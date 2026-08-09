@@ -56,20 +56,26 @@ Agent 能力雷达面向大学生和 Agent 使用者，用 GitHub 公开数据�
 
 ## 3. 当前验证结果
 
-- Python：18 项通过。
+- Python：20 项通过。
 - Vitest：6 项通过。
 - Playwright：双设备 16 项；核心全集 `--repeat-each=5` 共执行 80 次，75 通过，5 次为桌面项目按设计跳过移动专用断言，无偶发失败。
 - axe：首页/能力地图、项目详情 dialog、偏好 dialog 在桌面与移动端均为零违规。
 - TypeScript 严格检查和 Vite 生产构建通过；生产 sourcemap 已关闭。
 - 本地 Lighthouse 13.4.1：Performance 100、Accessibility 100、Best Practices 100、SEO 100、LCP 1.21 秒、CLS 0。
+- 线上 Lighthouse 13.4.1：Performance 97、Accessibility 100、Best Practices 100、SEO 100、LCP 1.36 秒、CLS 0。
 - 桌面 1440px 与移动 412px 已人工查看；移动 Hero 标题裁切问题已修正。
+- 线上 Playwright 移动 smoke：HTTP 200、8 张能力卡、无横向溢出、无 console/page/network 错误。
 
 ## 4. 真实采集与线上状态
 
-- 本地实现与发布前门禁已经完成。
-- `public/data/site.json` 当前仍是 `demo`，等待本轮代码推送后的首次 `workflow_dispatch` 采集。
-- 首次真实采集完成后需要确认候选数、发布数、API 失败告警、分类误报、catalog 内容和 `collection_status: live`。
-- 部署完成后需要再跑一次线上 smoke 与 Lighthouse，并观察下一次六小时定时任务是否持续更新历史快照和 catalog。
+- 已完成两次 `workflow_dispatch` 真实采集并部署，`collection_status` 为 `live`。
+- 每轮发现 254 个候选、发布 100 个项目；采集日志无 API 请求告警。
+- 第二轮校正了 README 偶然关键词导致的误报：`awesome-python`、`awesome-go`、`serverless` 已掉榜。
+- catalog 当前共 106 条：100 条 active、6 条 inactive；掉榜项目仍保留首轮 `first_seen`，在线验证了永久档案语义。
+- Stars 历史已产生两批共 240 行快照，`history_days` 为 1。
+- GitHub API 验收时 core 剩余 4962/5000、search 剩余 30/30。
+- 远端质量任务、正式 Chromium E2E 和 GitHub Pages 部署均已通过。
+- 尚未自然到达下一次六小时 cron；定时路径已配置为只运行 Python 测试、采集、数据提交和部署，不运行完整 Playwright/Lighthouse。
 
 ## 5. 暂不实现的边界
 

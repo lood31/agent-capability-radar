@@ -1,5 +1,69 @@
 # Errors
 
+## [ERR-20260809-012] powershell-node-e-quoting
+
+**Logged**: 2026-08-09T19:59:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tooling
+
+### Summary
+PowerShell removed nested quotes from an inline `node -e` Playwright smoke command.
+
+### Error
+```
+SyntaxError: Invalid or unexpected token
+```
+
+### Context
+- The script failed before launching a browser or contacting the deployed site.
+- Complex ESM imports and Windows paths made inline quoting fragile.
+
+### Suggested Fix
+Use a temporary `.mjs` file created and removed with `apply_patch` for non-trivial smoke scripts.
+
+### Metadata
+- Reproducible: yes
+- Related Files: none
+
+### Resolution
+- **Resolved**: 2026-08-09T20:00:00+08:00
+- **Notes**: The temporary script passed and was removed immediately afterward.
+
+---
+
+## [ERR-20260809-011] powershell-url-interpolation
+
+**Logged**: 2026-08-09T19:58:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tooling
+
+### Summary
+A backtick before `robots.txt` was interpreted as a carriage-return escape inside a PowerShell URL string.
+
+### Error
+```
+Invoke-WebRequest: 404 File not found
+```
+
+### Context
+- The deployed file was present; only the constructed request URL was malformed.
+- Other online checks completed successfully.
+
+### Suggested Fix
+Use `${base}robots.txt` when appending a path to a PowerShell variable.
+
+### Metadata
+- Reproducible: yes
+- Related Files: public/robots.txt
+
+### Resolution
+- **Resolved**: 2026-08-09T19:58:00+08:00
+- **Notes**: The corrected URL returned HTTP 200 and referenced the sitemap.
+
+---
+
 ## [ERR-20260809-010] push-raced-data-commit
 
 **Logged**: 2026-08-09T19:56:00+08:00
