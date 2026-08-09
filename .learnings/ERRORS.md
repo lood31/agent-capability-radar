@@ -33,6 +33,39 @@ Bind the narrowed root to a non-null constant and extract personalized scoring i
 
 ---
 
+## [ERR-20260809-004] github-pages-enablement
+
+**Logged**: 2026-08-09T17:47:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: infra
+
+### Summary
+The initial deployment build succeeded, but `actions/configure-pages` failed because Pages is not enabled on the new repository.
+
+### Error
+```
+Get Pages site failed. Please verify that the repository has Pages enabled and configured to build using GitHub Actions.
+```
+
+### Context
+- Workflow run: 31306670712
+- Repository: lood31/agent-capability-radar
+- `npm ci` and `npm run build` both succeeded.
+
+### Suggested Fix
+Enable GitHub Pages with `build_type=workflow`, rerun the failed workflow, and verify the published URL.
+
+### Metadata
+- Reproducible: yes
+- Related Files: .github/workflows/site.yml
+
+### Resolution
+- **Resolved**: 2026-08-09T17:50:00+08:00
+- **Notes**: Enabled Pages with `build_type=workflow`; rerun 31306670712 deployed successfully.
+
+---
+
 ## [ERR-20260809-003] git-safe-directory
 
 **Logged**: 2026-08-09T17:28:00+08:00
