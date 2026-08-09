@@ -9,12 +9,13 @@ async function waitForAnimations(locator: Locator): Promise<void> {
 }
 
 test("首页加载、搜索和六个栏目切换", async ({ page }) => {
+  await mockSiteData(page);
   await page.goto("/");
   await expect(page.getByRole("heading", { name: "今天，给你的 Agent 装上什么？" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "主要栏目" }).getByRole("button")).toHaveCount(6);
 
-  await page.getByRole("searchbox", { name: "搜索项目" }).fill("zotero");
-  await expect(page.getByRole("heading", { name: "zotero/zotero" })).toBeVisible();
+  await page.getByRole("searchbox", { name: "搜索项目" }).fill("fixture/research-learning");
+  await expect(page.getByRole("heading", { name: "fixture/research-learning" })).toBeVisible();
   await expect(page.locator(".project-card")).toHaveCount(1);
 
   await page.getByRole("searchbox", { name: "搜索项目" }).fill("");
@@ -26,8 +27,6 @@ test("首页加载、搜索和六个栏目切换", async ({ page }) => {
 
 test("八轨地图使用严格主分类，相关项目需主动开启", async ({ page }) => {
   await mockSiteData(page, (data) => {
-    const mcp = data.projects.find((project) => project.full_name === "modelcontextprotocol/servers")!;
-    mcp.capabilities.push("Skills & Prompts");
     return data;
   });
   await page.goto("/");
@@ -36,12 +35,13 @@ test("八轨地图使用严格主分类，相关项目需主动开启", async ({
   await expect(page.getByText("统计范围 · 当前榜单", { exact: true })).toBeVisible();
 
   await page.getByRole("button", { name: /^Skills & Prompts，/ }).click();
-  await expect(page.getByRole("heading", { name: "modelcontextprotocol/servers" })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "fixture/mcp-connectors" })).toHaveCount(0);
   await page.getByRole("checkbox", { name: "包含相关项目" }).check();
-  await expect(page.getByRole("heading", { name: "modelcontextprotocol/servers" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "fixture/mcp-connectors" })).toBeVisible();
 });
 
 test("项目详情 dialog 支持 Escape 并恢复焦点", async ({ page }) => {
+  await mockSiteData(page);
   await page.goto("/");
   const trigger = page.getByRole("button", { name: /查看能力详情/ }).first();
   await trigger.click();
@@ -54,6 +54,7 @@ test("项目详情 dialog 支持 Escape 并恢复焦点", async ({ page }) => {
 });
 
 test("偏好 dialog 约束焦点并在关闭后恢复", async ({ page }) => {
+  await mockSiteData(page);
   await page.goto("/");
   const trigger = page.getByRole("button", { name: "调整我的关注能力" });
   await trigger.click();
@@ -66,6 +67,7 @@ test("偏好 dialog 约束焦点并在关闭后恢复", async ({ page }) => {
 });
 
 test("页面与两个 dialog 通过 axe 扫描", async ({ page }) => {
+  await mockSiteData(page);
   await page.goto("/");
   await page.getByRole("button", { name: "能力地图", exact: true }).click();
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
@@ -84,6 +86,7 @@ test("页面与两个 dialog 通过 axe 扫描", async ({ page }) => {
 
 test("移动布局没有页面级横向溢出", async ({ page, isMobile }) => {
   test.skip(!isMobile, "仅移动项目验证");
+  await mockSiteData(page);
   await page.goto("/");
   await page.getByRole("button", { name: "能力地图", exact: true }).click();
   const sizes = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));

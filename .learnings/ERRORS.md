@@ -1,5 +1,71 @@
 # Errors
 
+## [ERR-20260809-010] push-raced-data-commit
+
+**Logged**: 2026-08-09T19:56:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: git
+
+### Summary
+An E2E fix push was rejected because the queued collection workflow published a data commit first.
+
+### Error
+```
+! [rejected] main -> main (fetch first)
+```
+
+### Context
+- The workflow is intentionally allowed to commit refreshed data to `main`.
+- The local change and bot data change touched separate files.
+
+### Suggested Fix
+Rebase the local commit onto the bot commit and push the resulting fast-forward history.
+
+### Metadata
+- Reproducible: yes
+- Related Files: public/data/site.json, data/catalog.json, data/history/2026-08.jsonl
+
+### Resolution
+- **Resolved**: 2026-08-09T19:56:00+08:00
+- **Notes**: Rebased cleanly onto bot commit `5e5d460` without overwriting collected data.
+
+---
+
+## [ERR-20260809-009] e2e-live-data-coupling
+
+**Logged**: 2026-08-09T19:54:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: testing
+
+### Summary
+The first CI run against collected data exposed two E2E tests that depended on repositories from the original demo dataset.
+
+### Error
+```
+getByRole('heading', { name: 'zotero/zotero' }): element(s) not found
+Cannot read properties of undefined (reading 'capabilities')
+```
+
+### Context
+- Production data is expected to change on every collection.
+- The failing tests assumed `zotero/zotero` and `modelcontextprotocol/servers` were always published.
+- The quality gate correctly prevented deployment of the classifier-only push.
+
+### Suggested Fix
+Build deterministic project fixtures from the current schema while keeping the production build and data-fetch boundary real.
+
+### Metadata
+- Reproducible: yes
+- Related Files: e2e/fixtures.ts, e2e/site.spec.ts
+
+### Resolution
+- **Resolved**: 2026-08-09T19:55:00+08:00
+- **Notes**: E2E now generates eight stable capability projects and no longer depends on current leaderboard membership.
+
+---
+
 ## [ERR-20260809-008] native-command-gate-not-stopping
 
 **Logged**: 2026-08-09T19:44:00+08:00
