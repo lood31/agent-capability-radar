@@ -1,6 +1,7 @@
 {
   "enrich_limit": 120,
   "publish_limit": 100,
+  "new_projects_days": 30,
   "searches": [
     { "query": "topic:ai-agent archived:false fork:false stars:>50", "limit": 40 },
     { "query": "topic:mcp-server archived:false fork:false stars:>10", "limit": 40 },
@@ -10,7 +11,12 @@
     { "query": "\"agent evaluation\" in:name,description,readme archived:false fork:false stars:>10", "limit": 30 },
     { "query": "\"research assistant\" in:name,description,readme archived:false fork:false stars:>20", "limit": 30 },
     { "query": "citation OR bibliography in:name,description archived:false fork:false stars:>100", "limit": 30 },
-    { "query": "created:>2026-07-10 archived:false fork:false stars:>200", "limit": 30 }
+    {
+      "query": "archived:false fork:false stars:>200",
+      "limit": 30,
+      "date_field": "created",
+      "window_days": 30
+    }
   ],
   "exclude": [],
   "overrides": {
@@ -21,4 +27,3 @@
     }
   }
 }
-

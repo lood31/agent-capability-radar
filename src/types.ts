@@ -66,6 +66,9 @@ export interface SiteData {
   schema_version: string;
   generated_at: string;
   collection_status: "live" | "demo" | "stale";
+  windows: {
+    new_projects_days: number;
+  };
   stats: {
     candidates: number;
     published: number;
@@ -74,3 +77,10 @@ export interface SiteData {
   projects: Project[];
 }
 
+export interface CapabilitySummary {
+  capability: Capability;
+  projectCount: number;
+  recentlyUpdated: number;
+  growth7: number | null;
+  representatives: Project[];
+}

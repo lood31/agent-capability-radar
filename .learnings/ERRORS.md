@@ -1,5 +1,130 @@
 # Errors
 
+## [ERR-20260809-008] native-command-gate-not-stopping
+
+**Logged**: 2026-08-09T19:44:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tooling
+
+### Summary
+A PowerShell staging script continued to `git commit` after `git diff --cached --check` reported trailing whitespace.
+
+### Error
+```
+programs.md:3: trailing whitespace.
+```
+
+### Context
+- PowerShell did not automatically stop on the non-zero exit code from the native Git command.
+- The issue was limited to three Markdown line-break spaces and did not affect runtime behavior.
+
+### Suggested Fix
+Check `$LASTEXITCODE` explicitly after native command gates before continuing.
+
+### Metadata
+- Reproducible: yes
+- Related Files: programs.md
+
+### Resolution
+- **Resolved**: 2026-08-09T19:44:00+08:00
+- **Notes**: Removed the trailing spaces and amended the local commit before pushing.
+
+---
+
+## [ERR-20260809-007] vitest-e2e-discovery
+
+**Logged**: 2026-08-09T19:24:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: testing
+
+### Summary
+Vitest discovered the Playwright `e2e/site.spec.ts` file and tried to execute it as a unit-test suite.
+
+### Error
+```
+Playwright Test did not expect test() to be called here.
+```
+
+### Context
+- All six frontend unit tests passed before Vitest reported the unrelated E2E suite failure.
+- Playwright tests require the Playwright runner and production preview server.
+
+### Suggested Fix
+Limit Vitest discovery to frontend unit tests under `src/**/*.test.ts`.
+
+### Metadata
+- Reproducible: yes
+- Related Files: vitest.config.ts, e2e/site.spec.ts
+
+### Resolution
+- **Resolved**: 2026-08-09T19:24:00+08:00
+- **Notes**: Added a dedicated Vitest include pattern.
+
+---
+
+## [ERR-20260809-006] playwright-browser-install-timeout
+
+**Logged**: 2026-08-09T19:12:00+08:00
+**Priority**: medium
+**Status**: pending
+**Area**: tooling
+
+### Summary
+The first project-local Chromium installation exceeded the 120-second command limit.
+
+### Error
+```
+command timed out after 124033 milliseconds
+```
+
+### Context
+- `@playwright/test` and `@axe-core/playwright` installed successfully.
+- The Playwright browser cache contained no completed browser directory after the timeout.
+- Retrying through both `npx.cmd` and the project CLI remained silent and left only a stale `__dirlock`.
+
+### Suggested Fix
+Keep CI on the version-matched Chromium install. Use the explicit local executable override only to validate the suite while the Windows cache issue is investigated.
+
+### Metadata
+- Reproducible: unknown
+- Related Files: package.json, package-lock.json
+
+---
+
+## [ERR-20260809-005] skill-path-resolution
+
+**Logged**: 2026-08-09T19:02:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: config
+
+### Summary
+The Python skill was first opened through a shorthand path that does not exist on disk.
+
+### Error
+```
+Get-Content: Cannot find path C:\Users\ASUS\.codex\skills\python-pro\SKILL.md
+```
+
+### Context
+- The available-skill catalog maps `python-pro` to a source-prefixed directory.
+- The failed read did not modify the repository.
+
+### Suggested Fix
+Resolve skill paths from the available-skill catalog before opening `SKILL.md`.
+
+### Metadata
+- Reproducible: yes
+- Related Files: none
+
+### Resolution
+- **Resolved**: 2026-08-09T19:03:00+08:00
+- **Notes**: Reopened the skill from `sickn33-antigravity-awesome-skills-python-pro/SKILL.md`.
+
+---
+
 ## [ERR-20260809-001] frontend-build
 
 **Logged**: 2026-08-09T16:30:00+08:00

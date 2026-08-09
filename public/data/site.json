@@ -1,7 +1,8 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "generated_at": "2026-08-09T08:00:00Z",
   "collection_status": "demo",
+  "windows": { "new_projects_days": 30 },
   "stats": { "candidates": 6, "published": 6, "history_days": 14 },
   "projects": [
     {
@@ -51,7 +52,7 @@
       "pushed_at": "2026-08-08T22:10:00Z",
       "content_type": "资源目录",
       "primary_capability": "MCP & Connectors",
-      "capabilities": ["MCP & Connectors", "Skills & Prompts"],
+      "capabilities": ["MCP & Connectors"],
       "research_use_cases": [],
       "integration_methods": ["MCP", "CLI"],
       "platforms": ["Windows", "macOS", "Linux"],
@@ -192,4 +193,3 @@
     }
   ]
 }
-

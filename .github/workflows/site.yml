@@ -12,6 +12,36 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  quality:
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Test collector
+        run: python -m unittest discover -s tests -v
+      - name: Test frontend logic
+        run: npm test
+      - name: Type-check and build
+        run: npm run build
+      - name: Test production site
+        run: npm run test:e2e
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
   collect:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
@@ -32,13 +62,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/site.json data/history
+          git add public/data/site.json data/catalog.json data/history
           git diff --cached --quiet || git commit -m "data: refresh capability radar"
           git push
 
   deploy:
-    needs: [collect]
-    if: always() && (needs.collect.result == 'success' || needs.collect.result == 'skipped')
+    needs: [quality, collect]
+    if: >-
+      always() &&
+      (needs.quality.result == 'success' || needs.quality.result == 'skipped') &&
+      (needs.collect.result == 'success' || needs.collect.result == 'skipped')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -63,4 +96,3 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
-
