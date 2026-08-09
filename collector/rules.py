@@ -17,7 +17,7 @@ CAPABILITY_SIGNALS: dict[str, tuple[str, ...]] = {
         "claude skill", "codex skill",
     ),
     "MCP & Connectors": (
-        "model context protocol", "mcp server", "mcp-server", "mcp servers", "tool connector",
+        "model context protocol", "mcp", "mcp server", "mcp-server", "mcp servers", "tool connector",
     ),
     "Browser & Computer Use": (
         "browser agent", "browser automation", "computer use", "web automation", "playwright",
@@ -60,19 +60,25 @@ CONTENT_SIGNALS: list[tuple[str, tuple[str, ...]]] = [
 ]
 
 AMBIGUOUS_AGENT = re.compile(r"\b(user|travel|real estate|insurance|support) agent\b")
+DOMAIN_SCOPE = re.compile(
+    r"\b(ai|llm|agents?|agentic|mcp|rag)\b|"
+    r"browser automation|computer use|knowledge base|knowledge graph|"
+    r"workflow automation|research assistant|citation|bibliography|reference manager",
+)
 
 
-def _normalise_text(repo: dict[str, Any], readme: str) -> tuple[str, set[str]]:
+def _normalise_text(repo: dict[str, Any], readme: str) -> tuple[str, str, str, set[str]]:
     topics = {str(topic).lower().replace("-", " ") for topic in repo.get("topics") or []}
-    base = " ".join(
+    metadata = " ".join(
         [
             str(repo.get("name") or ""),
             str(repo.get("description") or ""),
             " ".join(topics),
-            readme[:20_000],
         ]
     ).lower().replace("_", " ")
-    return re.sub(r"\s+", " ", base), topics
+    metadata = re.sub(r"\s+", " ", metadata)
+    readme_text = re.sub(r"\s+", " ", readme[:20_000].lower().replace("_", " "))
+    return f"{metadata} {readme_text}", metadata, readme_text, topics
 
 
 def _matches(text: str, signals: tuple[str, ...]) -> list[str]:
@@ -88,20 +94,24 @@ def classify(
     if override.get("exclude") or repo.get("archived") or repo.get("fork"):
         return None
 
-    text, topics = _normalise_text(repo, readme)
+    text, metadata_text, readme_text, topics = _normalise_text(repo, readme)
+    forced = override.get("capabilities")
+    if not forced and not DOMAIN_SCOPE.search(metadata_text):
+        return None
+
     scores: dict[str, int] = defaultdict(int)
     evidence: dict[str, list[str]] = defaultdict(list)
     for capability, signals in CAPABILITY_SIGNALS.items():
-        matches = _matches(text, signals)
-        scores[capability] += len(matches)
-        evidence[capability].extend(matches[:3])
+        metadata_matches = _matches(metadata_text, signals)
+        readme_matches = _matches(readme_text, signals)
+        scores[capability] += len(metadata_matches) * 3 + len(readme_matches)
+        evidence[capability].extend((metadata_matches + readme_matches)[:3])
         topic_matches = [signal for signal in signals if signal in topics]
         scores[capability] += len(topic_matches) * 2
 
     if AMBIGUOUS_AGENT.search(text) and max(scores.values(), default=0) < 2:
         return None
 
-    forced = override.get("capabilities")
     if forced:
         capabilities = [item for item in forced if item in CAPABILITIES]
     else:
@@ -174,4 +184,3 @@ def classify(
         evidence=rendered_evidence,
         confidence=min(100, max(scores.values()) * 18 + len(capabilities) * 6),
     )
-

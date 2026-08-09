@@ -54,7 +54,30 @@ class ClassificationTests(unittest.TestCase):
         assert result is not None
         self.assertEqual(result.primary_capability, "Skills & Prompts")
 
+    def test_generic_awesome_list_is_not_classified_from_readme_mentions(self) -> None:
+        result = classify(
+            repository(
+                name="awesome-python",
+                description="An opinionated list of Python frameworks and libraries",
+                topics=["awesome", "python"],
+            ),
+            "Includes an AI agent framework, an MCP server, observability and sandbox tools.",
+        )
+        self.assertIsNone(result)
+
+    def test_repository_metadata_outranks_broad_readme_mentions(self) -> None:
+        result = classify(
+            repository(
+                name="awesome-mcp-servers",
+                description="A collection of MCP servers",
+                topics=["ai", "mcp"],
+            ),
+            "Includes AI agent, multi-agent and coding agent projects.",
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertEqual(result.primary_capability, "MCP & Connectors")
+
 
 if __name__ == "__main__":
     unittest.main()
-
