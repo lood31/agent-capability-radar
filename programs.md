@@ -36,18 +36,18 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 
 ### 永久静态详情页
 
-- `npm run build` 从永久 catalog 为全部106条档案生成 `/projects/{owner}/{repo}/` 静态详情页。
+- `npm run build` 从永久 catalog 为全部108条档案生成 `/projects/{owner}/{repo}/` 静态详情页。
 - 当前非活跃项目继续保留稳定链接，并显示历史收录状态。
 - 每个详情页具有独立 title、description、canonical、Open Graph、Twitter Card 与 SoftwareSourceCode JSON-LD。
 - 详情页展示项目形态、用途、能力、技术数据、活跃度、接入特征、摘要来源和同类项目。
-- 构建时生成包含首页和106个项目页的107条 sitemap URL。
+- 构建时生成包含首页和108个项目页的109条 sitemap URL。
 - Preview 只保留可信可选字段；没有官方来源时不抓取、不伪造图片。
 
 ### 数据与自动化
 
 - 动态最近30天查询、dry-run零写入、失败不覆盖旧数据、Stars历史与永久catalog语义保持不变。
-- 当前发布榜单95项：Agents 53、MCP & Connectors 20、Skills & Plugins 13、Infrastructure 9。
-- catalog 共106项：95 active、11 inactive；普通资源目录掉榜但首次发现时间与历史排名保留。
+- 当前发布榜单95项：Agents 52、MCP & Connectors 20、Skills & Plugins 14、Infrastructure 9。
+- catalog 共108项：95 active、13 inactive；普通资源目录掉榜但首次发现时间与历史排名保留。
 - 六小时定时采集仍只运行Python测试、采集、提交与部署，不运行完整Playwright或Lighthouse。
 - 非定时质量任务继续执行Python、Vitest、TypeScript、生产构建和Chromium E2E。
 
@@ -59,7 +59,7 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 - Playwright `--repeat-each=5`：75通过、5项按设计跳过，无偶发失败；本地固定2 workers，CI固定1 worker。
 - E2E 覆盖四层入口、URL筛选、收藏、同层对比、能力覆盖、静态详情深链、恶意文本、404、移动端溢出和自动浏览器错误收集。
 - Axe：首页与静态详情页在桌面和Pixel 7均为零违规。
-- 生产构建生成106个详情页与107条 sitemap URL，生产 sourcemap 关闭。
+- 生产构建生成108个详情页与109条 sitemap URL，生产 sourcemap 关闭。
 - 本地 Lighthouse 13.4.1：Performance 100、Accessibility 100、Best Practices 100、SEO 100、LCP 1.375秒、CLS 0。
 - 本地浏览器：`D:\Chromium\chrome-win\chrome.exe`；CI继续安装Playwright匹配的Chromium。
 

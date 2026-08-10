@@ -318,3 +318,129 @@ Seed migration with the record's legacy classification fields while deriving new
 - **Notes**: Legacy classification is now supplied only as migration context; new collections still use strict discovery rules.
 
 ---
+
+## [ERR-20260810-011] git-fetch
+
+**Logged**: 2026-08-10T22:30:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: infra
+
+### Summary
+Fetching the latest main branch failed during the GitHub TLS handshake while resolving PR conflicts.
+
+### Error
+```text
+fatal: unable to access 'https://github.com/lood31/agent-capability-radar.git/': schannel: failed to receive handshake, SSL/TLS connection failed
+```
+
+### Context
+- Command: `git -c safe.directory=D:/find_hot_agent fetch origin main`
+- The preceding branch push succeeded, so this may be a transient GitHub or Windows Schannel failure.
+
+### Suggested Fix
+Retry the same scoped fetch once; if it remains unavailable, use a read-only GitHub API fallback for the required refs/files.
+
+### Metadata
+- Reproducible: unknown
+- Related Files: data/catalog.json, public/data/site.json
+
+### Resolution
+- **Resolved**: 2026-08-10T22:31:00+08:00
+- **Notes**: The same scoped fetch succeeded on the next attempt.
+
+---
+
+## [ERR-20260810-012] playwright-e2e-browser-path
+
+**Logged**: 2026-08-10T22:32:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tests
+
+### Summary
+Local E2E startup could not find Playwright's managed Chromium because the local executable path was omitted.
+
+### Error
+```text
+browserType.launch: Executable doesn't exist at ...chromium_headless_shell.exe
+```
+
+### Context
+- Command: `npm.cmd run test:e2e`
+- The project intentionally supports the user's local Chromium through `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`.
+
+### Suggested Fix
+Set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=D:\Chromium\chrome-win\chrome.exe` for local E2E runs.
+
+### Metadata
+- Reproducible: yes
+- Related Files: playwright.config.ts
+
+### Resolution
+- **Resolved**: 2026-08-10T22:32:00+08:00
+- **Notes**: The rerun passed 15 tests with one expected desktop skip.
+
+---
+
+## [ERR-20260810-013] powershell-git-stash-reference
+
+**Logged**: 2026-08-10T22:33:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: infra
+
+### Summary
+PowerShell parsed an unquoted `stash@{0}` reference instead of passing it literally to Git.
+
+### Error
+```text
+error: unknown switch `e'
+```
+
+### Context
+- Command: `git stash pop stash@{0}`
+
+### Suggested Fix
+Quote stash references in PowerShell, for example `git stash pop 'stash@{0}'`.
+
+### Metadata
+- Reproducible: yes
+- Related Files: .learnings/ERRORS.md
+
+### Resolution
+- **Resolved**: 2026-08-10T22:33:00+08:00
+- **Notes**: The quoted command restored the tracked error log and dropped the stash normally.
+
+---
+
+## [ERR-20260810-014] powershell-convertfrom-json
+
+**Logged**: 2026-08-10T22:34:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tests
+
+### Summary
+Windows PowerShell 5.1 failed to parse the large valid site and catalog JSON files during a read-only count check.
+
+### Error
+```text
+ConvertFrom-Json: The array passed in is invalid; expected ','.
+```
+
+### Context
+- The collector's Python validator had already accepted the same `site.json` with 95 projects.
+
+### Suggested Fix
+Use the project's Python JSON parser for large dataset verification when PowerShell 5.1 cannot handle the payload.
+
+### Metadata
+- Reproducible: yes
+- Related Files: data/catalog.json, public/data/site.json
+
+### Resolution
+- **Resolved**: 2026-08-10T22:34:00+08:00
+- **Notes**: Python confirmed Schema 1.2, 95 published projects, 108 catalog records, and 840 history lines.
+
+---
