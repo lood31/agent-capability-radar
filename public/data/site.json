@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-08-10T02:33:20.637401Z",
+  "generated_at": "2026-08-10T08:03:19.269446Z",
   "collection_status": "live",
   "windows": {
     "new_projects_days": 30
@@ -8,7 +8,7 @@
   "stats": {
     "candidates": 254,
     "published": 100,
-    "history_days": 1
+    "history_days": 2
   },
   "projects": [
     {
@@ -25,11 +25,11 @@
         "rag"
       ],
       "license": "Apache-2.0",
-      "stars": 131781,
-      "forks": 19409,
-      "open_issues": 9,
+      "stars": 131834,
+      "forks": 19415,
+      "open_issues": 7,
       "created_at": "2024-04-29T05:30:25Z",
-      "pushed_at": "2026-08-09T11:43:20Z",
+      "pushed_at": "2026-08-10T07:26:18Z",
       "content_type": "MCP Server",
       "primary_capability": "Memory & Knowledge",
       "capabilities": [
@@ -70,7 +70,7 @@
         "percent_7": null,
         "sparkline": [
           131721,
-          131781
+          131834
         ]
       },
       "recommendation_reasons": [
@@ -116,11 +116,11 @@
         "supermemory"
       ],
       "license": "Apache-2.0",
-      "stars": 90219,
-      "forks": 7856,
-      "open_issues": 387,
+      "stars": 90257,
+      "forks": 7859,
+      "open_issues": 393,
       "created_at": "2025-08-31T20:50:03Z",
-      "pushed_at": "2026-08-10T01:41:49Z",
+      "pushed_at": "2026-08-10T07:04:36Z",
       "content_type": "MCP Server",
       "primary_capability": "Memory & Knowledge",
       "capabilities": [
@@ -161,7 +161,7 @@
         "percent_7": null,
         "sparkline": [
           90190,
-          90219
+          90257
         ]
       },
       "recommendation_reasons": [
@@ -186,11 +186,11 @@
       "language": "TypeScript",
       "topics": [],
       "license": "MIT",
-      "stars": 76111,
-      "forks": 14169,
-      "open_issues": 5059,
+      "stars": 76129,
+      "forks": 14174,
+      "open_issues": 5057,
       "created_at": "2026-03-02T15:01:51Z",
-      "pushed_at": "2026-08-10T01:40:01Z",
+      "pushed_at": "2026-08-10T08:02:28Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -233,7 +233,7 @@
         "percent_7": null,
         "sparkline": [
           76052,
-          76111
+          76129
         ]
       },
       "recommendation_reasons": [
@@ -246,6 +246,88 @@
         "命中 ai agent",
         "命中 agent framework",
         "命中 coding agent"
+      ]
+    },
+    {
+      "id": 1201173969,
+      "full_name": "JuliusBrussee/caveman",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "homepage": "https://caveman.so/",
+      "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+      "language": "JavaScript",
+      "topics": [
+        "ai",
+        "anthropic",
+        "caveman",
+        "claude",
+        "claude-code",
+        "llm",
+        "meme",
+        "prompt-engineering",
+        "skill",
+        "tokens"
+      ],
+      "license": "MIT",
+      "stars": 97140,
+      "forks": 5599,
+      "open_issues": 470,
+      "created_at": "2026-04-04T10:03:00Z",
+      "pushed_at": "2026-08-08T11:05:00Z",
+      "content_type": "MCP Server",
+      "primary_capability": "Skills & Prompts",
+      "capabilities": [
+        "Agent Core",
+        "Skills & Prompts",
+        "MCP & Connectors"
+      ],
+      "research_use_cases": [
+        "论文检索与阅读",
+        "学习工作流"
+      ],
+      "integration_methods": [
+        "MCP",
+        "CLI",
+        "Docker"
+      ],
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Docker"
+      ],
+      "local_first": true,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 97,
+      "fit_score": 88,
+      "recommendation_score": 94,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 97,
+        "activity": 98,
+        "community": 94,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          97038,
+          97140
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "适合论文检索与阅读",
+        "支持本地或自托管运行",
+        "文档中提供 Windows 支持信号"
+      ],
+      "classification_evidence": [
+        "命中 claude skill",
+        "Topics: ai, anthropic, caveman, claude"
       ]
     },
     {
@@ -278,11 +360,11 @@
         "vibe-coding"
       ],
       "license": "Apache-2.0",
-      "stars": 84752,
-      "forks": 9905,
-      "open_issues": 806,
+      "stars": 84808,
+      "forks": 9909,
+      "open_issues": 802,
       "created_at": "2026-04-28T04:25:20Z",
-      "pushed_at": "2026-08-10T01:34:39Z",
+      "pushed_at": "2026-08-10T07:41:31Z",
       "content_type": "MCP Server",
       "primary_capability": "Skills & Prompts",
       "capabilities": [
@@ -321,7 +403,7 @@
         "percent_7": null,
         "sparkline": [
           84722,
-          84752
+          84808
         ]
       },
       "recommendation_reasons": [
@@ -358,8 +440,8 @@
         "openclaw-skills"
       ],
       "license": "MIT",
-      "stars": 51850,
-      "forks": 4996,
+      "stars": 51860,
+      "forks": 4997,
       "open_issues": 0,
       "created_at": "2026-01-25T09:22:32Z",
       "pushed_at": "2026-08-09T14:52:15Z",
@@ -407,7 +489,7 @@
         "percent_7": null,
         "sparkline": [
           51847,
-          51850
+          51860
         ]
       },
       "recommendation_reasons": [
@@ -452,9 +534,9 @@
         "tree-sitter"
       ],
       "license": "Apache-2.0",
-      "stars": 104643,
-      "forks": 10179,
-      "open_issues": 870,
+      "stars": 104749,
+      "forks": 10187,
+      "open_issues": 879,
       "created_at": "2026-04-03T15:49:07Z",
       "pushed_at": "2026-08-09T22:25:00Z",
       "content_type": "Skill Pack",
@@ -485,7 +567,7 @@
       "recommendation_score": 93,
       "score_breakdown": {
         "growth": null,
-        "heat": 98,
+        "heat": 99,
         "activity": 100,
         "community": 99,
         "completeness": 100,
@@ -498,7 +580,7 @@
         "percent_7": null,
         "sparkline": [
           104553,
-          104643
+          104749
         ]
       },
       "recommendation_reasons": [
@@ -526,9 +608,9 @@
         "mcp"
       ],
       "license": "MIT",
-      "stars": 92017,
-      "forks": 14236,
-      "open_issues": 2690,
+      "stars": 92034,
+      "forks": 14249,
+      "open_issues": 2704,
       "created_at": "2024-11-30T04:49:10Z",
       "pushed_at": "2026-08-03T03:09:55Z",
       "content_type": "MCP Server",
@@ -557,13 +639,13 @@
       "local_first": true,
       "external_service_required": false,
       "setup_level": "medium",
-      "quality_score": 96,
+      "quality_score": 95,
       "fit_score": 88,
       "recommendation_score": 93,
       "score_breakdown": {
         "growth": null,
         "heat": 99,
-        "activity": 87,
+        "activity": 85,
         "community": 100,
         "completeness": 100,
         "penalty": 0
@@ -575,7 +657,7 @@
         "percent_7": null,
         "sparkline": [
           92010,
-          92017
+          92034
         ]
       },
       "recommendation_reasons": [
@@ -615,8 +697,8 @@
         "state-management"
       ],
       "license": "Apache-2.0",
-      "stars": 62891,
-      "forks": 7334,
+      "stars": 62918,
+      "forks": 7337,
       "open_issues": 708,
       "created_at": "2023-06-20T08:58:36Z",
       "pushed_at": "2026-08-07T13:34:33Z",
@@ -662,7 +744,7 @@
         "percent_7": null,
         "sparkline": [
           62870,
-          62891
+          62918
         ]
       },
       "recommendation_reasons": [
@@ -703,11 +785,11 @@
         "skills"
       ],
       "license": "MIT",
-      "stars": 46435,
+      "stars": 46436,
       "forks": 10306,
-      "open_issues": 29,
+      "open_issues": 31,
       "created_at": "2022-08-07T08:33:41Z",
-      "pushed_at": "2026-08-10T01:59:46Z",
+      "pushed_at": "2026-08-10T08:02:53Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -753,7 +835,7 @@
         "percent_7": null,
         "sparkline": [
           46432,
-          46435
+          46436
         ]
       },
       "recommendation_reasons": [
@@ -798,11 +880,11 @@
         "wiki"
       ],
       "license": "AGPL-3.0",
-      "stars": 45691,
-      "forks": 2941,
-      "open_issues": 93,
+      "stars": 45696,
+      "forks": 2942,
+      "open_issues": 92,
       "created_at": "2020-08-30T09:21:35Z",
-      "pushed_at": "2026-08-10T01:35:21Z",
+      "pushed_at": "2026-08-10T07:45:53Z",
       "content_type": "可运行工具",
       "primary_capability": "Memory & Knowledge",
       "capabilities": [
@@ -847,7 +929,7 @@
         "percent_7": null,
         "sparkline": [
           45688,
-          45691
+          45696
         ]
       },
       "recommendation_reasons": [
@@ -883,13 +965,13 @@
         "vibe-coding"
       ],
       "license": "AGPL-3.0",
-      "stars": 50188,
-      "forks": 4746,
-      "open_issues": 1248,
+      "stars": 50204,
+      "forks": 4748,
+      "open_issues": 1250,
       "created_at": "2024-05-24T01:56:26Z",
-      "pushed_at": "2026-08-10T02:18:08Z",
+      "pushed_at": "2026-08-10T08:03:06Z",
       "content_type": "MCP Server",
-      "primary_capability": "Agent Core",
+      "primary_capability": "Skills & Prompts",
       "capabilities": [
         "Agent Core",
         "Skills & Prompts",
@@ -929,7 +1011,7 @@
         "percent_7": null,
         "sparkline": [
           50180,
-          50188
+          50204
         ]
       },
       "recommendation_reasons": [
@@ -939,9 +1021,9 @@
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
-        "命中 ai agent",
-        "命中 autonomous agent",
-        "命中 coding agent",
+        "命中 agent skill",
+        "命中 agent skills",
+        "命中 codex skill",
         "Topics: agent-skills, ai-agent, awesome-skills, claude-code"
       ]
     },
@@ -975,11 +1057,11 @@
         "workflow-automation"
       ],
       "license": "NOASSERTION",
-      "stars": 200003,
-      "forks": 60031,
-      "open_issues": 1418,
+      "stars": 200040,
+      "forks": 60039,
+      "open_issues": 1415,
       "created_at": "2019-06-22T09:24:21Z",
-      "pushed_at": "2026-08-10T02:32:07Z",
+      "pushed_at": "2026-08-10T07:58:28Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -1017,7 +1099,7 @@
         "percent_7": null,
         "sparkline": [
           199958,
-          200003
+          200040
         ]
       },
       "recommendation_reasons": [
@@ -1030,176 +1112,6 @@
         "命中 mcp",
         "命中 mcp server",
         "Topics: ai, apis, automation, cli"
-      ]
-    },
-    {
-      "id": 1201173969,
-      "full_name": "JuliusBrussee/caveman",
-      "url": "https://github.com/JuliusBrussee/caveman",
-      "homepage": "https://caveman.so/",
-      "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
-      "language": "JavaScript",
-      "topics": [
-        "ai",
-        "anthropic",
-        "caveman",
-        "claude",
-        "claude-code",
-        "llm",
-        "meme",
-        "prompt-engineering",
-        "skill",
-        "tokens"
-      ],
-      "license": "MIT",
-      "stars": 97084,
-      "forks": 5595,
-      "open_issues": 470,
-      "created_at": "2026-04-04T10:03:00Z",
-      "pushed_at": "2026-08-08T11:05:00Z",
-      "content_type": "MCP Server",
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "MCP & Connectors"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读",
-        "学习工作流"
-      ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "Docker"
-      ],
-      "platforms": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Docker"
-      ],
-      "local_first": true,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 97,
-      "fit_score": 81,
-      "recommendation_score": 91,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 97,
-        "activity": 98,
-        "community": 94,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          97038,
-          97084
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合论文检索与阅读",
-        "支持本地或自托管运行",
-        "文档中提供 Windows 支持信号"
-      ],
-      "classification_evidence": [
-        "命中 coding agent",
-        "命中 agentic",
-        "Topics: ai, anthropic, caveman, claude"
-      ]
-    },
-    {
-      "id": 1079456184,
-      "full_name": "K-Dense-AI/scientific-agent-skills",
-      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "homepage": "https://k-dense.ai",
-      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 158 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
-      "language": "Python",
-      "topics": [
-        "agent-skills",
-        "ai-scientist",
-        "bioinformatics",
-        "chemoinformatics",
-        "claude",
-        "claude-skills",
-        "claudecode",
-        "clinical-research",
-        "computational-biology",
-        "data-analysis",
-        "drug-discovery",
-        "genomics",
-        "materials-science",
-        "metabolomics",
-        "proteomics",
-        "scientific-computing",
-        "scientific-visualization"
-      ],
-      "license": "MIT",
-      "stars": 33065,
-      "forks": 3251,
-      "open_issues": 6,
-      "created_at": "2025-10-19T20:54:15Z",
-      "pushed_at": "2026-08-09T04:19:29Z",
-      "content_type": "Skill Pack",
-      "primary_capability": "Skills & Prompts",
-      "capabilities": [
-        "Agent Core",
-        "Skills & Prompts",
-        "Memory & Knowledge",
-        "Research & Learning"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读",
-        "文献与引用管理",
-        "研究数据与复现",
-        "学术写作"
-      ],
-      "integration_methods": [
-        "CLI",
-        "API"
-      ],
-      "platforms": [
-        "Web"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "easy",
-      "quality_score": 94,
-      "fit_score": 85,
-      "recommendation_score": 91,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 88,
-        "activity": 100,
-        "community": 90,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          33056,
-          33065
-        ]
-      },
-      "recommendation_reasons": [
-        "适合论文检索与阅读",
-        "最近仍在活跃更新"
-      ],
-      "classification_evidence": [
-        "命中 agent skill",
-        "命中 agent skills",
-        "命中 claude skill",
-        "Topics: agent-skills, ai-scientist, bioinformatics, chemoinformatics"
       ]
     },
     {
@@ -1230,11 +1142,11 @@
         "windows-sandbox"
       ],
       "license": "MIT",
-      "stars": 21064,
-      "forks": 1443,
-      "open_issues": 667,
+      "stars": 21078,
+      "forks": 1444,
+      "open_issues": 674,
       "created_at": "2025-01-31T15:02:49Z",
-      "pushed_at": "2026-08-10T01:14:54Z",
+      "pushed_at": "2026-08-10T08:02:46Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -1280,7 +1192,7 @@
         "percent_7": null,
         "sparkline": [
           21059,
-          21064
+          21078
         ]
       },
       "recommendation_reasons": [
@@ -1312,9 +1224,9 @@
         "skills"
       ],
       "license": "MIT",
-      "stars": 85198,
-      "forks": 9169,
-      "open_issues": 105,
+      "stars": 85368,
+      "forks": 9184,
+      "open_issues": 106,
       "created_at": "2026-02-15T20:20:26Z",
       "pushed_at": "2026-08-08T21:05:57Z",
       "content_type": "Skill Pack",
@@ -1354,7 +1266,7 @@
         "percent_7": null,
         "sparkline": [
           85013,
-          85198
+          85368
         ]
       },
       "recommendation_reasons": [
@@ -1364,7 +1276,7 @@
       "classification_evidence": [
         "命中 agent skill",
         "命中 agent skills",
-        "命中 agent skill",
+        "命中 codex skill",
         "Topics: agent-skills, antigravity, claude-code, codex"
       ]
     },
@@ -1398,8 +1310,8 @@
         "xpath"
       ],
       "license": "BSD-3-Clause",
-      "stars": 73299,
-      "forks": 7311,
+      "stars": 73334,
+      "forks": 7314,
       "open_issues": 0,
       "created_at": "2024-10-13T20:29:53Z",
       "pushed_at": "2026-08-09T19:06:50Z",
@@ -1442,7 +1354,7 @@
         "percent_7": null,
         "sparkline": [
           73277,
-          73299
+          73334
         ]
       },
       "recommendation_reasons": [
@@ -1488,15 +1400,16 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 67509,
-      "forks": 8077,
-      "open_issues": 809,
+      "stars": 67527,
+      "forks": 8080,
+      "open_issues": 811,
       "created_at": "2025-06-02T21:24:20Z",
-      "pushed_at": "2026-08-09T06:12:27Z",
+      "pushed_at": "2026-08-10T06:12:59Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
         "Agent Core",
+        "Skills & Prompts",
         "MCP & Connectors",
         "Memory & Knowledge",
         "Evaluation & Safety"
@@ -1536,7 +1449,7 @@
         "percent_7": null,
         "sparkline": [
           67480,
-          67509
+          67527
         ]
       },
       "recommendation_reasons": [
@@ -1582,11 +1495,11 @@
         "typescript"
       ],
       "license": "Apache-2.0",
-      "stars": 65661,
-      "forks": 5013,
-      "open_issues": 634,
+      "stars": 65702,
+      "forks": 5015,
+      "open_issues": 637,
       "created_at": "2026-01-07T19:58:51Z",
-      "pushed_at": "2026-08-09T23:24:33Z",
+      "pushed_at": "2026-08-10T03:12:43Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -1629,7 +1542,7 @@
         "percent_7": null,
         "sparkline": [
           65626,
-          65661
+          65702
         ]
       },
       "recommendation_reasons": [
@@ -1643,6 +1556,94 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, ai, anthropic, claude-code"
+      ]
+    },
+    {
+      "id": 1079456184,
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "homepage": "https://k-dense.ai",
+      "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 170,000+ scientists worldwide. 158 ready-to-use skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigravity, and the open Agent Skills standard.",
+      "language": "Python",
+      "topics": [
+        "agent-skills",
+        "ai-scientist",
+        "bioinformatics",
+        "chemoinformatics",
+        "claude",
+        "claude-skills",
+        "claudecode",
+        "clinical-research",
+        "computational-biology",
+        "data-analysis",
+        "drug-discovery",
+        "genomics",
+        "materials-science",
+        "metabolomics",
+        "proteomics",
+        "scientific-computing",
+        "scientific-visualization"
+      ],
+      "license": "MIT",
+      "stars": 33097,
+      "forks": 3252,
+      "open_issues": 6,
+      "created_at": "2025-10-19T20:54:15Z",
+      "pushed_at": "2026-08-09T04:19:29Z",
+      "content_type": "Skill Pack",
+      "primary_capability": "Skills & Prompts",
+      "capabilities": [
+        "Agent Core",
+        "Skills & Prompts",
+        "Memory & Knowledge",
+        "Research & Learning"
+      ],
+      "research_use_cases": [
+        "论文检索与阅读",
+        "文献与引用管理",
+        "研究数据与复现",
+        "学术写作"
+      ],
+      "integration_methods": [
+        "CLI",
+        "API"
+      ],
+      "platforms": [
+        "Web"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "easy",
+      "quality_score": 93,
+      "fit_score": 85,
+      "recommendation_score": 90,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 88,
+        "activity": 98,
+        "community": 90,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          33056,
+          33097
+        ]
+      },
+      "recommendation_reasons": [
+        "适合论文检索与阅读",
+        "最近仍在活跃更新"
+      ],
+      "classification_evidence": [
+        "命中 agent skill",
+        "命中 agent skills",
+        "命中 claude skill",
+        "Topics: agent-skills, ai-scientist, bioinformatics, chemoinformatics"
       ]
     },
     {
@@ -1665,9 +1666,9 @@
         "trading"
       ],
       "license": "MIT",
-      "stars": 30468,
-      "forks": 4907,
-      "open_issues": 22,
+      "stars": 30495,
+      "forks": 4915,
+      "open_issues": 31,
       "created_at": "2026-04-01T09:52:20Z",
       "pushed_at": "2026-08-09T14:59:50Z",
       "content_type": "可运行工具",
@@ -1709,7 +1710,7 @@
         "percent_7": null,
         "sparkline": [
           30449,
-          30468
+          30495
         ]
       },
       "recommendation_reasons": [
@@ -1752,9 +1753,9 @@
         "vector-database"
       ],
       "license": "Apache-2.0",
-      "stars": 29893,
-      "forks": 2899,
-      "open_issues": 380,
+      "stars": 29904,
+      "forks": 2900,
+      "open_issues": 381,
       "created_at": "2023-08-16T16:16:33Z",
       "pushed_at": "2026-08-09T18:57:32Z",
       "content_type": "MCP Server",
@@ -1800,7 +1801,7 @@
         "percent_7": null,
         "sparkline": [
           29889,
-          29893
+          29904
         ]
       },
       "recommendation_reasons": [
@@ -1825,8 +1826,8 @@
       "language": "Python",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 46819,
-      "forks": 4359,
+      "stars": 46830,
+      "forks": 4358,
       "open_issues": 79,
       "created_at": "2026-03-08T13:52:57Z",
       "pushed_at": "2026-08-03T09:29:17Z",
@@ -1872,7 +1873,7 @@
         "percent_7": null,
         "sparkline": [
           46811,
-          46819
+          46830
         ]
       },
       "recommendation_reasons": [
@@ -1916,11 +1917,11 @@
         "workflow-automation"
       ],
       "license": "MIT",
-      "stars": 46796,
-      "forks": 8283,
-      "open_issues": 799,
+      "stars": 46814,
+      "forks": 8281,
+      "open_issues": 802,
       "created_at": "2026-02-01T07:16:15Z",
-      "pushed_at": "2026-08-09T15:57:55Z",
+      "pushed_at": "2026-08-10T07:42:11Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -1964,7 +1965,7 @@
         "percent_7": null,
         "sparkline": [
           46795,
-          46796
+          46814
         ]
       },
       "recommendation_reasons": [
@@ -2010,11 +2011,11 @@
         "skill-library"
       ],
       "license": "MIT",
-      "stars": 44698,
-      "forks": 6552,
+      "stars": 44711,
+      "forks": 6554,
       "open_issues": 3,
       "created_at": "2026-01-14T17:48:09Z",
-      "pushed_at": "2026-08-09T16:08:44Z",
+      "pushed_at": "2026-08-10T07:36:17Z",
       "content_type": "Skill Pack",
       "primary_capability": "Skills & Prompts",
       "capabilities": [
@@ -2052,7 +2053,7 @@
         "percent_7": null,
         "sparkline": [
           44688,
-          44698
+          44711
         ]
       },
       "recommendation_reasons": [
@@ -2063,6 +2064,86 @@
         "命中 agent skills",
         "命中 codex skill",
         "Topics: agent-skills, agentic-skills, ai-agent-skills, ai-agents"
+      ]
+    },
+    {
+      "id": 822604462,
+      "full_name": "666ghj/BettaFish",
+      "url": "https://github.com/666ghj/BettaFish",
+      "homepage": "https://deepwiki.com/666ghj/BettaFish",
+      "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。",
+      "language": "Python",
+      "topics": [
+        "agent-framework",
+        "data-analysis",
+        "deep-research",
+        "deep-search",
+        "llms",
+        "multi-agent-system",
+        "nlp",
+        "public-opinion-analysis",
+        "python3",
+        "sentiment-analysis"
+      ],
+      "license": "GPL-2.0",
+      "stars": 41992,
+      "forks": 7632,
+      "open_issues": 7,
+      "created_at": "2024-07-01T13:11:38Z",
+      "pushed_at": "2026-08-10T03:55:07Z",
+      "content_type": "Framework / SDK",
+      "primary_capability": "Agent Core",
+      "capabilities": [
+        "Agent Core",
+        "Browser & Computer Use"
+      ],
+      "research_use_cases": [
+        "研究数据与复现"
+      ],
+      "integration_methods": [
+        "CLI",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Docker"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 96,
+      "fit_score": 75,
+      "recommendation_score": 89,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 92,
+        "activity": 100,
+        "community": 97,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          41982,
+          41992
+        ]
+      },
+      "recommendation_reasons": [
+        "适合研究数据与复现",
+        "文档中提供 Windows 支持信号",
+        "最近仍在活跃更新",
+        "配置成本中等"
+      ],
+      "classification_evidence": [
+        "命中 agent framework",
+        "Topics: agent-framework, data-analysis, deep-research, deep-search"
       ]
     },
     {
@@ -2088,11 +2169,11 @@
         "openclaw"
       ],
       "license": "Apache-2.0",
-      "stars": 26793,
-      "forks": 2278,
+      "stars": 26812,
+      "forks": 2280,
       "open_issues": 430,
       "created_at": "2026-02-25T07:32:52Z",
-      "pushed_at": "2026-08-09T12:31:00Z",
+      "pushed_at": "2026-08-10T06:13:27Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -2133,7 +2214,7 @@
         "percent_7": null,
         "sparkline": [
           26783,
-          26793
+          26812
         ]
       },
       "recommendation_reasons": [
@@ -2143,9 +2224,9 @@
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
-        "命中 ai agent",
         "命中 coding agent",
         "命中 multi-agent",
+        "命中 coding agent",
         "Topics: agentmemory, agents, ai, claude"
       ]
     },
@@ -2179,15 +2260,16 @@
         "zed-extension"
       ],
       "license": "NOASSERTION",
-      "stars": 19748,
+      "stars": 19752,
       "forks": 1414,
       "open_issues": 143,
       "created_at": "2026-02-23T05:56:28Z",
-      "pushed_at": "2026-08-09T18:06:56Z",
+      "pushed_at": "2026-08-10T06:24:55Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
         "Agent Core",
+        "Skills & Prompts",
         "MCP & Connectors",
         "Memory & Knowledge",
         "Evaluation & Safety"
@@ -2223,7 +2305,7 @@
         "percent_7": null,
         "sparkline": [
           19745,
-          19748
+          19752
         ]
       },
       "recommendation_reasons": [
@@ -2264,11 +2346,11 @@
         "openclaw"
       ],
       "license": "MIT",
-      "stars": 227974,
-      "forks": 44780,
-      "open_issues": 30199,
+      "stars": 228097,
+      "forks": 44813,
+      "open_issues": 30296,
       "created_at": "2025-07-22T22:22:28Z",
-      "pushed_at": "2026-08-10T02:24:26Z",
+      "pushed_at": "2026-08-10T07:46:12Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -2309,7 +2391,7 @@
         "percent_7": null,
         "sparkline": [
           227878,
-          227974
+          228097
         ]
       },
       "recommendation_reasons": [
@@ -2352,11 +2434,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 79617,
-      "forks": 10888,
-      "open_issues": 974,
+      "stars": 79639,
+      "forks": 10893,
+      "open_issues": 981,
       "created_at": "2025-05-07T02:50:19Z",
-      "pushed_at": "2026-08-10T01:59:21Z",
+      "pushed_at": "2026-08-10T03:01:14Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -2400,7 +2482,7 @@
         "percent_7": null,
         "sparkline": [
           79603,
-          79617
+          79639
         ]
       },
       "recommendation_reasons": [
@@ -2440,8 +2522,8 @@
         "vlm"
       ],
       "license": "Apache-2.0",
-      "stars": 38534,
-      "forks": 3885,
+      "stars": 38536,
+      "forks": 3884,
       "open_issues": 413,
       "created_at": "2025-01-19T09:04:43Z",
       "pushed_at": "2026-08-05T02:48:59Z",
@@ -2473,7 +2555,7 @@
       "score_breakdown": {
         "growth": null,
         "heat": 90,
-        "activity": 92,
+        "activity": 90,
         "community": 91,
         "completeness": 100,
         "penalty": 0
@@ -2485,7 +2567,7 @@
         "percent_7": null,
         "sparkline": [
           38533,
-          38534
+          38536
         ]
       },
       "recommendation_reasons": [
@@ -2502,6 +2584,98 @@
       ]
     },
     {
+      "id": 1033778670,
+      "full_name": "iOfficeAI/AionUi",
+      "url": "https://github.com/iOfficeAI/AionUi",
+      "homepage": "https://www.aionui.com",
+      "description": "Open-source 24/7 Cowork app for OpenClaw, Hermes, Claude Code, Codex, OpenCode and 20+ more CLI Agent | Customize your assistants | Team them up｜Star if you like it!",
+      "language": "TypeScript",
+      "topics": [
+        "acp",
+        "agent-team",
+        "ai",
+        "ai-agent",
+        "chat",
+        "chatbot",
+        "claude-code",
+        "clawdbot",
+        "codex",
+        "cowork",
+        "gemini",
+        "gemini-cli",
+        "hermes",
+        "llm",
+        "nano-banana",
+        "office",
+        "openclaw",
+        "opencode",
+        "skills",
+        "webui"
+      ],
+      "license": "Apache-2.0",
+      "stars": 31798,
+      "forks": 3243,
+      "open_issues": 755,
+      "created_at": "2025-08-07T10:29:51Z",
+      "pushed_at": "2026-08-10T07:59:45Z",
+      "content_type": "MCP Server",
+      "primary_capability": "Agent Core",
+      "capabilities": [
+        "Agent Core",
+        "Skills & Prompts",
+        "MCP & Connectors"
+      ],
+      "research_use_cases": [
+        "论文检索与阅读"
+      ],
+      "integration_methods": [
+        "MCP",
+        "CLI",
+        "API"
+      ],
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux"
+      ],
+      "local_first": false,
+      "external_service_required": true,
+      "setup_level": "easy",
+      "quality_score": 94,
+      "fit_score": 78,
+      "recommendation_score": 88,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 88,
+        "activity": 100,
+        "community": 90,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          31761,
+          31798
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "适合论文检索与阅读",
+        "文档中提供 Windows 支持信号",
+        "最近仍在活跃更新"
+      ],
+      "classification_evidence": [
+        "命中 ai agent",
+        "命中 ai agent",
+        "命中 multi-agent",
+        "Topics: acp, agent-team, ai, ai-agent"
+      ]
+    },
+    {
       "id": 840056306,
       "full_name": "getzep/graphiti",
       "url": "https://github.com/getzep/graphiti",
@@ -2515,8 +2689,8 @@
         "rag"
       ],
       "license": "Apache-2.0",
-      "stars": 29715,
-      "forks": 3002,
+      "stars": 29725,
+      "forks": 3003,
       "open_issues": 470,
       "created_at": "2024-08-08T22:08:30Z",
       "pushed_at": "2026-08-07T20:45:54Z",
@@ -2562,7 +2736,7 @@
         "percent_7": null,
         "sparkline": [
           29709,
-          29715
+          29725
         ]
       },
       "recommendation_reasons": [
@@ -2607,10 +2781,10 @@
       ],
       "license": "Apache-2.0",
       "stars": 29391,
-      "forks": 3767,
-      "open_issues": 263,
+      "forks": 3769,
+      "open_issues": 261,
       "created_at": "2025-01-05T22:47:49Z",
-      "pushed_at": "2026-08-10T02:28:24Z",
+      "pushed_at": "2026-08-10T07:38:26Z",
       "content_type": "Framework / SDK",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -2690,11 +2864,11 @@
         "workflows"
       ],
       "license": "NOASSERTION",
-      "stars": 23680,
-      "forks": 4017,
+      "stars": 23691,
+      "forks": 4019,
       "open_issues": 443,
       "created_at": "2022-12-03T02:52:46Z",
-      "pushed_at": "2026-08-10T02:09:30Z",
+      "pushed_at": "2026-08-10T07:45:32Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -2730,7 +2904,7 @@
         "percent_7": null,
         "sparkline": [
           23675,
-          23680
+          23691
         ]
       },
       "recommendation_reasons": [
@@ -2763,11 +2937,11 @@
         "productivity"
       ],
       "license": "MIT",
-      "stars": 239034,
-      "forks": 36307,
-      "open_issues": 135,
+      "stars": 239082,
+      "forks": 36316,
+      "open_issues": 140,
       "created_at": "2026-01-18T00:51:51Z",
-      "pushed_at": "2026-08-09T22:39:00Z",
+      "pushed_at": "2026-08-10T04:56:36Z",
       "content_type": "Framework / SDK",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -2802,7 +2976,7 @@
         "percent_7": null,
         "sparkline": [
           238988,
-          239034
+          239082
         ]
       },
       "recommendation_reasons": [
@@ -2831,8 +3005,8 @@
         "python"
       ],
       "license": "MIT",
-      "stars": 108503,
-      "forks": 11930,
+      "stars": 108545,
+      "forks": 11932,
       "open_issues": 345,
       "created_at": "2024-10-31T16:00:56Z",
       "pushed_at": "2026-08-06T18:27:59Z",
@@ -2873,7 +3047,7 @@
         "percent_7": null,
         "sparkline": [
           108468,
-          108503
+          108545
         ]
       },
       "recommendation_reasons": [
@@ -2909,11 +3083,11 @@
         "situation"
       ],
       "license": "NOASSERTION",
-      "stars": 80223,
-      "forks": 11985,
-      "open_issues": 340,
+      "stars": 80312,
+      "forks": 12006,
+      "open_issues": 332,
       "created_at": "2026-01-08T17:26:06Z",
-      "pushed_at": "2026-08-09T19:25:54Z",
+      "pushed_at": "2026-08-10T06:29:00Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -2954,7 +3128,7 @@
         "percent_7": null,
         "sparkline": [
           80160,
-          80223
+          80312
         ]
       },
       "recommendation_reasons": [
@@ -3000,8 +3174,8 @@
         "youtube"
       ],
       "license": "MIT",
-      "stars": 57768,
-      "forks": 5018,
+      "stars": 57792,
+      "forks": 5020,
       "open_issues": 119,
       "created_at": "2026-01-23T20:37:37Z",
       "pushed_at": "2026-08-09T18:44:11Z",
@@ -3045,7 +3219,7 @@
         "percent_7": null,
         "sparkline": [
           57741,
-          57768
+          57792
         ]
       },
       "recommendation_reasons": [
@@ -3078,11 +3252,11 @@
         "puppeteer"
       ],
       "license": "Apache-2.0",
-      "stars": 48822,
-      "forks": 3401,
+      "stars": 48842,
+      "forks": 3402,
       "open_issues": 135,
       "created_at": "2025-09-11T10:39:55Z",
-      "pushed_at": "2026-08-09T11:57:01Z",
+      "pushed_at": "2026-08-10T07:56:30Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -3121,7 +3295,7 @@
         "percent_7": null,
         "sparkline": [
           48814,
-          48822
+          48842
         ]
       },
       "recommendation_reasons": [
@@ -3166,11 +3340,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 46387,
-      "forks": 8050,
+      "stars": 46410,
+      "forks": 8056,
       "open_issues": 103,
       "created_at": "2026-03-18T18:38:02Z",
-      "pushed_at": "2026-08-10T02:14:55Z",
+      "pushed_at": "2026-08-10T07:05:52Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -3211,7 +3385,7 @@
         "percent_7": null,
         "sparkline": [
           46374,
-          46387
+          46410
         ]
       },
       "recommendation_reasons": [
@@ -3257,11 +3431,11 @@
         "windsurf"
       ],
       "license": "MIT",
-      "stars": 38308,
-      "forks": 3050,
-      "open_issues": 435,
+      "stars": 38344,
+      "forks": 3051,
+      "open_issues": 434,
       "created_at": "2026-02-24T22:01:00Z",
-      "pushed_at": "2026-08-10T02:25:15Z",
+      "pushed_at": "2026-08-10T07:09:50Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -3306,7 +3480,7 @@
         "percent_7": null,
         "sparkline": [
           38279,
-          38308
+          38344
         ]
       },
       "recommendation_reasons": [
@@ -3338,9 +3512,9 @@
         "rag"
       ],
       "license": "MIT",
-      "stars": 36919,
-      "forks": 6093,
-      "open_issues": 121,
+      "stars": 36920,
+      "forks": 6094,
+      "open_issues": 122,
       "created_at": "2024-10-21T10:43:24Z",
       "pushed_at": "2026-07-27T18:43:06Z",
       "content_type": "MCP Server",
@@ -3386,7 +3560,7 @@
         "percent_7": null,
         "sparkline": [
           36913,
-          36919
+          36920
         ]
       },
       "recommendation_reasons": [
@@ -3399,6 +3573,94 @@
         "命中 model context protocol",
         "命中 mcp",
         "Topics: agents, ai, llms, machine-learning"
+      ]
+    },
+    {
+      "id": 1165324947,
+      "full_name": "agentscope-ai/QwenPaw",
+      "url": "https://github.com/agentscope-ai/QwenPaw",
+      "homepage": "http://qwenpaw.agentscope.io/",
+      "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
+      "language": "Python",
+      "topics": [
+        "agent",
+        "agent-harness",
+        "agentscope",
+        "ai-agent",
+        "ai-agents",
+        "chatbot",
+        "harness-engineering",
+        "llm-tools",
+        "llms",
+        "loop-engineering",
+        "mcp",
+        "personal-ai-assistant",
+        "self-hosted",
+        "skills",
+        "super-agent",
+        "webui"
+      ],
+      "license": "Apache-2.0",
+      "stars": 34020,
+      "forks": 2967,
+      "open_issues": 986,
+      "created_at": "2026-02-24T03:42:56Z",
+      "pushed_at": "2026-08-10T08:01:22Z",
+      "content_type": "可运行工具",
+      "primary_capability": "Agent Core",
+      "capabilities": [
+        "Agent Core",
+        "MCP & Connectors"
+      ],
+      "research_use_cases": [
+        "知识与笔记整理"
+      ],
+      "integration_methods": [
+        "CLI",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Web",
+        "Docker"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 93,
+      "fit_score": 75,
+      "recommendation_score": 87,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 88,
+        "activity": 100,
+        "community": 89,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          34255,
+          34020
+        ]
+      },
+      "recommendation_reasons": [
+        "适合知识与笔记整理",
+        "文档中提供 Windows 支持信号",
+        "最近仍在活跃更新",
+        "配置成本中等"
+      ],
+      "classification_evidence": [
+        "命中 ai agent",
+        "命中 multi-agent",
+        "Topics: agent, agent-harness, agentscope, ai-agent"
       ]
     },
     {
@@ -3420,8 +3682,8 @@
         "rag"
       ],
       "license": "Apache-2.0",
-      "stars": 33393,
-      "forks": 4317,
+      "stars": 33437,
+      "forks": 4321,
       "open_issues": 89,
       "created_at": "2025-12-28T15:35:54Z",
       "pushed_at": "2026-08-09T16:48:36Z",
@@ -3468,7 +3730,7 @@
         "percent_7": null,
         "sparkline": [
           33348,
-          33393
+          33437
         ]
       },
       "recommendation_reasons": [
@@ -3501,8 +3763,8 @@
         "playwright"
       ],
       "license": "Apache-2.0",
-      "stars": 27984,
-      "forks": 2753,
+      "stars": 27998,
+      "forks": 2755,
       "open_issues": 253,
       "created_at": "2026-03-14T22:10:23Z",
       "pushed_at": "2026-08-09T15:46:03Z",
@@ -3546,7 +3808,7 @@
         "percent_7": null,
         "sparkline": [
           27971,
-          27984
+          27998
         ]
       },
       "recommendation_reasons": [
@@ -3578,9 +3840,9 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 27561,
-      "forks": 3846,
-      "open_issues": 204,
+      "stars": 27582,
+      "forks": 3845,
+      "open_issues": 205,
       "created_at": "2025-07-27T23:07:53Z",
       "pushed_at": "2026-08-09T01:01:23Z",
       "content_type": "MCP Server",
@@ -3619,7 +3881,7 @@
         "percent_7": null,
         "sparkline": [
           27551,
-          27561
+          27582
         ]
       },
       "recommendation_reasons": [
@@ -3643,8 +3905,8 @@
       "language": "Shell",
       "topics": [],
       "license": "MIT",
-      "stars": 140834,
-      "forks": 22997,
+      "stars": 141182,
+      "forks": 23036,
       "open_issues": 110,
       "created_at": "2025-10-13T12:12:29Z",
       "pushed_at": "2026-08-06T13:29:47Z",
@@ -3686,7 +3948,7 @@
         "percent_7": null,
         "sparkline": [
           140501,
-          140834
+          141182
         ]
       },
       "recommendation_reasons": [
@@ -3717,9 +3979,9 @@
         "mcp-server"
       ],
       "license": "Apache-2.0",
-      "stars": 106435,
-      "forks": 14412,
-      "open_issues": 852,
+      "stars": 106436,
+      "forks": 14410,
+      "open_issues": 853,
       "created_at": "2025-04-17T17:04:31Z",
       "pushed_at": "2026-08-10T01:16:01Z",
       "content_type": "MCP Server",
@@ -3759,7 +4021,7 @@
         "percent_7": null,
         "sparkline": [
           106432,
-          106435
+          106436
         ]
       },
       "recommendation_reasons": [
@@ -3793,9 +4055,9 @@
         "slides"
       ],
       "license": "MIT",
-      "stars": 44120,
-      "forks": 3604,
-      "open_issues": 5,
+      "stars": 44208,
+      "forks": 3612,
+      "open_issues": 7,
       "created_at": "2025-12-10T06:54:33Z",
       "pushed_at": "2026-08-10T01:52:08Z",
       "content_type": "可运行工具",
@@ -3836,7 +4098,7 @@
         "percent_7": null,
         "sparkline": [
           44089,
-          44120
+          44208
         ]
       },
       "recommendation_reasons": [
@@ -3852,133 +4114,35 @@
       ]
     },
     {
-      "id": 1165324947,
-      "full_name": "agentscope-ai/QwenPaw",
-      "url": "https://github.com/agentscope-ai/QwenPaw",
-      "homepage": "http://qwenpaw.agentscope.io/",
-      "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
+      "id": 742244656,
+      "full_name": "agentscope-ai/agentscope",
+      "url": "https://github.com/agentscope-ai/agentscope",
+      "homepage": "https://docs.agentscope.io/",
+      "description": "Build and run agents you can see, understand and trust.",
       "language": "Python",
       "topics": [
         "agent",
-        "agent-harness",
-        "agentscope",
-        "ai-agent",
-        "ai-agents",
         "chatbot",
-        "harness-engineering",
-        "llm-tools",
-        "llms",
-        "loop-engineering",
-        "mcp",
-        "personal-ai-assistant",
-        "self-hosted",
-        "skills",
-        "super-agent",
-        "webui"
-      ],
-      "license": "Apache-2.0",
-      "stars": 34023,
-      "forks": 2967,
-      "open_issues": 986,
-      "created_at": "2026-02-24T03:42:56Z",
-      "pushed_at": "2026-08-07T10:09:33Z",
-      "content_type": "可运行工具",
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "MCP & Connectors"
-      ],
-      "research_use_cases": [
-        "知识与笔记整理"
-      ],
-      "integration_methods": [
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Web",
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 92,
-      "fit_score": 75,
-      "recommendation_score": 86,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 88,
-        "activity": 96,
-        "community": 89,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          34255,
-          34023
-        ]
-      },
-      "recommendation_reasons": [
-        "适合知识与笔记整理",
-        "文档中提供 Windows 支持信号",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 ai agent",
-        "命中 multi-agent",
-        "Topics: agent, agent-harness, agentscope, ai-agent"
-      ]
-    },
-    {
-      "id": 1033778670,
-      "full_name": "iOfficeAI/AionUi",
-      "url": "https://github.com/iOfficeAI/AionUi",
-      "homepage": "https://www.aionui.com",
-      "description": "Open-source 24/7 Cowork app for OpenClaw, Hermes, Claude Code, Codex, OpenCode and 20+ more CLI Agent | Customize your assistants | Team them up｜Star if you like it!",
-      "language": "TypeScript",
-      "topics": [
-        "acp",
-        "agent-team",
-        "ai",
-        "ai-agent",
-        "chat",
-        "chatbot",
-        "claude-code",
-        "clawdbot",
-        "codex",
-        "cowork",
-        "gemini",
-        "gemini-cli",
-        "hermes",
+        "large-language-models",
         "llm",
-        "nano-banana",
-        "office",
-        "openclaw",
-        "opencode",
-        "skills",
-        "webui"
+        "llm-agent",
+        "mcp",
+        "multi-agent",
+        "multi-modal",
+        "react-agent"
       ],
       "license": "Apache-2.0",
-      "stars": 31775,
-      "forks": 3240,
-      "open_issues": 754,
-      "created_at": "2025-08-07T10:29:51Z",
-      "pushed_at": "2026-08-09T06:48:41Z",
+      "stars": 28758,
+      "forks": 3325,
+      "open_issues": 343,
+      "created_at": "2024-01-12T03:41:59Z",
+      "pushed_at": "2026-08-10T03:55:41Z",
       "content_type": "MCP Server",
-      "primary_capability": "Agent Core",
+      "primary_capability": "MCP & Connectors",
       "capabilities": [
         "Agent Core",
-        "MCP & Connectors"
+        "MCP & Connectors",
+        "Memory & Knowledge"
       ],
       "research_use_cases": [
         "论文检索与阅读"
@@ -3986,18 +4150,17 @@
       "integration_methods": [
         "MCP",
         "CLI",
-        "API"
+        "API",
+        "Docker"
       ],
       "platforms": [
-        "Windows",
-        "macOS",
-        "Linux"
+        "Docker"
       ],
       "local_first": false,
-      "external_service_required": true,
-      "setup_level": "easy",
+      "external_service_required": false,
+      "setup_level": "medium",
       "quality_score": 94,
-      "fit_score": 71,
+      "fit_score": 72,
       "recommendation_score": 86,
       "score_breakdown": {
         "growth": null,
@@ -4013,21 +4176,21 @@
         "day_30": null,
         "percent_7": null,
         "sparkline": [
-          31761,
-          31775
+          28739,
+          28758
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
-        "文档中提供 Windows 支持信号",
-        "最近仍在活跃更新"
+        "最近仍在活跃更新",
+        "配置成本中等"
       ],
       "classification_evidence": [
-        "命中 ai agent",
-        "命中 ai agent",
-        "命中 multi-agent",
-        "Topics: acp, agent-team, ai, ai-agent"
+        "命中 mcp",
+        "命中 mcp",
+        "命中 mcp server",
+        "Topics: agent, chatbot, large-language-models, llm"
       ]
     },
     {
@@ -4052,9 +4215,9 @@
         "vibe-coding"
       ],
       "license": "MIT",
-      "stars": 27786,
+      "stars": 27797,
       "forks": 1843,
-      "open_issues": 78,
+      "open_issues": 79,
       "created_at": "2025-03-23T22:35:24Z",
       "pushed_at": "2026-08-09T18:37:45Z",
       "content_type": "MCP Server",
@@ -4094,7 +4257,7 @@
         "percent_7": null,
         "sparkline": [
           27782,
-          27786
+          27797
         ]
       },
       "recommendation_reasons": [
@@ -4135,11 +4298,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 23332,
-      "forks": 2215,
-      "open_issues": 1228,
+      "stars": 23414,
+      "forks": 2219,
+      "open_issues": 1238,
       "created_at": "2025-12-31T14:01:28Z",
-      "pushed_at": "2026-08-09T23:56:18Z",
+      "pushed_at": "2026-08-10T08:02:36Z",
       "content_type": "可运行工具",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -4182,7 +4345,7 @@
         "percent_7": null,
         "sparkline": [
           23262,
-          23332
+          23414
         ]
       },
       "recommendation_reasons": [
@@ -4221,11 +4384,11 @@
         "rag"
       ],
       "license": "GPL-3.0",
-      "stars": 22451,
-      "forks": 3079,
-      "open_issues": 15,
+      "stars": 22456,
+      "forks": 3082,
+      "open_issues": 14,
       "created_at": "2023-09-14T02:05:12Z",
-      "pushed_at": "2026-08-10T02:02:10Z",
+      "pushed_at": "2026-08-10T07:55:00Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -4264,7 +4427,7 @@
         "percent_7": null,
         "sparkline": [
           22450,
-          22451
+          22456
         ]
       },
       "recommendation_reasons": [
@@ -4278,83 +4441,6 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, agentic-ai, chatbot, deepseek-r1"
-      ]
-    },
-    {
-      "id": 822604462,
-      "full_name": "666ghj/BettaFish",
-      "url": "https://github.com/666ghj/BettaFish",
-      "homepage": "https://deepwiki.com/666ghj/BettaFish",
-      "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。",
-      "language": "Python",
-      "topics": [
-        "agent-framework",
-        "data-analysis",
-        "deep-research",
-        "deep-search",
-        "llms",
-        "multi-agent-system",
-        "nlp",
-        "public-opinion-analysis",
-        "python3",
-        "sentiment-analysis"
-      ],
-      "license": "GPL-2.0",
-      "stars": 41986,
-      "forks": 7632,
-      "open_issues": 6,
-      "created_at": "2024-07-01T13:11:38Z",
-      "pushed_at": "2026-08-04T03:31:25Z",
-      "content_type": "Framework / SDK",
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "Browser & Computer Use"
-      ],
-      "research_use_cases": [],
-      "integration_methods": [
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 94,
-      "fit_score": 67,
-      "recommendation_score": 85,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 92,
-        "activity": 90,
-        "community": 97,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          41982,
-          41986
-        ]
-      },
-      "recommendation_reasons": [
-        "文档中提供 Windows 支持信号",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 agent framework",
-        "Topics: agent-framework, data-analysis, deep-research, deep-search"
       ]
     },
     {
@@ -4380,11 +4466,11 @@
         "reinforcement-learning"
       ],
       "license": "Apache-2.0",
-      "stars": 35267,
-      "forks": 3821,
-      "open_issues": 23,
+      "stars": 35463,
+      "forks": 3845,
+      "open_issues": 5,
       "created_at": "2025-09-09T02:41:44Z",
-      "pushed_at": "2026-08-10T00:18:53Z",
+      "pushed_at": "2026-08-10T06:14:42Z",
       "content_type": "Skill Pack",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -4423,7 +4509,7 @@
         "percent_7": null,
         "sparkline": [
           35168,
-          35267
+          35463
         ]
       },
       "recommendation_reasons": [
@@ -4435,86 +4521,6 @@
         "命中 coding agent",
         "命中 ai agent",
         "Topics: agent, agent-memory, ai-agent, book"
-      ]
-    },
-    {
-      "id": 742244656,
-      "full_name": "agentscope-ai/agentscope",
-      "url": "https://github.com/agentscope-ai/agentscope",
-      "homepage": "https://docs.agentscope.io/",
-      "description": "Build and run agents you can see, understand and trust.",
-      "language": "Python",
-      "topics": [
-        "agent",
-        "chatbot",
-        "large-language-models",
-        "llm",
-        "llm-agent",
-        "mcp",
-        "multi-agent",
-        "multi-modal",
-        "react-agent"
-      ],
-      "license": "Apache-2.0",
-      "stars": 28745,
-      "forks": 3323,
-      "open_issues": 341,
-      "created_at": "2024-01-12T03:41:59Z",
-      "pushed_at": "2026-08-07T10:39:33Z",
-      "content_type": "MCP Server",
-      "primary_capability": "MCP & Connectors",
-      "capabilities": [
-        "Agent Core",
-        "MCP & Connectors",
-        "Memory & Knowledge"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读"
-      ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 92,
-      "fit_score": 72,
-      "recommendation_score": 85,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 88,
-        "activity": 96,
-        "community": 90,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          28739,
-          28745
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合论文检索与阅读",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 mcp",
-        "命中 mcp",
-        "命中 mcp server",
-        "Topics: agent, chatbot, large-language-models, llm"
       ]
     },
     {
@@ -4532,11 +4538,11 @@
         "self-evolving"
       ],
       "license": "AGPL-3.0",
-      "stars": 28127,
+      "stars": 28147,
       "forks": 2219,
-      "open_issues": 458,
+      "open_issues": 453,
       "created_at": "2026-01-05T07:11:17Z",
-      "pushed_at": "2026-08-08T06:28:16Z",
+      "pushed_at": "2026-08-10T08:01:52Z",
       "content_type": "Framework / SDK",
       "primary_capability": "Memory & Knowledge",
       "capabilities": [
@@ -4559,13 +4565,13 @@
       "local_first": false,
       "external_service_required": false,
       "setup_level": "medium",
-      "quality_score": 92,
+      "quality_score": 93,
       "fit_score": 71,
       "recommendation_score": 85,
       "score_breakdown": {
         "growth": null,
         "heat": 87,
-        "activity": 98,
+        "activity": 100,
         "community": 87,
         "completeness": 100,
         "penalty": 0
@@ -4577,7 +4583,7 @@
         "percent_7": null,
         "sparkline": [
           28120,
-          28127
+          28147
         ]
       },
       "recommendation_reasons": [
@@ -4607,9 +4613,9 @@
         "tutorial"
       ],
       "license": "NOASSERTION",
-      "stars": 71853,
-      "forks": 8948,
-      "open_issues": 166,
+      "stars": 71936,
+      "forks": 8961,
+      "open_issues": 159,
       "created_at": "2025-09-07T09:50:24Z",
       "pushed_at": "2026-08-07T09:09:57Z",
       "content_type": "Skill Pack",
@@ -4645,7 +4651,7 @@
         "percent_7": null,
         "sparkline": [
           71826,
-          71853
+          71936
         ]
       },
       "recommendation_reasons": [
@@ -4666,9 +4672,9 @@
       "language": "Rust",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 40289,
-      "forks": 2649,
-      "open_issues": 650,
+      "stars": 40309,
+      "forks": 2653,
+      "open_issues": 651,
       "created_at": "2026-01-11T05:38:15Z",
       "pushed_at": "2026-08-08T21:52:52Z",
       "content_type": "Framework / SDK",
@@ -4708,7 +4714,7 @@
         "percent_7": null,
         "sparkline": [
           40263,
-          40289
+          40309
         ]
       },
       "recommendation_reasons": [
@@ -4748,11 +4754,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 33490,
-      "forks": 2168,
-      "open_issues": 991,
+      "stars": 33572,
+      "forks": 2176,
+      "open_issues": 1014,
       "created_at": "2026-04-21T08:27:02Z",
-      "pushed_at": "2026-08-10T02:30:26Z",
+      "pushed_at": "2026-08-10T07:29:34Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -4790,7 +4796,7 @@
         "percent_7": null,
         "sparkline": [
           33407,
-          33490
+          33572
         ]
       },
       "recommendation_reasons": [
@@ -4827,11 +4833,11 @@
         "typescript"
       ],
       "license": "Apache-2.0",
-      "stars": 26885,
-      "forks": 2831,
-      "open_issues": 904,
+      "stars": 26890,
+      "forks": 2834,
+      "open_issues": 911,
       "created_at": "2025-06-26T01:37:46Z",
-      "pushed_at": "2026-08-10T02:33:54Z",
+      "pushed_at": "2026-08-10T08:02:37Z",
       "content_type": "Framework / SDK",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -4869,7 +4875,7 @@
         "percent_7": null,
         "sparkline": [
           26879,
-          26885
+          26890
         ]
       },
       "recommendation_reasons": [
@@ -4912,7 +4918,7 @@
         "tutorials"
       ],
       "license": "NOASSERTION",
-      "stars": 23719,
+      "stars": 23722,
       "forks": 3985,
       "open_issues": 8,
       "created_at": "2024-09-09T20:10:19Z",
@@ -4955,7 +4961,7 @@
         "percent_7": null,
         "sparkline": [
           23716,
-          23719
+          23722
         ]
       },
       "recommendation_reasons": [
@@ -4992,11 +4998,11 @@
         "prompt-engineering"
       ],
       "license": "Apache-2.0",
-      "stars": 21258,
-      "forks": 1692,
-      "open_issues": 180,
+      "stars": 21266,
+      "forks": 1694,
+      "open_issues": 182,
       "created_at": "2023-05-10T12:57:13Z",
-      "pushed_at": "2026-08-10T00:18:12Z",
+      "pushed_at": "2026-08-10T07:50:49Z",
       "content_type": "Framework / SDK",
       "primary_capability": "Evaluation & Safety",
       "capabilities": [
@@ -5037,7 +5043,7 @@
         "percent_7": null,
         "sparkline": [
           21252,
-          21258
+          21266
         ]
       },
       "recommendation_reasons": [
@@ -5070,9 +5076,9 @@
         "spec-driven"
       ],
       "license": "MIT",
-      "stars": 125998,
-      "forks": 11253,
-      "open_issues": 326,
+      "stars": 126023,
+      "forks": 11258,
+      "open_issues": 330,
       "created_at": "2025-08-21T22:54:31Z",
       "pushed_at": "2026-08-07T17:55:55Z",
       "content_type": "Skill Pack",
@@ -5106,7 +5112,7 @@
         "percent_7": null,
         "sparkline": [
           125976,
-          125998
+          126023
         ]
       },
       "recommendation_reasons": [
@@ -5139,8 +5145,8 @@
         "tutorial"
       ],
       "license": "MIT",
-      "stars": 73672,
-      "forks": 11946,
+      "stars": 73706,
+      "forks": 11952,
       "open_issues": 68,
       "created_at": "2025-06-29T15:34:15Z",
       "pushed_at": "2026-07-28T17:27:46Z",
@@ -5179,7 +5185,7 @@
         "percent_7": null,
         "sparkline": [
           73659,
-          73672
+          73706
         ]
       },
       "recommendation_reasons": [
@@ -5219,8 +5225,8 @@
         "youtube-transcript"
       ],
       "license": "MIT",
-      "stars": 69783,
-      "forks": 5881,
+      "stars": 69975,
+      "forks": 5903,
       "open_issues": 60,
       "created_at": "2026-02-24T02:10:24Z",
       "pushed_at": "2026-08-06T12:09:49Z",
@@ -5258,7 +5264,7 @@
         "percent_7": null,
         "sparkline": [
           69621,
-          69783
+          69975
         ]
       },
       "recommendation_reasons": [
@@ -5285,11 +5291,11 @@
         "vibe-coding"
       ],
       "license": "MIT",
-      "stars": 60504,
-      "forks": 2910,
+      "stars": 60520,
+      "forks": 2913,
       "open_issues": 31,
       "created_at": "2025-03-26T23:40:39Z",
-      "pushed_at": "2026-08-09T19:09:20Z",
+      "pushed_at": "2026-08-10T07:12:58Z",
       "content_type": "MCP Server",
       "primary_capability": "MCP & Connectors",
       "capabilities": [
@@ -5324,7 +5330,7 @@
         "percent_7": null,
         "sparkline": [
           60493,
-          60504
+          60520
         ]
       },
       "recommendation_reasons": [
@@ -5368,11 +5374,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 36658,
-      "forks": 4529,
-      "open_issues": 372,
+      "stars": 36662,
+      "forks": 4528,
+      "open_issues": 373,
       "created_at": "2023-06-19T04:08:31Z",
-      "pushed_at": "2026-08-09T17:55:26Z",
+      "pushed_at": "2026-08-10T08:01:24Z",
       "content_type": "Skill Pack",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -5405,7 +5411,7 @@
         "percent_7": null,
         "sparkline": [
           36655,
-          36658
+          36662
         ]
       },
       "recommendation_reasons": [
@@ -5446,7 +5452,7 @@
       "forks": 1329,
       "open_issues": 120,
       "created_at": "2022-11-01T07:02:49Z",
-      "pushed_at": "2026-08-09T15:42:06Z",
+      "pushed_at": "2026-08-10T07:06:24Z",
       "content_type": "可运行工具",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -5526,7 +5532,7 @@
         "tutorials"
       ],
       "license": "NOASSERTION",
-      "stars": 21260,
+      "stars": 21262,
       "forks": 2815,
       "open_issues": 12,
       "created_at": "2025-06-16T17:33:44Z",
@@ -5571,7 +5577,7 @@
         "percent_7": null,
         "sparkline": [
           21261,
-          21260
+          21262
         ]
       },
       "recommendation_reasons": [
@@ -5606,8 +5612,8 @@
         "semantic-kernel"
       ],
       "license": "MIT",
-      "stars": 71747,
-      "forks": 23762,
+      "stars": 71771,
+      "forks": 23770,
       "open_issues": 11,
       "created_at": "2024-11-28T10:42:52Z",
       "pushed_at": "2026-07-29T19:47:29Z",
@@ -5646,7 +5652,7 @@
         "percent_7": null,
         "sparkline": [
           71729,
-          71747
+          71771
         ]
       },
       "recommendation_reasons": [
@@ -5690,11 +5696,11 @@
         "vibe-coding"
       ],
       "license": "MIT",
-      "stars": 64226,
-      "forks": 6387,
-      "open_issues": 17,
+      "stars": 64233,
+      "forks": 6388,
+      "open_issues": 18,
       "created_at": "2025-10-31T14:15:28Z",
-      "pushed_at": "2026-08-09T06:40:39Z",
+      "pushed_at": "2026-08-10T06:47:29Z",
       "content_type": "MCP Server",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -5727,7 +5733,7 @@
         "percent_7": null,
         "sparkline": [
           64216,
-          64226
+          64233
         ]
       },
       "recommendation_reasons": [
@@ -5771,9 +5777,9 @@
         "resume"
       ],
       "license": "MIT",
-      "stars": 63320,
+      "stars": 63349,
       "forks": 12491,
-      "open_issues": 281,
+      "open_issues": 283,
       "created_at": "2026-04-04T18:21:18Z",
       "pushed_at": "2026-08-10T01:41:02Z",
       "content_type": "Framework / SDK",
@@ -5808,7 +5814,7 @@
         "percent_7": null,
         "sparkline": [
           63300,
-          63320
+          63349
         ]
       },
       "recommendation_reasons": [
@@ -5851,7 +5857,7 @@
         "session-recovery"
       ],
       "license": "MIT",
-      "stars": 26070,
+      "stars": 26075,
       "forks": 2180,
       "open_issues": 6,
       "created_at": "2026-01-03T07:37:28Z",
@@ -5892,7 +5898,7 @@
         "percent_7": null,
         "sparkline": [
           26068,
-          26070
+          26075
         ]
       },
       "recommendation_reasons": [
@@ -5904,87 +5910,6 @@
         "命中 agent skills",
         "命中 claude skill",
         "Topics: agent-skills, autonomous-agents, claude, claude-code"
-      ]
-    },
-    {
-      "id": 306829688,
-      "full_name": "nocobase/nocobase",
-      "url": "https://github.com/nocobase/nocobase",
-      "homepage": "https://www.nocobase.com",
-      "description": "NocoBase is an open-source AI + no-code platform for building business systems fast. Instead of generating everything from scratch, AI works on top of production-proven infrastructure and a WYSIWYG no-code interface, so you get both speed and reliability.",
-      "language": "TypeScript",
-      "topics": [
-        "admin-dashboard",
-        "ai-agent",
-        "ai-agents",
-        "ai-assistant",
-        "ai-tools",
-        "airtable",
-        "crm",
-        "crud",
-        "erp",
-        "internal-tool",
-        "internal-tools",
-        "low-code",
-        "lowcode",
-        "no-code",
-        "nocode",
-        "project-management",
-        "salesforce",
-        "self-hosted",
-        "workflows"
-      ],
-      "license": "NOASSERTION",
-      "stars": 23604,
-      "forks": 2818,
-      "open_issues": 282,
-      "created_at": "2020-10-24T07:27:48Z",
-      "pushed_at": "2026-08-10T00:59:19Z",
-      "content_type": "可运行工具",
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "Automation"
-      ],
-      "research_use_cases": [],
-      "integration_methods": [
-        "CLI"
-      ],
-      "platforms": [
-        "Web"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "easy",
-      "quality_score": 93,
-      "fit_score": 63,
-      "recommendation_score": 82,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 86,
-        "activity": 100,
-        "community": 89,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          23605,
-          23604
-        ]
-      },
-      "recommendation_reasons": [
-        "最近仍在活跃更新"
-      ],
-      "classification_evidence": [
-        "命中 ai agent",
-        "命中 ai agent",
-        "命中 coding agent",
-        "Topics: admin-dashboard, ai-agent, ai-agents, ai-assistant"
       ]
     },
     {
@@ -6006,9 +5931,9 @@
         "natural-language-processing"
       ],
       "license": "Apache-2.0",
-      "stars": 17569,
-      "forks": 2035,
-      "open_issues": 465,
+      "stars": 17571,
+      "forks": 2037,
+      "open_issues": 466,
       "created_at": "2023-03-17T21:41:54Z",
       "pushed_at": "2026-08-07T09:51:49Z",
       "content_type": "Framework / SDK",
@@ -6049,7 +5974,7 @@
         "percent_7": null,
         "sparkline": [
           17568,
-          17569
+          17571
         ]
       },
       "recommendation_reasons": [
@@ -6057,10 +5982,80 @@
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
-        "命中 ai agent",
         "命中 agent framework",
         "命中 multi-agent",
+        "命中 ai agent",
         "Topics: agent, ai-societies, artificial-intelligence, communicative-ai"
+      ]
+    },
+    {
+      "id": 942771284,
+      "full_name": "github/github-mcp-server",
+      "url": "https://github.com/github/github-mcp-server",
+      "homepage": null,
+      "description": "GitHub's official MCP Server",
+      "language": "Go",
+      "topics": [
+        "github",
+        "mcp",
+        "mcp-server"
+      ],
+      "license": "MIT",
+      "stars": 32106,
+      "forks": 4761,
+      "open_issues": 370,
+      "created_at": "2025-03-04T16:42:04Z",
+      "pushed_at": "2026-08-10T07:54:13Z",
+      "content_type": "MCP Server",
+      "primary_capability": "MCP & Connectors",
+      "capabilities": [
+        "MCP & Connectors"
+      ],
+      "research_use_cases": [],
+      "integration_methods": [
+        "MCP",
+        "CLI",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Web",
+        "Docker"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 92,
+      "fit_score": 60,
+      "recommendation_score": 81,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 89,
+        "activity": 100,
+        "community": 93,
+        "completeness": 80,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          32095,
+          32106
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "最近仍在活跃更新",
+        "配置成本中等"
+      ],
+      "classification_evidence": [
+        "命中 mcp",
+        "命中 mcp server",
+        "命中 mcp-server",
+        "Topics: github, mcp, mcp-server"
       ]
     },
     {
@@ -6078,11 +6073,11 @@
         "coding"
       ],
       "license": "NOASSERTION",
-      "stars": 30596,
+      "stars": 30599,
       "forks": 8907,
-      "open_issues": 58,
+      "open_issues": 59,
       "created_at": "2026-04-01T03:15:49Z",
-      "pushed_at": "2026-08-10T02:10:37Z",
+      "pushed_at": "2026-08-10T03:10:03Z",
       "content_type": "可运行工具",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -6119,7 +6114,7 @@
         "percent_7": null,
         "sparkline": [
           30591,
-          30596
+          30599
         ]
       },
       "recommendation_reasons": [
@@ -6160,11 +6155,11 @@
         "workspace-manager"
       ],
       "license": "NOASSERTION",
-      "stars": 25847,
+      "stars": 25865,
       "forks": 2181,
-      "open_issues": 4110,
+      "open_issues": 4126,
       "created_at": "2026-01-28T10:03:24Z",
-      "pushed_at": "2026-08-10T02:31:11Z",
+      "pushed_at": "2026-08-10T08:03:21Z",
       "content_type": "Framework / SDK",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -6200,7 +6195,7 @@
         "percent_7": null,
         "sparkline": [
           25842,
-          25847
+          25865
         ]
       },
       "recommendation_reasons": [
@@ -6222,8 +6217,8 @@
       "language": "Rust",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 24543,
-      "forks": 4674,
+      "stars": 24559,
+      "forks": 4677,
       "open_issues": 0,
       "created_at": "2026-07-14T20:04:23Z",
       "pushed_at": "2026-08-09T20:00:55Z",
@@ -6264,7 +6259,7 @@
         "percent_7": null,
         "sparkline": [
           24525,
-          24543
+          24559
         ]
       },
       "recommendation_reasons": [
@@ -6275,6 +6270,94 @@
       "classification_evidence": [
         "命中 coding agent",
         "命中 coding agent"
+      ]
+    },
+    {
+      "id": 198683574,
+      "full_name": "dolthub/dolt",
+      "url": "https://github.com/dolthub/dolt",
+      "homepage": "https://www.dolthub.com",
+      "description": "Dolt – Git for Data",
+      "language": "Go",
+      "topics": [
+        "agent-memory",
+        "agent-memory-server",
+        "ai-agents",
+        "ai-database",
+        "data-version-control",
+        "data-versioning",
+        "database",
+        "database-version-control",
+        "database-versioning",
+        "decentralized-database",
+        "git",
+        "git-database",
+        "git-for-data",
+        "git-for-databases",
+        "git-sql",
+        "immutable-database",
+        "mariadb",
+        "mysql",
+        "sql",
+        "version-controlled-database"
+      ],
+      "license": "Apache-2.0",
+      "stars": 24136,
+      "forks": 853,
+      "open_issues": 664,
+      "created_at": "2019-07-24T17:46:25Z",
+      "pushed_at": "2026-08-10T07:24:02Z",
+      "content_type": "可运行工具",
+      "primary_capability": "Memory & Knowledge",
+      "capabilities": [
+        "Agent Core",
+        "Memory & Knowledge"
+      ],
+      "research_use_cases": [],
+      "integration_methods": [
+        "CLI",
+        "Docker"
+      ],
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Web",
+        "Docker"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 90,
+      "fit_score": 63,
+      "recommendation_score": 81,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 83,
+        "activity": 100,
+        "community": 80,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          24131,
+          24136
+        ]
+      },
+      "recommendation_reasons": [
+        "文档中提供 Windows 支持信号",
+        "最近仍在活跃更新",
+        "配置成本中等"
+      ],
+      "classification_evidence": [
+        "命中 agent memory",
+        "命中 agent memory",
+        "Topics: agent-memory, agent-memory-server, ai-agents, ai-database"
       ]
     },
     {
@@ -6291,8 +6374,8 @@
         "workflows"
       ],
       "license": "MIT",
-      "stars": 22643,
-      "forks": 3622,
+      "stars": 22644,
+      "forks": 3621,
       "open_issues": 60,
       "created_at": "2025-06-07T12:15:57Z",
       "pushed_at": "2026-08-09T10:59:02Z",
@@ -6333,7 +6416,7 @@
         "percent_7": null,
         "sparkline": [
           22644,
-          22643
+          22644
         ]
       },
       "recommendation_reasons": [
@@ -6379,7 +6462,7 @@
         "whisper-alternative"
       ],
       "license": "MIT",
-      "stars": 19740,
+      "stars": 19743,
       "forks": 1980,
       "open_issues": 5,
       "created_at": "2022-11-24T02:28:11Z",
@@ -6426,7 +6509,7 @@
         "percent_7": null,
         "sparkline": [
           19735,
-          19740
+          19743
         ]
       },
       "recommendation_reasons": [
@@ -6472,7 +6555,7 @@
         "voice-assistant"
       ],
       "license": "MIT",
-      "stars": 17424,
+      "stars": 17423,
       "forks": 1457,
       "open_issues": 109,
       "created_at": "2019-02-10T12:25:12Z",
@@ -6514,7 +6597,7 @@
         "percent_7": null,
         "sparkline": [
           17426,
-          17424
+          17423
         ]
       },
       "recommendation_reasons": [
@@ -6529,273 +6612,62 @@
       ]
     },
     {
-      "id": 906251482,
-      "full_name": "ashishpatel26/500-AI-Agents-Projects",
-      "url": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
-      "homepage": "https://ashishpatel26.github.io/500-AI-Agents-Projects/",
-      "description": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.",
-      "language": "Python",
-      "topics": [
-        "ai-agents",
-        "genai"
-      ],
-      "license": "MIT",
-      "stars": 36100,
-      "forks": 6436,
-      "open_issues": 70,
-      "created_at": "2024-12-20T13:37:15Z",
-      "pushed_at": "2026-07-27T05:40:40Z",
-      "content_type": "模板或工作流",
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "Memory & Knowledge"
-      ],
-      "research_use_cases": [
-        "研究数据与复现"
-      ],
-      "integration_methods": [
-        "CLI",
-        "API"
-      ],
-      "platforms": [],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "easy",
-      "quality_score": 88,
-      "fit_score": 65,
-      "recommendation_score": 80,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 91,
-        "activity": 73,
-        "community": 95,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          36093,
-          36100
-        ]
-      },
-      "recommendation_reasons": [
-        "适合研究数据与复现"
-      ],
-      "classification_evidence": [
-        "命中 ai agent",
-        "命中 ai agent",
-        "命中 agent framework",
-        "Topics: ai-agents, genai"
-      ]
-    },
-    {
-      "id": 942771284,
-      "full_name": "github/github-mcp-server",
-      "url": "https://github.com/github/github-mcp-server",
-      "homepage": null,
-      "description": "GitHub's official MCP Server",
-      "language": "Go",
-      "topics": [
-        "github",
-        "mcp",
-        "mcp-server"
-      ],
-      "license": "MIT",
-      "stars": 32100,
-      "forks": 4761,
-      "open_issues": 370,
-      "created_at": "2025-03-04T16:42:04Z",
-      "pushed_at": "2026-08-07T17:37:35Z",
-      "content_type": "MCP Server",
-      "primary_capability": "MCP & Connectors",
-      "capabilities": [
-        "MCP & Connectors"
-      ],
-      "research_use_cases": [],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Web",
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 91,
-      "fit_score": 60,
-      "recommendation_score": 80,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 89,
-        "activity": 96,
-        "community": 93,
-        "completeness": 80,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          32095,
-          32100
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 mcp",
-        "命中 mcp server",
-        "命中 mcp-server",
-        "Topics: github, mcp, mcp-server"
-      ]
-    },
-    {
-      "id": 198683574,
-      "full_name": "dolthub/dolt",
-      "url": "https://github.com/dolthub/dolt",
-      "homepage": "https://www.dolthub.com",
-      "description": "Dolt – Git for Data",
-      "language": "Go",
-      "topics": [
-        "agent-memory",
-        "agent-memory-server",
-        "ai-agents",
-        "ai-database",
-        "data-version-control",
-        "data-versioning",
-        "database",
-        "database-version-control",
-        "database-versioning",
-        "decentralized-database",
-        "git",
-        "git-database",
-        "git-for-data",
-        "git-for-databases",
-        "git-sql",
-        "immutable-database",
-        "mariadb",
-        "mysql",
-        "sql",
-        "version-controlled-database"
-      ],
-      "license": "Apache-2.0",
-      "stars": 24135,
-      "forks": 853,
-      "open_issues": 665,
-      "created_at": "2019-07-24T17:46:25Z",
-      "pushed_at": "2026-08-08T20:39:02Z",
-      "content_type": "可运行工具",
-      "primary_capability": "Memory & Knowledge",
-      "capabilities": [
-        "Agent Core",
-        "Memory & Knowledge"
-      ],
-      "research_use_cases": [],
-      "integration_methods": [
-        "CLI",
-        "Docker"
-      ],
-      "platforms": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Web",
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 89,
-      "fit_score": 63,
-      "recommendation_score": 80,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 83,
-        "activity": 98,
-        "community": 80,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          24131,
-          24135
-        ]
-      },
-      "recommendation_reasons": [
-        "文档中提供 Windows 支持信号",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 agent memory",
-        "命中 agent memory",
-        "Topics: agent-memory, agent-memory-server, ai-agents, ai-database"
-      ]
-    },
-    {
-      "id": 776908852,
-      "full_name": "browserbase/stagehand",
-      "url": "https://github.com/browserbase/stagehand",
-      "homepage": "https://stagehand.dev",
-      "description": "The SDK For Browser Agents",
+      "id": 306829688,
+      "full_name": "nocobase/nocobase",
+      "url": "https://github.com/nocobase/nocobase",
+      "homepage": "https://www.nocobase.com",
+      "description": "NocoBase is an open-source AI + no-code platform for building business systems fast. Instead of generating everything from scratch, AI works on top of production-proven infrastructure and a WYSIWYG no-code interface, so you get both speed and reliability.",
       "language": "TypeScript",
       "topics": [
-        "agents",
-        "ai",
-        "llms",
-        "playwright",
-        "puppeteer",
-        "selenium"
+        "admin-dashboard",
+        "ai-agent",
+        "ai-agents",
+        "ai-assistant",
+        "ai-tools",
+        "airtable",
+        "crm",
+        "crud",
+        "erp",
+        "internal-tool",
+        "internal-tools",
+        "low-code",
+        "lowcode",
+        "no-code",
+        "nocode",
+        "project-management",
+        "salesforce",
+        "self-hosted",
+        "workflows"
       ],
-      "license": "MIT",
-      "stars": 23789,
-      "forks": 1638,
-      "open_issues": 313,
-      "created_at": "2024-03-24T19:19:44Z",
-      "pushed_at": "2026-08-10T02:33:34Z",
-      "content_type": "Framework / SDK",
-      "primary_capability": "Browser & Computer Use",
+      "license": "NOASSERTION",
+      "stars": 23608,
+      "forks": 2820,
+      "open_issues": 280,
+      "created_at": "2020-10-24T07:27:48Z",
+      "pushed_at": "2026-08-10T06:29:57Z",
+      "content_type": "可运行工具",
+      "primary_capability": "Agent Core",
       "capabilities": [
-        "Browser & Computer Use"
+        "Agent Core"
       ],
       "research_use_cases": [],
       "integration_methods": [
-        "CLI",
-        "API"
+        "CLI"
       ],
       "platforms": [
-        "Windows"
+        "Web"
       ],
       "local_first": false,
       "external_service_required": false,
       "setup_level": "easy",
-      "quality_score": 91,
-      "fit_score": 60,
+      "quality_score": 93,
+      "fit_score": 56,
       "recommendation_score": 80,
       "score_breakdown": {
         "growth": null,
-        "heat": 85,
+        "heat": 86,
         "activity": 100,
-        "community": 85,
+        "community": 89,
         "completeness": 100,
         "penalty": 0
       },
@@ -6805,19 +6677,18 @@
         "day_30": null,
         "percent_7": null,
         "sparkline": [
-          23782,
-          23789
+          23605,
+          23608
         ]
       },
       "recommendation_reasons": [
-        "文档中提供 Windows 支持信号",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
-        "命中 browser agent",
-        "命中 playwright",
-        "命中 browser automation",
-        "Topics: agents, ai, llms, playwright"
+        "命中 ai agent",
+        "命中 ai agent",
+        "命中 coding agent",
+        "Topics: admin-dashboard, ai-agent, ai-agents, ai-assistant"
       ]
     },
     {
@@ -6839,9 +6710,9 @@
         "vector-search"
       ],
       "license": "NOASSERTION",
-      "stars": 18835,
-      "forks": 1696,
-      "open_issues": 593,
+      "stars": 19046,
+      "forks": 1721,
+      "open_issues": 595,
       "created_at": "2026-04-07T06:34:26Z",
       "pushed_at": "2026-08-06T12:07:09Z",
       "content_type": "Framework / SDK",
@@ -6878,7 +6749,7 @@
         "percent_7": null,
         "sparkline": [
           18678,
-          18835
+          19046
         ]
       },
       "recommendation_reasons": [
@@ -6920,7 +6791,7 @@
         "windows"
       ],
       "license": "AGPL-3.0",
-      "stars": 18230,
+      "stars": 18233,
       "forks": 1316,
       "open_issues": 5,
       "created_at": "2016-09-22T22:58:21Z",
@@ -6961,7 +6832,7 @@
         "percent_7": null,
         "sparkline": [
           18230,
-          18230
+          18233
         ]
       },
       "recommendation_reasons": [
@@ -6992,11 +6863,11 @@
         "python"
       ],
       "license": "Apache-2.0",
-      "stars": 17493,
-      "forks": 1772,
-      "open_issues": 434,
+      "stars": 17495,
+      "forks": 1776,
+      "open_issues": 435,
       "created_at": "2023-08-10T05:35:04Z",
-      "pushed_at": "2026-08-09T16:23:55Z",
+      "pushed_at": "2026-08-10T07:24:38Z",
       "content_type": "MCP Server",
       "primary_capability": "Evaluation & Safety",
       "capabilities": [
@@ -7032,7 +6903,7 @@
         "percent_7": null,
         "sparkline": [
           17492,
-          17493
+          17495
         ]
       },
       "recommendation_reasons": [
@@ -7042,7 +6913,7 @@
       "classification_evidence": [
         "命中 llm evaluation",
         "命中 llm evaluation",
-        "命中 tracing",
+        "命中 observability",
         "Topics: evaluation-framework, evaluation-metrics, llm-evaluation, llm-evaluation-framework"
       ]
     },
@@ -7057,9 +6928,9 @@
         "agent-skills"
       ],
       "license": null,
-      "stars": 167251,
-      "forks": 19951,
-      "open_issues": 1068,
+      "stars": 167309,
+      "forks": 19958,
+      "open_issues": 1070,
       "created_at": "2025-09-22T15:53:31Z",
       "pushed_at": "2026-08-07T17:14:15Z",
       "content_type": "MCP Server",
@@ -7097,7 +6968,7 @@
         "percent_7": null,
         "sparkline": [
           167210,
-          167251
+          167309
         ]
       },
       "recommendation_reasons": [
@@ -7138,9 +7009,9 @@
         "workflow-automation"
       ],
       "license": null,
-      "stars": 72153,
-      "forks": 8185,
-      "open_issues": 1206,
+      "stars": 72171,
+      "forks": 8189,
+      "open_issues": 1209,
       "created_at": "2025-10-17T07:15:01Z",
       "pushed_at": "2026-07-24T07:48:01Z",
       "content_type": "MCP Server",
@@ -7176,7 +7047,7 @@
       "score_breakdown": {
         "growth": null,
         "heat": 96,
-        "activity": 66,
+        "activity": 64,
         "community": 97,
         "completeness": 60,
         "penalty": 8
@@ -7188,7 +7059,7 @@
         "percent_7": null,
         "sparkline": [
           72137,
-          72153
+          72171
         ]
       },
       "recommendation_reasons": [
@@ -7218,8 +7089,8 @@
         "rust"
       ],
       "license": "Apache-2.0",
-      "stars": 67922,
-      "forks": 5846,
+      "stars": 67932,
+      "forks": 5847,
       "open_issues": 3,
       "created_at": "2023-07-14T07:10:44Z",
       "pushed_at": "2026-08-08T19:04:44Z",
@@ -7257,7 +7128,7 @@
         "percent_7": null,
         "sparkline": [
           67914,
-          67922
+          67932
         ]
       },
       "recommendation_reasons": [
@@ -7288,11 +7159,11 @@
         "quantitative-trading"
       ],
       "license": "MIT",
-      "stars": 61282,
-      "forks": 52027,
-      "open_issues": 40,
+      "stars": 61531,
+      "forks": 52111,
+      "open_issues": 42,
       "created_at": "2026-01-10T06:43:20Z",
-      "pushed_at": "2026-08-09T14:06:35Z",
+      "pushed_at": "2026-08-10T06:44:33Z",
       "content_type": "可运行工具",
       "primary_capability": "Agent Core",
       "capabilities": [
@@ -7328,7 +7199,7 @@
         "percent_7": null,
         "sparkline": [
           61088,
-          61282
+          61531
         ]
       },
       "recommendation_reasons": [
@@ -7338,6 +7209,71 @@
       "classification_evidence": [
         "命中 ai agent",
         "Topics: a-stock, ai-agent, aigc, llm"
+      ]
+    },
+    {
+      "id": 906251482,
+      "full_name": "ashishpatel26/500-AI-Agents-Projects",
+      "url": "https://github.com/ashishpatel26/500-AI-Agents-Projects",
+      "homepage": "https://ashishpatel26.github.io/500-AI-Agents-Projects/",
+      "description": "The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.",
+      "language": "Python",
+      "topics": [
+        "ai-agents",
+        "genai"
+      ],
+      "license": "MIT",
+      "stars": 36116,
+      "forks": 6438,
+      "open_issues": 70,
+      "created_at": "2024-12-20T13:37:15Z",
+      "pushed_at": "2026-07-27T05:40:40Z",
+      "content_type": "模板或工作流",
+      "primary_capability": "Agent Core",
+      "capabilities": [
+        "Agent Core",
+        "Memory & Knowledge"
+      ],
+      "research_use_cases": [
+        "研究数据与复现"
+      ],
+      "integration_methods": [
+        "CLI",
+        "API"
+      ],
+      "platforms": [],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "easy",
+      "quality_score": 87,
+      "fit_score": 65,
+      "recommendation_score": 79,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 91,
+        "activity": 71,
+        "community": 95,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          36093,
+          36116
+        ]
+      },
+      "recommendation_reasons": [
+        "适合研究数据与复现"
+      ],
+      "classification_evidence": [
+        "命中 ai agent",
+        "命中 ai agent",
+        "命中 agent framework",
+        "Topics: ai-agents, genai"
       ]
     },
     {
@@ -7368,8 +7304,8 @@
         "vector-database"
       ],
       "license": "NOASSERTION",
-      "stars": 29002,
-      "forks": 3527,
+      "stars": 29008,
+      "forks": 3528,
       "open_issues": 14,
       "created_at": "2024-07-13T16:08:36Z",
       "pushed_at": "2026-07-31T21:07:02Z",
@@ -7407,7 +7343,7 @@
         "percent_7": null,
         "sparkline": [
           29000,
-          29002
+          29008
         ]
       },
       "recommendation_reasons": [
@@ -7429,8 +7365,8 @@
       "language": "Python",
       "topics": [],
       "license": "MIT",
-      "stars": 17662,
-      "forks": 1452,
+      "stars": 17667,
+      "forks": 1453,
       "open_issues": 41,
       "created_at": "2025-12-21T02:43:42Z",
       "pushed_at": "2026-08-02T19:32:17Z",
@@ -7472,7 +7408,7 @@
         "percent_7": null,
         "sparkline": [
           17656,
-          17662
+          17667
         ]
       },
       "recommendation_reasons": [
@@ -7504,8 +7440,8 @@
         "superpowers"
       ],
       "license": "MIT",
-      "stars": 269762,
-      "forks": 24120,
+      "stars": 269912,
+      "forks": 24126,
       "open_issues": 326,
       "created_at": "2025-10-09T19:45:18Z",
       "pushed_at": "2026-08-08T01:45:49Z",
@@ -7540,7 +7476,7 @@
         "percent_7": null,
         "sparkline": [
           269663,
-          269762
+          269912
         ]
       },
       "recommendation_reasons": [
@@ -7553,6 +7489,71 @@
       ]
     },
     {
+      "id": 862584018,
+      "full_name": "modelcontextprotocol/python-sdk",
+      "url": "https://github.com/modelcontextprotocol/python-sdk",
+      "homepage": "https://py.sdk.modelcontextprotocol.io/",
+      "description": "The official Python SDK for Model Context Protocol servers and clients",
+      "language": "Python",
+      "topics": [
+        "mcp",
+        "mcp-client",
+        "mcp-server",
+        "python"
+      ],
+      "license": "MIT",
+      "stars": 23958,
+      "forks": 3765,
+      "open_issues": 528,
+      "created_at": "2024-09-24T21:01:35Z",
+      "pushed_at": "2026-08-10T07:40:28Z",
+      "content_type": "MCP Server",
+      "primary_capability": "MCP & Connectors",
+      "capabilities": [
+        "MCP & Connectors"
+      ],
+      "research_use_cases": [],
+      "integration_methods": [
+        "MCP",
+        "CLI"
+      ],
+      "platforms": [],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "easy",
+      "quality_score": 93,
+      "fit_score": 50,
+      "recommendation_score": 78,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 87,
+        "activity": 100,
+        "community": 91,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          23947,
+          23958
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "最近仍在活跃更新"
+      ],
+      "classification_evidence": [
+        "命中 model context protocol",
+        "命中 mcp",
+        "命中 mcp server",
+        "Topics: mcp, mcp-client, mcp-server, python"
+      ]
+    },
+    {
       "id": 898968194,
       "full_name": "huggingface/smolagents",
       "url": "https://github.com/huggingface/smolagents",
@@ -7561,8 +7562,8 @@
       "language": "Python",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 28735,
-      "forks": 2841,
+      "stars": 28738,
+      "forks": 2844,
       "open_issues": 746,
       "created_at": "2024-12-05T11:28:04Z",
       "pushed_at": "2026-07-21T18:35:00Z",
@@ -7606,7 +7607,7 @@
         "percent_7": null,
         "sparkline": [
           28735,
-          28735
+          28738
         ]
       },
       "recommendation_reasons": [
@@ -7621,46 +7622,48 @@
       ]
     },
     {
-      "id": 862584018,
-      "full_name": "modelcontextprotocol/python-sdk",
-      "url": "https://github.com/modelcontextprotocol/python-sdk",
-      "homepage": "https://py.sdk.modelcontextprotocol.io/",
-      "description": "The official Python SDK for Model Context Protocol servers and clients",
-      "language": "Python",
+      "id": 776908852,
+      "full_name": "browserbase/stagehand",
+      "url": "https://github.com/browserbase/stagehand",
+      "homepage": "https://stagehand.dev",
+      "description": "The SDK For Browser Agents",
+      "language": "TypeScript",
       "topics": [
-        "mcp",
-        "mcp-client",
-        "mcp-server",
-        "python"
+        "agents",
+        "ai",
+        "llms",
+        "playwright",
+        "puppeteer",
+        "selenium"
       ],
       "license": "MIT",
-      "stars": 23953,
-      "forks": 3765,
-      "open_issues": 528,
-      "created_at": "2024-09-24T21:01:35Z",
-      "pushed_at": "2026-08-07T11:43:09Z",
-      "content_type": "MCP Server",
-      "primary_capability": "MCP & Connectors",
+      "stars": 23791,
+      "forks": 1639,
+      "open_issues": 289,
+      "created_at": "2024-03-24T19:19:44Z",
+      "pushed_at": "2026-08-10T07:53:43Z",
+      "content_type": "Framework / SDK",
+      "primary_capability": "Browser & Computer Use",
       "capabilities": [
-        "MCP & Connectors"
+        "Browser & Computer Use"
       ],
       "research_use_cases": [],
       "integration_methods": [
-        "MCP",
-        "CLI"
+        "CLI",
+        "API"
       ],
       "platforms": [],
       "local_first": false,
       "external_service_required": false,
       "setup_level": "easy",
-      "quality_score": 92,
+      "quality_score": 91,
       "fit_score": 50,
       "recommendation_score": 77,
       "score_breakdown": {
         "growth": null,
-        "heat": 87,
-        "activity": 96,
-        "community": 91,
+        "heat": 85,
+        "activity": 100,
+        "community": 85,
         "completeness": 100,
         "penalty": 0
       },
@@ -7670,19 +7673,18 @@
         "day_30": null,
         "percent_7": null,
         "sparkline": [
-          23947,
-          23953
+          23782,
+          23791
         ]
       },
       "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
-        "命中 model context protocol",
-        "命中 mcp",
-        "命中 mcp server",
-        "Topics: mcp, mcp-client, mcp-server, python"
+        "命中 browser agent",
+        "命中 playwright",
+        "命中 browser agent",
+        "Topics: agents, ai, llms, playwright"
       ]
     },
     {
@@ -7694,9 +7696,9 @@
       "language": "Shell",
       "topics": [],
       "license": "MIT",
-      "stars": 211295,
-      "forks": 18270,
-      "open_issues": 314,
+      "stars": 211730,
+      "forks": 18302,
+      "open_issues": 315,
       "created_at": "2026-02-03T11:15:53Z",
       "pushed_at": "2026-08-07T15:50:46Z",
       "content_type": "Skill Pack",
@@ -7728,7 +7730,7 @@
         "percent_7": null,
         "sparkline": [
           210932,
-          211295
+          211730
         ]
       },
       "recommendation_reasons": [
@@ -7766,7 +7768,7 @@
         "rust"
       ],
       "license": "Apache-2.0",
-      "stars": 30283,
+      "stars": 30287,
       "forks": 1773,
       "open_issues": 118,
       "created_at": "2026-03-02T19:46:06Z",
@@ -7807,7 +7809,7 @@
         "percent_7": null,
         "sparkline": [
           30279,
-          30283
+          30287
         ]
       },
       "recommendation_reasons": [
@@ -7818,89 +7820,6 @@
         "命中 agent skills",
         "命中 agent skill",
         "Topics: agent-skills, ai-agent, automation, cli"
-      ]
-    },
-    {
-      "id": 639835356,
-      "full_name": "assafelovic/gpt-researcher",
-      "url": "https://github.com/assafelovic/gpt-researcher",
-      "homepage": "https://gptr.dev",
-      "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
-      "language": "Python",
-      "topics": [
-        "agent",
-        "ai",
-        "automation",
-        "deepresearch",
-        "llms",
-        "mcp",
-        "mcp-server",
-        "python",
-        "research",
-        "search",
-        "webscraping"
-      ],
-      "license": "Apache-2.0",
-      "stars": 28902,
-      "forks": 3917,
-      "open_issues": 191,
-      "created_at": "2023-05-12T10:33:54Z",
-      "pushed_at": "2026-07-18T07:56:55Z",
-      "content_type": "MCP Server",
-      "primary_capability": "MCP & Connectors",
-      "capabilities": [
-        "Agent Core",
-        "MCP & Connectors",
-        "Evaluation & Safety",
-        "Research & Learning"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读",
-        "文献与引用管理"
-      ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": true,
-      "setup_level": "medium",
-      "quality_score": 81,
-      "fit_score": 67,
-      "recommendation_score": 76,
-      "score_breakdown": {
-        "growth": null,
-        "heat": 88,
-        "activity": 54,
-        "community": 91,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": null,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          28901,
-          28902
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合论文检索与阅读",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 mcp",
-        "命中 mcp server",
-        "命中 mcp",
-        "Topics: agent, ai, automation, deepresearch"
       ]
     },
     {
@@ -7921,8 +7840,8 @@
         "vision-and-language"
       ],
       "license": "MIT",
-      "stars": 28692,
-      "forks": 5866,
+      "stars": 28697,
+      "forks": 5867,
       "open_issues": 3,
       "created_at": "2024-02-06T18:14:14Z",
       "pushed_at": "2026-07-28T18:07:14Z",
@@ -7959,7 +7878,7 @@
         "percent_7": null,
         "sparkline": [
           28688,
-          28692
+          28697
         ]
       },
       "recommendation_reasons": [
@@ -7971,6 +7890,89 @@
         "命中 multi-agent",
         "命中 agentic",
         "Topics: awesome, awesome-list, generative-ai, interview-questions"
+      ]
+    },
+    {
+      "id": 639835356,
+      "full_name": "assafelovic/gpt-researcher",
+      "url": "https://github.com/assafelovic/gpt-researcher",
+      "homepage": "https://gptr.dev",
+      "description": "An autonomous agent that conducts deep research on any data using any LLM providers",
+      "language": "Python",
+      "topics": [
+        "agent",
+        "ai",
+        "automation",
+        "deepresearch",
+        "llms",
+        "mcp",
+        "mcp-server",
+        "python",
+        "research",
+        "search",
+        "webscraping"
+      ],
+      "license": "Apache-2.0",
+      "stars": 28908,
+      "forks": 3918,
+      "open_issues": 193,
+      "created_at": "2023-05-12T10:33:54Z",
+      "pushed_at": "2026-07-18T07:56:55Z",
+      "content_type": "MCP Server",
+      "primary_capability": "MCP & Connectors",
+      "capabilities": [
+        "Agent Core",
+        "MCP & Connectors",
+        "Evaluation & Safety",
+        "Research & Learning"
+      ],
+      "research_use_cases": [
+        "论文检索与阅读",
+        "文献与引用管理"
+      ],
+      "integration_methods": [
+        "MCP",
+        "CLI",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Docker"
+      ],
+      "local_first": false,
+      "external_service_required": true,
+      "setup_level": "medium",
+      "quality_score": 80,
+      "fit_score": 67,
+      "recommendation_score": 75,
+      "score_breakdown": {
+        "growth": null,
+        "heat": 88,
+        "activity": 52,
+        "community": 91,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": null,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          28901,
+          28908
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "适合论文检索与阅读",
+        "配置成本中等"
+      ],
+      "classification_evidence": [
+        "命中 mcp",
+        "命中 mcp server",
+        "命中 mcp",
+        "Topics: agent, ai, automation, deepresearch"
       ]
     }
   ]
