@@ -1,17 +1,21 @@
-export const CAPABILITIES = [
-  "Agent Core",
-  "Skills & Prompts",
+export const ECOSYSTEM_LAYERS = [
+  "Agents",
+  "Skills & Plugins",
   "MCP & Connectors",
-  "Browser & Computer Use",
-  "Memory & Knowledge",
-  "Automation",
-  "Evaluation & Safety",
-  "Research & Learning",
+  "Infrastructure",
 ] as const;
 
+export const CAPABILITIES = [
+  "Agent Core", "Skills & Prompts", "MCP & Connectors", "Browser & Computer Use",
+  "Memory & Knowledge", "Automation", "Evaluation & Safety", "Research & Learning",
+] as const;
+
+export type EcosystemLayer = (typeof ECOSYSTEM_LAYERS)[number];
 export type Capability = (typeof CAPABILITIES)[number];
-export type View = "recommended" | "capabilities" | "research" | "rising" | "new" | "hot";
+export type SummarySource = "manual" | "github_description";
 export type SetupLevel = "easy" | "medium" | "advanced";
+export type View = "discover" | "trending" | "capabilities" | "saved" | "compare";
+export type SortMode = "recommended" | "trending" | "stars" | "updated" | "newest";
 
 export interface ScoreBreakdown {
   growth: number | null;
@@ -30,6 +34,22 @@ export interface GrowthData {
   sparkline: number[];
 }
 
+export interface ProjectFeatures {
+  web_ui: boolean;
+  api: boolean;
+  sdk: boolean;
+  cli: boolean;
+  docker: boolean;
+  self_host: boolean;
+  gpu_required: boolean;
+}
+
+export interface ProjectPreview {
+  type: string;
+  url: string;
+  source: string;
+}
+
 export interface Project {
   id: number;
   full_name: string;
@@ -44,9 +64,17 @@ export interface Project {
   open_issues: number;
   created_at: string;
   pushed_at: string;
+  ecosystem_layer: EcosystemLayer;
+  project_subtype: string;
+  use_cases: string[];
+  functional_capabilities: string[];
+  summary_zh: string | null;
+  summary_source: SummarySource;
+  features: ProjectFeatures;
+  preview: ProjectPreview | null;
   content_type: string;
-  primary_capability: Capability;
-  capabilities: Capability[];
+  primary_capability: string;
+  capabilities: string[];
   research_use_cases: string[];
   integration_methods: string[];
   platforms: string[];
@@ -66,15 +94,17 @@ export interface SiteData {
   schema_version: string;
   generated_at: string;
   collection_status: "live" | "demo" | "stale";
-  windows: {
-    new_projects_days: number;
-  };
-  stats: {
-    candidates: number;
-    published: number;
-    history_days: number;
-  };
+  windows: { new_projects_days: number };
+  stats: { candidates: number; published: number; history_days: number };
   projects: Project[];
+}
+
+export interface BrowseFilters {
+  layer: EcosystemLayer | null;
+  subtype: string;
+  useCase: string;
+  query: string;
+  sort: SortMode;
 }
 
 export interface CapabilitySummary {

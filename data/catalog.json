@@ -79,8 +79,29 @@
       "last_seen": "2026-08-09T11:52:59.044269Z",
       "last_rank": 1,
       "best_rank": 1,
-      "active": true,
-      "last_score": 95
+      "active": false,
+      "last_score": 95,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1048065319,
@@ -176,7 +197,28 @@
       "last_rank": 2,
       "best_rank": 2,
       "active": true,
-      "last_score": 95
+      "last_score": 95,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": "为 Claude Code、Codex、Hermes 等 Agent 持久保存并按需恢复会话上下文。",
+      "summary_source": "manual",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": true,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1170821064,
@@ -252,7 +294,27 @@
       "last_rank": 3,
       "best_rank": 3,
       "active": true,
-      "last_score": 95
+      "last_score": 95,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1223170290,
@@ -345,7 +407,28 @@
       "last_rank": 4,
       "best_rank": 4,
       "active": true,
-      "last_score": 94
+      "last_score": 94,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 656099147,
@@ -436,7 +519,27 @@
       "last_rank": 5,
       "best_rank": 5,
       "active": true,
-      "last_score": 94
+      "last_score": 94,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": "为 Agent 应用提供可集成的长期记忆层。",
+      "summary_source": "manual",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1141704318,
@@ -527,8 +630,26 @@
       "last_seen": "2026-08-09T11:52:59.044269Z",
       "last_rank": 6,
       "best_rank": 6,
-      "active": true,
-      "last_score": 94
+      "active": false,
+      "last_score": 94,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1200597263,
@@ -624,7 +745,28 @@
       "last_rank": 7,
       "best_rank": 7,
       "active": true,
-      "last_score": 93
+      "last_score": 93,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 896335270,
@@ -705,8 +847,26 @@
       "last_seen": "2026-08-09T11:52:59.044269Z",
       "last_rank": 8,
       "best_rank": 8,
-      "active": true,
-      "last_score": 93
+      "active": false,
+      "last_score": 93,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 291438522,
@@ -805,7 +965,27 @@
       "last_rank": 9,
       "best_rank": 9,
       "active": true,
-      "last_score": 93
+      "last_score": 93,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 805155266,
@@ -891,7 +1071,28 @@
       "last_rank": 10,
       "best_rank": 10,
       "active": true,
-      "last_score": 92
+      "last_score": 92,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 522158088,
@@ -987,7 +1188,25 @@
       "last_rank": 11,
       "best_rank": 11,
       "active": true,
-      "last_score": 92
+      "last_score": 92,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 193215554,
@@ -1079,7 +1298,28 @@
       "last_rank": 12,
       "best_rank": 11,
       "active": true,
-      "last_score": 91
+      "last_score": 91,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Automation & Orchestration",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": "结合可视化流程与代码扩展的自托管自动化编排平台。",
+      "summary_source": "manual",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1201173969,
@@ -1166,7 +1406,23 @@
       "last_rank": 13,
       "best_rank": 13,
       "active": true,
-      "last_score": 91
+      "last_score": 91,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1079456184,
@@ -1259,7 +1515,29 @@
       "last_rank": 14,
       "best_rank": 14,
       "active": true,
-      "last_score": 91
+      "last_score": 91,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Data Analysis"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 925270205,
@@ -1358,7 +1636,29 @@
       "last_rank": 15,
       "best_rank": 15,
       "active": true,
-      "last_score": 91
+      "last_score": 91,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Computer Use Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1158722119,
@@ -1435,7 +1735,28 @@
       "last_rank": 16,
       "best_rank": 15,
       "active": true,
-      "last_score": 90
+      "last_score": 90,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 872119017,
@@ -1530,7 +1851,29 @@
       "last_rank": 17,
       "best_rank": 16,
       "active": true,
-      "last_score": 90
+      "last_score": 90,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 995029641,
@@ -1629,7 +1972,33 @@
       "last_rank": 18,
       "best_rank": 17,
       "active": true,
-      "last_score": 90
+      "last_score": 90,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Knowledge Management",
+        "Automation",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1129940957,
@@ -1727,7 +2096,30 @@
       "last_rank": 19,
       "best_rank": 18,
       "active": true,
-      "last_score": 90
+      "last_score": 90,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1198306812,
@@ -1809,7 +2201,23 @@
       "last_rank": 20,
       "best_rank": 20,
       "active": true,
-      "last_score": 90
+      "last_score": 90,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 679343504,
@@ -1907,7 +2315,28 @@
       "last_rank": 21,
       "best_rank": 21,
       "active": true,
-      "last_score": 90
+      "last_score": 90,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1176011916,
@@ -1982,7 +2411,23 @@
       "last_rank": 22,
       "best_rank": 21,
       "active": true,
-      "last_score": 89
+      "last_score": 89,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1147094660,
@@ -2081,7 +2526,29 @@
       "last_rank": 23,
       "best_rank": 22,
       "active": true,
-      "last_score": 89
+      "last_score": 89,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1134426800,
@@ -2171,7 +2638,30 @@
       "last_rank": 24,
       "best_rank": 24,
       "active": true,
-      "last_score": 89
+      "last_score": 89,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1166408297,
@@ -2260,7 +2750,29 @@
       "last_rank": 25,
       "best_rank": 24,
       "active": true,
-      "last_score": 89
+      "last_score": 89,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1164477708,
@@ -2354,7 +2866,30 @@
       "last_rank": 26,
       "best_rank": 26,
       "active": true,
-      "last_score": 89
+      "last_score": 89,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1024554267,
@@ -2445,7 +2980,27 @@
       "last_rank": 27,
       "best_rank": 27,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 881458615,
@@ -2523,7 +3078,28 @@
       "last_rank": 28,
       "best_rank": 28,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 979115477,
@@ -2620,7 +3196,32 @@
       "last_rank": 29,
       "best_rank": 25,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Research & Science Agent",
+      "use_cases": [
+        "Research & Literature",
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Search & Research",
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 918932603,
@@ -2710,7 +3311,27 @@
       "last_rank": 30,
       "best_rank": 30,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 876064934,
@@ -2794,7 +3415,28 @@
       "last_rank": 31,
       "best_rank": 27,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 840056306,
@@ -2876,7 +3518,27 @@
       "last_rank": 32,
       "best_rank": 32,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 912559512,
@@ -2970,7 +3632,31 @@
       "last_rank": 33,
       "best_rank": 30,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding",
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1027384981,
@@ -3047,7 +3733,23 @@
       "last_rank": 34,
       "best_rank": 34,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 573661753,
@@ -3130,7 +3832,28 @@
       "last_rank": 35,
       "best_rank": 31,
       "active": true,
-      "last_score": 88
+      "last_score": 88,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1136590548,
@@ -3204,7 +3927,29 @@
       "last_rank": 36,
       "best_rank": 36,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Search & Research",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1130564872,
@@ -3292,7 +4037,25 @@
       "last_rank": 37,
       "best_rank": 32,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1140843380,
@@ -3387,7 +4150,28 @@
       "last_rank": 38,
       "best_rank": 38,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1185590488,
@@ -3483,7 +4267,25 @@
       "last_rank": 39,
       "best_rank": 33,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1166102148,
@@ -3583,7 +4385,29 @@
       "last_rank": 40,
       "best_rank": 34,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1165324947,
@@ -3676,7 +4500,23 @@
       "last_rank": 41,
       "best_rank": 41,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1124219907,
@@ -3764,7 +4604,30 @@
       "last_rank": 42,
       "best_rank": 35,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [
+        "Research & Literature",
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Search & Research",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1181982220,
@@ -3847,7 +4710,28 @@
       "last_rank": 43,
       "best_rank": 36,
       "active": true,
-      "last_score": 87
+      "last_score": 87,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1075372545,
@@ -3918,7 +4802,23 @@
       "last_rank": 44,
       "best_rank": 38,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 968197216,
@@ -3996,7 +4896,25 @@
       "last_rank": 45,
       "best_rank": 45,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1054793726,
@@ -4077,7 +4995,29 @@
       "last_rank": 46,
       "best_rank": 39,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Browser & Computer Use"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1113573066,
@@ -4160,7 +5100,23 @@
       "last_rank": 47,
       "best_rank": 40,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1033778670,
@@ -4256,7 +5212,23 @@
       "last_rank": 48,
       "best_rank": 42,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 953683578,
@@ -4341,7 +5313,28 @@
       "last_rank": 49,
       "best_rank": 44,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1125856365,
@@ -4433,7 +5426,28 @@
       "last_rank": 50,
       "best_rank": 50,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Browser & Computer Use"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 691347156,
@@ -4521,7 +5535,28 @@
       "last_rank": 51,
       "best_rank": 51,
       "active": true,
-      "last_score": 86
+      "last_score": 86,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 822604462,
@@ -4603,7 +5638,29 @@
       "last_rank": 52,
       "best_rank": 47,
       "active": true,
-      "last_score": 85
+      "last_score": 85,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Data Analysis"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1132001614,
@@ -4673,7 +5730,28 @@
       "last_rank": 53,
       "best_rank": 53,
       "active": true,
-      "last_score": 85
+      "last_score": 85,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1053118194,
@@ -4758,7 +5836,30 @@
       "last_rank": 54,
       "best_rank": 48,
       "active": true,
-      "last_score": 85
+      "last_score": 85,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [
+        "Coding",
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 742244656,
@@ -4843,7 +5944,23 @@
       "last_rank": 55,
       "best_rank": 49,
       "active": true,
-      "last_score": 85
+      "last_score": 85,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1128123594,
@@ -4924,7 +6041,27 @@
       "last_rank": 56,
       "best_rank": 50,
       "active": true,
-      "last_score": 85
+      "last_score": 85,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Plugin",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1052050442,
@@ -4993,7 +6130,27 @@
       "last_rank": 57,
       "best_rank": 55,
       "active": true,
-      "last_score": 84
+      "last_score": 84,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1216785679,
@@ -5081,7 +6238,28 @@
       "last_rank": 58,
       "best_rank": 58,
       "active": true,
-      "last_score": 84
+      "last_score": 84,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1008713177,
@@ -5164,7 +6342,27 @@
       "last_rank": 59,
       "best_rank": 59,
       "active": true,
-      "last_score": 84
+      "last_score": 84,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 854807707,
@@ -5255,7 +6453,28 @@
       "last_rank": 60,
       "best_rank": 60,
       "active": true,
-      "last_score": 84
+      "last_score": 84,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 638951438,
@@ -5344,7 +6563,30 @@
       "last_rank": 61,
       "best_rank": 61,
       "active": true,
-      "last_score": 84
+      "last_score": 84,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Evaluation & Observability",
+      "use_cases": [
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1042367133,
@@ -5415,7 +6657,23 @@
       "last_rank": 62,
       "best_rank": 61,
       "active": true,
-      "last_score": 83
+      "last_score": 83,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1010681419,
@@ -5493,7 +6751,28 @@
       "last_rank": 63,
       "best_rank": 62,
       "active": true,
-      "last_score": 83
+      "last_score": 83,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1165277268,
@@ -5577,7 +6856,27 @@
       "last_rank": 64,
       "best_rank": 64,
       "active": true,
-      "last_score": 83
+      "last_score": 83,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 655515393,
@@ -5664,7 +6963,23 @@
       "last_rank": 65,
       "best_rank": 63,
       "active": true,
-      "last_score": 83
+      "last_score": 83,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 560299175,
@@ -5746,7 +7061,25 @@
       "last_rank": 66,
       "best_rank": 64,
       "active": true,
-      "last_score": 83
+      "last_score": 83,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1003143578,
@@ -5839,7 +7172,29 @@
       "last_rank": 67,
       "best_rank": 67,
       "active": true,
-      "last_score": 83
+      "last_score": 83,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Evaluation & Observability",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 895508656,
@@ -5919,7 +7274,27 @@
       "last_rank": 68,
       "best_rank": 68,
       "active": true,
-      "last_score": 82
+      "last_score": 82,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1087192965,
@@ -6005,7 +7380,29 @@
       "last_rank": 69,
       "best_rank": 65,
       "active": true,
-      "last_score": 82
+      "last_score": 82,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1201476594,
@@ -6090,7 +7487,29 @@
       "last_rank": 70,
       "best_rank": 66,
       "active": true,
-      "last_score": 82
+      "last_score": 82,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 955620917,
@@ -6162,7 +7581,28 @@
       "last_rank": 71,
       "best_rank": 67,
       "active": true,
-      "last_score": 82
+      "last_score": 82,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1127110039,
@@ -6252,7 +7692,28 @@
       "last_rank": 72,
       "best_rank": 70,
       "active": true,
-      "last_score": 82
+      "last_score": 82,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 615510678,
@@ -6333,7 +7794,26 @@
       "last_rank": 73,
       "best_rank": 73,
       "active": true,
-      "last_score": 82
+      "last_score": 82,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1144115288,
@@ -6419,7 +7899,27 @@
       "last_rank": 74,
       "best_rank": 74,
       "active": true,
-      "last_score": 81
+      "last_score": 81,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1300902838,
@@ -6488,7 +7988,27 @@
       "last_rank": 75,
       "best_rank": 75,
       "active": true,
-      "last_score": 81
+      "last_score": 81,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 198683574,
@@ -6581,7 +8101,25 @@
       "last_rank": 76,
       "best_rank": 76,
       "active": true,
-      "last_score": 81
+      "last_score": 81,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 997890921,
@@ -6658,7 +8196,28 @@
       "last_rank": 77,
       "best_rank": 77,
       "active": true,
-      "last_score": 81
+      "last_score": 81,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 569959091,
@@ -6756,7 +8315,25 @@
       "last_rank": 78,
       "best_rank": 78,
       "active": true,
-      "last_score": 81
+      "last_score": 81,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1203558071,
@@ -6835,7 +8412,25 @@
       "last_rank": 79,
       "best_rank": 79,
       "active": true,
-      "last_score": 81
+      "last_score": 81,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 169975410,
@@ -6926,7 +8521,27 @@
       "last_rank": 80,
       "best_rank": 80,
       "active": true,
-      "last_score": 81
+      "last_score": 81,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 666299222,
@@ -7000,7 +8615,27 @@
       "last_rank": 81,
       "best_rank": 81,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 906251482,
@@ -7070,7 +8705,25 @@
       "last_rank": 82,
       "best_rank": 82,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 942771284,
@@ -7145,7 +8798,25 @@
       "last_rank": 83,
       "best_rank": 83,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1197990888,
@@ -7219,7 +8890,27 @@
       "last_rank": 84,
       "best_rank": 84,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 776908852,
@@ -7293,7 +8984,25 @@
       "last_rank": 85,
       "best_rank": 85,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Computer Use Agent",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Browser & Computer Use"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": true,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 306829688,
@@ -7378,7 +9087,27 @@
       "last_rank": 86,
       "best_rank": 86,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 68968979,
@@ -7465,7 +9194,25 @@
       "last_rank": 87,
       "best_rank": 87,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1120349776,
@@ -7536,7 +9283,25 @@
       "last_rank": 88,
       "best_rank": 88,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 676829188,
@@ -7611,7 +9376,25 @@
       "last_rank": 89,
       "best_rank": 89,
       "active": true,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Evaluation & Observability",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1073224795,
@@ -7682,7 +9465,27 @@
       "last_rank": 90,
       "best_rank": 90,
       "active": true,
-      "last_score": 79
+      "last_score": 79,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1061953414,
@@ -7752,7 +9555,25 @@
       "last_rank": 91,
       "best_rank": 91,
       "active": true,
-      "last_score": 79
+      "last_score": 79,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1078079172,
@@ -7847,8 +9668,30 @@
       "last_seen": "2026-08-09T11:52:59.044269Z",
       "last_rank": 92,
       "best_rank": 92,
-      "active": true,
-      "last_score": 79
+      "active": false,
+      "last_score": 79,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1131513930,
@@ -7922,7 +9765,23 @@
       "last_rank": 93,
       "best_rank": 93,
       "active": true,
-      "last_score": 79
+      "last_score": 79,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 828268839,
@@ -8007,7 +9866,28 @@
       "last_rank": 94,
       "best_rank": 94,
       "active": true,
-      "last_score": 79
+      "last_score": 79,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 898968194,
@@ -8080,7 +9960,23 @@
       "last_rank": 95,
       "best_rank": 95,
       "active": true,
-      "last_score": 77
+      "last_score": 77,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 862584018,
@@ -8150,7 +10046,25 @@
       "last_rank": 96,
       "best_rank": 96,
       "active": true,
-      "last_score": 77
+      "last_score": 77,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": true,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1148788086,
@@ -8210,7 +10124,23 @@
       "last_rank": 97,
       "best_rank": 97,
       "active": true,
-      "last_score": 76
+      "last_score": 76,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1171026502,
@@ -8295,7 +10225,28 @@
       "last_rank": 98,
       "best_rank": 98,
       "active": true,
-      "last_score": 76
+      "last_score": 76,
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 639835356,
@@ -8383,7 +10334,30 @@
       "last_rank": 99,
       "best_rank": 99,
       "active": true,
-      "last_score": 76
+      "last_score": 76,
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Search & Research",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 753750990,
@@ -8457,8 +10431,28 @@
       "last_seen": "2026-08-09T11:52:59.044269Z",
       "last_rank": 100,
       "best_rank": 100,
-      "active": true,
-      "last_score": 76
+      "active": false,
+      "last_score": 76,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 21289110,
@@ -8541,7 +10535,23 @@
       "last_rank": 1,
       "best_rank": 1,
       "active": false,
-      "last_score": 97
+      "last_score": 97,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 21540759,
@@ -8625,7 +10635,23 @@
       "last_rank": 7,
       "best_rank": 7,
       "active": false,
-      "last_score": 93
+      "last_score": 93,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1179264259,
@@ -8693,7 +10719,23 @@
       "last_rank": 53,
       "best_rank": 53,
       "active": false,
-      "last_score": 84
+      "last_score": 84,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 21938243,
@@ -8770,7 +10812,23 @@
       "last_rank": 68,
       "best_rank": 68,
       "active": false,
-      "last_score": 82
+      "last_score": 82,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 21515044,
@@ -8853,7 +10911,26 @@
       "last_rank": 87,
       "best_rank": 87,
       "active": false,
-      "last_score": 80
+      "last_score": 80,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Data Analysis",
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 34302698,
@@ -8926,7 +11003,23 @@
       "last_rank": 96,
       "best_rank": 96,
       "active": false,
-      "last_score": 79
+      "last_score": 79,
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     }
   ]
 }

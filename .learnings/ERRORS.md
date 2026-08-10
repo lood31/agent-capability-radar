@@ -1,385 +1,320 @@
 # Errors
 
-## [ERR-20260809-012] powershell-node-e-quoting
+## [ERR-20260810-001] migrate_v2_data
 
-**Logged**: 2026-08-09T19:59:00+08:00
+**Logged**: 2026-08-10T00:00:00+08:00
 **Priority**: low
 **Status**: resolved
-**Area**: tooling
+**Area**: backend
 
 ### Summary
-PowerShell removed nested quotes from an inline `node -e` Playwright smoke command.
+Direct execution of a script under `scripts/` could not import the repository-local `collector` package.
 
 ### Error
-```
-SyntaxError: Invalid or unexpected token
+```text
+ModuleNotFoundError: No module named 'collector'
 ```
 
 ### Context
-- The script failed before launching a browser or contacting the deployed site.
-- Complex ESM imports and Windows paths made inline quoting fragile.
+- Command: `python scripts\migrate_v2_data.py`
+- Environment: Windows PowerShell, repository root working directory
 
 ### Suggested Fix
-Use a temporary `.mjs` file created and removed with `apply_patch` for non-trivial smoke scripts.
+Insert the resolved repository root into `sys.path` before importing repository-local modules.
 
 ### Metadata
 - Reproducible: yes
-- Related Files: none
+- Related Files: scripts/migrate_v2_data.py
 
 ### Resolution
-- **Resolved**: 2026-08-09T20:00:00+08:00
-- **Notes**: The temporary script passed and was removed immediately afterward.
+- **Resolved**: 2026-08-10T00:00:00+08:00
+- **Notes**: The migration script now resolves and inserts its repository root before local imports.
 
 ---
 
-## [ERR-20260809-011] powershell-url-interpolation
+## [ERR-20260810-010] python-regression
 
-**Logged**: 2026-08-09T19:58:00+08:00
-**Priority**: low
-**Status**: resolved
-**Area**: tooling
-
-### Summary
-A backtick before `robots.txt` was interpreted as a carriage-return escape inside a PowerShell URL string.
-
-### Error
-```
-Invoke-WebRequest: 404 File not found
-```
-
-### Context
-- The deployed file was present; only the constructed request URL was malformed.
-- Other online checks completed successfully.
-
-### Suggested Fix
-Use `${base}robots.txt` when appending a path to a PowerShell variable.
-
-### Metadata
-- Reproducible: yes
-- Related Files: public/robots.txt
-
-### Resolution
-- **Resolved**: 2026-08-09T19:58:00+08:00
-- **Notes**: The corrected URL returned HTTP 200 and referenced the sitemap.
-
----
-
-## [ERR-20260809-010] push-raced-data-commit
-
-**Logged**: 2026-08-09T19:56:00+08:00
-**Priority**: low
-**Status**: resolved
-**Area**: git
-
-### Summary
-An E2E fix push was rejected because the queued collection workflow published a data commit first.
-
-### Error
-```
-! [rejected] main -> main (fetch first)
-```
-
-### Context
-- The workflow is intentionally allowed to commit refreshed data to `main`.
-- The local change and bot data change touched separate files.
-
-### Suggested Fix
-Rebase the local commit onto the bot commit and push the resulting fast-forward history.
-
-### Metadata
-- Reproducible: yes
-- Related Files: public/data/site.json, data/catalog.json, data/history/2026-08.jsonl
-
-### Resolution
-- **Resolved**: 2026-08-09T19:56:00+08:00
-- **Notes**: Rebased cleanly onto bot commit `5e5d460` without overwriting collected data.
-
----
-
-## [ERR-20260809-009] e2e-live-data-coupling
-
-**Logged**: 2026-08-09T19:54:00+08:00
-**Priority**: medium
-**Status**: resolved
-**Area**: testing
-
-### Summary
-The first CI run against collected data exposed two E2E tests that depended on repositories from the original demo dataset.
-
-### Error
-```
-getByRole('heading', { name: 'zotero/zotero' }): element(s) not found
-Cannot read properties of undefined (reading 'capabilities')
-```
-
-### Context
-- Production data is expected to change on every collection.
-- The failing tests assumed `zotero/zotero` and `modelcontextprotocol/servers` were always published.
-- The quality gate correctly prevented deployment of the classifier-only push.
-
-### Suggested Fix
-Build deterministic project fixtures from the current schema while keeping the production build and data-fetch boundary real.
-
-### Metadata
-- Reproducible: yes
-- Related Files: e2e/fixtures.ts, e2e/site.spec.ts
-
-### Resolution
-- **Resolved**: 2026-08-09T19:55:00+08:00
-- **Notes**: E2E now generates eight stable capability projects and no longer depends on current leaderboard membership.
-
----
-
-## [ERR-20260809-008] native-command-gate-not-stopping
-
-**Logged**: 2026-08-09T19:44:00+08:00
-**Priority**: low
-**Status**: resolved
-**Area**: tooling
-
-### Summary
-A PowerShell staging script continued to `git commit` after `git diff --cached --check` reported trailing whitespace.
-
-### Error
-```
-programs.md:3: trailing whitespace.
-```
-
-### Context
-- PowerShell did not automatically stop on the non-zero exit code from the native Git command.
-- The issue was limited to three Markdown line-break spaces and did not affect runtime behavior.
-
-### Suggested Fix
-Check `$LASTEXITCODE` explicitly after native command gates before continuing.
-
-### Metadata
-- Reproducible: yes
-- Related Files: programs.md
-
-### Resolution
-- **Resolved**: 2026-08-09T19:44:00+08:00
-- **Notes**: Removed the trailing spaces and amended the local commit before pushing.
-
----
-
-## [ERR-20260809-007] vitest-e2e-discovery
-
-**Logged**: 2026-08-09T19:24:00+08:00
-**Priority**: low
-**Status**: resolved
-**Area**: testing
-
-### Summary
-Vitest discovered the Playwright `e2e/site.spec.ts` file and tried to execute it as a unit-test suite.
-
-### Error
-```
-Playwright Test did not expect test() to be called here.
-```
-
-### Context
-- All six frontend unit tests passed before Vitest reported the unrelated E2E suite failure.
-- Playwright tests require the Playwright runner and production preview server.
-
-### Suggested Fix
-Limit Vitest discovery to frontend unit tests under `src/**/*.test.ts`.
-
-### Metadata
-- Reproducible: yes
-- Related Files: vitest.config.ts, e2e/site.spec.ts
-
-### Resolution
-- **Resolved**: 2026-08-09T19:24:00+08:00
-- **Notes**: Added a dedicated Vitest include pattern.
-
----
-
-## [ERR-20260809-006] playwright-browser-install-timeout
-
-**Logged**: 2026-08-09T19:12:00+08:00
-**Priority**: medium
-**Status**: pending
-**Area**: tooling
-
-### Summary
-The first project-local Chromium installation exceeded the 120-second command limit.
-
-### Error
-```
-command timed out after 124033 milliseconds
-```
-
-### Context
-- `@playwright/test` and `@axe-core/playwright` installed successfully.
-- The Playwright browser cache contained no completed browser directory after the timeout.
-- Retrying through both `npx.cmd` and the project CLI remained silent and left only a stale `__dirlock`.
-
-### Suggested Fix
-Keep CI on the version-matched Chromium install. Use the explicit local executable override only to validate the suite while the Windows cache issue is investigated.
-
-### Metadata
-- Reproducible: unknown
-- Related Files: package.json, package-lock.json
-
----
-
-## [ERR-20260809-005] skill-path-resolution
-
-**Logged**: 2026-08-09T19:02:00+08:00
-**Priority**: low
-**Status**: resolved
-**Area**: config
-
-### Summary
-The Python skill was first opened through a shorthand path that does not exist on disk.
-
-### Error
-```
-Get-Content: Cannot find path C:\Users\ASUS\.codex\skills\python-pro\SKILL.md
-```
-
-### Context
-- The available-skill catalog maps `python-pro` to a source-prefixed directory.
-- The failed read did not modify the repository.
-
-### Suggested Fix
-Resolve skill paths from the available-skill catalog before opening `SKILL.md`.
-
-### Metadata
-- Reproducible: yes
-- Related Files: none
-
-### Resolution
-- **Resolved**: 2026-08-09T19:03:00+08:00
-- **Notes**: Reopened the skill from `sickn33-antigravity-awesome-skills-python-pro/SKILL.md`.
-
----
-
-## [ERR-20260809-001] frontend-build
-
-**Logged**: 2026-08-09T16:30:00+08:00
-**Priority**: medium
-**Status**: resolved
-**Area**: frontend
-
-### Summary
-The first TypeScript build lost the DOM root null narrowing and Vitest had no test files.
-
-### Error
-```
-TS18047: 'app' is possibly 'null'.
-No test files found, exiting with code 1.
-```
-
-### Context
-- Commands: `npm run build` and `npm test`
-- Fresh Vite and TypeScript project
-
-### Suggested Fix
-Bind the narrowed root to a non-null constant and extract personalized scoring into a testable pure module.
-
-### Metadata
-- Reproducible: yes
-- Related Files: src/main.ts, src/preferences.ts
-
-### Resolution
-- **Resolved**: 2026-08-09T17:22:00+08:00
-- **Notes**: Bound the app root after narrowing and added a pure preference scoring module with Vitest coverage.
-
----
-
-## [ERR-20260809-004] github-pages-enablement
-
-**Logged**: 2026-08-09T17:47:00+08:00
-**Priority**: medium
-**Status**: resolved
-**Area**: infra
-
-### Summary
-The initial deployment build succeeded, but `actions/configure-pages` failed because Pages is not enabled on the new repository.
-
-### Error
-```
-Get Pages site failed. Please verify that the repository has Pages enabled and configured to build using GitHub Actions.
-```
-
-### Context
-- Workflow run: 31306670712
-- Repository: lood31/agent-capability-radar
-- `npm ci` and `npm run build` both succeeded.
-
-### Suggested Fix
-Enable GitHub Pages with `build_type=workflow`, rerun the failed workflow, and verify the published URL.
-
-### Metadata
-- Reproducible: yes
-- Related Files: .github/workflows/site.yml
-
-### Resolution
-- **Resolved**: 2026-08-09T17:50:00+08:00
-- **Notes**: Enabled Pages with `build_type=workflow`; rerun 31306670712 deployed successfully.
-
----
-
-## [ERR-20260809-003] git-safe-directory
-
-**Logged**: 2026-08-09T17:28:00+08:00
-**Priority**: low
-**Status**: resolved
-**Area**: config
-
-### Summary
-Git status was blocked because the sandbox account differs from the Windows workspace owner.
-
-### Error
-```
-fatal: detected dubious ownership in repository at 'D:/find_hot_agent'
-```
-
-### Context
-- The repository was initialized successfully as `main`.
-- Global Git configuration belongs to the user's system environment and was not changed.
-
-### Suggested Fix
-Use `git -c safe.directory=D:/find_hot_agent ...` for sandbox-only inspection.
-
-### Metadata
-- Reproducible: yes
-- Related Files: .git
-
-### Resolution
-- **Resolved**: 2026-08-09T17:28:00+08:00
-- **Notes**: Used a command-scoped safe.directory override; no global configuration was mutated. The reverse ownership check also applies when the host ASUS account runs `gh` against the sandbox-owned `.git`, so `GIT_CONFIG_COUNT` is injected only for that process.
-
----
-
-## [ERR-20260809-002] windows-preview-launch
-
-**Logged**: 2026-08-09T17:25:00+08:00
+**Logged**: 2026-08-10T00:50:00+08:00
 **Priority**: low
 **Status**: resolved
 **Area**: tests
 
 ### Summary
-PowerShell `Start-Process` failed because the inherited environment contains both `Path` and `PATH` keys.
+A legacy metadata-priority test used an `awesome-*` repository name that is intentionally excluded by V2 policy.
 
 ### Error
-```
-Start-Process: An item with the same key has already been added. Key: PATH
+```text
+test_repository_metadata_outranks_broad_readme_mentions expected a result but received None
 ```
 
 ### Context
-- Attempted to launch `npm run preview` in a hidden child process on Windows.
+- The test's purpose is metadata-versus-README weighting, not resource-directory inclusion.
 
 ### Suggested Fix
-Use a single-process Node visual QA script that owns both the static server and Playwright lifecycle.
+Use a non-resource MCP toolkit fixture for metadata weighting; keep resource-directory behavior in its dedicated test.
 
 ### Metadata
 - Reproducible: yes
-- Related Files: dist/index.html
+- Related Files: tests/test_rules.py
 
 ### Resolution
-- **Resolved**: 2026-08-09T17:27:00+08:00
-- **Notes**: Replaced the background preview process with an ephemeral Node HTTP server in the visual check. Windows ESM imports use `file:///C:/...` URLs.
+- **Resolved**: 2026-08-10T00:50:00+08:00
+- **Notes**: The fixture now isolates the behavior it intends to test.
+
+---
+
+## [ERR-20260810-008] playwright-process-exit
+
+**Logged**: 2026-08-10T00:35:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: tests
+
+### Summary
+All browser assertions completed under unbounded local concurrency, but Playwright did not exit before the command limit.
+
+### Error
+```text
+16 tests completed, then the command timed out without the Playwright summary.
+```
+
+### Context
+- Local custom Chromium initially ran 12 workers.
+- CI already used one worker.
+
+### Suggested Fix
+Bound local concurrency to two workers.
+
+### Metadata
+- Reproducible: yes
+- Related Files: playwright.config.ts
+
+### Resolution
+- **Resolved**: 2026-08-10T00:40:00+08:00
+- **Notes**: Two-worker runs completed normally; the five-repeat suite finished 75 passed and 5 expected skips.
+
+---
+
+## [ERR-20260810-009] lighthouse-temp-cleanup
+
+**Logged**: 2026-08-10T00:45:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tests
+
+### Summary
+Lighthouse completed its audit but Chrome Launcher could not delete its Windows temporary directory.
+
+### Error
+```text
+EPERM, Permission denied: C:\Users\ASUS\AppData\Local\Temp\lighthouse.*
+```
+
+### Context
+- Lighthouse 13.4.1 with the user-provided Chromium.
+- The JSON report was fully written before cleanup failed.
+
+### Suggested Fix
+Read and validate the completed report, use an isolated browser profile, and treat launcher cleanup separately from audit validity.
+
+### Metadata
+- Reproducible: yes
+- Related Files: test-results/lighthouse-v2.json
+
+### Resolution
+- **Resolved**: 2026-08-10T00:45:00+08:00
+- **Notes**: Report verified at 100/100/100/100, LCP 1.375 seconds, CLS 0; preview process was terminated.
+
+---
+
+## [ERR-20260810-007] playwright-e2e
+
+**Logged**: 2026-08-10T00:30:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: frontend
+
+### Summary
+An empty compare query string was coerced to numeric project ID zero, inflating the selected-project count.
+
+### Error
+```text
+Playwright waited for "对比 2" while the UI showed "对比 3" with only two real projects selected.
+```
+
+### Context
+- Command: local Chromium Playwright suite
+- Root cause: `Number("") === 0` during URL-state parsing.
+
+### Suggested Fix
+Discard empty tokens before numeric conversion.
+
+### Metadata
+- Reproducible: yes
+- Related Files: src/main.ts, e2e/site.spec.ts
+
+### Resolution
+- **Resolved**: 2026-08-10T00:30:00+08:00
+- **Notes**: Empty compare tokens are now filtered before conversion.
+
+---
+
+## [ERR-20260810-006] python-regression
+
+**Logged**: 2026-08-10T00:25:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tests
+
+### Summary
+A legacy duplicate-ID fixture failed V2 field validation before reaching its intended duplicate assertion.
+
+### Error
+```text
+AssertionError: Duplicate does not match Invalid ecosystem_layer for owner/repo
+```
+
+### Context
+- Command: `python -m unittest discover -s tests -v`
+- Production validation correctly requires the additive Schema 1.2 fields.
+
+### Suggested Fix
+Enrich the test fixture rather than weakening production validation.
+
+### Metadata
+- Reproducible: yes
+- Related Files: tests/test_pipeline.py
+
+### Resolution
+- **Resolved**: 2026-08-10T00:25:00+08:00
+- **Notes**: The duplicate fixture now conforms to Schema 1.2.
+
+---
+
+## [ERR-20260810-005] static-page-generator
+
+**Logged**: 2026-08-10T00:20:00+08:00
+**Priority**: medium
+**Status**: resolved
+**Area**: frontend
+
+### Summary
+Using a file URL pathname directly duplicated the Windows drive prefix during static-page generation.
+
+### Error
+```text
+ENOENT: mkdir 'D:\\D:\\find_hot_agent\\dist\\projects\\...'
+```
+
+### Context
+- Command: `npm.cmd run build`
+- `URL.pathname` is not a native Windows filesystem path.
+
+### Suggested Fix
+Convert file URLs with Node's `fileURLToPath` before passing them to path utilities.
+
+### Metadata
+- Reproducible: yes
+- Related Files: scripts/generate-static-pages.mjs
+
+### Resolution
+- **Resolved**: 2026-08-10T00:20:00+08:00
+- **Notes**: Static output now uses `fileURLToPath(dist)`.
+
+---
+
+## [ERR-20260810-004] typescript-build
+
+**Logged**: 2026-08-10T00:15:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: tests
+
+### Summary
+Schema migration exposed nullable DOM narrowing and legacy test-type compatibility gaps.
+
+### Error
+```text
+TS18047 app is possibly null; legacy Capability exports and V2 fixture fields were missing.
+```
+
+### Context
+- Command: `npm.cmd run build`
+- The production build type-checks test files as well as application code.
+
+### Suggested Fix
+Use a narrowed non-null app root, retain legacy capability types for one compatibility release, and enrich test fixtures with V2 fields.
+
+### Metadata
+- Reproducible: yes
+- Related Files: src/types.ts, src/main.ts, src/preferences.test.ts, src/projectViews.test.ts
+
+### Resolution
+- **Resolved**: 2026-08-10T00:15:00+08:00
+- **Notes**: Added the compatibility surface and V2 fixture fields.
+
+---
+
+## [ERR-20260810-003] typescript-build
+
+**Logged**: 2026-08-10T00:10:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: frontend
+
+### Summary
+The first V2 build found a missing closing parenthesis in compare-table rendering.
+
+### Error
+```text
+src/main.ts(343,153): error TS1005: ')' expected.
+```
+
+### Context
+- Command: `npm.cmd run build`
+- Related code: nested `forEach` calls in compare-row rendering
+
+### Suggested Fix
+Close the inner `projects.forEach` call before appending the row.
+
+### Metadata
+- Reproducible: yes
+- Related Files: src/main.ts
+
+### Resolution
+- **Resolved**: 2026-08-10T00:10:00+08:00
+- **Notes**: Corrected the nested call syntax before rerunning the build.
+
+---
+
+## [ERR-20260810-002] migrate_v2_data
+
+**Logged**: 2026-08-10T00:05:00+08:00
+**Priority**: low
+**Status**: resolved
+**Area**: backend
+
+### Summary
+Legacy published projects without a current metadata-domain signal could not be enriched by the stricter classifier.
+
+### Error
+```text
+ValueError: Unable to migrate paperclipai/paperclip
+```
+
+### Context
+- Existing published records are already vetted but may not satisfy newly tightened discovery gates from stored metadata alone.
+
+### Suggested Fix
+Seed migration with the record's legacy classification fields while deriving new V2 fields.
+
+### Metadata
+- Reproducible: yes
+- Related Files: scripts/migrate_v2_data.py
+- See Also: ERR-20260810-001
+
+### Resolution
+- **Resolved**: 2026-08-10T00:05:00+08:00
+- **Notes**: Legacy classification is now supplied only as migration context; new collections still use strict discovery rules.
 
 ---

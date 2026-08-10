@@ -4,7 +4,7 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from collector.models import CAPABILITIES, Classification
+from collector.models import CAPABILITIES, ECOSYSTEM_LAYERS, PROJECT_SUBTYPES, Classification
 
 
 CAPABILITY_SIGNALS: dict[str, tuple[str, ...]] = {
@@ -58,6 +58,53 @@ CONTENT_SIGNALS: list[tuple[str, tuple[str, ...]]] = [
     ("模板或工作流", ("workflow template", "starter template", "automation template")),
     ("Framework / SDK", ("framework", "sdk", "library")),
 ]
+
+LAYER_SIGNALS: dict[str, tuple[str, ...]] = {
+    "MCP & Connectors": ("model context protocol", "mcp server", "mcp-server", "mcp connector"),
+    "Skills & Plugins": ("agent skill", "agent skills", "skill pack", "claude skill", "codex skill", "agent plugin"),
+    "Infrastructure": (
+        "agent memory", "long-term memory", "agent evaluation", "llm evaluation",
+        "observability", "guardrail", "agent security", "agent sandbox", "agent orchestration",
+    ),
+}
+
+SUBTYPE_SIGNALS: list[tuple[str, str, tuple[str, ...]]] = [
+    ("MCP & Connectors", "MCP Server", ("mcp server", "mcp-server", "model context protocol")),
+    ("MCP & Connectors", "Connector", ("connector", "integration")),
+    ("MCP & Connectors", "Agent Tool Adapter", ("tool adapter", "agent tool")),
+    ("Skills & Plugins", "Agent Skill", ("agent skill", "agent skills", "skill pack", "claude skill", "codex skill")),
+    ("Skills & Plugins", "Plugin", ("agent plugin", "plugin")),
+    ("Skills & Plugins", "Workflow Pack", ("workflow pack", "workflow template", "automation template")),
+    ("Infrastructure", "Safety & Sandbox", ("sandbox", "guardrail", "agent security", "safety")),
+    ("Infrastructure", "Evaluation & Observability", ("evaluation", "benchmark", "observability", "tracing")),
+    ("Infrastructure", "Automation & Orchestration", ("orchestration", "workflow automation", "scheduler")),
+    ("Infrastructure", "Memory & Knowledge", ("agent memory", "long-term memory", "knowledge base", "knowledge graph", "rag")),
+    ("Agents", "Agent Framework", ("agent framework", "agent-framework", "agent sdk")),
+    ("Agents", "Coding Agent", ("coding agent", "swe agent", "software engineering agent")),
+    ("Agents", "Research & Science Agent", ("research agent", "research assistant", "scientific agent", "deep research")),
+    ("Agents", "Data Agent", ("data agent", "sql agent", "data science agent")),
+    ("Agents", "Computer Use Agent", ("computer use", "browser agent", "desktop agent", "web automation")),
+    ("Agents", "Multi-Agent System", ("multi-agent", "multi agent")),
+]
+
+FUNCTIONAL_SIGNALS: dict[str, tuple[str, ...]] = {
+    "Coding & Developer Tools": ("coding", "software engineering", "developer tool", "code agent", "swe agent"),
+    "Browser & Computer Use": ("browser", "computer use", "desktop agent", "playwright", "web automation"),
+    "Search & Research": ("research", "paper", "literature", "citation", "web search"),
+    "Memory & Knowledge": ("memory", "knowledge", "rag", "retrieval augmented"),
+    "Automation & Orchestration": ("automation", "workflow", "orchestration", "scheduler"),
+    "Evaluation, Observability & Safety": ("evaluation", "benchmark", "observability", "tracing", "sandbox", "guardrail", "safety"),
+}
+
+USE_CASE_SIGNALS: dict[str, tuple[str, ...]] = {
+    "Agent Development": ("agent framework", "agent sdk", "agent tool", "mcp server", "agent skill"),
+    "Coding": ("coding", "software engineering", "swe agent", "code agent"),
+    "Research & Literature": ("research", "paper", "literature", "citation", "scientific"),
+    "Data Analysis": ("data analysis", "data science", "sql agent"),
+    "Knowledge Management": ("knowledge base", "knowledge graph", "note taking", "rag"),
+    "Automation": ("automation", "workflow", "orchestration"),
+    "Learning": ("learning", "study", "education", "flashcard"),
+}
 
 AMBIGUOUS_AGENT = re.compile(r"\b(user|travel|real estate|insurance|support) agent\b")
 DOMAIN_SCOPE = re.compile(
@@ -131,6 +178,40 @@ def classify(
                 content_type = candidate
                 break
 
+    repository_name = str(repo.get("name") or "").lower()
+    is_resource_catalog = repository_name.startswith("awesome-") or content_type == "资源目录"
+    if is_resource_catalog and not override.get("include_resource"):
+        return None
+
+    ecosystem_layer = override.get("ecosystem_layer")
+    if ecosystem_layer not in ECOSYSTEM_LAYERS:
+        ecosystem_layer = "Agents"
+        for candidate in ("MCP & Connectors", "Skills & Plugins", "Infrastructure"):
+            signals = LAYER_SIGNALS[candidate]
+            if _matches(metadata_text, signals) or len(_matches(readme_text, signals)) >= 2:
+                ecosystem_layer = candidate
+                break
+
+    project_subtype = override.get("project_subtype")
+    if project_subtype not in PROJECT_SUBTYPES:
+        project_subtype = {
+            "Agents": "General Agent",
+            "Skills & Plugins": "Agent Skill",
+            "MCP & Connectors": "MCP Server",
+            "Infrastructure": "Memory & Knowledge",
+        }[ecosystem_layer]
+        for layer, subtype, signals in SUBTYPE_SIGNALS:
+            if layer == ecosystem_layer and _matches(text, signals):
+                project_subtype = subtype
+                break
+
+    functional_capabilities = list(dict.fromkeys(
+        item for item, signals in FUNCTIONAL_SIGNALS.items() if _matches(text, signals)
+    ))
+    use_cases = list(dict.fromkeys(
+        item for item, signals in USE_CASE_SIGNALS.items() if _matches(text, signals)
+    ))
+
     research_use_cases = [
         name for name, signals in RESEARCH_USE_CASES.items() if _matches(text, signals)
     ]
@@ -166,10 +247,27 @@ def classify(
     external_required = any(
         token in text for token in ("requires api key", "openai api key", "anthropic api key")
     )
+    features = {
+        "web_ui": any(token in text for token in ("web ui", "web app", "dashboard")),
+        "api": "API" in integrations,
+        "sdk": any(token in text for token in (" sdk ", "software development kit")),
+        "cli": "CLI" in integrations,
+        "docker": "Docker" in integrations,
+        "self_host": local_first or "self-host" in text,
+        "gpu_required": any(token in text for token in ("gpu required", "requires gpu", "cuda required")),
+    }
+    summary_zh = override.get("summary_zh")
+    if not isinstance(summary_zh, str) or not summary_zh.strip():
+        summary_zh = None
+    preview = override.get("preview")
+    if not isinstance(preview, dict) or not {"type", "url", "source"} <= preview.keys():
+        preview = None
     primary_evidence = evidence.get(primary, [])
     rendered_evidence = [f"命中 {item}" for item in primary_evidence[:3]]
     if repo.get("topics"):
         rendered_evidence.append(f"Topics: {', '.join(repo['topics'][:4])}")
+    rendered_evidence.insert(0, f"生态层: {ecosystem_layer}")
+    rendered_evidence.insert(1, f"项目类型: {project_subtype}")
 
     return Classification(
         content_type=str(content_type),
@@ -183,4 +281,12 @@ def classify(
         setup_level=setup_level,
         evidence=rendered_evidence,
         confidence=min(100, max(scores.values()) * 18 + len(capabilities) * 6),
+        ecosystem_layer=str(ecosystem_layer),
+        project_subtype=str(project_subtype),
+        use_cases=use_cases,
+        functional_capabilities=functional_capabilities,
+        summary_zh=summary_zh,
+        summary_source="manual" if summary_zh else "github_description",
+        features=features,
+        preview=preview,
     )
