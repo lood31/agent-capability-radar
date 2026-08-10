@@ -65,11 +65,25 @@ class ClassificationTests(unittest.TestCase):
         )
         self.assertIsNone(result)
 
+    def test_agent_focused_awesome_list_is_excluded_unless_explicitly_allowed(self) -> None:
+        repo = repository(
+            name="awesome-agent-tools",
+            description="A collection of AI agent skills and MCP servers",
+            topics=["ai-agent", "mcp-server"],
+        )
+        self.assertIsNone(classify(repo, "Agent skill and agent framework catalog."))
+        official = classify(
+            repo,
+            "Agent skill and agent framework catalog.",
+            {"include_resource": True, "ecosystem_layer": "MCP & Connectors"},
+        )
+        self.assertIsNotNone(official)
+
     def test_repository_metadata_outranks_broad_readme_mentions(self) -> None:
         result = classify(
             repository(
-                name="awesome-mcp-servers",
-                description="A collection of MCP servers",
+                name="mcp-toolkit",
+                description="An MCP server toolkit",
                 topics=["ai", "mcp"],
             ),
             "Includes AI agent, multi-agent and coding agent projects.",
@@ -77,6 +91,41 @@ class ClassificationTests(unittest.TestCase):
         self.assertIsNotNone(result)
         assert result is not None
         self.assertEqual(result.primary_capability, "MCP & Connectors")
+        self.assertEqual(result.ecosystem_layer, "MCP & Connectors")
+        self.assertEqual(result.project_subtype, "MCP Server")
+
+    def test_agent_subtypes_are_separate_from_functional_capabilities(self) -> None:
+        result = classify(
+            repository(
+                description="A coding agent for software engineering with browser automation",
+                topics=["ai-agent", "coding-agent", "browser-automation"],
+            ),
+            "Runs coding tasks and can use a browser.",
+        )
+        self.assertIsNotNone(result)
+        assert result is not None
+        self.assertEqual(result.ecosystem_layer, "Agents")
+        self.assertEqual(result.project_subtype, "Coding Agent")
+        self.assertIn("Browser & Computer Use", result.functional_capabilities)
+        self.assertIn("Coding", result.use_cases)
+
+    def test_skill_and_infrastructure_layers_are_detected(self) -> None:
+        skill = classify(repository(description="Agent skill pack for Claude skills", topics=["agent-skills"]), "")
+        memory = classify(repository(description="Agent memory and observability infrastructure", topics=["agent-memory"]), "")
+        assert skill is not None and memory is not None
+        self.assertEqual((skill.ecosystem_layer, skill.project_subtype), ("Skills & Plugins", "Agent Skill"))
+        self.assertEqual(memory.ecosystem_layer, "Infrastructure")
+
+    def test_manual_summary_and_feature_evidence_are_explicit(self) -> None:
+        result = classify(
+            repository(description="An AI agent framework", topics=["agent-framework"]),
+            "Install the CLI with Docker. Includes a REST API and web UI.",
+            {"summary_zh": "用于构建本地 Agent 的开源框架。"},
+        )
+        assert result is not None
+        self.assertEqual(result.summary_source, "manual")
+        self.assertTrue(result.features["docker"])
+        self.assertTrue(result.features["api"])
 
 
 if __name__ == "__main__":

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "generated_at": "2026-08-10T13:42:47.241774Z",
   "collection_status": "live",
   "windows": {
@@ -7,85 +7,10 @@
   },
   "stats": {
     "candidates": 254,
-    "published": 100,
+    "published": 95,
     "history_days": 2
   },
   "projects": [
-    {
-      "id": 793375104,
-      "full_name": "Shubhamsaboo/awesome-llm-apps",
-      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-      "homepage": "https://www.theunwindai.com",
-      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
-      "language": "Python",
-      "topics": [
-        "agents",
-        "llms",
-        "python",
-        "rag"
-      ],
-      "license": "Apache-2.0",
-      "stars": 131893,
-      "forks": 19424,
-      "open_issues": 9,
-      "created_at": "2024-04-29T05:30:25Z",
-      "pushed_at": "2026-08-10T07:26:18Z",
-      "content_type": "MCP Server",
-      "primary_capability": "Memory & Knowledge",
-      "capabilities": [
-        "Agent Core",
-        "Skills & Prompts",
-        "MCP & Connectors",
-        "Browser & Computer Use",
-        "Memory & Knowledge"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读",
-        "文献与引用管理"
-      ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API"
-      ],
-      "platforms": [],
-      "local_first": true,
-      "external_service_required": false,
-      "setup_level": "easy",
-      "quality_score": 94,
-      "fit_score": 85,
-      "recommendation_score": 91,
-      "score_breakdown": {
-        "growth": 80,
-        "heat": 100,
-        "activity": 100,
-        "community": 100,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 232,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          131721,
-          131893
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合论文检索与阅读",
-        "支持本地或自托管运行",
-        "最近仍在活跃更新"
-      ],
-      "classification_evidence": [
-        "命中 rag",
-        "命中 agent memory",
-        "命中 knowledge graph",
-        "Topics: agents, llms, python, rag"
-      ]
-    },
     {
       "id": 1200597263,
       "full_name": "Graphify-Labs/graphify",
@@ -175,7 +100,28 @@
         "命中 rag",
         "命中 knowledge graph",
         "Topics: ai-agents, antigravity, ast, claude-code"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1170821064,
@@ -246,7 +192,27 @@
         "命中 ai agent",
         "命中 agent framework",
         "命中 coding agent"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1048065319,
@@ -337,7 +303,28 @@
         "命中 rag",
         "命中 vector database",
         "Topics: ai, ai-agents, ai-memory, anthropic"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": "为 Claude Code、Codex、Hermes 等 Agent 持久保存并按需恢复会话上下文。",
+      "summary_source": "manual",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": true,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1223170290,
@@ -425,7 +412,28 @@
         "命中 agent skill",
         "命中 agent skills",
         "Topics: agent-skills, ai-agents, ai-design, byok"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1201173969,
@@ -507,7 +515,23 @@
         "命中 coding agent",
         "命中 agentic",
         "Topics: ai, anthropic, caveman, claude"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1158722119,
@@ -579,7 +603,28 @@
         "命中 agent skills",
         "命中 agent skill",
         "Topics: agent-skills, antigravity, claude-code, codex"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1075372545,
@@ -645,7 +690,23 @@
         "命中 observability",
         "命中 sandbox",
         "命中 guardrail"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1129940957,
@@ -738,7 +799,30 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, ai, anthropic, claude-code"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 656099147,
@@ -824,7 +908,27 @@
         "命中 rag",
         "命中 long-term memory",
         "Topics: agents, ai, ai-agents, application"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": "为 Agent 应用提供可集成的长期记忆层。",
+      "summary_source": "manual",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1024554267,
@@ -910,7 +1014,27 @@
         "命中 ai agent",
         "命中 ai agent",
         "Topics: ai, ai-agent, ai-agents, anthropic"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 193215554,
@@ -997,171 +1121,28 @@
         "命中 mcp",
         "命中 mcp server",
         "Topics: ai, apis, automation, cli"
-      ]
-    },
-    {
-      "id": 896335270,
-      "full_name": "punkpeye/awesome-mcp-servers",
-      "url": "https://github.com/punkpeye/awesome-mcp-servers",
-      "homepage": "https://glama.ai/mcp/servers",
-      "description": "A collection of MCP servers.",
-      "language": null,
-      "topics": [
-        "ai",
-        "mcp"
       ],
-      "license": "MIT",
-      "stars": 92040,
-      "forks": 14264,
-      "open_issues": 2719,
-      "created_at": "2024-11-30T04:49:10Z",
-      "pushed_at": "2026-08-03T03:09:55Z",
-      "content_type": "MCP Server",
-      "primary_capability": "MCP & Connectors",
-      "capabilities": [
-        "Agent Core",
-        "Skills & Prompts",
-        "MCP & Connectors"
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Automation & Orchestration",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
       ],
-      "research_use_cases": [
-        "论文检索与阅读"
+      "functional_capabilities": [
+        "Automation & Orchestration"
       ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Web",
-        "Docker"
-      ],
-      "local_first": true,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 85,
-      "fit_score": 88,
-      "recommendation_score": 86,
-      "score_breakdown": {
-        "growth": 61,
-        "heat": 99,
-        "activity": 85,
-        "community": 100,
-        "completeness": 100,
-        "penalty": 0
+      "summary_zh": "结合可视化流程与代码扩展的自托管自动化编排平台。",
+      "summary_source": "manual",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
       },
-      "growth": {
-        "day_1": 39,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          92010,
-          92040
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合论文检索与阅读",
-        "支持本地或自托管运行",
-        "文档中提供 Windows 支持信号"
-      ],
-      "classification_evidence": [
-        "命中 mcp",
-        "命中 mcp server",
-        "命中 mcp-server",
-        "Topics: ai, mcp"
-      ]
-    },
-    {
-      "id": 1141704318,
-      "full_name": "VoltAgent/awesome-openclaw-skills",
-      "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
-      "homepage": "https://clawskills.sh/",
-      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
-      "language": null,
-      "topics": [
-        "agent-skills",
-        "awesome",
-        "awesome-list",
-        "awesome-lists",
-        "clawd",
-        "clawdbot",
-        "clawdbot-skill",
-        "clawdhub",
-        "moltbot",
-        "moltbot-skills",
-        "openclaw",
-        "openclaw-skills"
-      ],
-      "license": "MIT",
-      "stars": 51868,
-      "forks": 4998,
-      "open_issues": 1,
-      "created_at": "2026-01-25T09:22:32Z",
-      "pushed_at": "2026-08-09T14:52:15Z",
-      "content_type": "Skill Pack",
-      "primary_capability": "Skills & Prompts",
-      "capabilities": [
-        "Agent Core",
-        "Skills & Prompts",
-        "Automation",
-        "Research & Learning"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读",
-        "文献与引用管理",
-        "知识与笔记整理"
-      ],
-      "integration_methods": [
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "macOS",
-        "Web",
-        "Docker"
-      ],
-      "local_first": true,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 84,
-      "fit_score": 91,
-      "recommendation_score": 86,
-      "score_breakdown": {
-        "growth": 57,
-        "heat": 92,
-        "activity": 100,
-        "community": 93,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 28,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          51847,
-          51868
-        ]
-      },
-      "recommendation_reasons": [
-        "适合论文检索与阅读",
-        "支持本地或自托管运行",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 agent skill",
-        "命中 agent skills",
-        "命中 agent skill",
-        "Topics: agent-skills, awesome, awesome-list, awesome-lists"
-      ]
+      "preview": null
     },
     {
       "id": 805155266,
@@ -1243,7 +1224,28 @@
         "命中 autonomous agent",
         "命中 coding agent",
         "Topics: agent-skills, ai-agent, awesome-skills, claude-code"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1124219907,
@@ -1326,7 +1328,30 @@
         "命中 knowledge base",
         "命中 rag",
         "Topics: ai-agents, ai-tutor, clawdbot, cli-tool"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [
+        "Research & Literature",
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Search & Research",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1079456184,
@@ -1414,7 +1439,29 @@
         "命中 agent skills",
         "命中 claude skill",
         "Topics: agent-skills, ai-scientist, bioinformatics, chemoinformatics"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Data Analysis"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 872119017,
@@ -1504,7 +1551,29 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: ai, ai-scraping, automation, crawler"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 995029641,
@@ -1598,7 +1667,33 @@
         "命中 autonomous agent",
         "命中 coding agent",
         "Topics: agentic-ai, agentic-framework, agentic-workflow, agents"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Knowledge Management",
+        "Automation",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1053118194,
@@ -1678,7 +1773,30 @@
         "命中 coding agent",
         "命中 ai agent",
         "Topics: agent, agent-memory, ai-agent, book"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [
+        "Coding",
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1198306812,
@@ -1756,7 +1874,23 @@
         "命中 mcp",
         "命中 mcp",
         "Topics: ai-agent, algorithmic-trading, backtesting, fintech"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1125856365,
@@ -1843,7 +1977,28 @@
         "命中 coding agent",
         "命中 coding agent",
         "Topics: ai-agent, ai-coding-agent, anthropic, bun"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Browser & Computer Use"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 925270205,
@@ -1937,7 +2092,29 @@
         "命中 ai agent",
         "命中 agent framework",
         "Topics: agent, ai-agent, apple, computer-use"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Computer Use Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1130564872,
@@ -2020,7 +2197,25 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, ai, dashboard, geopolitics"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 522158088,
@@ -2112,7 +2307,25 @@
         "命中 ai agent",
         "命中 agent framework",
         "Topics: ai, ai-agent, ai-agents, chatgpt-on-wechat"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 291438522,
@@ -2206,7 +2419,27 @@
         "命中 knowledge graph",
         "命中 rag",
         "Topics: agentic-ai, ai-agent, digital-garden, electron"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1166408297,
@@ -2290,7 +2523,29 @@
         "命中 multi-agent",
         "命中 coding agent",
         "Topics: agentmemory, agents, ai, claude"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1136590548,
@@ -2359,7 +2614,29 @@
         "命中 mcp",
         "命中 mcp",
         "Topics: ai-agents, anthropic, claude, claude-code"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Search & Research",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 881458615,
@@ -2432,7 +2709,28 @@
         "命中 playwright",
         "命中 browser agent",
         "Topics: ai-agents, ai-tools, browser-automation, browser-use"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 979115477,
@@ -2524,7 +2822,32 @@
         "命中 agentic",
         "命中 multi-agent",
         "Topics: agent, agentic, agentic-framework, agentic-workflow"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Research & Science Agent",
+      "use_cases": [
+        "Research & Literature",
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Search & Research",
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1176011916,
@@ -2594,7 +2917,23 @@
       "classification_evidence": [
         "命中 ai agent",
         "命中 coding agent"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1134426800,
@@ -2679,7 +3018,30 @@
         "命中 agent skills",
         "命中 codex skill",
         "Topics: agent-skills, agentic-skills, ai-agent-skills, ai-agents"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1113573066,
@@ -2757,7 +3119,23 @@
         "命中 ai agent",
         "命中 agentic",
         "Topics: ai-agent, aippt, office, powerpoint"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1166102148,
@@ -2852,7 +3230,29 @@
         "命中 mcp",
         "命中 mcp server",
         "Topics: aider, ast, claude-code, code-analysis"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 679343504,
@@ -2945,7 +3345,28 @@
         "命中 long-term memory",
         "命中 knowledge graph",
         "Topics: agent-memory, agent-skills, ai, ai-agents"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1165277268,
@@ -3024,7 +3445,27 @@
         "命中 mcp",
         "命中 mcp-server",
         "Topics: agent-infrastructure, ai-agent, ai-search, automation"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1140843380,
@@ -3114,7 +3555,28 @@
         "命中 agent skill",
         "命中 agent skills",
         "Topics: ai-prompts, ai-skill, bluesky, claude"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1147094660,
@@ -3208,7 +3670,29 @@
         "命中 agent framework",
         "命中 multi-agent",
         "Topics: agent-framework, ai-agent, ai-agents, chatbot"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1216785679,
@@ -3291,7 +3775,28 @@
         "命中 agent framework",
         "命中 coding agent",
         "Topics: agent, agent-framework, ai-agent, ai-coding"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 840056306,
@@ -3368,7 +3873,27 @@
         "命中 rag",
         "命中 agent memory",
         "Topics: agents, graph, llms, rag"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1203558071,
@@ -3442,7 +3967,25 @@
         "命中 agent framework",
         "命中 multi-agent",
         "Topics: agent, ai-agent, embedding, llm"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1052050442,
@@ -3506,7 +4049,27 @@
         "命中 rag",
         "命中 rag",
         "Topics: agent, llm, rag, tutorial"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1054793726,
@@ -3582,7 +4145,29 @@
         "命中 mcp server",
         "命中 model context protocol",
         "Topics: browser, chrome, chrome-devtools, debugging"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Browser & Computer Use"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1185590488,
@@ -3673,7 +4258,25 @@
         "命中 mcp",
         "命中 mcp server",
         "Topics: agents, ai, ai-agents, ai-engineering"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 918932603,
@@ -3758,7 +4361,27 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, agent-tars, browser-use, computer-use"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1181982220,
@@ -3836,7 +4459,28 @@
         "命中 playwright",
         "命中 browser agent",
         "Topics: ai-agent, ai-agents, ai-tools, browser-automation"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1027384981,
@@ -3908,7 +4552,23 @@
         "命中 ai agent",
         "命中 coding agent",
         "Topics: ai, deepagents, langchain, langgraph"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 573661753,
@@ -3986,7 +4646,28 @@
         "命中 mcp server",
         "命中 mcp servers",
         "Topics: ai-agent, ai-agent-tools, ai-agents, ai-agents-framework"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1164477708,
@@ -4075,7 +4756,30 @@
         "命中 mcp server",
         "命中 model context protocol",
         "Topics: antigravity, claude, claude-code, claude-code-hooks"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1132001614,
@@ -4140,7 +4844,28 @@
         "命中 browser automation",
         "命中 browser agent",
         "命中 browser automation"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1033778670,
@@ -4231,7 +4956,23 @@
         "命中 ai agent",
         "命中 multi-agent",
         "Topics: acp, agent-team, ai, ai-agent"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 953683578,
@@ -4311,7 +5052,28 @@
         "命中 mcp server",
         "命中 model context protocol",
         "Topics: agent, ai, ai-coding, claude"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1010681419,
@@ -4384,7 +5146,25 @@
         "命中 ai agent",
         "命中 autonomous agent",
         "Topics: agent, agent-development, ai-agent, claude"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 742244656,
@@ -4464,7 +5244,23 @@
         "命中 mcp",
         "命中 mcp server",
         "Topics: agent, chatbot, large-language-models, llm"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1128123594,
@@ -4540,7 +5336,27 @@
         "命中 rag",
         "命中 long-term memory",
         "Topics: agent-memory, agent-plugins, agentic-rag, context-database"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Plugin",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1042367133,
@@ -4606,7 +5422,23 @@
         "命中 agent skill",
         "命中 agent skills",
         "Topics: ai, copilot, development, engineering"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 895508656,
@@ -4681,7 +5513,27 @@
         "命中 agentic",
         "命中 ai agent",
         "Topics: agentic-ai, agentic-framework, agentic-rag, ai-agents"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1131513930,
@@ -4750,7 +5602,23 @@
       "classification_evidence": [
         "命中 ai agent",
         "Topics: a-stock, ai-agent, aigc, llm"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 876064934,
@@ -4829,7 +5697,28 @@
         "命中 model context protocol",
         "命中 mcp",
         "Topics: agents, ai, llms, machine-learning"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 912559512,
@@ -4917,7 +5806,31 @@
         "命中 workflow automation",
         "命中 agent workflow",
         "Topics: agent-workflow, agentic-workflow, agents, ai"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding",
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 638951438,
@@ -5001,7 +5914,30 @@
         "命中 observability",
         "命中 tracing",
         "Topics: evaluation, hacktoberfest, hacktoberfest2025, langchain"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Evaluation & Observability",
+      "use_cases": [
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1073224795,
@@ -5067,98 +6003,27 @@
         "命中 agentic",
         "命中 coding agent",
         "Topics: ai, brainstorming, coding, obra"
-      ]
-    },
-    {
-      "id": 1078079172,
-      "full_name": "ComposioHQ/awesome-claude-skills",
-      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
-      "homepage": null,
-      "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows",
-      "language": "Python",
-      "topics": [
-        "agent-skills",
-        "ai-agents",
-        "antigravity",
-        "automation",
-        "claude",
-        "claude-code",
-        "codex",
-        "composio",
-        "cursor",
-        "developer-tools",
-        "gemini-cli",
-        "mcp",
-        "openai-codex",
-        "rube",
-        "saas",
-        "skill",
-        "workflow-automation"
       ],
-      "license": null,
-      "stars": 72189,
-      "forks": 8195,
-      "open_issues": 1213,
-      "created_at": "2025-10-17T07:15:01Z",
-      "pushed_at": "2026-07-24T07:48:01Z",
-      "content_type": "MCP Server",
-      "primary_capability": "Skills & Prompts",
-      "capabilities": [
-        "Agent Core",
-        "Skills & Prompts",
-        "MCP & Connectors",
-        "Browser & Computer Use",
-        "Automation",
-        "Evaluation & Safety",
-        "Research & Learning"
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding"
       ],
-      "research_use_cases": [
-        "论文检索与阅读",
-        "文献与引用管理",
-        "研究数据与复现"
+      "functional_capabilities": [
+        "Coding & Developer Tools"
       ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API"
-      ],
-      "platforms": [
-        "Web"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "easy",
-      "quality_score": 70,
-      "fit_score": 89,
-      "recommendation_score": 77,
-      "score_breakdown": {
-        "growth": 68,
-        "heat": 96,
-        "activity": 64,
-        "community": 97,
-        "completeness": 60,
-        "penalty": 8
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
       },
-      "growth": {
-        "day_1": 74,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          72137,
-          72189
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合论文检索与阅读"
-      ],
-      "classification_evidence": [
-        "命中 agent skill",
-        "命中 agent skills",
-        "命中 claude skill",
-        "Topics: agent-skills, ai-agents, antigravity, automation"
-      ]
+      "preview": null
     },
     {
       "id": 1201476594,
@@ -5238,7 +6103,29 @@
         "命中 multi-agent",
         "命中 agentic",
         "Topics: ai, ai-agent, anthropic, ats"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 955620917,
@@ -5305,7 +6192,28 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: llm, mcp, mcp-server, vibe-coding"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1008713177,
@@ -5383,7 +6291,27 @@
         "命中 coding agent",
         "命中 agentic",
         "Topics: agentic, ai, ai-agent, ai-coding"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1300902838,
@@ -5447,7 +6375,27 @@
       "classification_evidence": [
         "命中 coding agent",
         "命中 coding agent"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 854807707,
@@ -5533,7 +6481,28 @@
         "命中 autonomous agent",
         "命中 multi-agent",
         "Topics: agentic-ai, agents, ai, ai-agents"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Multi-Agent System",
+      "use_cases": [
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 691347156,
@@ -5616,7 +6585,28 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, agentic-ai, chatbot, deepseek-r1"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1120349776,
@@ -5682,7 +6672,25 @@
         "命中 multi-agent",
         "命中 ai agent",
         "命中 autonomous agent"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1148788086,
@@ -5737,7 +6745,23 @@
       "classification_evidence": [
         "命中 agent skill",
         "命中 agent skills"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1061953414,
@@ -5802,7 +6826,25 @@
         "命中 agent skills",
         "命中 agent skill",
         "Topics: agent-skills"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 968197216,
@@ -5875,7 +6917,25 @@
         "命中 mcp server",
         "命中 model context protocol",
         "Topics: ai, ai-agents, cli, gemini"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 822604462,
@@ -5952,7 +7012,29 @@
       "classification_evidence": [
         "命中 agent framework",
         "Topics: agent-framework, data-analysis, deep-research, deep-search"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Data Analysis"
+      ],
+      "functional_capabilities": [
+        "Search & Research"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1144115288,
@@ -6033,7 +7115,27 @@
         "命中 coding agent",
         "命中 coding agent",
         "Topics: amp, claude-code, cli, codex"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1162099055,
@@ -6105,7 +7207,27 @@
         "命中 ai agent",
         "命中 coding agent",
         "Topics: agent, ai, claude, claude-code"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1087192965,
@@ -6186,7 +7308,29 @@
         "命中 coding agent",
         "命中 agentic",
         "Topics: agentic-ai, agentic-coding, agentic-engineering, agentic-workflow"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 655515393,
@@ -6268,7 +7412,23 @@
         "命中 agentic",
         "命中 coding agent",
         "Topics: agent, agent-native, agentic-ai, agents"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 906251482,
@@ -6333,7 +7493,25 @@
         "命中 ai agent",
         "命中 agent framework",
         "Topics: ai-agents, genai"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 942771284,
@@ -6403,7 +7581,25 @@
         "命中 mcp server",
         "命中 mcp-server",
         "Topics: github, mcp, mcp-server"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1127110039,
@@ -6488,7 +7684,28 @@
         "命中 agent skills",
         "命中 claude skill",
         "Topics: agent-skills, autonomous-agents, claude, claude-code"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1003143578,
@@ -6576,7 +7793,29 @@
         "命中 agent framework",
         "命中 agentic",
         "Topics: agent, agent-framework, agentic-ai, agents"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Evaluation & Observability",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 569959091,
@@ -6669,7 +7908,25 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: asr, audio, chinese, emotion-recognition"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 666299222,
@@ -6738,7 +7995,27 @@
         "命中 coding agent",
         "命中 coding agent",
         "Topics: acp, coding-agent, deepseek, kimi"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Coding Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1197990888,
@@ -6807,7 +8084,27 @@
         "命中 ai agent",
         "命中 agentic",
         "Topics: ai, ai-agent, ai-tools, cli"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Coding"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 198683574,
@@ -6895,7 +8192,27 @@
         "命中 agent memory",
         "命中 agent memory",
         "Topics: agent-memory, agent-memory-server, ai-agents, ai-database"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Memory & Knowledge",
+      "use_cases": [
+        "Data Analysis"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 615510678,
@@ -6971,7 +8288,26 @@
         "命中 agent framework",
         "命中 multi-agent",
         "Topics: agent, ai-societies, artificial-intelligence, communicative-ai"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Learning"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 676829188,
@@ -7041,7 +8377,25 @@
         "命中 llm evaluation",
         "命中 observability",
         "Topics: evaluation-framework, evaluation-metrics, llm-evaluation, llm-evaluation-framework"
-      ]
+      ],
+      "ecosystem_layer": "Infrastructure",
+      "project_subtype": "Evaluation & Observability",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 828268839,
@@ -7121,7 +8475,28 @@
         "命中 retrieval augmented",
         "命中 vector database",
         "Topics: agentic-rag, ai, embeddings, generative-ai"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 898968194,
@@ -7189,7 +8564,23 @@
       "classification_evidence": [
         "命中 multi-agent",
         "命中 agentic"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 862584018,
@@ -7254,7 +8645,25 @@
         "命中 mcp",
         "命中 mcp server",
         "Topics: mcp, mcp-client, mcp-server, python"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": true,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 306829688,
@@ -7334,7 +8743,27 @@
         "命中 ai agent",
         "命中 coding agent",
         "Topics: admin-dashboard, ai-agent, ai-agents, ai-assistant"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 560299175,
@@ -7411,7 +8840,25 @@
         "命中 ai agent",
         "命中 ai agent",
         "Topics: ai-agent, airtable, airtable-alternative, app-builder"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 68968979,
@@ -7493,7 +8940,25 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, ai, desktop-app, linux"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1171026502,
@@ -7573,7 +9038,28 @@
         "命中 agent skills",
         "命中 agent skill",
         "Topics: agent-skills, ai-agent, automation, cli"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 639835356,
@@ -7656,77 +9142,30 @@
         "命中 mcp server",
         "命中 mcp",
         "Topics: agent, ai, automation, deepresearch"
-      ]
-    },
-    {
-      "id": 753750990,
-      "full_name": "aishwaryanr/awesome-generative-ai-guide",
-      "url": "https://github.com/aishwaryanr/awesome-generative-ai-guide",
-      "homepage": "https://www.linkedin.com/in/areganti/",
-      "description": "A one stop repository for generative AI research updates, interview resources, notebooks and much more!",
-      "language": "HTML",
-      "topics": [
-        "awesome",
-        "awesome-list",
-        "generative-ai",
-        "interview-questions",
-        "large-language-models",
-        "llms",
-        "notebook-jupyter",
-        "vision-and-language"
       ],
-      "license": "MIT",
-      "stars": 28701,
-      "forks": 5867,
-      "open_issues": 3,
-      "created_at": "2024-02-06T18:14:14Z",
-      "pushed_at": "2026-07-28T18:07:14Z",
-      "content_type": "资源目录",
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "Evaluation & Safety"
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Automation"
       ],
-      "research_use_cases": [
-        "论文检索与阅读",
-        "研究数据与复现"
+      "functional_capabilities": [
+        "Search & Research",
+        "Automation & Orchestration"
       ],
-      "integration_methods": [],
-      "platforms": [],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 77,
-      "fit_score": 53,
-      "recommendation_score": 69,
-      "score_breakdown": {
-        "growth": 53,
-        "heat": 89,
-        "activity": 75,
-        "community": 95,
-        "completeness": 100,
-        "penalty": 0
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
       },
-      "growth": {
-        "day_1": 19,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          28688,
-          28701
-        ]
-      },
-      "recommendation_reasons": [
-        "适合论文检索与阅读",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "命中 ai agent",
-        "命中 multi-agent",
-        "命中 agentic",
-        "Topics: awesome, awesome-list, generative-ai, interview-questions"
-      ]
+      "preview": null
     },
     {
       "id": 1219042200,
@@ -7795,7 +9234,25 @@
         "命中 ai agent",
         "命中 ai agent",
         "Topics: ai-agent, claude-code, codex, html-deck"
-      ]
+      ],
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development"
+      ],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 997890921,
@@ -7867,7 +9324,28 @@
         "命中 mcp server",
         "命中 model context protocol",
         "Topics: mcp, mcp-server, n8n, workflows"
-      ]
+      ],
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     },
     {
       "id": 1165324947,
@@ -7955,7 +9433,23 @@
         "命中 ai agent",
         "命中 multi-agent",
         "Topics: agent, agent-harness, agentscope, ai-agent"
-      ]
+      ],
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null
     }
   ]
 }

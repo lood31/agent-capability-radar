@@ -99,6 +99,12 @@ class ValidationTests(unittest.TestCase):
             "quality_score": 50,
             "fit_score": 50,
             "recommendation_score": 50,
+            "ecosystem_layer": "Agents",
+            "project_subtype": "General Agent",
+            "summary_source": "github_description",
+            "use_cases": [],
+            "functional_capabilities": [],
+            "features": {},
         }
         payload = {
             "schema_version": "1.0",

@@ -10,7 +10,7 @@ from collector import SCHEMA_VERSION
 from collector.catalog import build_catalog, load_catalog
 from collector.github import GitHubClient, GitHubError
 from collector.history import HistoryStore
-from collector.models import Project
+from collector.models import ECOSYSTEM_LAYERS, PROJECT_SUBTYPES, Project
 from collector.rules import classify
 from collector.scoring import score_project
 
@@ -68,6 +68,17 @@ def validate_site_data(payload: dict[str, Any]) -> None:
         homepage = project.get("homepage")
         if homepage and not str(homepage).startswith(("https://", "http://")):
             raise ValueError(f"Invalid homepage URL for {project.get('full_name')}")
+        if project.get("ecosystem_layer") not in ECOSYSTEM_LAYERS:
+            raise ValueError(f"Invalid ecosystem_layer for {project.get('full_name')}")
+        if project.get("project_subtype") not in PROJECT_SUBTYPES:
+            raise ValueError(f"Invalid project_subtype for {project.get('full_name')}")
+        if project.get("summary_source") not in {"manual", "github_description"}:
+            raise ValueError(f"Invalid summary_source for {project.get('full_name')}")
+        for field in ("use_cases", "functional_capabilities"):
+            if not isinstance(project.get(field), list):
+                raise ValueError(f"Invalid {field} for {project.get('full_name')}")
+        if not isinstance(project.get("features"), dict):
+            raise ValueError(f"Invalid features for {project.get('full_name')}")
 
 
 def collect(

@@ -1,89 +1,94 @@
 import "./styles.css";
 import { computePersonalizedScore } from "./preferences";
-import { buildCapabilitySummaries, isWithinDays, matchesCapability } from "./projectViews";
-import { CAPABILITIES, type Capability, type Project, type SiteData, type View } from "./types";
+import {
+  canCompare,
+  filterAndSortProjects,
+  layerCounts,
+  migrateLegacyPreferences,
+  parseCompareIds,
+  projectPath,
+} from "./ecosystemViews";
+import {
+  ECOSYSTEM_LAYERS,
+  type BrowseFilters,
+  type EcosystemLayer,
+  type Project,
+  type SiteData,
+  type SortMode,
+  type View,
+} from "./types";
 
-const CAPABILITY_SHORT: Record<Capability, string> = {
-  "Agent Core": "Agent",
-  "Skills & Prompts": "Skills",
-  "MCP & Connectors": "MCP",
-  "Browser & Computer Use": "Browser",
-  "Memory & Knowledge": "Memory",
-  Automation: "Flow",
-  "Evaluation & Safety": "Safety",
-  "Research & Learning": "Research",
+const LAYER_COPY: Record<EcosystemLayer, { short: string; description: string; code: string }> = {
+  Agents: { short: "Agents", code: "A", description: "可运行 Agent、专业 Agent 与开发框架" },
+  "Skills & Plugins": { short: "Skills", code: "S", description: "为现有 Agent 增加可复用工作能力" },
+  "MCP & Connectors": { short: "MCP", code: "M", description: "连接数据、工具与外部服务" },
+  Infrastructure: { short: "Infra", code: "I", description: "记忆、编排、评测、可观测与安全" },
 };
 
 const VIEW_LABELS: Array<[View, string]> = [
-  ["recommended", "为我推荐"],
-  ["capabilities", "能力地图"],
-  ["research", "研究学习"],
-  ["rising", "增长最快"],
-  ["new", "新项目"],
-  ["hot", "全站热门"],
+  ["discover", "发现"], ["trending", "趋势"], ["capabilities", "能力覆盖"],
+  ["saved", "My Radar"], ["compare", "对比"],
 ];
-
-const DEFAULT_PREFS: Capability[] = [
-  "Agent Core",
-  "Skills & Prompts",
-  "MCP & Connectors",
-  "Browser & Computer Use",
-  "Memory & Knowledge",
-  "Research & Learning",
-];
-
-const state: {
-  data: SiteData | null;
-  view: View;
-  capability: Capability | null;
-  includeRelated: boolean;
-  query: string;
-  prefs: Set<Capability>;
-  selected: Project | null;
-} = {
-  data: null,
-  view: "recommended",
-  capability: null,
-  includeRelated: false,
-  query: "",
-  prefs: new Set(loadPrefs()),
-  selected: null,
-};
 
 const appRoot = document.querySelector<HTMLDivElement>("#app");
 if (!appRoot) throw new Error("App root not found");
 const app: HTMLDivElement = appRoot;
 
-function loadPrefs(): Capability[] {
-  try {
-    const stored = JSON.parse(localStorage.getItem("agent-radar-preferences") ?? "[]") as string[];
-    const valid = stored.filter((item): item is Capability => CAPABILITIES.includes(item as Capability));
-    return valid.length ? valid : DEFAULT_PREFS;
-  } catch {
-    return DEFAULT_PREFS;
-  }
-}
+const state: {
+  data: SiteData | null;
+  view: View;
+  filters: BrowseFilters;
+  trendWindow: "day_1" | "day_7" | "day_30";
+  saved: Set<number>;
+  recent: number[];
+  compare: Set<number>;
+  preferences: Set<EcosystemLayer>;
+} = {
+  data: null,
+  view: "discover",
+  filters: { layer: null, subtype: "", useCase: "", query: "", sort: "recommended" },
+  trendWindow: "day_7",
+  saved: new Set(loadNumberList("agent-radar-saved")),
+  recent: loadNumberList("agent-radar-recent"),
+  compare: new Set(),
+  preferences: new Set(loadPreferences()),
+};
 
-function savePrefs(): void {
-  localStorage.setItem("agent-radar-preferences", JSON.stringify([...state.prefs]));
-}
-
-function node<K extends keyof HTMLElementTagNameMap>(
-  tag: K,
-  className?: string,
-  text?: string,
-): HTMLElementTagNameMap[K] {
+function node<K extends keyof HTMLElementTagNameMap>(tag: K, className = "", text?: string): HTMLElementTagNameMap[K] {
   const element = document.createElement(tag);
   if (className) element.className = className;
   if (text !== undefined) element.textContent = text;
   return element;
 }
 
-function button(className: string, text: string, onClick: () => void): HTMLButtonElement {
+function button(className: string, text: string, action: () => void): HTMLButtonElement {
   const element = node("button", className, text);
   element.type = "button";
-  element.addEventListener("click", onClick);
+  element.addEventListener("click", action);
   return element;
+}
+
+function loadNumberList(key: string): number[] {
+  try {
+    const value = JSON.parse(localStorage.getItem(key) ?? "[]");
+    return Array.isArray(value) ? value.filter((item): item is number => Number.isInteger(item)).slice(0, 24) : [];
+  } catch { return []; }
+}
+
+function loadPreferences(): EcosystemLayer[] {
+  try {
+    const current = JSON.parse(localStorage.getItem("agent-radar-ecosystem-preferences") ?? "null");
+    if (Array.isArray(current)) return migrateLegacyPreferences(current);
+    const legacy = JSON.parse(localStorage.getItem("agent-radar-preferences") ?? "[]");
+    const migrated = migrateLegacyPreferences(Array.isArray(legacy) ? legacy : []);
+    const result = migrated.length ? migrated : [...ECOSYSTEM_LAYERS];
+    localStorage.setItem("agent-radar-ecosystem-preferences", JSON.stringify(result));
+    return result;
+  } catch { return [...ECOSYSTEM_LAYERS]; }
+}
+
+function persistNumberSet(key: string, values: Iterable<number>): void {
+  localStorage.setItem(key, JSON.stringify([...values]));
 }
 
 function formatNumber(value: number): string {
@@ -91,521 +96,279 @@ function formatNumber(value: number): string {
 }
 
 function relativeTime(value: string): string {
-  const days = Math.max(0, Math.floor((Date.now() - new Date(value).getTime()) / 86_400_000));
-  if (days === 0) return "今天更新";
-  if (days === 1) return "昨天更新";
-  return `${days} 天前更新`;
+  const days = Math.max(0, Math.floor((Date.now() - Date.parse(value)) / 86_400_000));
+  return days === 0 ? "今天更新" : days === 1 ? "昨天更新" : `${days} 天前更新`;
 }
 
-function safeExternalUrl(value: string | null, githubOnly = false): string | null {
-  if (!value) return null;
-  try {
-    const parsed = new URL(value);
-    if (!['http:', 'https:'].includes(parsed.protocol)) return null;
-    if (githubOnly && parsed.hostname !== 'github.com') return null;
-    return parsed.href;
-  } catch {
-    return null;
+function projectSummary(project: Project): string {
+  return project.summary_zh?.trim() || project.description?.trim() || "该项目暂未提供可验证的简介。";
+}
+
+function readUrlState(): void {
+  const params = new URLSearchParams(location.search);
+  const view = params.get("view") as View | null;
+  if (VIEW_LABELS.some(([candidate]) => candidate === view)) state.view = view!;
+  const layer = params.get("layer") as EcosystemLayer | null;
+  state.filters.layer = ECOSYSTEM_LAYERS.includes(layer as EcosystemLayer) ? layer : null;
+  state.filters.subtype = params.get("subtype") ?? "";
+  state.filters.useCase = params.get("usecase") ?? "";
+  state.filters.query = params.get("q") ?? "";
+  const sort = params.get("sort") as SortMode | null;
+  if (["recommended", "trending", "stars", "updated", "newest"].includes(sort ?? "")) state.filters.sort = sort!;
+  const period = params.get("period");
+  if (["day_1", "day_7", "day_30"].includes(period ?? "")) state.trendWindow = period as typeof state.trendWindow;
+  state.compare = new Set(parseCompareIds(params.get("compare")));
+}
+
+function writeUrlState(replace = false): void {
+  const params = new URLSearchParams();
+  if (state.view !== "discover") params.set("view", state.view);
+  if (state.filters.layer) params.set("layer", state.filters.layer);
+  if (state.filters.subtype) params.set("subtype", state.filters.subtype);
+  if (state.filters.useCase) params.set("usecase", state.filters.useCase);
+  if (state.filters.query) params.set("q", state.filters.query);
+  if (state.filters.sort !== "recommended") params.set("sort", state.filters.sort);
+  if (state.view === "trending") params.set("period", state.trendWindow);
+  if (state.compare.size) params.set("compare", [...state.compare].join(","));
+  const url = `${location.pathname}${params.size ? `?${params}` : ""}`;
+  history[replace ? "replaceState" : "pushState"](null, "", url);
+}
+
+function setView(view: View): void {
+  state.view = view;
+  if (view === "trending") state.filters.sort = "trending";
+  writeUrlState();
+  render();
+}
+
+function allProjects(): Project[] { return state.data?.projects ?? []; }
+
+function visibleProjects(): Project[] {
+  let projects = filterAndSortProjects(allProjects(), state.filters);
+  if (state.view === "saved") projects = projects.filter((project) => state.saved.has(project.id));
+  if (state.view === "trending") {
+    const key = state.trendWindow;
+    projects.sort((a, b) => (b.growth[key] ?? -1) - (a.growth[key] ?? -1));
   }
-}
-
-function personalizedScore(project: Project): number {
-  return computePersonalizedScore(project, state.prefs);
-}
-
-function filteredProjects(): Project[] {
-  if (!state.data) return [];
-  const query = state.query.trim().toLocaleLowerCase("zh-CN");
-  const now = Date.now();
-  let projects = state.data.projects.filter((project) => {
-    if (
-      state.capability
-      && !matchesCapability(project, state.capability, state.includeRelated)
-    ) return false;
-    if (!query) return true;
-    return [project.full_name, project.description ?? "", project.language ?? "", ...project.topics]
-      .join(" ")
-      .toLocaleLowerCase("zh-CN")
-      .includes(query);
-  });
-
-  if (state.view === "research" && !state.capability) {
-    projects = projects.filter((project) =>
-      matchesCapability(project, "Research & Learning", state.includeRelated),
-    );
+  if (state.filters.sort === "recommended") {
+    projects.sort((a, b) => computePersonalizedScore(b, state.preferences) - computePersonalizedScore(a, state.preferences));
   }
-  if (state.view === "new") {
-    projects = projects.filter((project) =>
-      isWithinDays(project.created_at, now, state.data!.windows.new_projects_days),
-    );
-  }
-
-  return projects.sort((a, b) => {
-    if (state.view === "rising") return (b.growth.day_7 ?? -1) - (a.growth.day_7 ?? -1);
-    if (state.view === "hot") return b.quality_score - a.quality_score;
-    if (state.view === "new") return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-    return personalizedScore(b) - personalizedScore(a);
-  });
-}
-
-function sparkline(values: number[], label: string): SVGSVGElement {
-  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.classList.add("sparkline");
-  svg.setAttribute("viewBox", "0 0 112 32");
-  svg.setAttribute("role", "img");
-  svg.setAttribute("aria-label", label);
-  const safe = values.filter(Number.isFinite);
-  if (safe.length < 2) return svg;
-  const min = Math.min(...safe);
-  const max = Math.max(...safe);
-  const range = max - min || 1;
-  const points = safe.map((value, index) => `${(index / (safe.length - 1)) * 108 + 2},${29 - ((value - min) / range) * 24}`).join(" ");
-  const line = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
-  line.setAttribute("points", points);
-  line.setAttribute("fill", "none");
-  line.setAttribute("stroke", "currentColor");
-  line.setAttribute("stroke-width", "2");
-  line.setAttribute("vector-effect", "non-scaling-stroke");
-  svg.append(line);
-  return svg;
+  return projects;
 }
 
 function renderHeader(root: HTMLElement): void {
   const header = node("header", "site-header");
-  const brand = node("a", "brand");
-  brand.href = "./";
-  brand.append(node("span", "brand-mark", "AR"), node("span", "brand-name", "Agent 能力雷达"));
-
-  const status = node("div", "data-status");
-  const statusDot = node("span", `status-dot ${state.data?.collection_status ?? "stale"}`);
-  const statusText = state.data
-    ? `${state.data.collection_status === "demo" ? "示例数据" : "数据在线"} · ${new Date(state.data.generated_at).toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}`
-    : "正在连接数据";
-  status.append(statusDot, node("span", "", statusText));
+  const brand = node("a", "brand"); brand.href = "./";
+  brand.append(node("span", "brand-mark", "AR"), node("span", "brand-name", "Agent Capability Radar"));
+  const status = node("span", "data-status", state.data ? `LIVE · ${new Date(state.data.generated_at).toLocaleDateString("zh-CN")}` : "CONNECTING");
   header.append(brand, status);
-
-  const nav = node("nav", "top-nav");
-  nav.setAttribute("aria-label", "主要栏目");
+  const nav = node("nav", "top-nav"); nav.setAttribute("aria-label", "主要栏目");
   for (const [view, label] of VIEW_LABELS) {
-    const item = button(view === state.view ? "nav-item active" : "nav-item", label, () => {
-      state.view = view;
-      state.capability = view === "research" ? "Research & Learning" : null;
-      state.includeRelated = false;
-      render();
-    });
-    item.setAttribute("aria-current", view === state.view ? "page" : "false");
+    const count = view === "saved" ? ` ${state.saved.size}` : view === "compare" ? ` ${state.compare.size}` : "";
+    const item = button(view === state.view ? "nav-item active" : "nav-item", `${label}${count}`, () => setView(view));
+    if (view === state.view) item.setAttribute("aria-current", "page");
     nav.append(item);
   }
   root.append(header, nav);
 }
 
-function renderRail(): HTMLElement {
-  const aside = node("aside", "capability-rail");
-  const heading = node("div", "rail-heading");
-  heading.append(node("span", "eyebrow", "能力轨道"), node("span", "rail-count", `${state.prefs.size}/8 已关注`));
-  aside.append(heading);
-  for (const capability of CAPABILITIES) {
-    const active = state.capability === capability;
-    const item = button(active ? "rail-item active" : "rail-item", "", () => {
-      state.capability = active ? null : capability;
-      state.includeRelated = false;
-      state.view = "capabilities";
-      render();
-    });
-    const signal = node("span", state.prefs.has(capability) ? "rail-signal on" : "rail-signal");
-    item.append(signal, node("span", "rail-label", CAPABILITY_SHORT[capability]), node("span", "rail-arrow", "↗"));
-    item.setAttribute("aria-pressed", String(active));
-    aside.append(item);
-  }
-  const customize = button("customize-button", "调整我的关注能力", () => openPreferences(customize));
-  aside.append(customize);
-  return aside;
-}
-
 function renderHero(): HTMLElement {
   const hero = node("section", "hero");
   const copy = node("div", "hero-copy");
-  copy.append(
-    node("span", "eyebrow", "你的开源能力补给站"),
-    node("h1", "", "今天，给你的 Agent 装上什么？"),
-    node("p", "hero-lead", "从 Skills、MCP 到研究工作流，用可验证的信号找到真正值得接入的开源能力。"),
-  );
+  copy.append(node("span", "eyebrow", "GITHUB AGENT ECOSYSTEM · VERIFIED SIGNALS"));
+  const heading = node("h1"); heading.append("为你的 Agent 找到", node("span", "accent", "下一项开源能力"), "。");
+  copy.append(heading, node("p", "hero-lead", "发现和比较 GitHub 上的 Agents、Skills、Plugins、MCP 与基础设施。先看清它是什么，再决定是否接入。"));
   const search = node("label", "search-box");
   search.append(node("span", "search-icon", "⌕"));
-  const input = node("input");
-  input.type = "search";
-  input.placeholder = "搜索项目、语言或 topic";
-  input.value = state.query;
-  input.setAttribute("aria-label", "搜索项目");
-  input.addEventListener("input", () => {
-    state.query = input.value;
-    renderProjectRegion();
-  });
-  search.append(input);
-  copy.append(search);
+  const input = node("input"); input.type = "search"; input.value = state.filters.query;
+  input.placeholder = "搜索项目、用例、能力或技术"; input.setAttribute("aria-label", "搜索生态项目");
+  input.addEventListener("input", () => { state.filters.query = input.value; writeUrlState(true); renderContent(); });
+  search.append(input); copy.append(search);
 
-  const top = filteredProjects()[0];
-  const signal = node("div", "hero-signal");
-  signal.append(node("span", "eyebrow", "当前最强信号"));
-  if (top) {
-    signal.append(node("strong", "signal-project", top.full_name), node("span", "signal-score", `${personalizedScore(top)} 匹配`));
-    const track = node("div", "signal-track");
-    for (const capability of CAPABILITIES) {
-      const dot = node("span", top.capabilities.includes(capability) ? "track-node active" : "track-node");
-      dot.title = CAPABILITY_SHORT[capability];
-      track.append(dot);
-    }
-    signal.append(track, node("p", "signal-reason", top.recommendation_reasons[0] ?? "符合你的关注方向"));
-  } else {
-    signal.append(node("p", "signal-reason", "调整筛选，发现新的能力信号。"));
-  }
-  hero.append(copy, signal);
+  const data = state.data!;
+  const stats = node("dl", "hero-stats");
+  [["当前榜单", data.stats.published], ["候选项目", data.stats.candidates], ["历史数据", `${data.stats.history_days} 天`]].forEach(([term, value]) => {
+    stats.append(node("div", "stat-cell")); const cell = stats.lastElementChild!;
+    cell.append(node("dt", "", String(term)), node("dd", "", typeof value === "number" ? formatNumber(value) : value));
+  });
+  hero.append(copy, stats);
   return hero;
+}
+
+function renderSpectrum(): HTMLElement {
+  const section = node("section", "spectrum"); section.setAttribute("aria-labelledby", "spectrum-title");
+  const top = node("div", "section-heading");
+  const copy = node("div"); copy.append(node("span", "eyebrow", "ECOSYSTEM LAYERS"), node("h2", "", "先选择项目形态")); copy.querySelector("h2")!.id = "spectrum-title";
+  top.append(copy, node("p", "section-copy", "项目是什么，与它能做什么，分开浏览。")); section.append(top);
+  const counts = layerCounts(allProjects()); const grid = node("div", "spectrum-grid");
+  ECOSYSTEM_LAYERS.forEach((layer, index) => {
+    const active = state.filters.layer === layer;
+    const item = button(active ? "spectrum-card active" : "spectrum-card", "", () => {
+      state.filters.layer = active ? null : layer; state.filters.subtype = ""; state.filters.useCase = ""; state.view = "discover"; writeUrlState(); render();
+    });
+    item.setAttribute("aria-pressed", String(active));
+    item.append(node("span", "spectrum-code", `${String(index + 1).padStart(2, "0")} / ${LAYER_COPY[layer].code}`), node("strong", "", layer), node("span", "spectrum-description", LAYER_COPY[layer].description), node("span", "spectrum-count", `${counts.get(layer) ?? 0} 项`));
+    grid.append(item);
+  });
+  section.append(grid); return section;
+}
+
+function selectControl(labelText: string, value: string, options: string[], onChange: (value: string) => void): HTMLLabelElement {
+  const label = node("label", "filter-control"); label.append(node("span", "", labelText));
+  const select = node("select"); select.value = value;
+  select.append(new Option("全部", "")); options.forEach((option) => select.append(new Option(option, option)));
+  select.addEventListener("change", () => onChange(select.value)); label.append(select); return label;
+}
+
+function renderFilters(): HTMLElement {
+  const controls = node("div", "filter-bar");
+  const source = state.filters.layer ? allProjects().filter((p) => p.ecosystem_layer === state.filters.layer) : allProjects();
+  const subtypes = [...new Set(source.map((p) => p.project_subtype))].sort();
+  const useCases = [...new Set(source.flatMap((p) => p.use_cases))].sort();
+  controls.append(
+    selectControl("项目类型", state.filters.subtype, subtypes, (value) => { state.filters.subtype = value; writeUrlState(true); renderContent(); }),
+    selectControl("使用场景", state.filters.useCase, useCases, (value) => { state.filters.useCase = value; writeUrlState(true); renderContent(); }),
+  );
+  const sortLabel = node("label", "filter-control"); sortLabel.append(node("span", "", "排序"));
+  const sort = node("select");
+  const modes: Array<[SortMode, string]> = [["recommended", "综合推荐"], ["trending", "7日增长"], ["stars", "Stars"], ["updated", "最近更新"], ["newest", "最新创建"]];
+  modes.forEach(([value, label]) => sort.append(new Option(label, value))); sort.value = state.filters.sort;
+  sort.addEventListener("change", () => { state.filters.sort = sort.value as SortMode; writeUrlState(true); renderContent(); });
+  sortLabel.append(sort); controls.append(sortLabel);
+  const clear = button("clear-button", "清除筛选", () => { state.filters = { layer: null, subtype: "", useCase: "", query: "", sort: "recommended" }; writeUrlState(); render(); });
+  controls.append(clear); return controls;
+}
+
+function markRecent(project: Project): void {
+  state.recent = [project.id, ...state.recent.filter((id) => id !== project.id)].slice(0, 12);
+  localStorage.setItem("agent-radar-recent", JSON.stringify(state.recent));
+}
+
+function toggleSaved(project: Project): void {
+  state.saved.has(project.id) ? state.saved.delete(project.id) : state.saved.add(project.id);
+  persistNumberSet("agent-radar-saved", state.saved); renderContent(); renderHeaderCounts();
+}
+
+function toggleCompare(project: Project): void {
+  if (state.compare.has(project.id)) state.compare.delete(project.id);
+  else {
+    const selected = allProjects().filter((item) => state.compare.has(item.id));
+    if (state.compare.size >= 4 || (selected.length && !selected.every((item) => item.ecosystem_layer === project.ecosystem_layer))) return;
+    state.compare.add(project.id);
+  }
+  writeUrlState(true); renderContent(); renderHeaderCounts();
+}
+
+function renderHeaderCounts(): void {
+  const old = app.querySelector(".top-nav");
+  if (!old) return;
+  const holder = node("div"); renderHeader(holder); old.replaceWith(holder.querySelector(".top-nav")!);
 }
 
 function projectCard(project: Project, rank: number): HTMLElement {
   const card = node("article", "project-card");
-  card.tabIndex = 0;
-  card.setAttribute("aria-label", `查看 ${project.full_name} 详情`);
-  const rankBox = node("div", "rank-box");
-  rankBox.append(node("span", "rank-label", "SIGNAL"), node("strong", "rank-number", String(rank).padStart(2, "0")));
-
+  const side = node("div", "rank-box"); side.append(node("span", "rank-label", "SIGNAL"), node("strong", "rank-number", String(rank).padStart(2, "0")));
   const body = node("div", "project-body");
-  const header = node("div", "project-header");
-  const titleWrap = node("div");
-  titleWrap.append(node("span", "project-type", project.content_type), node("h2", "project-title", project.full_name));
-  const score = node("div", "score-orbit");
-  score.style.setProperty("--score", `${personalizedScore(project) * 3.6}deg`);
-  score.append(node("strong", "", String(personalizedScore(project))), node("span", "", "匹配"));
-  header.append(titleWrap, score);
-
-  const description = node("p", "project-description", project.description || "该项目暂未提供描述。");
-  const capabilityLine = node("div", "capability-line");
-  const dots = node("span", "capability-dots");
-  dots.setAttribute("aria-hidden", "true");
-  for (const capability of CAPABILITIES) {
-    const dot = node("span", project.capabilities.includes(capability) ? "cap-dot active" : "cap-dot");
-    dots.append(dot);
-  }
-  const related = project.capabilities.filter((item) => item !== project.primary_capability);
-  const capabilityLabel = node(
-    "span",
-    "capability-name",
-    `主要能力 · ${CAPABILITY_SHORT[project.primary_capability]}`,
-  );
-  capabilityLine.append(dots, capabilityLabel);
-  if (related.length) {
-    capabilityLine.append(
-      node("span", "related-capabilities", `相关 · ${related.map((item) => CAPABILITY_SHORT[item]).join(" / ")}`),
-    );
-  }
-
-  const reason = node("p", "recommendation-reason", project.recommendation_reasons[0] ?? "符合当前筛选条件");
+  const category = node("div", "project-category"); category.append(node("span", "layer-pill", project.ecosystem_layer), node("span", "subtype", project.project_subtype));
+  const heading = node("h2", "project-title"); const title = node("a", "", project.full_name); title.href = projectPath(project); title.addEventListener("click", () => markRecent(project)); heading.append(title);
+  body.append(category, heading, node("p", "project-description", projectSummary(project)));
+  const tags = node("ul", "tag-list");
+  [...project.functional_capabilities, ...project.use_cases].slice(0, 3).forEach((tag) => tags.append(node("li", "", tag)));
+  if (tags.children.length) body.append(tags);
   const meta = node("div", "project-meta");
-  meta.append(
-    node("span", "", `★ ${formatNumber(project.stars)}`),
-    node("span", project.growth.day_7 !== null && project.growth.day_7 > 0 ? "growth-positive" : "", project.growth.day_7 === null ? "7 日数据积累中" : `↗ ${formatNumber(project.growth.day_7)} / 7天`),
-    node("span", "", project.language ?? "多语言"),
-    node("span", "", relativeTime(project.pushed_at)),
-  );
-  body.append(header, description, capabilityLine, reason, meta);
-
-  const trend = node("div", "trend-box");
-  trend.append(node("span", "trend-label", "30D SIGNAL"), sparkline(project.growth.sparkline, `${project.full_name} 近期 Stars 趋势`));
-  const details = button("details-button", "查看能力详情 ↗", () => openProject(project, details));
-  trend.append(details);
-  card.append(rankBox, body, trend);
-  card.addEventListener("click", (event) => {
-    if ((event.target as HTMLElement).closest("button, a")) return;
-    openProject(project, card);
-  });
-  card.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openProject(project, card);
-    }
-  });
-  return card;
+  meta.append(node("span", "", `★ ${formatNumber(project.stars)}`), node("span", project.growth.day_7 && project.growth.day_7 > 0 ? "growth-positive" : "", project.growth.day_7 === null ? "7日数据积累中" : `+${formatNumber(project.growth.day_7)} / 7天`), node("span", "", project.language ?? "多语言"), node("span", "", project.license ?? "License 未识别"), node("span", "", relativeTime(project.pushed_at)));
+  body.append(meta);
+  const actions = node("div", "card-actions");
+  const detail = node("a", "details-link", "查看详情 ↗"); detail.href = projectPath(project); detail.addEventListener("click", () => markRecent(project));
+  const save = button(state.saved.has(project.id) ? "icon-button active" : "icon-button", state.saved.has(project.id) ? "已收藏" : "收藏", () => toggleSaved(project)); save.setAttribute("aria-pressed", String(state.saved.has(project.id)));
+  const compare = button(state.compare.has(project.id) ? "icon-button active" : "icon-button", state.compare.has(project.id) ? "已加入对比" : "加入对比", () => toggleCompare(project)); compare.setAttribute("aria-pressed", String(state.compare.has(project.id)));
+  actions.append(detail, save, compare);
+  const score = node("div", "score-orbit"); score.style.setProperty("--score", `${project.recommendation_score * 3.6}deg`); score.append(node("strong", "", String(project.recommendation_score)), node("span", "", "推荐"));
+  card.append(side, body, score, actions); return card;
 }
 
-function projectRegion(): HTMLElement {
-  if (state.view === "capabilities" && !state.capability) {
-    return capabilityMapRegion();
-  }
-  const section = node("section", "project-region");
-  section.id = "project-list";
-  const projects = filteredProjects();
-  const heading = node("div", "section-heading");
-  const headingCopy = node("div");
-  const title = state.capability ? CAPABILITY_SHORT[state.capability] : VIEW_LABELS.find(([view]) => view === state.view)?.[1] ?? "项目";
-  headingCopy.append(node("span", "eyebrow", "实时能力信号"), node("h2", "", title));
-  const headingTools = node("div", "heading-tools");
-  if (state.capability) headingTools.append(relatedProjectsToggle());
-  const count = node("span", "result-count", `${projects.length} 个项目`);
-  count.setAttribute("aria-live", "polite");
-  headingTools.append(count);
-  heading.append(headingCopy, headingTools);
-  section.append(heading);
+function renderProjectList(): HTMLElement {
+  const section = node("section", "project-region"); section.id = "project-list";
+  const projects = visibleProjects(); const heading = node("div", "list-heading");
+  const title = state.view === "saved" ? "我的收藏" : state.view === "trending" ? "增长信号" : state.filters.layer ?? "全部生态项目";
+  const copy = node("div"); copy.append(node("span", "eyebrow", "CURRENT CATALOG"), node("h2", "", title));
+  const count = node("span", "result-count", `${projects.length} 个项目`); count.setAttribute("aria-live", "polite"); heading.append(copy, count); section.append(heading);
+  if (state.view === "trending") section.append(renderTrendTabs());
+  section.append(renderFilters());
   const list = node("div", "project-list");
   if (!projects.length) {
-    const empty = node("div", "empty-state");
-    empty.append(node("strong", "", "没有匹配的项目"), node("p", "", "换一个关键词或清除能力筛选后再试。"));
-    list.append(empty);
-  } else {
-    projects.forEach((project, index) => list.append(projectCard(project, index + 1)));
+    const empty = node("div", "empty-state"); empty.append(node("strong", "", state.view === "saved" ? "还没有收藏项目" : "没有匹配的项目"), node("p", "", "尝试清除一个筛选条件，或切换到其他生态层。")); list.append(empty);
+  } else projects.forEach((project, index) => list.append(projectCard(project, index + 1)));
+  section.append(list); return section;
+}
+
+function renderTrendTabs(): HTMLElement {
+  const tabs = node("div", "period-tabs"); tabs.setAttribute("aria-label", "趋势周期");
+  const options: Array<[typeof state.trendWindow, string]> = [["day_1", "24H"], ["day_7", "7 Days"], ["day_30", "30 Days"]];
+  options.forEach(([value, label]) => {
+    const item = button(value === state.trendWindow ? "period-button active" : "period-button", label, () => { state.trendWindow = value; writeUrlState(true); renderContent(); });
+    item.setAttribute("aria-pressed", String(value === state.trendWindow)); tabs.append(item);
+  }); return tabs;
+}
+
+function renderCapabilities(): HTMLElement {
+  const section = node("section", "project-region");
+  const heading = node("div", "list-heading"); const copy = node("div");
+  copy.append(node("span", "eyebrow", "FUNCTIONAL COVERAGE"), node("h2", "", "能力覆盖图"), node("p", "section-copy", "统计当前榜单中的功能标签；它回答“能做什么”，不再承担项目类型导航。"));
+  heading.append(copy, node("span", "result-count", "统计范围 · 当前榜单")); section.append(heading);
+  const capabilities = [...new Set(allProjects().flatMap((project) => project.functional_capabilities))].sort();
+  const grid = node("div", "capability-grid");
+  capabilities.forEach((capability, index) => {
+    const projects = allProjects().filter((project) => project.functional_capabilities.includes(capability));
+    const card = node("article", "capability-card");
+    card.append(node("span", "spectrum-code", `${String(index + 1).padStart(2, "0")} / CAPABILITY`), node("h3", "", capability), node("strong", "capability-total", `${projects.length} 项`));
+    const bar = node("span", "coverage-track"); const fill = node("span", "coverage-fill"); fill.style.width = `${Math.min(100, projects.length)}%`; bar.append(fill); card.append(bar);
+    const reps = node("ul", "representatives"); projects.slice(0, 3).forEach((p) => reps.append(node("li", "", p.full_name))); card.append(reps); grid.append(card);
+  }); section.append(grid); return section;
+}
+
+function renderCompare(): HTMLElement {
+  const section = node("section", "project-region compare-region");
+  const projects = allProjects().filter((project) => state.compare.has(project.id));
+  const heading = node("div", "list-heading"); const copy = node("div"); copy.append(node("span", "eyebrow", "2–4 PROJECTS · SAME LAYER"), node("h2", "", "技术选型对比")); heading.append(copy, node("span", "result-count", `${projects.length}/4 已选择`)); section.append(heading);
+  if (!canCompare(projects)) {
+    const empty = node("div", "empty-state"); empty.append(node("strong", "", "请选择同一生态层的 2–4 个项目"), node("p", "", "从项目卡点击“加入对比”；不同项目形态不会被强行放进同一张表。")); section.append(empty); return section;
   }
-  section.append(list);
-  return section;
+  const wrapper = node("div", "table-scroll"); const table = node("table", "compare-table");
+  const head = node("tr"); head.append(node("th", "", "维度")); projects.forEach((p) => head.append(node("th", "", p.full_name))); const thead = node("thead"); thead.append(head); table.append(thead);
+  const body = node("tbody");
+  const rows: Array<[string, (p: Project) => string]> = [
+    ["项目类型", (p) => p.project_subtype], ["Stars", (p) => formatNumber(p.stars)], ["7日增长", (p) => p.growth.day_7 === null ? "积累中" : `+${formatNumber(p.growth.day_7)}`], ["语言", (p) => p.language ?? "未识别"], ["License", (p) => p.license ?? "未识别"], ["上手门槛", (p) => p.setup_level], ["最近更新", (p) => relativeTime(p.pushed_at)], ["推荐分", (p) => String(p.recommendation_score)],
+  ];
+  rows.forEach(([label, get]) => { const row = node("tr"); row.append(node("th", "", label)); projects.forEach((p) => row.append(node("td", "", get(p)))); body.append(row); }); table.append(body); wrapper.append(table); section.append(wrapper); return section;
 }
 
-function relatedProjectsToggle(): HTMLElement {
-  const label = node("label", "related-toggle");
-  const input = node("input");
-  input.type = "checkbox";
-  input.checked = state.includeRelated;
-  input.addEventListener("change", () => {
-    state.includeRelated = input.checked;
-    renderProjectRegion();
-  });
-  label.append(input, node("span", "toggle-track"), node("span", "toggle-label", "包含相关项目"));
-  return label;
-}
-
-function capabilityMapRegion(): HTMLElement {
-  const section = node("section", "project-region capability-map-region");
-  section.id = "capability-map";
-  const heading = node("div", "section-heading capability-map-heading");
-  const headingCopy = node("div");
-  headingCopy.append(
-    node("span", "eyebrow", "八轨能力信号"),
-    node("h2", "", "能力地图"),
-    node("p", "section-copy", "按主要能力统计当前榜单覆盖。选择一条轨道，查看该分类的代表项目。"),
-  );
-  const scope = node("span", "result-count", "统计范围 · 当前榜单");
-  scope.setAttribute("aria-live", "polite");
-  heading.append(headingCopy, scope);
-  section.append(heading);
-
-  const source = state.data?.projects.filter((project) => {
-    const query = state.query.trim().toLocaleLowerCase("zh-CN");
-    if (!query) return true;
-    return [project.full_name, project.description ?? "", project.language ?? "", ...project.topics]
-      .join(" ")
-      .toLocaleLowerCase("zh-CN")
-      .includes(query);
-  }) ?? [];
-  const summaries = buildCapabilitySummaries(
-    source,
-    Date.now(),
-    state.data?.windows.new_projects_days ?? 30,
-  );
-  const maxCount = Math.max(1, ...summaries.map((item) => item.projectCount));
-  const grid = node("div", "capability-map-grid");
-  summaries.forEach((summary, index) => {
-    const card = button("capability-map-card", "", () => {
-      state.capability = summary.capability;
-      state.includeRelated = false;
-      render();
-      document.querySelector("#main-content")?.scrollIntoView();
-    });
-    card.setAttribute(
-      "aria-label",
-      `${summary.capability}，当前榜单 ${summary.projectCount} 个项目`,
-    );
-    const top = node("span", "map-card-topline");
-    top.append(
-      node("span", "map-index", String(index + 1).padStart(2, "0")),
-      node("span", "map-count", `${summary.projectCount} 项`),
-    );
-    const title = node("strong", "map-title", summary.capability);
-    const coverage = node("span", "coverage-track");
-    const coverageFill = node("span", "coverage-fill");
-    coverageFill.style.width = `${(summary.projectCount / maxCount) * 100}%`;
-    coverage.append(coverageFill);
-    const signals = node("span", "map-signals");
-    signals.append(
-      node("span", "", `${summary.recentlyUpdated} 个近期更新`),
-      node(
-        "span",
-        summary.growth7 !== null && summary.growth7 > 0 ? "growth-positive" : "",
-        summary.growth7 === null ? "7 日数据积累中" : `7 日 +${formatNumber(summary.growth7)} Stars`,
-      ),
-    );
-    const representatives = node("span", "map-projects");
-    if (summary.representatives.length) {
-      summary.representatives.forEach((project) =>
-        representatives.append(node("span", "map-project", project.full_name)),
-      );
-    } else {
-      representatives.append(node("span", "map-project empty", "当前榜单尚无主分类项目"));
-    }
-    card.append(top, title, coverage, signals, representatives, node("span", "map-enter", "进入轨道 ↗"));
-    grid.append(card);
-  });
-  section.append(grid);
-  return section;
-}
-
-function renderProjectRegion(): void {
-  const current = document.querySelector(".project-region");
-  const replacement = projectRegion();
-  current?.replaceWith(replacement);
+function renderContent(): void {
+  const old = app.querySelector(".project-region");
+  const next = state.view === "capabilities" ? renderCapabilities() : state.view === "compare" ? renderCompare() : renderProjectList();
+  old?.replaceWith(next);
 }
 
 function renderFooter(root: HTMLElement): void {
   const footer = node("footer", "site-footer");
-  footer.append(
-    node("p", "", "由 GitHub 公开数据与透明规则生成，不使用 AI 摘要。"),
-    node("p", "mono", state.data ? `schema ${state.data.schema_version} · ${state.data.stats.history_days} 天历史` : "等待数据"),
-  );
-  root.append(footer);
-}
-
-function openProject(project: Project, trigger: HTMLElement): void {
-  state.selected = project;
-  const drawer = node("dialog", "detail-drawer");
-  drawer.setAttribute("aria-labelledby", "drawer-title");
-  const close = button("drawer-close", "关闭 ×", () => drawer.close());
-  const intro = node("div", "drawer-intro");
-  intro.append(node("span", "project-type", project.content_type), node("h2", "", project.full_name));
-  intro.querySelector("h2")!.id = "drawer-title";
-  intro.append(node("p", "", project.description || "该项目暂未提供描述。"));
-
-  const scores = node("div", "drawer-scores");
-  [["质量", project.quality_score], ["适配", project.fit_score], ["推荐", personalizedScore(project)]].forEach(([label, value]) => {
-    const box = node("div", "drawer-score");
-    box.append(node("strong", "", String(value)), node("span", "", String(label)));
-    scores.append(box);
-  });
-
-  const capabilitySection = drawerSection("增强的能力");
-  const capabilityGrid = node("dl", "setup-grid");
-  const related = project.capabilities.filter((item) => item !== project.primary_capability);
-  capabilityGrid.append(
-    node("dt", "", "主要能力"),
-    node("dd", "", project.primary_capability),
-    node("dt", "", "相关能力"),
-    node("dd", "", related.join(" · ") || "无"),
-  );
-  capabilitySection.append(capabilityGrid);
-
-  const why = drawerSection("为什么推荐");
-  const reasonList = node("ul", "reason-list");
-  project.recommendation_reasons.forEach((item) => reasonList.append(node("li", "", item)));
-  why.append(reasonList);
-
-  const setup = drawerSection("接入信息");
-  const setupGrid = node("dl", "setup-grid");
-  const rows: Array<[string, string]> = [
-    ["配置难度", { easy: "容易", medium: "中等", advanced: "进阶" }[project.setup_level]],
-    ["运行平台", project.platforms.join(" · ") || "未识别"],
-    ["接入方式", project.integration_methods.join(" · ") || "未识别"],
-    ["本地优先", project.local_first ? "是" : "否或未知"],
-    ["外部服务", project.external_service_required ? "需要" : "未发现强制依赖"],
-  ];
-  rows.forEach(([term, value]) => setupGrid.append(node("dt", "", term), node("dd", "", value)));
-  setup.append(setupGrid);
-
-  const evidence = drawerSection("分类依据");
-  evidence.append(node("p", "drawer-evidence", project.classification_evidence.join("；") || "由仓库公开元数据判定。"));
-
-  const actions = node("div", "drawer-actions");
-  const github = node("a", "primary-link", "打开 GitHub ↗");
-  github.href = safeExternalUrl(project.url, true) ?? "https://github.com";
-  github.target = "_blank";
-  github.rel = "noopener noreferrer";
-  actions.append(github);
-  const safeHomepage = safeExternalUrl(project.homepage);
-  if (safeHomepage) {
-    const homepage = node("a", "secondary-link", "项目主页");
-    homepage.href = safeHomepage;
-    homepage.target = "_blank";
-    homepage.rel = "noopener noreferrer";
-    actions.append(homepage);
-  }
-  drawer.append(close, intro, scores, capabilitySection, why, setup, evidence, actions);
-  showDialog(drawer, trigger);
-}
-
-function drawerSection(title: string): HTMLElement {
-  const section = node("section", "drawer-section");
-  section.append(node("h3", "", title));
-  return section;
-}
-
-function openPreferences(trigger: HTMLElement): void {
-  const panel = node("dialog", "preference-panel");
-  panel.setAttribute("aria-labelledby", "preference-title");
-  const close = button("drawer-close", "关闭 ×", () => panel.close());
-  panel.append(close, node("span", "eyebrow", "只保存在这个浏览器"), node("h2", "", "你想增强哪些能力？"), node("p", "panel-copy", "选择会立即改变“为我推荐”的排序，不需要账号。"));
-  panel.querySelector("h2")!.id = "preference-title";
-  const choices = node("div", "preference-grid");
-  for (const capability of CAPABILITIES) {
-    const label = node("label", "preference-choice");
-    const input = node("input");
-    input.type = "checkbox";
-    input.checked = state.prefs.has(capability);
-    input.addEventListener("change", () => {
-      if (input.checked) state.prefs.add(capability);
-      else state.prefs.delete(capability);
-      savePrefs();
-    });
-    label.append(input, node("span", "", capability));
-    choices.append(label);
-  }
-  const save = button("primary-button", "保存并重新排序", () => {
-    panel.close();
-    render();
-  });
-  panel.append(choices, save);
-  showDialog(panel, trigger);
-}
-
-function showDialog(dialog: HTMLDialogElement, trigger: HTMLElement): void {
-  dialog.addEventListener("click", (event) => {
-    if (event.target === dialog) dialog.close();
-  });
-  dialog.addEventListener(
-    "close",
-    () => {
-      dialog.remove();
-      document.body.classList.remove("drawer-open");
-      state.selected = null;
-      trigger.focus();
-    },
-    { once: true },
-  );
-  document.body.append(dialog);
-  document.body.classList.add("drawer-open");
-  dialog.showModal();
+  footer.append(node("p", "", "公开 GitHub 数据 · 人工摘要明确标注 · 不伪造项目预览"), node("p", "mono", state.data ? `schema ${state.data.schema_version} · ${state.data.stats.history_days} 天历史` : "等待数据")); root.append(footer);
 }
 
 function render(): void {
-  app.replaceChildren();
-  renderHeader(app);
-  const main = node("main");
-  main.id = "main-content";
-  main.tabIndex = -1;
-  main.append(renderHero());
-  const layout = node("div", "main-layout");
-  layout.append(renderRail(), projectRegion());
-  main.append(layout);
-  app.append(main);
-  renderFooter(app);
+  app.replaceChildren(); renderHeader(app); const main = node("main"); main.id = "main-content"; main.tabIndex = -1;
+  main.append(renderHero(), renderSpectrum(), state.view === "capabilities" ? renderCapabilities() : state.view === "compare" ? renderCompare() : renderProjectList()); app.append(main); renderFooter(app);
 }
 
 async function bootstrap(): Promise<void> {
-  app.replaceChildren(node("div", "loading-screen", "正在扫描开源能力信号…"));
+  app.replaceChildren(node("div", "loading-screen", "正在校准生态信号…"));
   try {
     const response = await fetch("./data/site.json", { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.data = (await response.json()) as SiteData;
-    render();
+    state.data = await response.json() as SiteData; readUrlState(); render();
+    addEventListener("popstate", () => { readUrlState(); render(); });
   } catch (error) {
-    const failure = node("main", "fatal-state");
-    failure.setAttribute("role", "alert");
-    failure.append(node("strong", "", "数据没有加载成功"), node("p", "", "请确认 public/data/site.json 存在，然后刷新页面。"), node("code", "", String(error)));
-    app.replaceChildren(failure);
+    const failure = node("main", "fatal-state"); failure.setAttribute("role", "alert");
+    failure.append(node("strong", "", "数据没有加载成功"), node("p", "", "请确认 public/data/site.json 存在，然后刷新页面。"), node("code", "", String(error))); app.replaceChildren(failure);
   }
 }
 

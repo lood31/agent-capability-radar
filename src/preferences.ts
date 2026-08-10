@@ -1,15 +1,8 @@
-import type { Capability, Project } from "./types";
+import type { EcosystemLayer, Project } from "./types";
 
-type ScorableProject = Pick<Project, "quality_score" | "fit_score" | "capabilities">;
+type ScorableProject = Pick<Project, "quality_score" | "fit_score" | "ecosystem_layer">;
 
-export function computePersonalizedScore(project: ScorableProject, preferences: ReadonlySet<Capability>): number {
-  const matched = project.capabilities.filter((item) => preferences.has(item)).length;
-  const preferenceBoost = preferences.size
-    ? Math.min(100, (matched / Math.min(3, preferences.size)) * 100)
-    : 0;
-  return Math.round(
-    project.quality_score * 0.65
-      + (project.fit_score * 0.65 + preferenceBoost * 0.35) * 0.35,
-  );
+export function computePersonalizedScore(project: ScorableProject, preferences: ReadonlySet<EcosystemLayer>): number {
+  const preferenceBoost = preferences.has(project.ecosystem_layer) ? 100 : 0;
+  return Math.round(project.quality_score * 0.65 + (project.fit_score * 0.65 + preferenceBoost * 0.35) * 0.35);
 }
-

@@ -1,119 +1,81 @@
 import AxeBuilder from "@axe-core/playwright";
-import type { Locator } from "@playwright/test";
+import { readFile } from "node:fs/promises";
 import { expect, mockSiteData, test, unguardedTest } from "./fixtures";
 
-async function waitForAnimations(locator: Locator): Promise<void> {
-  await locator.evaluate(async (element: Element) => {
-    await Promise.all(element.getAnimations({ subtree: true }).map((animation) => animation.finished));
-  });
-}
-
-test("首页加载、搜索和六个栏目切换", async ({ page }) => {
-  await mockSiteData(page);
-  await page.goto("/");
-  await expect(page.getByRole("heading", { name: "今天，给你的 Agent 装上什么？" })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "主要栏目" }).getByRole("button")).toHaveCount(6);
-
-  await page.getByRole("searchbox", { name: "搜索项目" }).fill("fixture/research-learning");
-  await expect(page.getByRole("heading", { name: "fixture/research-learning" })).toBeVisible();
-  await expect(page.locator(".project-card")).toHaveCount(1);
-
-  await page.getByRole("searchbox", { name: "搜索项目" }).fill("");
-  for (const label of ["能力地图", "研究学习", "增长最快", "新项目", "全站热门", "为我推荐"]) {
-    await page.getByRole("button", { name: label, exact: true }).click();
-    await expect(page.getByRole("button", { name: label, exact: true })).toHaveAttribute("aria-current", "page");
-  }
+test("首页解释产品并提供四层生态入口", async ({ page }) => {
+  await mockSiteData(page); await page.goto("/");
+  await expect(page.getByRole("heading", { name: /为你的 Agent 找到/ })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "主要栏目" }).getByRole("button")).toHaveCount(5);
+  await expect(page.getByRole("button", { name: /Agents/ })).toBeVisible();
+  await expect(page.locator(".spectrum-card")).toHaveCount(4);
+  await expect(page.getByText("8 个项目", { exact: true })).toBeVisible();
 });
 
-test("八轨地图使用严格主分类，相关项目需主动开启", async ({ page }) => {
-  await mockSiteData(page, (data) => {
-    return data;
-  });
-  await page.goto("/");
-  await page.getByRole("button", { name: "能力地图", exact: true }).click();
-  await expect(page.locator(".capability-map-card")).toHaveCount(8);
+test("生态筛选、搜索与排序进入可分享 URL", async ({ page }) => {
+  await mockSiteData(page); await page.goto("/");
+  await page.getByRole("button", { name: /MCP & Connectors/ }).click();
+  await expect(page).toHaveURL(/layer=MCP/);
+  await expect(page.locator(".project-card")).toHaveCount(2);
+  await page.getByRole("searchbox", { name: "搜索生态项目" }).fill("Connector");
+  await expect(page).toHaveURL(/q=Connector/);
+  await expect(page.getByRole("heading", { name: "fixture/project-6" })).toBeVisible();
+  await page.getByLabel("排序").selectOption("stars");
+  await expect(page).toHaveURL(/sort=stars/);
+});
+
+test("能力覆盖与项目形态分离", async ({ page }) => {
+  await mockSiteData(page); await page.goto("/");
+  await page.getByRole("button", { name: "能力覆盖" }).click();
+  await expect(page.getByRole("heading", { name: "能力覆盖图" })).toBeVisible();
   await expect(page.getByText("统计范围 · 当前榜单", { exact: true })).toBeVisible();
-
-  await page.getByRole("button", { name: /^Skills & Prompts，/ }).click();
-  await expect(page.getByRole("heading", { name: "fixture/mcp-connectors" })).toHaveCount(0);
-  await page.getByRole("checkbox", { name: "包含相关项目" }).check();
-  await expect(page.getByRole("heading", { name: "fixture/mcp-connectors" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Memory & Knowledge" })).toBeVisible();
 });
 
-test("项目详情 dialog 支持 Escape 并恢复焦点", async ({ page }) => {
-  await mockSiteData(page);
-  await page.goto("/");
-  const trigger = page.getByRole("button", { name: /查看能力详情/ }).first();
-  await trigger.click();
-  const dialog = page.getByRole("dialog");
-  await expect(dialog).toBeVisible();
-  await expect(dialog.getByText("主要能力", { exact: true })).toBeVisible();
-  await page.keyboard.press("Escape");
-  await expect(dialog).toHaveCount(0);
-  await expect(trigger).toBeFocused();
+test("收藏持久化且同层项目可以表格对比", async ({ page }) => {
+  await mockSiteData(page); await page.goto("/");
+  const cards = page.locator(".project-card");
+  await cards.nth(0).getByRole("button", { name: "收藏" }).click();
+  await cards.nth(0).getByRole("button", { name: "加入对比" }).click();
+  await cards.nth(1).getByRole("button", { name: "加入对比" }).click();
+  await page.getByRole("button", { name: /对比 2/ }).click();
+  await expect(page.getByRole("table")).toBeVisible();
+  await expect(page.getByRole("row", { name: /项目类型/ })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole("table")).toBeVisible();
+  await page.getByRole("button", { name: /My Radar 1/ }).click();
+  await expect(page.locator(".project-card")).toHaveCount(1);
 });
 
-test("偏好 dialog 约束焦点并在关闭后恢复", async ({ page }) => {
-  await mockSiteData(page);
-  await page.goto("/");
-  const trigger = page.getByRole("button", { name: "调整我的关注能力" });
-  await trigger.click();
-  const dialog = page.getByRole("dialog", { name: "你想增强哪些能力？" });
-  await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole("checkbox")).toHaveCount(8);
-  await page.keyboard.press("Escape");
-  await expect(dialog).toHaveCount(0);
-  await expect(trigger).toBeFocused();
-});
-
-test("页面与两个 dialog 通过 axe 扫描", async ({ page }) => {
-  await mockSiteData(page);
-  await page.goto("/");
-  await page.getByRole("button", { name: "能力地图", exact: true }).click();
+test("首页与静态详情页通过 Axe，详情支持直接访问", async ({ page }) => {
+  await mockSiteData(page); await page.goto("/");
   expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
 
-  await page.getByRole("button", { name: "为我推荐", exact: true }).click();
-  await page.getByRole("button", { name: /查看能力详情/ }).first().click();
-  const detailsDialog = page.getByRole("dialog");
-  await waitForAnimations(detailsDialog);
-  expect((await new AxeBuilder({ page }).include("dialog").analyze()).violations).toEqual([]);
-  await page.keyboard.press("Escape");
-
-  await page.getByRole("button", { name: "调整我的关注能力" }).click();
-  await waitForAnimations(page.getByRole("dialog"));
-  expect((await new AxeBuilder({ page }).include("dialog").analyze()).violations).toEqual([]);
+  const catalog = JSON.parse(await readFile(new URL("../data/catalog.json", import.meta.url), "utf8"));
+  const project = catalog.projects[0];
+  await page.goto(`/projects/${project.full_name}/`);
+  await expect(page.getByRole("heading", { level: 1, name: project.full_name })).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/projects\//);
+  await expect(page.getByRole("link", { name: /打开 GitHub/ })).toBeVisible();
+  expect((await new AxeBuilder({ page }).analyze()).violations).toEqual([]);
 });
 
-test("移动布局没有页面级横向溢出", async ({ page, isMobile }) => {
+test("移动端无页面级横向溢出", async ({ page, isMobile }) => {
   test.skip(!isMobile, "仅移动项目验证");
-  await mockSiteData(page);
-  await page.goto("/");
-  await page.getByRole("button", { name: "能力地图", exact: true }).click();
+  await mockSiteData(page); await page.goto("/");
   const sizes = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
   expect(sizes.scroll).toBeLessThanOrEqual(sizes.client);
-  await expect(page.locator(".capability-map-grid")).toHaveCSS("grid-template-columns", /\d+(\.\d+)?px/);
+  await expect(page.locator(".spectrum-grid")).toHaveCSS("grid-template-columns", /\d+(\.\d+)?px/);
 });
 
-test("空列表、冷启动趋势和恶意文本 fixture 可安全呈现", async ({ page }) => {
+test("恶意文本、空列表与趋势冷启动安全呈现", async ({ page }) => {
   await mockSiteData(page, (data) => {
-    const project = data.projects[0];
-    project.full_name = "fixture/malicious";
-    project.description = '<img src=x onerror="window.__xss = true">';
-    project.homepage = "javascript:alert(1)";
-    project.growth.day_7 = null;
-    project.growth.sparkline = [];
-    data.projects = [project];
-    return data;
+    data.projects[0].description = '<img src=x onerror="window.__xss = true">';
+    data.projects[0].summary_zh = null; data.projects[0].growth.day_7 = null; return data;
   });
   await page.goto("/");
   await expect(page.getByText('<img src=x onerror="window.__xss = true">', { exact: true })).toBeVisible();
-  await expect(page.getByText("7 日数据积累中", { exact: true })).toBeVisible();
   expect(await page.evaluate(() => (window as Window & { __xss?: boolean }).__xss)).not.toBe(true);
-
-  await page.getByRole("button", { name: /查看能力详情/ }).click();
-  await expect(page.getByRole("link", { name: "项目主页" })).toHaveCount(0);
-  await page.keyboard.press("Escape");
-  await page.getByRole("searchbox", { name: "搜索项目" }).fill("没有这个项目");
+  await page.getByRole("searchbox", { name: "搜索生态项目" }).fill("没有这个项目");
   await expect(page.getByText("没有匹配的项目", { exact: true })).toBeVisible();
 });
 

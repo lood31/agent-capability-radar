@@ -16,6 +16,21 @@ CAPABILITIES = (
     "Research & Learning",
 )
 
+ECOSYSTEM_LAYERS = (
+    "Agents",
+    "Skills & Plugins",
+    "MCP & Connectors",
+    "Infrastructure",
+)
+
+PROJECT_SUBTYPES = (
+    "General Agent", "Coding Agent", "Research & Science Agent", "Data Agent",
+    "Computer Use Agent", "Multi-Agent System", "Agent Framework",
+    "Agent Skill", "Plugin", "Workflow Pack", "MCP Server", "Connector",
+    "Agent Tool Adapter", "Memory & Knowledge", "Automation & Orchestration",
+    "Evaluation & Observability", "Safety & Sandbox",
+)
+
 
 def safe_external_url(value: Any) -> str | None:
     if not isinstance(value, str):
@@ -39,6 +54,14 @@ class Classification:
     setup_level: str = "medium"
     evidence: list[str] = field(default_factory=list)
     confidence: int = 0
+    ecosystem_layer: str = "Agents"
+    project_subtype: str = "General Agent"
+    use_cases: list[str] = field(default_factory=list)
+    functional_capabilities: list[str] = field(default_factory=list)
+    summary_zh: str | None = None
+    summary_source: str = "github_description"
+    features: dict[str, bool] = field(default_factory=dict)
+    preview: dict[str, str] | None = None
 
 
 @dataclass(slots=True)
@@ -84,6 +107,14 @@ class Project:
             "created_at": str(repo["created_at"]),
             "pushed_at": str(repo["pushed_at"]),
             "content_type": self.classification.content_type,
+            "ecosystem_layer": self.classification.ecosystem_layer,
+            "project_subtype": self.classification.project_subtype,
+            "use_cases": self.classification.use_cases,
+            "functional_capabilities": self.classification.functional_capabilities,
+            "summary_zh": self.classification.summary_zh,
+            "summary_source": self.classification.summary_source,
+            "features": self.classification.features,
+            "preview": self.classification.preview,
             "primary_capability": self.classification.primary_capability,
             "capabilities": self.classification.capabilities,
             "research_use_cases": self.classification.research_use_cases,
