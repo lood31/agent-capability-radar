@@ -21,6 +21,7 @@ export function searchText(project: Project): string {
     project.full_name,
     project.description ?? "",
     project.summary_zh ?? "",
+    project.readme_excerpt ?? "",
     project.ecosystem_layer,
     project.project_subtype,
     ...project.use_cases,

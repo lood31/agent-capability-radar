@@ -1,12 +1,24 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 
-CATALOG_SCHEMA_VERSION = "1.0"
+CATALOG_SCHEMA_VERSION = "1.1"
+LEGACY_CATALOG_SCHEMA_VERSION = "1.0"
+
+CONTENT_DEFAULTS: dict[str, Any] = {
+    "readme_excerpt": None,
+    "readme_language": "unknown",
+    "readme_url": None,
+    "readme_hash": None,
+    "summary_status": "pending",
+    "summary_model": None,
+    "summary_updated_at": None,
+}
 
 
 def load_catalog(path: Path) -> dict[str, Any]:
@@ -16,9 +28,31 @@ def load_catalog(path: Path) -> dict[str, Any]:
             "updated_at": None,
             "projects": [],
         }
-    payload = json.loads(path.read_text(encoding="utf-8"))
+    payload = migrate_catalog(json.loads(path.read_text(encoding="utf-8")))
     validate_catalog(payload)
     return payload
+
+
+def migrate_catalog(payload: dict[str, Any]) -> dict[str, Any]:
+    if payload.get("schema_version") == CATALOG_SCHEMA_VERSION:
+        return payload
+    if payload.get("schema_version") != LEGACY_CATALOG_SCHEMA_VERSION:
+        raise ValueError(f"Unsupported catalog schema: {payload.get('schema_version')!r}")
+    migrated = {
+        **payload,
+        "schema_version": CATALOG_SCHEMA_VERSION,
+        "projects": [
+            {
+                **CONTENT_DEFAULTS,
+                **record,
+                "summary_status": (
+                    "ready" if record.get("summary_source") == "manual" else "pending"
+                ),
+            }
+            for record in payload.get("projects", [])
+        ],
+    }
+    return migrated
 
 
 def build_catalog(
@@ -26,6 +60,7 @@ def build_catalog(
     published: list[dict[str, Any]],
     generated_at: str,
 ) -> dict[str, Any]:
+    previous = migrate_catalog(previous)
     validate_catalog(previous)
     records = {int(item["id"]): dict(item) for item in previous["projects"]}
 
@@ -38,6 +73,7 @@ def build_catalog(
         first_seen = existing["first_seen"] if existing else generated_at
         previous_best = int(existing["best_rank"]) if existing else rank
         records[repo_id] = {
+            **CONTENT_DEFAULTS,
             **project,
             "first_seen": first_seen,
             "last_seen": generated_at,
@@ -90,6 +126,7 @@ def validate_catalog(payload: dict[str, Any]) -> None:
             "best_rank",
             "active",
             "last_score",
+            *CONTENT_DEFAULTS,
         } - record.keys()
         if missing_project:
             raise ValueError(f"Missing catalog project fields: {sorted(missing_project)}")
@@ -112,6 +149,19 @@ def validate_catalog(payload: dict[str, Any]) -> None:
         score = record["last_score"]
         if not isinstance(score, int) or isinstance(score, bool) or not 0 <= score <= 100:
             raise ValueError(f"Invalid last_score for {record['full_name']}")
+        if record["readme_language"] not in {"zh", "en", "mixed", "unknown"}:
+            raise ValueError(f"Invalid readme_language for {record['full_name']}")
+        if record["summary_status"] not in {"ready", "pending", "stale", "unavailable"}:
+            raise ValueError(f"Invalid summary_status for {record['full_name']}")
+        excerpt = record["readme_excerpt"]
+        if excerpt is not None and (not isinstance(excerpt, str) or len(excerpt) > 1200):
+            raise ValueError(f"Invalid readme_excerpt for {record['full_name']}")
+        readme_url = record["readme_url"]
+        if readme_url is not None and not str(readme_url).startswith("https://github.com/"):
+            raise ValueError(f"Invalid readme_url for {record['full_name']}")
+        readme_hash = record["readme_hash"]
+        if readme_hash is not None and not re.fullmatch(r"[0-9a-f]{64}", str(readme_hash)):
+            raise ValueError(f"Invalid readme_hash for {record['full_name']}")
 
 
 def _parse_timestamp(value: Any, field: str) -> datetime:

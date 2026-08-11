@@ -3,6 +3,8 @@ name: Refresh data and deploy Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   schedule:
     - cron: "17 */6 * * *"
   workflow_dispatch:
@@ -47,6 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      models: read
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -62,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/site.json data/catalog.json data/history
+          git add public/data/site.json data/catalog.json data/translations.json data/history
           git diff --cached --quiet || git commit -m "data: refresh capability radar"
           git push
 
@@ -70,6 +73,7 @@ jobs:
     needs: [quality, collect]
     if: >-
       always() &&
+      github.event_name != 'pull_request' &&
       (needs.quality.result == 'success' || needs.quality.result == 'skipped') &&
       (needs.collect.result == 'success' || needs.collect.result == 'skipped')
     runs-on: ubuntu-latest

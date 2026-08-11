@@ -24,6 +24,16 @@ describe("ecosystem browsing", () => {
     expect(result.map((item) => item.id)).toEqual([1]);
   });
 
+  it("searches Chinese summaries and README excerpts", () => {
+    const documented = {
+      ...agents,
+      summary_zh: "本地编码代理",
+      readme_excerpt: "Unique orchestration protocol for tool adapters",
+    };
+    expect(filterAndSortProjects([documented, mcp], { layer: null, subtype: "", useCase: "", query: "本地编码", sort: "recommended" })).toEqual([documented]);
+    expect(filterAndSortProjects([documented, mcp], { layer: null, subtype: "", useCase: "", query: "orchestration protocol", sort: "recommended" })).toEqual([documented]);
+  });
+
   it("builds four layer counts including empty layers", () => {
     const counts = layerCounts([agents, mcp]);
     expect([...counts.keys()]).toHaveLength(4);

@@ -9,6 +9,19 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from collector.rules import classify
+from collector import SCHEMA_VERSION
+from collector.catalog import CATALOG_SCHEMA_VERSION, CONTENT_DEFAULTS
+
+
+def with_content_defaults(project: dict[str, Any]) -> dict[str, Any]:
+    migrated = {**CONTENT_DEFAULTS, **project}
+    if "summary_status" not in project:
+        migrated["summary_status"] = (
+            "ready"
+            if project.get("summary_source") == "manual" and project.get("summary_zh")
+            else "pending"
+        )
+    return migrated
 
 
 def enrich(
@@ -63,16 +76,21 @@ def main() -> None:
     overrides = config.get("overrides", {})
     site_path = ROOT / "public" / "data" / "site.json"
     site = json.loads(site_path.read_text(encoding="utf-8"))
-    site["schema_version"] = "1.2"
+    site["schema_version"] = SCHEMA_VERSION
     migrated_site = [enrich(project, overrides) for project in site["projects"]]
-    site["projects"] = [project for project, excluded in migrated_site if not excluded]
+    site["projects"] = [
+        with_content_defaults(project)
+        for project, excluded in migrated_site
+        if not excluded
+    ]
     site["stats"]["published"] = len(site["projects"])
     write(site_path, site)
 
     catalog_path = ROOT / "data" / "catalog.json"
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    catalog["schema_version"] = CATALOG_SCHEMA_VERSION
     catalog["projects"] = [
-        enrich(project, overrides, keep_excluded=True)[0]
+        with_content_defaults(enrich(project, overrides, keep_excluded=True)[0])
         for project in catalog["projects"]
     ]
     write(catalog_path, catalog)

@@ -1,13 +1,13 @@
 # Agent Capability Radar V2 开发进度
 
-> 状态快照：2026-08-10
+> 状态快照：2026-08-11
 > 线上网站：https://lood31.github.io/agent-capability-radar/
 > GitHub 仓库：https://github.com/lood31/agent-capability-radar
-> 数据 schema：`site.json` 1.2，`catalog.json` 1.0
+> 数据 schema：`site.json` 1.3，`catalog.json` 1.1，`translations.json` 1.0
 
 ## 1. 产品定位
 
-Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，发现、理解和比较 GitHub 上的 Agents、Skills、Plugins、MCP 与基础设施。产品坚持真实公开数据、可解释评分、零账号、零数据库、零付费服务；中文摘要只允许版本控制中的人工覆盖，否则回退到 GitHub description。
+Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，发现、理解和比较 GitHub 上的 Agents、Skills、Plugins、MCP 与基础设施。产品坚持真实公开数据、可解释评分、零账号与零数据库；中文说明按人工摘要、中文 README、GitHub Models 自动摘要和 GitHub description 的可信优先级回退，来源始终明确展示。
 
 首页核心命题已经调整为：**为你的 Agent 找到下一项开源能力。**
 
@@ -36,43 +36,53 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 
 ### 永久静态详情页
 
-- `npm run build` 从永久 catalog 为全部108条档案生成 `/projects/{owner}/{repo}/` 静态详情页。
+- `npm run build` 从永久 catalog 为全部130条档案生成 `/projects/{owner}/{repo}/` 静态详情页。
 - 当前非活跃项目继续保留稳定链接，并显示历史收录状态。
 - 每个详情页具有独立 title、description、canonical、Open Graph、Twitter Card 与 SoftwareSourceCode JSON-LD。
 - 详情页展示项目形态、用途、能力、技术数据、活跃度、接入特征、摘要来源和同类项目。
-- 构建时生成包含首页和108个项目页的109条 sitemap URL。
+- 构建时生成包含首页和130个项目页的131条 sitemap URL。
 - Preview 只保留可信可选字段；没有官方来源时不抓取、不伪造图片。
+
+### README 摘录与自动中文摘要
+
+- `site.json` 1.3 与 `catalog.json` 1.1 新增 README 摘录、语言、原文链接、内容 hash、摘要状态、模型和更新时间字段；旧 1.2 数据仍可被前端安全加载。
+- README 最多清洗前40,000字符，模型输入最多6,000字符，详情页只保存和展示最多1,200字符的纯文本摘录；HTML、图片、徽章、代码块、表格和纯链接段落不会被渲染。
+- 摘要优先级固定为人工 override → 中文 README 摘录 → 当前 hash 的模型摘要 → stale 旧摘要 → GitHub description。
+- `data/translations.json` 只按仓库 ID 与 README hash 缓存摘要、模型、时间和标准化错误码，不保存完整 README。
+- GitHub Models 使用 `openai/gpt-4.1-mini`，每轮最多20项；403、429、超时或无效 JSON 不阻塞采集和部署，dry-run 不调用模型也不写缓存。
+- 首页卡片显示四类摘要来源；详情页显示 README 原文摘录、语言属性、完整 README 链接，以及 AI 内容偏差提示。
+- 搜索新增中文摘要和 README 摘录；`site.json` 构建体积门禁为600,000字节。
 
 ### 数据与自动化
 
 - 动态最近30天查询、dry-run零写入、失败不覆盖旧数据、Stars历史与永久catalog语义保持不变。
-- 当前发布榜单95项：Agents 52、MCP & Connectors 20、Skills & Plugins 14、Infrastructure 9。
-- catalog 共108项：95 active、13 inactive；普通资源目录掉榜但首次发现时间与历史排名保留。
+- 当前本地快照发布榜单94项，catalog 共130项：94 active、36 inactive；掉榜项目的首次发现时间与历史排名继续保留。
+- 当前人工中文摘要3项，另外91个活跃项目处于待回填状态；本地没有 GitHub Models Token，因此缓存仍为0，首次真实回填将在带 `models: read` 的定时 Actions 中执行。
 - 六小时定时采集仍只运行Python测试、采集、提交与部署，不运行完整Playwright或Lighthouse。
-- 非定时质量任务继续执行Python、Vitest、TypeScript、生产构建和Chromium E2E。
+- Pull Request 与非定时质量任务执行Python、Vitest、TypeScript、生产构建和Chromium E2E；PR 不采集也不部署，合并到 `main` 后才正式发布。
 
 ## 3. 当前验证结果
 
-- Python：24项通过，覆盖四层分类、子类型、人工摘要、资源目录例外、动态查询、catalog、dry-run与失败保护。
-- Vitest：11项通过，覆盖四层筛选、搜索、排序、计数、同层对比、旧偏好迁移与空compare参数。
-- Playwright：双设备16项，15通过、1项桌面按设计跳过移动专属断言。
-- Playwright `--repeat-each=5`：75通过、5项按设计跳过，无偶发失败；本地固定2 workers，CI固定1 worker。
-- E2E 覆盖四层入口、URL筛选、收藏、同层对比、能力覆盖、静态详情深链、恶意文本、404、移动端溢出和自动浏览器错误收集。
+- Python：43项通过，新增覆盖 README 清洗、语言检测、中文免翻译、hash 缓存、stale 重译、20项限额、403/429/超时、无 Token、无效 JSON、Schema 迁移、体积预算和 dry-run 零调用。
+- Vitest：17项通过，新增覆盖四类摘要来源、旧字段回退、中文摘要和英文 README 搜索。
+- Playwright：双设备20项，19通过、1项桌面按设计跳过移动专属断言。
+- Playwright 核心流程 `--repeat-each=5`：45通过、5项按设计跳过，无偶发失败；本地固定2 workers，CI固定1 worker。
+- E2E 新增摘要来源、README 搜索、详情摘录语言与原文链接、提示注入和恶意 HTML 转义验证。
 - Axe：首页与静态详情页在桌面和Pixel 7均为零违规。
-- 生产构建生成108个详情页与109条 sitemap URL，生产 sourcemap 关闭。
-- 本地 Lighthouse 13.4.1：Performance 100、Accessibility 100、Best Practices 100、SEO 100、LCP 1.375秒、CLS 0。
+- 生产构建生成130个详情页与131条 sitemap URL；`site.json` 为302,004字节，生产 sourcemap 关闭。
+- 本地 Lighthouse 13.4.1：Performance 100、Accessibility 100、Best Practices 100、SEO 100、LCP 1.369秒、CLS 0。
 - 本地浏览器：`D:\Chromium\chrome-win\chrome.exe`；CI继续安装Playwright匹配的Chromium。
 
 ## 4. 发布状态
 
-- 本轮V2改动已在本地完成并通过质量门禁，尚未提交、推送或部署。
-- 线上网站仍是上一轮V1版本；线上Lighthouse和线上smoke需要在本轮代码发布后重新验收。
-- 下一次真实采集会直接输出Schema 1.2，并持续维护95项以上的动态榜单和永久catalog。
+- 本轮 README 与中文摘要改动已在本地完成并通过质量门禁，尚未推送或部署。
+- 线上网站仍是上一轮 V2 版本；线上 Lighthouse、smoke 与 GitHub Models 最小推理需要在本轮代码发布后重新验收。
+- 下一次真实采集会输出 Schema 1.3，并开始按每轮最多20项回填 `translations.json`；需连续观察两个六小时周期确认缓存增长且相同 hash 不重复调用。
 
 ## 5. 暂不实现
 
 - 不增加账号同步、社区、评论、社交Feed或复杂个人主页。
-- 不增加AI摘要、自然语言搜索、AI推荐模型或自动生成文章。
+- 不增加自然语言搜索、AI推荐模型或自动生成文章；自动摘要只做有来源标记的 README 信息压缩。
 - 不接入第三方埋点；在隐私策略和服务选择明确前只保留本地状态。
 - 不缓存不明来源的README图片，不为项目生成虚假Screenshot。
 - 暂不移除Schema 1.1遗留字段；清理工作留到Schema 2.0。
@@ -82,8 +92,9 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 
 - 前端：`src/main.ts`、`src/styles.css`、`src/ecosystemViews.ts`
 - Schema与采集：`src/types.ts`、`collector/models.py`、`collector/rules.py`、`collector/pipeline.py`
-- 数据：`public/data/site.json`、`data/catalog.json`、`data/history/`
-- 静态页：`scripts/generate-static-pages.mjs`
+- 数据：`public/data/site.json`、`data/catalog.json`、`data/translations.json`、`data/history/`
+- README与摘要：`collector/translations.py`、`src/contentViews.ts`
+- 静态页：`scripts/generate-static-pages.mjs`、`scripts/detail-content.mjs`
 - 搜索与人工覆盖：`config/discovery.json`
 - 测试：`tests/`、`src/*.test.ts`、`e2e/`
 - 自动化：`playwright.config.ts`、`.github/workflows/site.yml`

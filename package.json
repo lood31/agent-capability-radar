@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node scripts/generate-static-pages.mjs",
+    "build": "node scripts/check-data-size.mjs && tsc --noEmit && vite build && node scripts/generate-static-pages.mjs",
     "preview": "vite preview",
     "test": "vitest run",
     "test:e2e": "playwright test",

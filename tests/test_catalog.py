@@ -2,7 +2,18 @@ from __future__ import annotations
 
 import unittest
 
-from collector.catalog import build_catalog, validate_catalog
+from collector.catalog import build_catalog, migrate_catalog, validate_catalog
+
+
+CONTENT = {
+    "readme_excerpt": None,
+    "readme_language": "unknown",
+    "readme_url": None,
+    "readme_hash": None,
+    "summary_status": "pending",
+    "summary_model": None,
+    "summary_updated_at": None,
+}
 
 
 def project(repo_id: int, name: str, score: int) -> dict[str, object]:
@@ -47,6 +58,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_duplicate_catalog_repository_is_rejected(self) -> None:
         entry = {
+            **CONTENT,
             **project(1, "owner/one", 80),
             "first_seen": "2026-08-09T00:00:00Z",
             "last_seen": "2026-08-09T00:00:00Z",
@@ -58,7 +70,7 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate catalog"):
             validate_catalog(
                 {
-                    "schema_version": "1.0",
+                    "schema_version": "1.1",
                     "updated_at": "2026-08-09T00:00:00Z",
                     "projects": [entry, dict(entry)],
                 }
@@ -66,6 +78,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_invalid_catalog_metadata_is_rejected(self) -> None:
         entry = {
+            **CONTENT,
             **project(1, "owner/one", 80),
             "first_seen": "2026-08-10T00:00:00Z",
             "last_seen": "2026-08-09T00:00:00Z",
@@ -77,8 +90,19 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "first_seen is after"):
             validate_catalog(
                 {
-                    "schema_version": "1.0",
+                    "schema_version": "1.1",
                     "updated_at": "2026-08-10T00:00:00Z",
                     "projects": [entry],
                 }
             )
+
+    def test_legacy_catalog_is_migrated_with_content_defaults(self) -> None:
+        migrated = migrate_catalog(
+            {
+                "schema_version": "1.0",
+                "updated_at": None,
+                "projects": [],
+            }
+        )
+        self.assertEqual(migrated["schema_version"], "1.1")
+        validate_catalog(migrated)

@@ -1,6 +1,7 @@
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { escapeHtml, readmeSection } from "./detail-content.mjs";
 
 const root = new URL("../", import.meta.url);
 const dist = new URL("../dist/", import.meta.url);
@@ -10,14 +11,17 @@ const assets = await readdir(new URL("../dist/assets/", import.meta.url));
 const cssAsset = assets.find((name) => name.endsWith(".css"));
 if (!cssAsset) throw new Error("Production CSS asset not found");
 
-const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
-  "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;",
-})[char]);
 const cleanText = (value, fallback = "未识别") => escapeHtml(value || fallback);
 const projectRoute = (project) => project.full_name.split("/").map(encodeURIComponent).join("/");
 const projectUrl = (project) => `${origin}/projects/${projectRoute(project)}/`;
 const relativeProjectUrl = (project) => `../../../projects/${projectRoute(project)}/`;
 const summary = (project) => project.summary_zh || project.description || "该项目暂未提供可验证的简介。";
+const summarySource = (project) => {
+  if (project.summary_source === "manual") return "人工审核摘要";
+  if (project.summary_source === "github_models") return project.summary_status === "stale" ? "AI 自动摘要 · 待更新" : "AI 自动摘要";
+  if (project.summary_source === "readme_zh") return "README 中文摘录";
+  return "GitHub 原始 description";
+};
 const safeUrl = (value) => {
   try { const url = new URL(value); return ["http:", "https:"].includes(url.protocol) ? url.href : null; }
   catch { return null; }
@@ -30,6 +34,7 @@ function detailHtml(project, similar) {
   const tags = [...(project.functional_capabilities || []), ...(project.use_cases || [])];
   const github = safeUrl(project.url);
   const homepage = safeUrl(project.homepage);
+  const summaryTimestamp = project.summary_updated_at ? new Date(project.summary_updated_at).toLocaleDateString("zh-CN", { timeZone: "UTC" }) : null;
   const structured = JSON.stringify({
     "@context": "https://schema.org", "@type": "SoftwareSourceCode", name: project.full_name,
     description: summary(project), codeRepository: github, url: projectUrl(project),
@@ -52,9 +57,10 @@ function detailHtml(project, similar) {
 <nav class="detail-breadcrumb" aria-label="面包屑"><a href="../../../">首页</a><span>/</span><span>${cleanText(project.ecosystem_layer)}</span><span>/</span><span aria-current="page">${cleanText(project.full_name)}</span></nav>
 <section class="detail-hero"><div><span class="layer-pill">${cleanText(project.ecosystem_layer)}</span><h1>${cleanText(project.full_name)}</h1><p>${escapeHtml(summary(project))}</p><div class="detail-actions">${github ? `<a class="details-link" href="${escapeHtml(github)}" target="_blank" rel="noopener noreferrer">打开 GitHub ↗</a>` : ""}${homepage ? `<a class="secondary-link" href="${escapeHtml(homepage)}" target="_blank" rel="noopener noreferrer">项目主页 ↗</a>` : ""}</div></div><div class="project-signal"><span class="eyebrow">RECOMMENDATION SIGNAL</span><strong>${Number(project.recommendation_score || project.last_score || 0)}</strong><span>${project.active ? "当前榜单活跃" : "历史收录 · 当前非活跃"}</span></div></section>
 <section class="detail-grid"><article><span class="eyebrow">WHAT IT IS</span><h2>30 秒看懂</h2><dl class="detail-facts"><div><dt>项目类型</dt><dd>${cleanText(project.project_subtype)}</dd></div><div><dt>主要用途</dt><dd>${cleanText((project.use_cases || []).join(" · "), "尚未识别")}</dd></div><div><dt>功能能力</dt><dd>${cleanText((project.functional_capabilities || []).join(" · "), "尚未识别")}</dd></div><div><dt>上手门槛</dt><dd>${cleanText(project.setup_level)}</dd></div></dl></article><article><span class="eyebrow">DEVELOPER DATA</span><h2>技术与活跃度</h2><dl class="detail-facts"><div><dt>Stars / Forks</dt><dd>${Number(project.stars).toLocaleString("zh-CN")} / ${Number(project.forks).toLocaleString("zh-CN")}</dd></div><div><dt>语言 / License</dt><dd>${cleanText(project.language)} / ${cleanText(project.license)}</dd></div><div><dt>最近更新</dt><dd>${cleanText(project.pushed_at)}</dd></div><div><dt>首次收录</dt><dd>${cleanText(project.first_seen)}</dd></div></dl></article></section>
-<section class="detail-section"><span class="eyebrow">VERIFIED SIGNALS</span><h2>接入与能力标签</h2><ul class="detail-tags">${[...features, ...tags].map((tag) => `<li>${escapeHtml(tag)}</li>`).join("") || "<li>暂无已验证标签</li>"}</ul><p class="source-note">中文摘要来源：${project.summary_source === "manual" ? "人工审核覆盖" : "GitHub 原始 description 回退"}。页面不生成未经验证的项目预览。</p></section>
+<section class="detail-section"><span class="eyebrow">VERIFIED SIGNALS</span><h2>接入与能力标签</h2><ul class="detail-tags">${[...features, ...tags].map((tag) => `<li>${escapeHtml(tag)}</li>`).join("") || "<li>暂无已验证标签</li>"}</ul><p class="source-note">摘要来源：${escapeHtml(summarySource(project))}${summaryTimestamp ? ` · ${escapeHtml(summaryTimestamp)} 更新` : ""}。${project.summary_source === "github_models" ? "AI 自动摘要可能存在偏差，请以项目原文为准。" : ""}</p></section>
+${readmeSection(project)}
 <section class="detail-section"><span class="eyebrow">SIMILAR PROJECTS</span><h2>继续探索同类项目</h2><div class="similar-grid">${similar.map((item) => `<a href="${relativeProjectUrl(item)}"><span>${escapeHtml(item.project_subtype)}</span><strong>${escapeHtml(item.full_name)}</strong><small>★ ${Number(item.stars).toLocaleString("zh-CN")}</small></a>`).join("") || "<p>当前 catalog 暂无同类项目。</p>"}</div></section>
-</main><footer class="site-footer"><p>公开 GitHub 数据 · 永久 catalog 档案</p><p class="mono">schema 1.2</p></footer></div></body></html>`;
+</main><footer class="site-footer"><p>公开 GitHub 数据 · 永久 catalog 档案</p><p class="mono">schema 1.3</p></footer></div></body></html>`;
 }
 
 for (const project of catalog.projects) {

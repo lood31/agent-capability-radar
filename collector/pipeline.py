@@ -2,17 +2,33 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
 from collector import SCHEMA_VERSION
-from collector.catalog import build_catalog, load_catalog
+from collector.catalog import build_catalog, load_catalog, validate_catalog
 from collector.github import GitHubClient, GitHubError
 from collector.history import HistoryStore
 from collector.models import ECOSYSTEM_LAYERS, PROJECT_SUBTYPES, Project
 from collector.rules import classify
 from collector.scoring import score_project
+from collector.translations import (
+    README_LANGUAGES,
+    SUMMARY_SOURCES,
+    SUMMARY_STATUSES,
+    GitHubModelsClient,
+    ReadmeInfo,
+    SummaryTranslator,
+    analyse_readme,
+    load_translation_cache,
+    resolve_project_content,
+    validate_translation_cache,
+)
+
+
+SITE_DATA_MAX_BYTES = 600_000
 
 
 def load_config(path: Path) -> dict[str, Any]:
@@ -72,13 +88,35 @@ def validate_site_data(payload: dict[str, Any]) -> None:
             raise ValueError(f"Invalid ecosystem_layer for {project.get('full_name')}")
         if project.get("project_subtype") not in PROJECT_SUBTYPES:
             raise ValueError(f"Invalid project_subtype for {project.get('full_name')}")
-        if project.get("summary_source") not in {"manual", "github_description"}:
+        if project.get("summary_source") not in SUMMARY_SOURCES:
             raise ValueError(f"Invalid summary_source for {project.get('full_name')}")
         for field in ("use_cases", "functional_capabilities"):
             if not isinstance(project.get(field), list):
                 raise ValueError(f"Invalid {field} for {project.get('full_name')}")
         if not isinstance(project.get("features"), dict):
             raise ValueError(f"Invalid features for {project.get('full_name')}")
+        if payload.get("schema_version") == SCHEMA_VERSION:
+            if project.get("readme_language") not in README_LANGUAGES:
+                raise ValueError(f"Invalid readme_language for {project.get('full_name')}")
+            if project.get("summary_status") not in SUMMARY_STATUSES:
+                raise ValueError(f"Invalid summary_status for {project.get('full_name')}")
+            excerpt = project.get("readme_excerpt")
+            if excerpt is not None and (not isinstance(excerpt, str) or len(excerpt) > 1200):
+                raise ValueError(f"Invalid readme_excerpt for {project.get('full_name')}")
+            readme_url = project.get("readme_url")
+            if readme_url is not None and not str(readme_url).startswith("https://github.com/"):
+                raise ValueError(f"Invalid readme_url for {project.get('full_name')}")
+            readme_hash = project.get("readme_hash")
+            if readme_hash is not None and not re.fullmatch(r"[0-9a-f]{64}", str(readme_hash)):
+                raise ValueError(f"Invalid readme_hash for {project.get('full_name')}")
+
+
+def validate_site_size(payload: dict[str, Any], limit: int = SITE_DATA_MAX_BYTES) -> None:
+    size = len(
+        (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    )
+    if size > limit:
+        raise ValueError(f"site.json exceeds {limit} bytes: {size}")
 
 
 def collect(
@@ -86,6 +124,7 @@ def collect(
     *,
     dry_run: bool = False,
     client: GitHubClient | None = None,
+    translator: SummaryTranslator | None = None,
     now: datetime | None = None,
 ) -> dict[str, Any]:
     now = now or datetime.now(UTC)
@@ -93,6 +132,18 @@ def collect(
     client = client or GitHubClient(os.environ.get("GITHUB_TOKEN"))
     overrides = config.get("overrides", {})
     excluded = set(config.get("exclude", []))
+    translation_config = config.get("translation", {})
+    translation_limit = int(translation_config.get("batch_size", 20))
+    if translation_limit < 0:
+        raise ValueError("translation batch_size must not be negative")
+    catalog_path = root / "data" / "catalog.json"
+    previous_catalog = load_catalog(catalog_path)
+    translations_path = root / "data" / "translations.json"
+    translations = load_translation_cache(translations_path)
+    if translator is None and not dry_run and translation_config.get("enabled", False):
+        model_token = os.environ.get("GITHUB_MODELS_TOKEN") or os.environ.get("GITHUB_TOKEN")
+        if model_token:
+            translator = GitHubModelsClient(model_token)
     candidates: dict[int, dict[str, Any]] = {}
 
     for search in config["searches"]:
@@ -114,6 +165,7 @@ def collect(
     history = HistoryStore(root / "data" / "history")
     projects: list[Project] = []
     observed: list[dict[str, Any]] = []
+    readmes: dict[int, ReadmeInfo] = {}
 
     for candidate in ordered[:enrich_limit]:
         full_name = str(candidate["full_name"])
@@ -124,6 +176,7 @@ def collect(
             print(f"warning: {error}")
             repo, readme = candidate, ""
         observed.append(repo)
+        readmes[int(repo["id"])] = analyse_readme(full_name, readme)
         classification = classify(repo, readme, overrides.get(full_name))
         if classification is None:
             continue
@@ -135,6 +188,40 @@ def collect(
     projects = projects[: int(config.get("publish_limit", 100))]
     generated_at = now.isoformat().replace("+00:00", "Z")
     site_projects = [project.to_site_dict() for project in projects]
+    for project in site_projects:
+        resolve_project_content(
+            project,
+            readmes[int(project["id"])],
+            translations,
+            translator=None,
+            generated_at=generated_at,
+            allow_model_call=False,
+        )
+
+    translation_calls = 0
+    stop_translation_batch = False
+    translation_candidates = sorted(
+        site_projects,
+        key=lambda project: (
+            project.get("summary_status") == "stale",
+            -int(project.get("recommendation_score", 0)),
+        ),
+    )
+    if not dry_run and translator is not None:
+        for project in translation_candidates:
+            if translation_calls >= translation_limit or stop_translation_batch:
+                break
+            if project.get("summary_status") not in {"pending", "stale"}:
+                continue
+            called, stop_translation_batch = resolve_project_content(
+                project,
+                readmes[int(project["id"])],
+                translations,
+                translator=translator,
+                generated_at=generated_at,
+                allow_model_call=True,
+            )
+            translation_calls += int(called)
     payload: dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
         "generated_at": generated_at,
@@ -150,8 +237,38 @@ def collect(
         "projects": site_projects,
     }
     validate_site_data(payload)
-    catalog_path = root / "data" / "catalog.json"
-    catalog = build_catalog(load_catalog(catalog_path), site_projects, generated_at)
+    validate_site_size(payload)
+    catalog = build_catalog(previous_catalog, site_projects, generated_at)
+
+    if not dry_run and translator is not None and translation_calls < translation_limit:
+        checked_inactive = 0
+        for record in catalog["projects"]:
+            if (
+                record["active"]
+                or record.get("summary_status") == "ready"
+                or checked_inactive >= translation_limit - translation_calls
+                or stop_translation_batch
+            ):
+                continue
+            checked_inactive += 1
+            try:
+                raw_readme = client.readme(str(record["full_name"]))
+            except GitHubError as error:
+                print(f"warning: {error}")
+                continue
+            info = analyse_readme(str(record["full_name"]), raw_readme)
+            called, stop_translation_batch = resolve_project_content(
+                record,
+                info,
+                translations,
+                translator=translator,
+                generated_at=generated_at,
+                allow_model_call=True,
+            )
+            translation_calls += int(called)
+
+    validate_catalog(catalog)
+    validate_translation_cache(translations)
     if not dry_run:
         history.append(observed, now)
         output = root / "public" / "data" / "site.json"
@@ -159,6 +276,7 @@ def collect(
         catalog_path.parent.mkdir(parents=True, exist_ok=True)
         _atomic_write_json(catalog_path, catalog)
         _atomic_write_json(output, payload)
+        _atomic_write_json(translations_path, translations)
     return payload
 
 

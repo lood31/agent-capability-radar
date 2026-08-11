@@ -12,7 +12,9 @@ export const CAPABILITIES = [
 
 export type EcosystemLayer = (typeof ECOSYSTEM_LAYERS)[number];
 export type Capability = (typeof CAPABILITIES)[number];
-export type SummarySource = "manual" | "github_description";
+export type SummarySource = "manual" | "github_models" | "readme_zh" | "github_description";
+export type SummaryStatus = "ready" | "pending" | "stale" | "unavailable";
+export type ReadmeLanguage = "zh" | "en" | "mixed" | "unknown";
 export type SetupLevel = "easy" | "medium" | "advanced";
 export type View = "discover" | "trending" | "capabilities" | "saved" | "compare";
 export type SortMode = "recommended" | "trending" | "stars" | "updated" | "newest";
@@ -70,6 +72,13 @@ export interface Project {
   functional_capabilities: string[];
   summary_zh: string | null;
   summary_source: SummarySource;
+  readme_excerpt?: string | null;
+  readme_language?: ReadmeLanguage;
+  readme_url?: string | null;
+  readme_hash?: string | null;
+  summary_status?: SummaryStatus;
+  summary_model?: string | null;
+  summary_updated_at?: string | null;
   features: ProjectFeatures;
   preview: ProjectPreview | null;
   content_type: string;
