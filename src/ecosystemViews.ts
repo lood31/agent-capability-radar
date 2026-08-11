@@ -1,6 +1,16 @@
-import { ECOSYSTEM_LAYERS, type BrowseFilters, type EcosystemLayer, type Project } from "./types";
+import { ECOSYSTEM_LAYERS, type BrowseFilters, type EcosystemLayer, type Project, type SiteData } from "./types";
 
 const DAY_MS = 86_400_000;
+export const DATA_MAX_AGE_MS = 12 * 60 * 60 * 1000;
+
+export type DataFreshness = "live" | "stale" | "demo";
+
+export function dataFreshness(data: Pick<SiteData, "collection_status" | "generated_at">, now = Date.now()): DataFreshness {
+  if (data.collection_status === "demo") return "demo";
+  const generatedAt = Date.parse(data.generated_at);
+  if (data.collection_status !== "live" || !Number.isFinite(generatedAt)) return "stale";
+  return now - generatedAt <= DATA_MAX_AGE_MS ? "live" : "stale";
+}
 
 export function projectPath(project: Pick<Project, "full_name">): string {
   return `./projects/${project.full_name.split("/").map(encodeURIComponent).join("/")}/`;

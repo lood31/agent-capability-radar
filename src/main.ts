@@ -2,6 +2,7 @@ import "./styles.css";
 import { computePersonalizedScore } from "./preferences";
 import {
   canCompare,
+  dataFreshness,
   filterAndSortProjects,
   layerCounts,
   migrateLegacyPreferences,
@@ -160,7 +161,10 @@ function renderHeader(root: HTMLElement): void {
   const header = node("header", "site-header");
   const brand = node("a", "brand"); brand.href = "./";
   brand.append(node("span", "brand-mark", "AR"), node("span", "brand-name", "Agent Capability Radar"));
-  const status = node("span", "data-status", state.data ? `LIVE · ${new Date(state.data.generated_at).toLocaleDateString("zh-CN")}` : "CONNECTING");
+  const freshness = state.data ? dataFreshness(state.data) : null;
+  const statusLabel = freshness === "live" ? "LIVE" : freshness === "demo" ? "DEMO DATA" : "STALE DATA";
+  const status = node("span", `data-status ${freshness ?? "stale"}`, state.data ? `${statusLabel} · ${new Date(state.data.generated_at).toLocaleString("zh-CN")}` : "CONNECTING");
+  status.title = state.data ? `Snapshot generated ${new Date(state.data.generated_at).toISOString()}` : "Loading snapshot";
   header.append(brand, status);
   const nav = node("nav", "top-nav"); nav.setAttribute("aria-label", "主要栏目");
   for (const [view, label] of VIEW_LABELS) {
