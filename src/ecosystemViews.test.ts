@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { canCompare, filterAndSortProjects, layerCounts, migrateLegacyPreferences, parseCompareIds, projectPath } from "./ecosystemViews";
+import { canCompare, dataFreshness, filterAndSortProjects, layerCounts, migrateLegacyPreferences, parseCompareIds, projectPath } from "./ecosystemViews";
 import type { EcosystemLayer, Project } from "./types";
 
 function project(id: number, layer: EcosystemLayer, subtype: string, score: number): Project {
@@ -44,5 +44,18 @@ describe("ecosystem browsing", () => {
   it("does not turn an empty compare parameter into project zero", () => {
     expect(parseCompareIds("")).toEqual([]);
     expect(parseCompareIds("1,2,bad,3,4,5")).toEqual([1, 2, 3, 4]);
+  });
+});
+
+describe("data freshness", () => {
+  const now = Date.parse("2026-08-11T02:00:00Z");
+
+  it("does not present an old live snapshot as live", () => {
+    expect(dataFreshness({ collection_status: "live", generated_at: "2026-08-10T13:42:47Z" }, now)).toBe("stale");
+  });
+
+  it("keeps recent live snapshots and demo data distinct", () => {
+    expect(dataFreshness({ collection_status: "live", generated_at: "2026-08-10T18:00:00Z" }, now)).toBe("live");
+    expect(dataFreshness({ collection_status: "demo", generated_at: "2020-01-01T00:00:00Z" }, now)).toBe("demo");
   });
 });

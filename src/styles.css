@@ -38,6 +38,8 @@ a { color: inherit; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--ink); color: #fff; font: 700 12px var(--mono); }
 .brand-name { font: 700 17px var(--display); letter-spacing: -.025em; }
 .data-status { color: var(--teal-text); font: 700 11px var(--mono); }
+.data-status.stale { color: var(--orange-text); }
+.data-status.demo { color: var(--muted); }
 .top-nav { display: flex; min-height: 54px; overflow-x: auto; border-bottom: 1px solid var(--grid); scrollbar-width: none; }
 .nav-item { position: relative; flex: 0 0 auto; border: 0; background: transparent; padding: 0 20px; color: var(--muted); cursor: pointer; }
 .nav-item:first-child { padding-left: 0; }
