@@ -2,6 +2,13 @@
   "enrich_limit": 120,
   "publish_limit": 100,
   "new_projects_days": 30,
+  "translation": {
+    "enabled": true,
+    "model": "openai/gpt-4.1-mini",
+    "batch_size": 20,
+    "max_input_chars": 6000,
+    "summary_max_chars": 160
+  },
   "searches": [
     { "query": "topic:ai-agent archived:false fork:false stars:>50", "limit": 40 },
     { "query": "topic:mcp-server archived:false fork:false stars:>10", "limit": 40 },

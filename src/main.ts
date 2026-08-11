@@ -1,5 +1,6 @@
 import "./styles.css";
 import { computePersonalizedScore } from "./preferences";
+import { projectSummary, summarySourceLabel } from "./contentViews";
 import {
   canCompare,
   dataFreshness,
@@ -101,10 +102,6 @@ function relativeTime(value: string): string {
   return days === 0 ? "今天更新" : days === 1 ? "昨天更新" : `${days} 天前更新`;
 }
 
-function projectSummary(project: Project): string {
-  return project.summary_zh?.trim() || project.description?.trim() || "该项目暂未提供可验证的简介。";
-}
-
 function readUrlState(): void {
   const params = new URLSearchParams(location.search);
   const view = params.get("view") as View | null;
@@ -185,7 +182,7 @@ function renderHero(): HTMLElement {
   const search = node("label", "search-box");
   search.append(node("span", "search-icon", "⌕"));
   const input = node("input"); input.type = "search"; input.value = state.filters.query;
-  input.placeholder = "搜索项目、用例、能力或技术"; input.setAttribute("aria-label", "搜索生态项目");
+  input.placeholder = "搜索项目、中文摘要、README 或技术"; input.setAttribute("aria-label", "搜索生态项目");
   input.addEventListener("input", () => { state.filters.query = input.value; writeUrlState(true); renderContent(); });
   search.append(input); copy.append(search);
 
@@ -275,7 +272,7 @@ function projectCard(project: Project, rank: number): HTMLElement {
   const body = node("div", "project-body");
   const category = node("div", "project-category"); category.append(node("span", "layer-pill", project.ecosystem_layer), node("span", "subtype", project.project_subtype));
   const heading = node("h2", "project-title"); const title = node("a", "", project.full_name); title.href = projectPath(project); title.addEventListener("click", () => markRecent(project)); heading.append(title);
-  body.append(category, heading, node("p", "project-description", projectSummary(project)));
+  body.append(category, heading, node("span", "summary-source", summarySourceLabel(project)), node("p", "project-description", projectSummary(project)));
   const tags = node("ul", "tag-list");
   [...project.functional_capabilities, ...project.use_cases].slice(0, 3).forEach((tag) => tags.append(node("li", "", tag)));
   if (tags.children.length) body.append(tags);
@@ -355,7 +352,7 @@ function renderContent(): void {
 
 function renderFooter(root: HTMLElement): void {
   const footer = node("footer", "site-footer");
-  footer.append(node("p", "", "公开 GitHub 数据 · 人工摘要明确标注 · 不伪造项目预览"), node("p", "mono", state.data ? `schema ${state.data.schema_version} · ${state.data.stats.history_days} 天历史` : "等待数据")); root.append(footer);
+  footer.append(node("p", "", "公开 GitHub 数据 · 人工与 AI 摘要明确标注 · README 仅展示原文摘录"), node("p", "mono", state.data ? `schema ${state.data.schema_version} · ${state.data.stats.history_days} 天历史` : "等待数据")); root.append(footer);
 }
 
 function render(): void {
