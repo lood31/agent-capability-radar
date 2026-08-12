@@ -13,6 +13,10 @@ CONTENT = {
     "summary_status": "pending",
     "summary_model": None,
     "summary_updated_at": None,
+    "content_url": None,
+    "guide_source": "metadata_fallback",
+    "guide_status": "partial",
+    "guide_updated_at": None,
 }
 
 
@@ -70,7 +74,7 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Duplicate catalog"):
             validate_catalog(
                 {
-                    "schema_version": "1.1",
+                    "schema_version": "1.2",
                     "updated_at": "2026-08-09T00:00:00Z",
                     "projects": [entry, dict(entry)],
                 }
@@ -90,7 +94,7 @@ class CatalogTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "first_seen is after"):
             validate_catalog(
                 {
-                    "schema_version": "1.1",
+                    "schema_version": "1.2",
                     "updated_at": "2026-08-10T00:00:00Z",
                     "projects": [entry],
                 }
@@ -104,5 +108,5 @@ class CatalogTests(unittest.TestCase):
                 "projects": [],
             }
         )
-        self.assertEqual(migrated["schema_version"], "1.1")
+        self.assertEqual(migrated["schema_version"], "1.2")
         validate_catalog(migrated)

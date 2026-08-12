@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1025856648,
+  "full_name": "wshobson/agents",
+  "guide_zh": {
+    "overview": "Multi-harness agentic plugin marketplace for Claude Code, Codex CLI, Cursor, OpenCode, GitHub Copilot, and Gemini CLI",
+    "capabilities": [
+      "编程与开发工具",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "2fd5b3272af8e1fe03e4c2f31c699d0afbcad555806479db5d1be9561cbe344f",
+    "source_url": "https://github.com/wshobson/agents#readme",
+    "markdown": "> Production-ready agentic workflow building blocks: **94 plugins**, **203 agents**, > **175 skills**, **109 commands** — built for Claude Code and consumed natively by > OpenAI Codex CLI, Cursor, OpenCode, Gemini CLI, and GitHub Copilot from a single Markdown source.\n\n> [!NOTE] > One source-of-truth (plugins/), five harnesses. Each harness gets idiomatic, > harness-native artifacts — not lowest-common-denominator translations. > See docs/harnesses.md for the capability matrix.",
+    "truncated": false
+  }
+}

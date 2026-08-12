@@ -1,3 +1,3 @@
 """Agent Capability Radar data collector."""
 
-SCHEMA_VERSION = "1.3"
+SCHEMA_VERSION = "1.4"

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "project_id": 599320067,
+  "full_name": "langflow-ai/langflow",
+  "guide_zh": {
+    "overview": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows.",
+    "capabilities": [
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "4dcf55d87265217613ee5ce315a567ee29ced5151c97f828aa6c0bd96c277e7a",
+    "source_url": "https://github.com/langflow-ai/langflow#readme",
+    "markdown": "Langflow is a powerful platform for building and deploying AI-powered agents and workflows. It provides developers with both a visual authoring experience and built-in API and MCP servers that turn every workflow into a tool that can be integrated into applications built on any framework or stack. Langflow comes with batteries included and supports all major LLMs, vector databases and a growing library of AI tools.\n\n**Visual builder interface** to quickly get started and iterate. **Source code access** lets you customize any component using Python. **Interactive playground** to immediately test and refine your flows with step-by-step control. **Multi-agent orchestration** with conversation management and retrieval. **Deploy as an API** or export as JSON for Python apps. **Deploy as an MCP server** and turn your flows into tools for MCP clients. **Observability** with LangSmith, LangFuse and other integrations. **Enterprise-ready** security and scalability.",
+    "truncated": false
+  }
+}

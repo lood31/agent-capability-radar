@@ -7,8 +7,8 @@ from pathlib import Path
 from typing import Any
 
 
-CATALOG_SCHEMA_VERSION = "1.1"
-LEGACY_CATALOG_SCHEMA_VERSION = "1.0"
+CATALOG_SCHEMA_VERSION = "1.2"
+LEGACY_CATALOG_SCHEMA_VERSIONS = {"1.0", "1.1"}
 
 CONTENT_DEFAULTS: dict[str, Any] = {
     "readme_excerpt": None,
@@ -18,6 +18,10 @@ CONTENT_DEFAULTS: dict[str, Any] = {
     "summary_status": "pending",
     "summary_model": None,
     "summary_updated_at": None,
+    "content_url": None,
+    "guide_source": "metadata_fallback",
+    "guide_status": "partial",
+    "guide_updated_at": None,
 }
 
 
@@ -36,7 +40,7 @@ def load_catalog(path: Path) -> dict[str, Any]:
 def migrate_catalog(payload: dict[str, Any]) -> dict[str, Any]:
     if payload.get("schema_version") == CATALOG_SCHEMA_VERSION:
         return payload
-    if payload.get("schema_version") != LEGACY_CATALOG_SCHEMA_VERSION:
+    if payload.get("schema_version") not in LEGACY_CATALOG_SCHEMA_VERSIONS:
         raise ValueError(f"Unsupported catalog schema: {payload.get('schema_version')!r}")
     migrated = {
         **payload,
@@ -153,6 +157,15 @@ def validate_catalog(payload: dict[str, Any]) -> None:
             raise ValueError(f"Invalid readme_language for {record['full_name']}")
         if record["summary_status"] not in {"ready", "pending", "stale", "unavailable"}:
             raise ValueError(f"Invalid summary_status for {record['full_name']}")
+        if record["guide_source"] not in {
+            "manual", "github_models", "readme_zh", "metadata_fallback"
+        }:
+            raise ValueError(f"Invalid guide_source for {record['full_name']}")
+        if record["guide_status"] not in {"ready", "partial", "stale", "unavailable"}:
+            raise ValueError(f"Invalid guide_status for {record['full_name']}")
+        content_url = record["content_url"]
+        if content_url is not None and not re.fullmatch(r"data/projects/\d+\.json", str(content_url)):
+            raise ValueError(f"Invalid content_url for {record['full_name']}")
         excerpt = record["readme_excerpt"]
         if excerpt is not None and (not isinstance(excerpt, str) or len(excerpt) > 1200):
             raise ValueError(f"Invalid readme_excerpt for {record['full_name']}")

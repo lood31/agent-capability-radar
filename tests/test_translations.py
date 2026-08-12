@@ -37,14 +37,26 @@ Run the package manager command.
 class StubTranslator:
     model = "test/model"
 
-    def summarize(self, full_name: str, description: str | None, readme: str) -> str:
-        return "这是一个用于构建本地编码代理的开源框架，可连接复用工具、保存任务上下文并通过命令行运行开发工作流，适合代理应用开发与验证。"
+    def generate_guide(
+        self, full_name: str, description: str | None, readme: str
+    ) -> dict[str, object]:
+        return {
+            "overview": (
+                "这是一个用于构建本地编码代理的开源框架，主要解决代理开发过程中工具连接、任务上下文维护和工作流组织分散的问题。"
+                "项目把常用的代理运行能力整合到统一的开发接口中，让仓库中已有的工具和任务状态能够被持续复用，并通过清晰的数据结构"
+                "向开发者呈现代理执行过程。"
+                "它通过一致的项目模型汇总仓库中的关键功能，让各项代理能力能够被清楚识别、独立比较，并追溯到README中的原始说明。"
+            ),
+            "capabilities": ["连接可复用代理工具", "维护任务上下文", "组织代理执行流程"],
+        }
 
 
 class FailingTranslator:
     model = "test/model"
 
-    def summarize(self, full_name: str, description: str | None, readme: str) -> str:
+    def generate_guide(
+        self, full_name: str, description: str | None, readme: str
+    ) -> dict[str, object]:
         raise TranslationError("network_error", stop_batch=True)
 
 
@@ -268,7 +280,7 @@ class GitHubModelsClientTests(unittest.TestCase):
         error = urllib.error.HTTPError("url", 403, "forbidden", {}, io.BytesIO())
         with patch("urllib.request.urlopen", side_effect=error):
             with self.assertRaises(TranslationError) as caught:
-                GitHubModelsClient("token").summarize("owner/repo", None, "readme")
+                GitHubModelsClient("token").generate_guide("owner/repo", None, "readme")
         self.assertEqual(caught.exception.code, "forbidden")
         self.assertTrue(caught.exception.stop_batch)
 
@@ -279,7 +291,7 @@ class GitHubModelsClientTests(unittest.TestCase):
             patch("time.sleep"),
         ):
             with self.assertRaises(TranslationError) as caught:
-                GitHubModelsClient("token").summarize("owner/repo", None, "readme")
+                GitHubModelsClient("token").generate_guide("owner/repo", None, "readme")
         self.assertEqual(request.call_count, 3)
         self.assertEqual(caught.exception.code, "rate_limited")
         self.assertTrue(caught.exception.stop_batch)
@@ -291,7 +303,7 @@ class GitHubModelsClientTests(unittest.TestCase):
             patch("time.sleep"),
         ):
             with self.assertRaises(TranslationError) as caught:
-                GitHubModelsClient("token").summarize("owner/repo", None, "readme")
+                GitHubModelsClient("token").generate_guide("owner/repo", None, "readme")
         self.assertEqual(request.call_count, 3)
         self.assertEqual(caught.exception.code, "invalid_response")
         self.assertTrue(caught.exception.stop_batch)
@@ -302,7 +314,7 @@ class GitHubModelsClientTests(unittest.TestCase):
             patch("time.sleep"),
         ):
             with self.assertRaises(TranslationError) as caught:
-                GitHubModelsClient("token").summarize("owner/repo", None, "readme")
+                GitHubModelsClient("token").generate_guide("owner/repo", None, "readme")
         self.assertEqual(request.call_count, 3)
         self.assertEqual(caught.exception.code, "network_error")
         self.assertTrue(caught.exception.stop_batch)

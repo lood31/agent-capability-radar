@@ -149,9 +149,36 @@ a { color: inherit; }
 .detail-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .detail-tags li { border: 1px solid var(--grid); background: var(--paper); padding: 9px 12px; color: var(--teal-text); font-size: 12px; }
 .source-note { margin: 24px 0 0; color: var(--muted); font-size: 12px; }
+.guide-section { position: relative; display: grid; grid-template-columns: minmax(0,1.25fr) minmax(280px,.75fr); column-gap: 64px; }
+.guide-section > .eyebrow, .guide-section > h2, .guide-section > .source-note { grid-column: 1 / -1; }
+.guide-section h2 { margin-bottom: 32px; }
+.guide-overview { margin: 0; max-width: 760px; font-size: 18px; line-height: 1.9; letter-spacing: .01em; }
+.guide-capability-panel h3 { margin: 3px 0 16px; color: var(--muted); font: 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.guide-capabilities { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.guide-capabilities li { position: relative; border-top: 1px solid var(--grid); padding: 11px 0 11px 20px; font-size: 13px; line-height: 1.55; }
+.guide-capabilities li::before { position: absolute; top: 17px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); content: ""; }
 .readme-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
 .readme-heading h2 { margin-bottom: 0; }
-.readme-excerpt { max-width: 900px; margin: 30px 0 0; border-left: 3px solid var(--teal); padding: 4px 0 4px 24px; color: var(--ink); font-size: 15px; line-height: 1.85; overflow-wrap: anywhere; white-space: pre-line; }
+.readme-details { margin-top: 28px; border: 1px solid var(--grid); background: rgba(255,255,255,.5); }
+.readme-details summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; padding: 14px 18px; color: var(--teal-text); font: 700 12px var(--mono); list-style: none; }
+.readme-details summary::-webkit-details-marker { display: none; }
+.readme-details summary::before { margin-right: 12px; color: var(--orange-text); content: "+"; font-size: 18px; }
+.readme-details[open] summary::before { content: "−"; }
+.readme-details summary:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.readme-content { border-top: 1px solid var(--grid); padding: clamp(20px,4vw,42px); color: var(--ink); font-size: 15px; line-height: 1.75; overflow-wrap: anywhere; }
+.readme-content > :first-child { margin-top: 0; }
+.readme-content > :last-child { margin-bottom: 0; }
+.readme-content h1, .readme-content h2, .readme-content h3, .readme-content h4 { margin: 1.7em 0 .7em; font-family: var(--display); line-height: 1.25; letter-spacing: -.025em; }
+.readme-content h1 { font-size: 28px; }
+.readme-content h2 { font-size: 23px; }
+.readme-content h3 { font-size: 19px; }
+.readme-content pre { max-width: 100%; overflow-x: auto; border: 1px solid var(--grid); background: var(--ink); padding: 16px; color: #eaf3f7; font: 12px/1.65 var(--mono); }
+.readme-content code { font-family: var(--mono); overflow-wrap: anywhere; }
+.readme-content :not(pre) > code { background: var(--paper); padding: 2px 5px; color: var(--orange-text); }
+.readme-content table { width: 100%; display: block; overflow-x: auto; border-collapse: collapse; }
+.readme-content th, .readme-content td { border: 1px solid var(--grid); padding: 9px 12px; text-align: left; }
+.readme-content blockquote { margin-left: 0; border-left: 3px solid var(--teal); padding-left: 18px; color: var(--muted); }
+.readme-content a { color: var(--teal-text); text-underline-offset: 3px; }
 .similar-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid var(--ink); border-left: 1px solid var(--grid); }
 .similar-grid a { display: grid; min-height: 180px; border-right: 1px solid var(--grid); border-bottom: 1px solid var(--grid); padding: 22px; text-decoration: none; }
 .similar-grid a:hover { background: var(--paper); }
@@ -205,7 +232,10 @@ a { color: inherit; }
   .detail-facts div { grid-template-columns: 100px 1fr; }
   .similar-grid { grid-template-columns: 1fr; }
   .readme-heading { align-items: start; flex-direction: column; }
-  .readme-excerpt { padding-left: 16px; font-size: 14px; }
+  .guide-section { grid-template-columns: 1fr; gap: 0; }
+  .guide-capability-panel { margin-top: 30px; }
+  .guide-overview { font-size: 16px; }
+  .readme-content { font-size: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -65,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/site.json data/catalog.json data/translations.json data/history
+          git add public/data/site.json data/catalog.json data/translations.json data/projects data/history
           git diff --cached --quiet || git commit -m "data: refresh capability radar"
           git push
 

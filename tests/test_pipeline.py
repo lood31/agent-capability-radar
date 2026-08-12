@@ -38,9 +38,18 @@ class FakeTranslator:
     def __init__(self) -> None:
         self.calls: list[str] = []
 
-    def summarize(self, full_name: str, description: str | None, readme: str) -> str:
+    def generate_guide(
+        self, full_name: str, description: str | None, readme: str
+    ) -> dict[str, object]:
         self.calls.append(full_name)
-        return "这是一个面向开发者的开源代理框架，可在本地组织命令行任务、连接工具并执行可复用工作流，适合用于构建和验证自动化代理应用。"
+        return {
+            "overview": (
+                "这是一个面向开发者的开源代理框架，主要解决代理任务、工具连接和执行状态分散的问题。项目将可复用工具与代理任务组织到统一"
+                "的数据流程中，使开发者能够持续查看项目能力、执行上下文以及不同工具之间的协作关系，并保留足够的原始信息用于验证。"
+                "它通过一致的项目模型汇总仓库中的关键功能，让各项代理能力能够被清楚识别、独立比较，并追溯到README中的原始说明。"
+            ),
+            "capabilities": ["组织代理任务", "连接可复用工具", "维护执行上下文"],
+        }
 
 
 def collectable_repository() -> dict[str, Any]:
@@ -116,13 +125,19 @@ class ValidationTests(unittest.TestCase):
             "features": {},
         }
         payload = {
-            "schema_version": "1.3",
+            "schema_version": "1.4",
             "generated_at": "2026-08-11T00:00:00Z",
             "collection_status": "live",
             "windows": {"new_projects_days": 30},
             "stats": {},
             "projects": [project],
         }
+        project.update({
+            "content_url": "data/projects/1.json",
+            "guide_source": "metadata_fallback",
+            "guide_status": "partial",
+            "guide_updated_at": None,
+        })
         with self.assertRaisesRegex(ValueError, "Invalid readme_hash"):
             validate_site_data(payload)
 

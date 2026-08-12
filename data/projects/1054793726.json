@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1054793726,
+  "full_name": "ChromeDevTools/chrome-devtools-mcp",
+  "guide_zh": {
+    "overview": "Chrome DevTools for coding agents",
+    "capabilities": [
+      "编程与开发工具",
+      "浏览器与计算机操作",
+      "记忆与知识管理",
+      "自动化与任务编排"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "0caceb67c35f79bba8a4deef7f5a722168c02c027fd2981a935fae343a0c52fb",
+    "source_url": "https://github.com/ChromeDevTools/chrome-devtools-mcp#readme",
+    "markdown": "Chrome DevTools for agents (chrome-devtools-mcp) lets your coding agent (such as Antigravity, Claude, Cursor or Copilot) control and inspect a live Chrome browser. It acts as a Model-Context-Protocol (MCP) server, giving your AI coding assistant access to the full power of Chrome DevTools for reliable automation, in-depth debugging, and performance analysis. A CLI is also provided for use without MCP.\n\nTool reference | Changelog | Contributing | Troubleshooting | Design Principles",
+    "truncated": false
+  }
+}

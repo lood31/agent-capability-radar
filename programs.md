@@ -1,9 +1,9 @@
 # Agent Capability Radar V2 开发进度
 
-> 状态快照：2026-08-11
+> 状态快照：2026-08-12
 > 线上网站：https://lood31.github.io/agent-capability-radar/
 > GitHub 仓库：https://github.com/lood31/agent-capability-radar
-> 数据 schema：`site.json` 1.3，`catalog.json` 1.1，`translations.json` 1.0
+> 数据 schema：`site.json` 1.4，`catalog.json` 1.2，`translations.json` 1.1，项目内容 1.0
 
 ## 1. 产品定位
 
@@ -53,6 +53,16 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 - 首页卡片显示四类摘要来源；详情页显示 README 原文摘录、语言属性、完整 README 链接，以及 AI 内容偏差提示。
 - 搜索新增中文摘要和 README 摘录；`site.json` 构建体积门禁为600,000字节。
 
+### 中文项目导读与可展开 README
+
+- 详情页删除仅重复标签的“30 秒看懂”，保留顶部简短简介，并将“技术与活跃度”和“接入与能力标签”合并为同一层扫描区域。
+- 新增“中文项目导读”，数据结构严格只有 `overview` 与 `capabilities`：前者说明项目是什么及主要解决什么问题，后者列出最多6项主要能力。
+- 每个catalog项目具有独立的 `data/projects/{repo-id}.json`，保存结构化导读和清洗后的README；主榜单仅保留 `content_url` 与导读来源、状态、更新时间。
+- README使用原生 `<details>` 默认收起，安全保留标题、段落、列表、代码块、表格和HTTP(S)链接；原始HTML、脚本、iframe、远程图片与危险协议不会被渲染。
+- 清洗器移除徽章、国旗、语言切换栏、目录、赞助区及Docs/Discord等链接导航；单个README最多80,000字节，超限按章节截断并链接GitHub全文。
+- GitHub Models现在输出150–300字项目说明和1–6项有README依据的能力，不生成安装方法、使用场景、适用人群、依赖、限制或注意事项。
+- `site.json`继续限制600,000字节；单个项目内容限制100,000字节，全部内容限制10,000,000字节。当前94个项目内容文件共约128 KB。
+
 ### 数据与自动化
 
 - 动态最近30天查询、dry-run零写入、失败不覆盖旧数据、Stars历史与永久catalog语义保持不变。
@@ -63,21 +73,21 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 
 ## 3. 当前验证结果
 
-- Python：43项通过，新增覆盖 README 清洗、语言检测、中文免翻译、hash 缓存、stale 重译、20项限额、403/429/超时、无 Token、无效 JSON、Schema 迁移、体积预算和 dry-run 零调用。
-- Vitest：17项通过，新增覆盖四类摘要来源、旧字段回退、中文摘要和英文 README 搜索。
+- Python：49项通过，新增覆盖README结构清洗、语言与导航噪声过滤、80 KB截断、导读字段限制、hash缓存、20项限额、模型失败回退、Schema迁移和dry-run零写入。
+- Vitest：20项通过，新增覆盖导读最小结构、Markdown安全链接、危险协议、原始HTML与远程图片过滤。
 - Playwright：双设备20项，19通过、1项桌面按设计跳过移动专属断言。
 - Playwright 核心流程 `--repeat-each=5`：45通过、5项按设计跳过，无偶发失败；本地固定2 workers，CI固定1 worker。
-- E2E 新增摘要来源、README 搜索、详情摘录语言与原文链接、提示注入和恶意 HTML 转义验证。
+- E2E覆盖详情页不再出现“30 秒看懂”、导读最小结构、README默认收起及展开、原文语言、安全链接、恶意HTML、Axe和移动端无横向溢出。
 - Axe：首页与静态详情页在桌面和Pixel 7均为零违规。
-- 生产构建生成130个详情页与131条 sitemap URL；`site.json` 为302,004字节，生产 sourcemap 关闭。
+- 生产构建生成130个详情页与131条 sitemap URL；`site.json` 为367,108字节，项目内容约127,572字节，生产 sourcemap 关闭。
 - 本地 Lighthouse 13.4.1：Performance 100、Accessibility 100、Best Practices 100、SEO 100、LCP 1.369秒、CLS 0。
 - 本地浏览器：`D:\Chromium\chrome-win\chrome.exe`；CI继续安装Playwright匹配的Chromium。
 
 ## 4. 发布状态
 
-- 本轮 README 与中文摘要改动已在本地完成并通过质量门禁，尚未推送或部署。
+- 本轮中文导读与可展开README已在本地完成并通过质量门禁，尚未推送或部署。
 - 线上网站仍是上一轮 V2 版本；线上 Lighthouse、smoke 与 GitHub Models 最小推理需要在本轮代码发布后重新验收。
-- 下一次真实采集会输出 Schema 1.3，并开始按每轮最多20项回填 `translations.json`；需连续观察两个六小时周期确认缓存增长且相同 hash 不重复调用。
+- 下一次真实采集会输出Schema 1.4，并开始按每轮最多20项回填结构化导读；需观察Actions中的模型错误码与两个六小时周期的缓存增长。当前缓存记录显示旧模型请求为 `api_error`，本轮已修正API版本并把400/401/404/422拆分为可诊断错误码，但本地无Token，无法完成真实最小推理。
 
 ## 5. 暂不实现
 
@@ -93,7 +103,7 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 - 前端：`src/main.ts`、`src/styles.css`、`src/ecosystemViews.ts`
 - Schema与采集：`src/types.ts`、`collector/models.py`、`collector/rules.py`、`collector/pipeline.py`
 - 数据：`public/data/site.json`、`data/catalog.json`、`data/translations.json`、`data/history/`
-- README与摘要：`collector/translations.py`、`src/contentViews.ts`
+- README与导读：`collector/translations.py`、`collector/project_content.py`、`data/projects/`
 - 静态页：`scripts/generate-static-pages.mjs`、`scripts/detail-content.mjs`
 - 搜索与人工覆盖：`config/discovery.json`
 - 测试：`tests/`、`src/*.test.ts`、`e2e/`

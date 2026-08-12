@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project_id": 953683578,
+  "full_name": "oraios/serena",
+  "guide_zh": {
+    "overview": "A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent",
+    "capabilities": [
+      "编程与开发工具",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "e617441ff791c8c9cdb250b66ed9510284f6df0af260c529b77a94e3ac4eb461",
+    "source_url": "https://github.com/oraios/serena#readme",
+    "markdown": "Serena provides essential **semantic code retrieval, editing, refactoring and debugging tools** that are akin to an IDE's capabilities, operating at the symbol level and exploiting relational structure. It integrates with any client/LLM via the model context protocol (**MCP**).\n\nSerena's **agent-first tool design** involves robust high-level abstractions, distinguishing it from approaches that rely on low-level concepts like line numbers or primitive search patterns.",
+    "truncated": false
+  }
+}

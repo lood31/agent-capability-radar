@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "project_id": 656099147,
+  "full_name": "mem0ai/mem0",
+  "guide_zh": {
+    "overview": "为 Agent 应用提供可集成的长期记忆层。",
+    "capabilities": [
+      "编程与开发工具",
+      "浏览器与计算机操作",
+      "搜索与研究",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "7509347d34a767a2ef37ceb6cf6c714de9e8d84fe66ad5eea92bbae824a8fbeb",
+    "source_url": "https://github.com/mem0ai/mem0#readme",
+    "markdown": "📄 Benchmarking Mem0's token-efficient memory algorithm →\n\nAll benchmarks run on the same production-representative model stack. Single-pass retrieval (one call, no agentic loops) at a top_200 retrieval budget. Scores reflect Mem0's managed platform, which includes proprietary optimizations not available in the open-source SDK; open-source users should expect directionally similar gains but not identical numbers.",
+    "truncated": false
+  }
+}

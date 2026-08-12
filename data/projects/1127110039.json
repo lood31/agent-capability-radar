@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1127110039,
+  "full_name": "OthmanAdi/planning-with-files",
+  "guide_zh": {
+    "overview": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn re-injection against context rot, deterministic completion gate. Manus-style. Install from npm, the Claude Code plugin marketplace, or npx sk",
+    "capabilities": [
+      "编程与开发工具",
+      "搜索与研究",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "837657405af14466068f5cb18f797d77f75d8caa4e28eb2ebf5f50ae2f61adc2",
+    "source_url": "https://github.com/OthmanAdi/planning-with-files#readme",
+    "markdown": "Your agent's context window dies. The plan does not.\n\nPersistent file-based planning for AI coding agents and long-running agent tasks: the skill keeps task_plan.md, findings.md, and progress.md on disk and re-injects them every turn, so the plan survives context loss, /clear, crashes, and compaction. Manus-style working memory on disk, with an opt-in completion gate. Installs across 60+ agents via the Agent Skills standard.",
+    "truncated": false
+  }
+}
