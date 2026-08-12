@@ -60,6 +60,7 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 - 每个catalog项目具有独立的 `data/projects/{repo-id}.json`，保存结构化导读和仓库README Markdown；主榜单仅保留 `content_url` 与导读来源、状态、更新时间。
 - README使用原生 `<details>` 默认收起；原始Markdown不再删除徽章、导航、目录或正文，标题、段落、列表、代码块、表格、安全链接和HTTPS图片均可展示。
 - 安全边界只在构建渲染时生效：原始HTML不执行，脚本、iframe和危险协议不可用，远程图片延迟加载且不发送referrer。单个README最多80,000字节，超限按章节截断并链接GitHub全文。
+- README内嵌HTML通过白名单渲染：支持居中段落、安全链接、图片、视频和常见排版属性，不再把合法标签显示为文本；事件属性、iframe与危险URL仍会移除。
 - 项目内容记录 `source_fidelity`；旧版清洗缓存明确标为非完整原文，只有重新采集到仓库Markdown后才显示原文保真说明。
 - GitHub Models现在输出150–300字项目说明和1–6项有README依据的能力，不生成安装方法、使用场景、适用人群、依赖、限制或注意事项。
 - `site.json`继续限制600,000字节；单个项目内容限制100,000字节，全部内容限制10,000,000字节。当前130个catalog项目均有独立内容文件。

@@ -1,4 +1,5 @@
 import MarkdownIt from "markdown-it";
+import sanitizeHtml from "sanitize-html";
 
 export function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, (char) => ({
@@ -25,7 +26,7 @@ function repositoryBases(fullName) {
   };
 }
 
-const markdown = new MarkdownIt({ html: false, linkify: false, typographer: false });
+const markdown = new MarkdownIt({ html: true, linkify: false, typographer: false });
 markdown.renderer.rules.image = (tokens, index, options, env) => {
   const src = safeUrl(tokens[index].attrGet("src"), env.imageBase);
   const alt = escapeHtml(tokens[index].content || "");
@@ -54,7 +55,75 @@ export function renderSafeMarkdown(value, fullName) {
     /\[([^\]]+)\]\(\s*(?:javascript|data|vbscript):[^\n)]*\)\)?/gi,
     "$1",
   );
-  return markdown.render(safeSource, repositoryBases(fullName));
+  const bases = repositoryBases(fullName);
+  const rendered = markdown.render(safeSource, bases);
+  return sanitizeHtml(rendered, {
+    allowedTags: [
+      ...sanitizeHtml.defaults.allowedTags,
+      "img", "video", "source",
+    ],
+    allowedAttributes: {
+      a: ["href", "name", "target", "rel"],
+      p: ["align"],
+      div: ["align"],
+      img: ["src", "alt", "title", "width", "height", "loading", "decoding", "referrerpolicy"],
+      video: ["src", "width", "height", "controls", "preload", "poster"],
+      source: ["src", "type"],
+      code: ["class"],
+      pre: ["tabindex"],
+    },
+    allowedSchemes: ["http", "https"],
+    allowedSchemesAppliedToAttributes: ["href", "src", "poster"],
+    allowProtocolRelative: false,
+    transformTags: {
+      a: (_tagName, attributes) => {
+        const href = safeUrl(attributes.href, bases.linkBase);
+        if (!href) return { tagName: "span", attribs: {} };
+        if (href.startsWith("#")) return { tagName: "a", attribs: { href } };
+        return { tagName: "a", attribs: { href, target: "_blank", rel: "noopener noreferrer" } };
+      },
+      img: (_tagName, attributes) => {
+        const src = safeUrl(attributes.src, bases.imageBase);
+        if (!src) return { tagName: "span", attribs: {} };
+        const decorativeIcon = validDimension(attributes.width) && Number(attributes.width) <= 64;
+        return {
+          tagName: "img",
+          attribs: {
+            src,
+            alt: decorativeIcon ? "" : attributes.alt || "",
+            ...(attributes.title ? { title: attributes.title } : {}),
+            ...(validDimension(attributes.width) ? { width: attributes.width } : {}),
+            ...(validDimension(attributes.height) ? { height: attributes.height } : {}),
+            loading: "lazy",
+            decoding: "async",
+            referrerpolicy: "no-referrer",
+          },
+        };
+      },
+      video: (_tagName, attributes) => {
+        const src = safeUrl(attributes.src, bases.imageBase);
+        return {
+          tagName: "video",
+          attribs: {
+            ...(src ? { src } : {}),
+            ...(validDimension(attributes.width) ? { width: attributes.width } : {}),
+            ...(validDimension(attributes.height) ? { height: attributes.height } : {}),
+            ...(attributes.controls !== undefined ? { controls: "" } : {}),
+            preload: "none",
+          },
+        };
+      },
+      source: (_tagName, attributes) => {
+        const src = safeUrl(attributes.src, bases.imageBase);
+        return { tagName: "source", attribs: src ? { src, ...(attributes.type ? { type: attributes.type } : {}) } : {} };
+      },
+      pre: () => ({ tagName: "pre", attribs: { tabindex: "0" } }),
+    },
+  }).replace(/<th>\s*<\/th>/g, '<td aria-hidden="true"></td>');
+}
+
+function validDimension(value) {
+  return /^\d{1,4}$/.test(String(value ?? ""));
 }
 
 export function guideSection(content) {

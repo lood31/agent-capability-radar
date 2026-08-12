@@ -52,7 +52,7 @@ test("详情页 README 默认收起、保留语言并转义恶意内容", async 
   await page.getByText("展开 README", { exact: true }).click();
   await expect(details).toHaveAttribute("open", "");
   await expect(page.locator(".readme-content")).toHaveAttribute("lang", "en");
-  await expect(page.getByText(malicious, { exact: true })).toBeVisible();
+  await expect(page.getByText(malicious, { exact: true })).toHaveCount(0);
   await expect(page.getByRole("link", { name: /在 GitHub 查看原始 README/ })).toHaveAttribute("href", "https://github.com/fixture/readme#readme");
   await expect(page.locator("img")).toHaveCount(0);
   expect(await page.evaluate(() => (window as Window & { __xss?: boolean }).__xss)).not.toBe(true);
