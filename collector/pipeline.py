@@ -12,6 +12,14 @@ from collector.catalog import build_catalog, load_catalog, validate_catalog
 from collector.github import GitHubClient, GitHubError
 from collector.history import HistoryStore
 from collector.models import ECOSYSTEM_LAYERS, PROJECT_SUBTYPES, Project
+from collector.project_content import (
+    GUIDE_SOURCES,
+    GUIDE_STATUSES,
+    PROJECT_CONTENT_TOTAL_MAX_BYTES,
+    build_project_content,
+    validate_project_content,
+    write_project_content,
+)
 from collector.rules import classify
 from collector.scoring import score_project
 from collector.translations import (
@@ -90,6 +98,13 @@ def validate_site_data(payload: dict[str, Any]) -> None:
             raise ValueError(f"Invalid project_subtype for {project.get('full_name')}")
         if project.get("summary_source") not in SUMMARY_SOURCES:
             raise ValueError(f"Invalid summary_source for {project.get('full_name')}")
+        if payload.get("schema_version") == SCHEMA_VERSION:
+            if project.get("guide_source") not in GUIDE_SOURCES:
+                raise ValueError(f"Invalid guide_source for {project.get('full_name')}")
+            if project.get("guide_status") not in GUIDE_STATUSES:
+                raise ValueError(f"Invalid guide_status for {project.get('full_name')}")
+            if not re.fullmatch(r"data/projects/\d+\.json", str(project.get("content_url", ""))):
+                raise ValueError(f"Invalid content_url for {project.get('full_name')}")
         for field in ("use_cases", "functional_capabilities"):
             if not isinstance(project.get(field), list):
                 raise ValueError(f"Invalid {field} for {project.get('full_name')}")
@@ -189,6 +204,10 @@ def collect(
     generated_at = now.isoformat().replace("+00:00", "Z")
     site_projects = [project.to_site_dict() for project in projects]
     for project in site_projects:
+        override = overrides.get(str(project["full_name"])) or {}
+        if isinstance(override.get("guide_zh"), dict):
+            project["guide_zh"] = override["guide_zh"]
+            project["guide_source"] = "manual"
         resolve_project_content(
             project,
             readmes[int(project["id"])],
@@ -203,7 +222,7 @@ def collect(
     translation_candidates = sorted(
         site_projects,
         key=lambda project: (
-            project.get("summary_status") == "stale",
+            project.get("guide_status") == "stale",
             -int(project.get("recommendation_score", 0)),
         ),
     )
@@ -211,7 +230,7 @@ def collect(
         for project in translation_candidates:
             if translation_calls >= translation_limit or stop_translation_batch:
                 break
-            if project.get("summary_status") not in {"pending", "stale"}:
+            if project.get("guide_status") not in {"partial", "stale", "unavailable"}:
                 continue
             called, stop_translation_batch = resolve_project_content(
                 project,
@@ -222,6 +241,16 @@ def collect(
                 allow_model_call=True,
             )
             translation_calls += int(called)
+    project_contents: dict[int, dict[str, Any]] = {}
+    for project in site_projects:
+        info = readmes[int(project["id"])]
+        project_contents[int(project["id"])] = build_project_content(
+            project,
+            readme_markdown=info.markdown,
+            readme_truncated=info.truncated,
+        )
+        project.pop("guide_zh", None)
+
     payload: dict[str, Any] = {
         "schema_version": SCHEMA_VERSION,
         "generated_at": generated_at,
@@ -245,7 +274,7 @@ def collect(
         for record in catalog["projects"]:
             if (
                 record["active"]
-                or record.get("summary_status") == "ready"
+                or record.get("guide_status") == "ready"
                 or checked_inactive >= translation_limit - translation_calls
                 or stop_translation_batch
             ):
@@ -266,9 +295,16 @@ def collect(
                 allow_model_call=True,
             )
             translation_calls += int(called)
+            project_contents[int(record["id"])] = build_project_content(
+                record,
+                readme_markdown=info.markdown,
+                readme_truncated=info.truncated,
+            )
+            record.pop("guide_zh", None)
 
     validate_catalog(catalog)
     validate_translation_cache(translations)
+    _validate_project_content_budget(root / "data" / "projects", project_contents)
     if not dry_run:
         history.append(observed, now)
         output = root / "public" / "data" / "site.json"
@@ -277,6 +313,8 @@ def collect(
         _atomic_write_json(catalog_path, catalog)
         _atomic_write_json(output, payload)
         _atomic_write_json(translations_path, translations)
+        for repo_id, content in project_contents.items():
+            write_project_content(root / "data" / "projects" / f"{repo_id}.json", content)
     return payload
 
 
@@ -287,3 +325,21 @@ def _atomic_write_json(path: Path, payload: dict[str, Any]) -> None:
         encoding="utf-8",
     )
     temporary.replace(path)
+
+
+def _validate_project_content_budget(
+    directory: Path, pending: dict[int, dict[str, Any]]
+) -> None:
+    sizes: dict[str, int] = {}
+    if directory.exists():
+        sizes.update({path.name: path.stat().st_size for path in directory.glob("*.json")})
+    for repo_id, payload in pending.items():
+        validate_project_content(payload)
+        sizes[f"{repo_id}.json"] = len(
+            (json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+        )
+    total = sum(sizes.values())
+    if total > PROJECT_CONTENT_TOTAL_MAX_BYTES:
+        raise ValueError(
+            f"Project content exceeds {PROJECT_CONTENT_TOTAL_MAX_BYTES} bytes: {total}"
+        )

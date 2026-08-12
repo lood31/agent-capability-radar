@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1027384981,
+  "full_name": "langchain-ai/deepagents",
+  "guide_zh": {
+    "overview": "The batteries-included agent harness.",
+    "capabilities": [
+      "编程与开发工具",
+      "搜索与研究",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "c404867a799a46fc6b26ac0d3824eb61135007b0e93793b07819621b9405fda1",
+    "source_url": "https://github.com/langchain-ai/deepagents#readme",
+    "markdown": "Deep Agents is an open source agent harness — an opinionated agent that runs out of the box. Extend, override, or replace any piece.\n\n**Opinionated** — defaults tuned for long-horizon, multi-step work **Extensible** — override or replace any piece without forking **Model-agnostic** — works with any LLM that supports tool calling: frontier, open-weight, or local **Production-ready** — built on LangGraph (streaming, persistence, checkpointing) with first-class tracing, evaluation, and deployment via LangSmith",
+    "truncated": false
+  }
+}

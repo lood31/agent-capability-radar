@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1166102148,
+  "full_name": "DeusData/codebase-memory-mcp",
+  "guide_zh": {
+    "overview": "High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.",
+    "capabilities": [
+      "编程与开发工具",
+      "浏览器与计算机操作",
+      "搜索与研究",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "2a396230faf9c7186c8874c5df374e92b77efd2cea0e13c8d549f5d0f4f27327",
+    "source_url": "https://github.com/DeusData/codebase-memory-mcp#readme",
+    "markdown": "**The fastest and most efficient code intelligence engine for AI coding agents.** Full-indexes an average repository in milliseconds, the Linux kernel (28M LOC, 75K files) in 3 minutes. Answers structural queries in under 1ms. Ships as a native executable with a small verified runtime-asset set for macOS, Linux, and Windows — download, run install, done.\n\nHigh-quality parsing through tree-sitter AST analysis across all 158 languages, enhanced with **Hybrid LSP** semantic type resolution for Python, TypeScript / JavaScript / JSX / TSX, PHP, C#, Go, C, C++, Java, Kotlin, Rust, and Perl — producing a persistent knowledge graph of functions, classes, call chains, HTTP routes, and cross-service links. 15 MCP tools. No language runtime, hosted service, or API key. Plug and play across 43 supported automatic/conditional client surfaces.",
+    "truncated": false
+  }
+}

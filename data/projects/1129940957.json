@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1129940957,
+  "full_name": "headroomlabs-ai/headroom",
+  "guide_zh": {
+    "overview": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+    "capabilities": [
+      "编程与开发工具",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "546946b0cfafd44220c8843c12088584c02a4222079da1e7185968ff1d9db514",
+    "source_url": "https://github.com/headroomlabs-ai/headroom#readme",
+    "markdown": "██╗ ██╗███████╗ █████╗ ██████╗ ██████╗ ██████╗ ██████╗ ███╗ ███╗ ██║ ██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗████╗ ████║ ███████║█████╗ ███████║██║ ██║██████╔╝██║ ██║██║ ██║██╔████╔██║ ██╔══██║██╔══╝ ██╔══██║██║ ██║██╔══██╗██║ ██║██║ ██║██║╚██╔╝██║ ██║ ██║███████╗██║ ██║██████╔╝██║ ██║╚██████╔╝╚██████╔╝██║ ╚═╝ ██║ ╚═╝ ╚═╝╚══════╝╚═╝ ╚═╝╚═════╝ ╚═╝ ╚═╝ ╚═════╝ ╚═════╝ ╚═╝ ╚═╝ The context compression layer for AI agents\n\n60–95% fewer tokens (for JSON data), 15-20% fewer tokens (for coding agents) · library · proxy · MCP · content-aware compressors · local-first · reversible",
+    "truncated": false
+  }
+}

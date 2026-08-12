@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "project_id": 942771284,
+  "full_name": "github/github-mcp-server",
+  "guide_zh": {
+    "overview": "GitHub's official MCP Server",
+    "capabilities": [
+      "浏览器与计算机操作",
+      "记忆与知识管理",
+      "自动化与任务编排"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "012dbb7a89ded9245c1d5a2b130af28da4994566657e11cb5887991641f74f38",
+    "source_url": "https://github.com/github/github-mcp-server#readme",
+    "markdown": "The GitHub MCP Server connects AI tools directly to GitHub's platform. This gives AI agents, assistants, and chatbots the ability to read repositories and code files, manage issues and PRs, analyze code, and automate workflows. All through natural language interactions.\n\nRepository Management: Browse and query code, search files, analyze commits, and understand project structure across any repository you have access to. Issue & PR Automation: Create, update, and manage issues and pull requests. Let AI help triage bugs, review code changes, and maintain project boards. CI/CD & Workflow Intelligence: Monitor GitHub Actions workflow runs, analyze build failures, manage releases, and get insights into your development pipeline. Code Analysis: Examine security findings, review Dependabot alerts, understand code patterns, and get comprehensive insights into your codebase.",
+    "truncated": false
+  }
+}

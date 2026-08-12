@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "project_id": 995029641,
+  "full_name": "ruvnet/ruflo",
+  "guide_zh": {
+    "overview": "🌊 The original agent meta-harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
+    "capabilities": [
+      "编程与开发工具",
+      "浏览器与计算机操作",
+      "搜索与研究",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "fd3a16d0bbd889924a389764ea404e01117d5ead97f27b5511a15fde90520935",
+    "source_url": "https://github.com/ruvnet/ruflo#readme",
+    "markdown": "**An agent meta-harness for Claude Code and Codex.**\n\n> **Agent = Model + Harness.** The model writes; the harness gives it tools, memory, loops, sandboxes, and controls so it can actually work. **Ruflo is the harness** — the execution layer around Claude Code and Codex that adds 100+ specialized agents, coordinated swarms, self-learning memory, federated comms across machines, and enterprise security guardrails. So agents don't just run, they collaborate.",
+    "truncated": false
+  }
+}

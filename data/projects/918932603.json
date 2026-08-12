@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "project_id": 918932603,
+  "full_name": "bytedance/UI-TARS-desktop",
+  "guide_zh": {
+    "overview": "The Open-Source Multimodal AI Agent Stack: Connecting Cutting-Edge AI Models and Agent Infra",
+    "capabilities": [
+      "浏览器与计算机操作",
+      "搜索与研究",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "0f05aa4f447d43439f6b3f4ab179cbe1e59d170eaf6c0684fa9c2eb0872e5985",
+    "source_url": "https://github.com/bytedance/UI-TARS-desktop#readme",
+    "markdown": "TARS\\* is a Multimodal AI Agent stack, currently shipping two projects: Agent TARS and UI-TARS-desktop:\n\nAgent TARS UI-TARS-desktop Agent TARS is a general multimodal AI Agent stack, it brings the power of GUI Agent and Vision into your terminal, computer, browser and product. It primarily ships with a CLI and Web UI for usage. It aims to provide a workflow that is closer to human-like task completion through cutting-edge multimodal LLMs and seamless integration with various real-world MCP tools. UI-TARS Desktop is a desktop application that provides a native GUI Agent based on the UI-TARS model. It primarily ships a local and remote computer as well as browser operators.",
+    "truncated": false
+  }
+}

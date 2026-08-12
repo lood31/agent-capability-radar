@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1061953414,
+  "full_name": "anthropics/skills",
+  "guide_zh": {
+    "overview": "Public repository for Agent Skills",
+    "capabilities": [
+      "自动化与任务编排"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "2fb9c4cc026366ea6e21c60cb23c908a4d27c62071819cc06beffaac102d0694",
+    "source_url": "https://github.com/anthropics/skills#readme",
+    "markdown": "> **Note:** This repository contains Anthropic's implementation of skills for Claude. For information about the Agent Skills standard, see agentskills.io.\n\nSkills Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.",
+    "truncated": false
+  }
+}

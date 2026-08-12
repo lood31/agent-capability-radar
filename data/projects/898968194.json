@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "project_id": 898968194,
+  "full_name": "huggingface/smolagents",
+  "guide_zh": {
+    "overview": "🤗 smolagents: a barebones library for agents that think in code.",
+    "capabilities": [
+      "编程与开发工具",
+      "浏览器与计算机操作",
+      "搜索与研究",
+      "记忆与知识管理",
+      "自动化与任务编排",
+      "评估、可观测性与安全"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": null,
+  "readme": {
+    "language": "en",
+    "hash": "131628d2669b4ee983c715002b57ea4b375b62c8502f6354b8d9fdf3fbc39f8d",
+    "source_url": "https://github.com/huggingface/smolagents#readme",
+    "markdown": "smolagents is a library that enables you to run powerful agents in a few lines of code. It offers:\n\n✨ **Simplicity**: the logic for agents fits in ~1,000 lines of code (see agents.py). We kept abstractions to their minimal shape above raw code!",
+    "truncated": false
+  }
+}

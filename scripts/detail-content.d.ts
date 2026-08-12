@@ -1,6 +1,4 @@
 export function escapeHtml(value: unknown): string;
-export function readmeSection(project: {
-  readme_excerpt?: string | null;
-  readme_language?: "zh" | "en" | "mixed" | "unknown";
-  readme_url?: string | null;
-}): string;
+export function renderSafeMarkdown(value: unknown): string;
+export function guideSection(content: Record<string, any>): string;
+export function readmeSection(content: Record<string, any>): string;
