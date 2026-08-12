@@ -43,16 +43,17 @@ test("详情页 README 默认收起、保留语言并转义恶意内容", async 
       language: "en",
       source_url: "https://github.com/fixture/readme#readme",
       truncated: false,
+      source_fidelity: "source_markdown",
     },
   });
   await page.setContent(`<!doctype html><html lang="zh-CN"><body><main>${section}</main></body></html>`);
   const details = page.locator("details");
   await expect(details).not.toHaveAttribute("open", "");
-  await page.getByText("展开 README 原文", { exact: true }).click();
+  await page.getByText("展开 README", { exact: true }).click();
   await expect(details).toHaveAttribute("open", "");
   await expect(page.locator(".readme-content")).toHaveAttribute("lang", "en");
   await expect(page.getByText(malicious, { exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: /查看完整 README/ })).toHaveAttribute("href", "https://github.com/fixture/readme#readme");
+  await expect(page.getByRole("link", { name: /在 GitHub 查看原始 README/ })).toHaveAttribute("href", "https://github.com/fixture/readme#readme");
   await expect(page.locator("img")).toHaveCount(0);
   expect(await page.evaluate(() => (window as Window & { __xss?: boolean }).__xss)).not.toBe(true);
 });
@@ -94,7 +95,7 @@ test("首页与静态详情页通过 Axe，详情支持直接访问", async ({ p
   await expect(page.getByRole("heading", { name: "技术与活跃度" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "接入与能力标签" })).toBeVisible();
   await expect(page.getByRole("heading", { name: /中文项目导读|项目原始简介/ })).toBeVisible();
-  const readmeToggle = page.getByText("展开 README 原文", { exact: true });
+  const readmeToggle = page.getByText("展开 README", { exact: true });
   if (await readmeToggle.count()) {
     await readmeToggle.click();
     await expect(page.locator("details.readme-details")).toHaveAttribute("open", "");

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { guideSection, renderSafeMarkdown } from "../scripts/detail-content.mjs";
+import { guideSection, readmeSection, renderSafeMarkdown } from "../scripts/detail-content.mjs";
 
 describe("detail content rendering", () => {
   it("renders safe external links and drops dangerous protocols", () => {
@@ -10,11 +10,30 @@ describe("detail content rendering", () => {
     expect(html).toContain("危险链接");
   });
 
-  it("does not execute raw HTML or render remote images", () => {
-    const html = renderSafeMarkdown('<script>alert(1)</script> ![preview](https://example.com/a.png)');
+  it("preserves safe images and relative links without executing raw HTML", () => {
+    const html = renderSafeMarkdown(
+      '<script>alert(1)</script>\n\n![preview](./docs/a.png)\n\n[Guide](./docs/start.md)',
+      "owner/repo",
+    );
     expect(html).not.toContain("<script>");
-    expect(html).not.toContain("<img");
-    expect(html).toContain("preview");
+    expect(html).toContain('<img src="https://raw.githubusercontent.com/owner/repo/HEAD/docs/a.png"');
+    expect(html).toContain('referrerpolicy="no-referrer"');
+    expect(html).toContain('href="https://github.com/owner/repo/blob/HEAD/docs/start.md"');
+    expect(html).not.toContain("onerror=");
+  });
+
+  it("does not describe legacy cleaned content as original README", () => {
+    const legacy = readmeSection({
+      full_name: "owner/repo",
+      readme: { markdown: "Legacy excerpt", source_url: "https://github.com/owner/repo#readme" },
+    });
+    expect(legacy).toContain("旧版摘要缓存，不是完整原文");
+
+    const source = readmeSection({
+      full_name: "owner/repo",
+      readme: { markdown: "# README", source_fidelity: "source_markdown" },
+    });
+    expect(source).toContain("保留 Markdown 正文并进行安全渲染");
   });
 
   it("guide contains only the overview and capability list", () => {

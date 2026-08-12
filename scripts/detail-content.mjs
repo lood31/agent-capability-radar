@@ -6,19 +6,35 @@ export function escapeHtml(value) {
   })[char]);
 }
 
-function safeUrl(value) {
+function safeUrl(value, base) {
+  if (String(value ?? "").startsWith("#")) return String(value);
   try {
-    const url = new URL(value);
+    const url = new URL(value, base);
     return ["http:", "https:"].includes(url.protocol) ? url.href : null;
   } catch {
     return null;
   }
 }
 
+function repositoryBases(fullName) {
+  const repo = String(fullName ?? "");
+  if (!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repo)) return {};
+  return {
+    linkBase: `https://github.com/${repo}/blob/HEAD/`,
+    imageBase: `https://raw.githubusercontent.com/${repo}/HEAD/`,
+  };
+}
+
 const markdown = new MarkdownIt({ html: false, linkify: false, typographer: false });
-markdown.renderer.rules.image = (tokens, index) => escapeHtml(tokens[index].content || "");
+markdown.renderer.rules.image = (tokens, index, options, env) => {
+  const src = safeUrl(tokens[index].attrGet("src"), env.imageBase);
+  const alt = escapeHtml(tokens[index].content || "");
+  if (!src) return alt;
+  const title = tokens[index].attrGet("title");
+  return `<img src="${escapeHtml(src)}" alt="${alt}" loading="lazy" decoding="async" referrerpolicy="no-referrer"${title ? ` title="${escapeHtml(title)}"` : ""}>`;
+};
 markdown.renderer.rules.link_open = (tokens, index, options, env, self) => {
-  const href = safeUrl(tokens[index].attrGet("href"));
+  const href = safeUrl(tokens[index].attrGet("href"), env.linkBase);
   if (!href) {
     tokens[index].meta = { unsafe: true };
     return "";
@@ -33,12 +49,12 @@ markdown.renderer.rules.link_close = (tokens, index, options, env, self) => {
   return opener?.meta?.unsafe ? "" : self.renderToken(tokens, index, options);
 };
 
-export function renderSafeMarkdown(value) {
+export function renderSafeMarkdown(value, fullName) {
   const safeSource = String(value ?? "").replace(
     /\[([^\]]+)\]\(\s*(?:javascript|data|vbscript):[^\n)]*\)\)?/gi,
     "$1",
   );
-  return markdown.render(safeSource);
+  return markdown.render(safeSource, repositoryBases(fullName));
 }
 
 export function guideSection(content) {
@@ -66,5 +82,10 @@ export function readmeSection(content) {
   if (!readme?.markdown) return "";
   const sourceUrl = safeUrl(readme.source_url);
   const language = readme.language === "en" ? "en" : readme.language === "zh" ? "zh-CN" : "";
-  return `<section class="detail-section readme-section" aria-labelledby="readme-title"><div class="readme-heading"><div><span class="eyebrow">README</span><h2 id="readme-title">README 原文</h2></div>${sourceUrl ? `<a class="secondary-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">查看完整 README ↗</a>` : ""}</div><details class="readme-details"><summary>展开 README 原文</summary><div class="readme-content"${language ? ` lang="${language}"` : ""}>${renderSafeMarkdown(readme.markdown)}</div></details>${readme.truncated ? `<p class="source-note">README 内容较长，本站已按完整章节截断，请前往 GitHub 查看全文。</p>` : `<p class="source-note">README 已经过安全清洗；远程图片、徽章和仓库内嵌 HTML 不会在本站执行。</p>`}</section>`;
+  const note = readme.source_fidelity === "source_markdown"
+    ? readme.truncated
+      ? "README 内容超过 80 KB，本站仅按章节边界截断；请前往 GitHub 查看完整原文。"
+      : "内容来自仓库 README；本站保留 Markdown 正文并进行安全渲染，原始 HTML 不执行，危险链接不可点击。"
+    : "当前展示的是旧版摘要缓存，不是完整原文；请前往 GitHub 查看原始 README，本站将在下一次数据采集后更新。";
+  return `<section class="detail-section readme-section" aria-labelledby="readme-title"><div class="readme-heading"><div><span class="eyebrow">README</span><h2 id="readme-title">README</h2></div>${sourceUrl ? `<a class="secondary-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">在 GitHub 查看原始 README ↗</a>` : ""}</div><details class="readme-details"><summary>展开 README</summary><div class="readme-content"${language ? ` lang="${language}"` : ""}>${renderSafeMarkdown(readme.markdown, content.full_name)}</div></details><p class="source-note">${note}</p></section>`;
 }

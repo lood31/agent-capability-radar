@@ -14,16 +14,9 @@ README_MARKDOWN_MAX_BYTES = 80_000
 GUIDE_SOURCES = {"manual", "github_models", "readme_zh", "metadata_fallback"}
 GUIDE_STATUSES = {"ready", "partial", "stale", "unavailable"}
 
-_HTML_COMMENT = re.compile(r"<!--.*?-->", re.DOTALL)
-_HTML_BLOCK = re.compile(
-    r"<(?:script|style|iframe|object|embed|svg|picture)\b.*?</(?:script|style|iframe|object|embed|svg|picture)>",
-    re.IGNORECASE | re.DOTALL,
-)
 _HTML_TAG = re.compile(r"<[^>]+>")
 _IMAGE = re.compile(r"!\[([^\]]*)\]\([^)]*\)")
-_REFERENCE_IMAGE = re.compile(r"!\[([^\]]*)\]\[[^\]]*\]")
 _FLAG = re.compile(r"[\U0001F1E6-\U0001F1FF]{2}")
-_HEADING = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 _LINK = re.compile(r"\[[^\]]+\]\([^)]+\)")
 _REFERENCE_LINK = re.compile(r"^\s*\[[^\]]+\]:\s*\S+")
 _LANGUAGE_WORDS = {
@@ -33,10 +26,6 @@ _LANGUAGE_WORDS = {
 _NAV_WORDS = {
     "docs", "documentation", "quickstart", "github", "discord", "twitter", "website",
     "community", "blog", "demo", "homepage", "roadmap",
-}
-_SKIP_SECTIONS = {
-    "table of contents", "contents", "目录", "目錄", "sponsors", "sponsor", "赞助",
-    "contributors", "contributing", "acknowledgements", "acknowledgments",
 }
 _CAPABILITY_ZH = {
     "Coding & Developer Tools": "编程与开发工具",
@@ -50,55 +39,12 @@ _CAPABILITY_ZH = {
 }
 
 
-def clean_readme_markdown(raw: str) -> tuple[str, bool]:
-    """Return conservative Markdown suitable for build-time rendering."""
-    source = _HTML_BLOCK.sub("", _HTML_COMMENT.sub("", raw.replace("\r\n", "\n")))
-    output: list[str] = []
-    in_code = False
-    fence = ""
-    skipped_heading_level: int | None = None
-
-    for source_line in source.splitlines():
-        stripped = source_line.strip()
-        if stripped.startswith(("```", "~~~")):
-            marker = stripped[:3]
-            if not in_code:
-                in_code, fence = True, marker
-            elif marker == fence:
-                in_code, fence = False, ""
-            if skipped_heading_level is None:
-                output.append(source_line.rstrip())
-            continue
-        if in_code:
-            if skipped_heading_level is None:
-                output.append(source_line.rstrip())
-            continue
-
-        heading = _HEADING.match(stripped)
-        if heading:
-            level = len(heading.group(1))
-            title = _plain_text(heading.group(2)).strip().casefold()
-            if skipped_heading_level is not None and level <= skipped_heading_level:
-                skipped_heading_level = None
-            if title in _SKIP_SECTIONS:
-                skipped_heading_level = level
-                continue
-        if skipped_heading_level is not None:
-            continue
-        if is_readme_noise_line(stripped):
-            continue
-
-        line = _IMAGE.sub(r"\1", source_line)
-        line = _REFERENCE_IMAGE.sub(r"\1", line)
-        line = _HTML_TAG.sub("", line)
-        line = html.unescape(line).rstrip()
-        output.append(line)
-
-    cleaned = _collapse_blank_lines("\n".join(output)).strip()
-    encoded = cleaned.encode("utf-8")
+def prepare_readme_markdown(raw: str) -> tuple[str, bool]:
+    """Preserve source Markdown, truncating only when the content budget requires it."""
+    encoded = raw.encode("utf-8")
     if len(encoded) <= README_MARKDOWN_MAX_BYTES:
-        return cleaned, False
-    return _truncate_at_section(cleaned, README_MARKDOWN_MAX_BYTES), True
+        return raw, False
+    return _truncate_at_section(raw, README_MARKDOWN_MAX_BYTES), True
 
 
 def build_project_content(
@@ -106,6 +52,7 @@ def build_project_content(
     *,
     readme_markdown: str,
     readme_truncated: bool,
+    readme_source_fidelity: bool = True,
 ) -> dict[str, Any]:
     guide = project.get("guide_zh") or metadata_guide(project)
     payload = {
@@ -122,6 +69,7 @@ def build_project_content(
             "source_url": project.get("readme_url"),
             "markdown": readme_markdown,
             "truncated": bool(readme_truncated),
+            "source_fidelity": "source_markdown" if readme_source_fidelity else "legacy_excerpt",
         },
     }
     validate_project_content(payload)
@@ -151,6 +99,8 @@ def validate_project_content(payload: dict[str, Any]) -> None:
     readme = payload.get("readme")
     if not isinstance(readme, dict) or not isinstance(readme.get("markdown"), str):
         raise ValueError("Invalid project README")
+    if readme.get("source_fidelity") not in {"source_markdown", "legacy_excerpt"}:
+        raise ValueError("Invalid project README fidelity")
     if len(readme["markdown"].encode("utf-8")) > README_MARKDOWN_MAX_BYTES:
         raise ValueError("Project README exceeds content budget")
     size = len((json.dumps(payload, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
@@ -213,10 +163,6 @@ def _plain_text(value: str) -> str:
     value = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", value)
     value = _HTML_TAG.sub("", value)
     return html.unescape(value)
-
-
-def _collapse_blank_lines(value: str) -> str:
-    return re.sub(r"\n{3,}", "\n\n", value)
 
 
 def _truncate_at_section(value: str, limit: int) -> str:

@@ -5,13 +5,13 @@ import unittest
 from collector.project_content import (
     README_MARKDOWN_MAX_BYTES,
     build_project_content,
-    clean_readme_markdown,
+    prepare_readme_markdown,
     validate_project_content,
 )
 
 
 class ProjectContentTests(unittest.TestCase):
-    def test_cleaner_removes_language_navigation_badges_and_remote_images(self) -> None:
+    def test_source_markdown_is_preserved_without_silent_cleanup(self) -> None:
         raw = """
 [![Build](https://img.shields.io/build.svg)](https://example.com)
 🇺🇸 English | 🇨🇳 简体中文 | 🇯🇵 日本語 | 🇰🇷 한국어
@@ -24,15 +24,9 @@ Agent Tool solves fragmented agent workflows while keeping project evidence visi
 ![Screenshot](https://example.com/remote.png)
 <script>alert('xss')</script>
 """
-        markdown, truncated = clean_readme_markdown(raw)
+        markdown, truncated = prepare_readme_markdown(raw)
         self.assertFalse(truncated)
-        self.assertIn("# Agent Tool", markdown)
-        self.assertIn("solves fragmented", markdown)
-        self.assertNotIn("🇺🇸", markdown)
-        self.assertNotIn("Discord", markdown)
-        self.assertNotIn("shields.io", markdown)
-        self.assertNotIn("remote.png", markdown)
-        self.assertNotIn("<script", markdown)
+        self.assertEqual(markdown, raw)
 
     def test_cleaner_preserves_useful_markdown_structure(self) -> None:
         raw = """
@@ -53,23 +47,23 @@ print("safe text")
 
 [Documentation](https://example.com/docs)
 """
-        markdown, _ = clean_readme_markdown(raw)
+        markdown, _ = prepare_readme_markdown(raw)
         self.assertIn("## Features", markdown)
         self.assertIn("- First capability", markdown)
         self.assertIn("```python", markdown)
         self.assertIn("| Name | Value |", markdown)
         self.assertIn("[Documentation](https://example.com/docs)", markdown)
 
-    def test_cleaner_removes_link_free_navigation_row(self) -> None:
-        markdown, _ = clean_readme_markdown(
+    def test_source_markdown_keeps_navigation_text(self) -> None:
+        markdown, _ = prepare_readme_markdown(
             "Quickstart · Docs · GitHub · Discord · Twitter · Website\n\nActual project overview."
         )
-        self.assertNotIn("Quickstart", markdown)
+        self.assertIn("Quickstart", markdown)
         self.assertIn("Actual project overview", markdown)
 
     def test_oversized_readme_is_truncated_within_budget(self) -> None:
         raw = "# Overview\n\n" + ("Useful project overview. " * 2500) + "\n\n## Later\n\n" + ("x" * 90_000)
-        markdown, truncated = clean_readme_markdown(raw)
+        markdown, truncated = prepare_readme_markdown(raw)
         self.assertTrue(truncated)
         self.assertLessEqual(len(markdown.encode("utf-8")), README_MARKDOWN_MAX_BYTES)
         self.assertNotIn("## Later", markdown)
@@ -91,6 +85,7 @@ print("safe text")
         }
         payload = build_project_content(project, readme_markdown="# README", readme_truncated=False)
         validate_project_content(payload)
+        self.assertEqual(payload["readme"]["source_fidelity"], "source_markdown")
         payload["guide_zh"]["installation"] = "不要出现"
         with self.assertRaisesRegex(ValueError, "Chinese project guide"):
             validate_project_content(payload)

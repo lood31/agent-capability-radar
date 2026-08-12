@@ -50,18 +50,19 @@ Agent Capability Radar 面向已经使用或正在构建 Agent 的开发者，�
 - 摘要优先级固定为人工 override → 中文 README 摘录 → 当前 hash 的模型摘要 → stale 旧摘要 → GitHub description。
 - `data/translations.json` 只按仓库 ID 与 README hash 缓存摘要、模型、时间和标准化错误码，不保存完整 README。
 - GitHub Models 使用 `openai/gpt-4.1-mini`，每轮最多20项；403、429、超时或无效 JSON 不阻塞采集和部署，dry-run 不调用模型也不写缓存。
-- 首页卡片显示四类摘要来源；详情页显示 README 原文摘录、语言属性、完整 README 链接，以及 AI 内容偏差提示。
+- 首页卡片显示四类摘要来源；详情页显示 README、语言属性、GitHub 原始 README 链接，以及 AI 内容偏差提示。
 - 搜索新增中文摘要和 README 摘录；`site.json` 构建体积门禁为600,000字节。
 
 ### 中文项目导读与可展开 README
 
 - 详情页删除仅重复标签的“30 秒看懂”，保留顶部简短简介，并将“技术与活跃度”和“接入与能力标签”合并为同一层扫描区域。
 - 新增“中文项目导读”，数据结构严格只有 `overview` 与 `capabilities`：前者说明项目是什么及主要解决什么问题，后者列出最多6项主要能力。
-- 每个catalog项目具有独立的 `data/projects/{repo-id}.json`，保存结构化导读和清洗后的README；主榜单仅保留 `content_url` 与导读来源、状态、更新时间。
-- README使用原生 `<details>` 默认收起，安全保留标题、段落、列表、代码块、表格和HTTP(S)链接；原始HTML、脚本、iframe、远程图片与危险协议不会被渲染。
-- 清洗器移除徽章、国旗、语言切换栏、目录、赞助区及Docs/Discord等链接导航；单个README最多80,000字节，超限按章节截断并链接GitHub全文。
+- 每个catalog项目具有独立的 `data/projects/{repo-id}.json`，保存结构化导读和仓库README Markdown；主榜单仅保留 `content_url` 与导读来源、状态、更新时间。
+- README使用原生 `<details>` 默认收起；原始Markdown不再删除徽章、导航、目录或正文，标题、段落、列表、代码块、表格、安全链接和HTTPS图片均可展示。
+- 安全边界只在构建渲染时生效：原始HTML不执行，脚本、iframe和危险协议不可用，远程图片延迟加载且不发送referrer。单个README最多80,000字节，超限按章节截断并链接GitHub全文。
+- 项目内容记录 `source_fidelity`；旧版清洗缓存明确标为非完整原文，只有重新采集到仓库Markdown后才显示原文保真说明。
 - GitHub Models现在输出150–300字项目说明和1–6项有README依据的能力，不生成安装方法、使用场景、适用人群、依赖、限制或注意事项。
-- `site.json`继续限制600,000字节；单个项目内容限制100,000字节，全部内容限制10,000,000字节。当前94个项目内容文件共约128 KB。
+- `site.json`继续限制600,000字节；单个项目内容限制100,000字节，全部内容限制10,000,000字节。当前130个catalog项目均有独立内容文件。
 
 ### 数据与自动化
 

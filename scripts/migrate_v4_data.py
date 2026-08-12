@@ -13,7 +13,7 @@ from collector.catalog import migrate_catalog, validate_catalog
 from collector.pipeline import validate_site_data, validate_site_size
 from collector.project_content import (
     build_project_content,
-    clean_readme_markdown,
+    prepare_readme_markdown,
     metadata_guide,
     write_project_content,
 )
@@ -65,12 +65,13 @@ def main() -> None:
     validate_translation_cache(translations)
 
     for project in catalog["projects"]:
-        markdown, truncated = clean_readme_markdown(project.get("readme_excerpt") or "")
+        markdown, truncated = prepare_readme_markdown(project.get("readme_excerpt") or "")
         content_project = {**project, "guide_zh": guide_for(project)}
         content = build_project_content(
             content_project,
             readme_markdown=markdown,
             readme_truncated=truncated,
+            readme_source_fidelity=False,
         )
         write_project_content(ROOT / "data" / "projects" / f"{int(project['id'])}.json", content)
 

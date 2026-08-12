@@ -14,7 +14,7 @@ from typing import Any, Protocol
 from collector.project_content import (
     GUIDE_SOURCES,
     GUIDE_STATUSES,
-    clean_readme_markdown,
+    prepare_readme_markdown,
     is_readme_noise_line,
     metadata_guide,
 )
@@ -177,7 +177,7 @@ def analyse_readme(full_name: str, raw: str) -> ReadmeInfo:
     cleaned = clean_readme(select_model_sections(raw), max_chars=6000)
     excerpt = "\n\n".join(cleaned.split("\n\n")[:2])[:1200].rstrip() or None
     language = detect_language(excerpt or "")
-    markdown, truncated = clean_readme_markdown(raw)
+    markdown, truncated = prepare_readme_markdown(raw)
     return ReadmeInfo(
         excerpt,
         language,
