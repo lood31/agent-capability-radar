@@ -22,6 +22,40 @@ describe("detail content rendering", () => {
     expect(html).not.toContain("onerror=");
   });
 
+  it("renders Paperclip-style centered HTML media instead of showing tags as text", () => {
+    const readme = `<p align="center">
+  <img src="doc/assets/banner.jpg" alt="Paperclip banner" width="720" />
+</p>
+<p align="center">
+  <a href="#quickstart"><strong>Quickstart</strong></a> ·
+  <a href="https://docs.paperclip.ing"><strong>Docs</strong></a>
+</p>
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/demo" width="600" controls></video>
+</div>
+<iframe src="https://evil.example"></iframe>
+<img src="x" onerror="alert(1)">`;
+    const html = renderSafeMarkdown(readme, "paperclipai/paperclip");
+    expect(html).toContain('<p align="center">');
+    expect(html).toContain('src="https://raw.githubusercontent.com/paperclipai/paperclip/HEAD/doc/assets/banner.jpg"');
+    expect(html).toContain('href="#quickstart"');
+    expect(html).toContain('<video src="https://github.com/user-attachments/assets/demo" width="600" controls preload="none"></video>');
+    expect(html).not.toContain("&lt;p");
+    expect(html).not.toContain("<iframe");
+    expect(html).not.toContain("onerror");
+  });
+
+  it("repairs common README accessibility issues", () => {
+    const html = renderSafeMarkdown(
+      '|  | Name |\n| --- | --- |\n| <img src="./codex.svg" alt="Codex" width="32"> | Codex |\n\n```bash\necho hello\n```',
+      "owner/repo",
+    );
+    expect(html).not.toContain("<th></th>");
+    expect(html).toContain('<td aria-hidden="true"></td>');
+    expect(html).toContain('alt=""');
+    expect(html).toContain('<pre tabindex="0">');
+  });
+
   it("does not describe legacy cleaned content as original README", () => {
     const legacy = readmeSection({
       full_name: "owner/repo",
