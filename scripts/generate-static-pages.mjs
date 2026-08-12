@@ -47,7 +47,7 @@ function detailHtml(project, similar, content) {
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="index, follow">
 <meta name="theme-color" content="#f4f7fb"><meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <link rel="canonical" href="${projectUrl(project)}"><link rel="stylesheet" href="../../../assets/${cssAsset}">
 <meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta property="og:url" content="${projectUrl(project)}">
 <meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}">
