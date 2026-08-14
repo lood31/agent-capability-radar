@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "project_id": 1333065091,
+  "full_name": "deepseek-ai/deepseek-harness",
+  "guide_zh": {
+    "overview": "DeepSeek Harness: Everything is a Plugin.",
+    "capabilities": [
+      "搜索与研究"
+    ]
+  },
+  "guide_source": "metadata_fallback",
+  "guide_status": "partial",
+  "guide_updated_at": "2026-08-14T13:41:16.016675Z",
+  "readme": {
+    "language": "en",
+    "hash": "56d143f81cf6d8ea754af1aad3e8ca5901f1e2b59e38e8321968d1fa0e83eb72",
+    "source_url": "https://github.com/deepseek-ai/deepseek-harness#readme",
+    "markdown": "# DeepSeek Harness\n\nEnglish | [中文](README.zh.md)\n\nDeepSeek Harness (`dsh`) is an open-source agent harness developed by [DeepSeek AI](https://deepseek.com).\n\nIt uses an architecture where **everything is a plugin**, and is powered by [Cordis](https://github.com/cordiverse/cordis), whose design is described in [_A Programming Paradigm for Spatiotemporal Composability_](https://github.com/cordiverse/paper).\n\n## Developer preview\n\nDeepSeek Harness is currently in _developer preview_ and is iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.**\n\n## Run\n\n### Run from `npm`\n\nInstall `Node.js`, then run:\n\n```sh\nnpx @deepseek-ai/dsh web\n```\n\nThe command starts the Web UI, served at `http://127.0.0.1:3080` by default. See [Web UI guide](docs/user/guide/index.md).\n\n### Run from source\n\nTo run from a repository checkout:\n\n```sh\ngit clone https://github.com/deepseek-ai/deepseek-harness.git\ncd deepseek-harness\npnpm install\npnpm run build\npnpm dsh web\n```\n\n## Community and support\n\n- Feel free to submit feedback or bug reports through [GitHub Discussions](https://github.com/deepseek-ai/deepseek-harness/discussions).\n- Add the [`dsh-plugin`](https://github.com/topics/dsh-plugin) topic to your plugin repository for discoverability.\n- Join <a href=\"https://discord.gg/Ycq5dCaS4\">DeepSeek Harness Discord community</a>.\n\n## Contributing\n\nSee [CONTRIBUTING.md](CONTRIBUTING.md).\n\n## Development\n\nStart with the [development guide](docs/development.md) and [architecture documentation](docs/architecture.md).\n\nFor agents, follow [AGENTS.md](AGENTS.md).\n\n## License\n\n[MIT](LICENSE)\n\nThird-party dependencies and their licenses are disclosed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).\n",
+    "truncated": false,
+    "source_fidelity": "source_markdown"
+  }
+}
