@@ -198,7 +198,7 @@
       "summary_zh": null,
       "model": "openai/gpt-4.1-mini",
       "generated_at": null,
-      "status": "pending",
+      "status": "stale",
       "last_error_code": "api_error",
       "guide_zh": null
     },
@@ -390,6 +390,16 @@
       "model": "openai/gpt-4.1-mini",
       "generated_at": null,
       "status": "stale",
+      "last_error_code": "api_error"
+    },
+    "1137711311": {
+      "full_name": "Hmbown/CodeWhale",
+      "readme_hash": "1569156eb887a13b450cc65f4cec0fe1d77cdb301f7cb0f7ec3531fb89cc2770",
+      "summary_zh": null,
+      "guide_zh": null,
+      "model": "openai/gpt-4.1-mini",
+      "generated_at": null,
+      "status": "pending",
       "last_error_code": "api_error"
     }
   }
