@@ -1,6 +1,6 @@
 {
   "schema_version": "1.4",
-  "generated_at": "2026-08-29T16:42:10.439967Z",
+  "generated_at": "2026-08-29T20:54:09.255821Z",
   "collection_status": "live",
   "windows": {
     "new_projects_days": 30
@@ -38,8 +38,8 @@
         "scientific-visualization"
       ],
       "license": "MIT",
-      "stars": 37643,
-      "forks": 3558,
+      "stars": 37855,
+      "forks": 3567,
       "open_issues": 15,
       "created_at": "2025-10-19T20:54:15Z",
       "pushed_at": "2026-08-29T13:57:33Z",
@@ -97,11 +97,11 @@
       "local_first": false,
       "external_service_required": false,
       "setup_level": "easy",
-      "quality_score": 88,
+      "quality_score": 89,
       "fit_score": 85,
-      "recommendation_score": 87,
+      "recommendation_score": 88,
       "score_breakdown": {
-        "growth": 73,
+        "growth": 75,
         "heat": 90,
         "activity": 100,
         "community": 91,
@@ -109,10 +109,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 1991,
-        "day_7": 3529,
+        "day_1": 2203,
+        "day_7": 3726,
         "day_30": null,
-        "percent_7": 10.34,
+        "percent_7": 10.92,
         "sparkline": [
           33056,
           33145,
@@ -134,12 +134,12 @@
           34665,
           35272,
           36494,
-          37643
+          37855
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
-        "过去 7 天新增 3,529 Stars",
+        "过去 7 天新增 3,726 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -159,7 +159,7 @@
       "content_url": "data/projects/1079456184.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -187,11 +187,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 28251,
-      "forks": 2823,
-      "open_issues": 1956,
+      "stars": 28283,
+      "forks": 2826,
+      "open_issues": 1913,
       "created_at": "2025-12-31T14:01:28Z",
-      "pushed_at": "2026-08-29T14:58:27Z",
+      "pushed_at": "2026-08-29T18:18:23Z",
       "content_type": "可运行工具",
       "ecosystem_layer": "Agents",
       "project_subtype": "Coding Agent",
@@ -255,23 +255,23 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 195,
-        "day_7": 4750,
+        "day_1": 227,
+        "day_7": 4782,
         "day_30": null,
-        "percent_7": 20.21,
+        "percent_7": 20.35,
         "sparkline": [
           23262,
           23501,
           27663,
           27916,
           28143,
-          28251
+          28283
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 4,750 Stars",
+        "过去 7 天新增 4,782 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -291,161 +291,7 @@
       "content_url": "data/projects/1125856365.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
-      "summary_status": "pending"
-    },
-    {
-      "id": 1032808806,
-      "full_name": "usestrix/strix",
-      "url": "https://github.com/usestrix/strix",
-      "homepage": "https://strix.ai",
-      "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
-      "language": "Python",
-      "topics": [
-        "agents",
-        "ai-hacking",
-        "ai-penetration-testing",
-        "ai-pentesting",
-        "ai-security",
-        "artificial-intelligence",
-        "bug-bounty",
-        "code-quality",
-        "ctf-tools",
-        "cybersecurity",
-        "cybersecurity-tools",
-        "ethical-hacking",
-        "hacking",
-        "llm-security",
-        "offensive-security",
-        "penetration-testing",
-        "pentesting-tools",
-        "red-teaming",
-        "security",
-        "security-automation"
-      ],
-      "license": "Apache-2.0",
-      "stars": 59247,
-      "forks": 6467,
-      "open_issues": 329,
-      "created_at": "2025-08-05T21:28:30Z",
-      "pushed_at": "2026-08-28T20:46:50Z",
-      "content_type": "MCP Server",
-      "ecosystem_layer": "MCP & Connectors",
-      "project_subtype": "MCP Server",
-      "use_cases": [
-        "Agent Development",
-        "Coding",
-        "Research & Literature",
-        "Knowledge Management",
-        "Automation",
-        "Learning"
-      ],
-      "functional_capabilities": [
-        "Coding & Developer Tools",
-        "Browser & Computer Use",
-        "Search & Research",
-        "Memory & Knowledge",
-        "Automation & Orchestration",
-        "Evaluation, Observability & Safety"
-      ],
-      "summary_zh": null,
-      "summary_source": "github_description",
-      "features": {
-        "web_ui": true,
-        "api": true,
-        "sdk": false,
-        "cli": true,
-        "docker": true,
-        "self_host": true,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "MCP & Connectors",
-      "capabilities": [
-        "Agent Core",
-        "MCP & Connectors",
-        "Memory & Knowledge"
-      ],
-      "research_use_cases": [
-        "知识与笔记整理"
-      ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Linux",
-        "Web",
-        "Docker"
-      ],
-      "local_first": true,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 85,
-      "fit_score": 88,
-      "recommendation_score": 86,
-      "score_breakdown": {
-        "growth": 57,
-        "heat": 94,
-        "activity": 100,
-        "community": 95,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 261,
-        "day_7": 2320,
-        "day_30": null,
-        "percent_7": 4.08,
-        "sparkline": [
-          50715,
-          51158,
-          51500,
-          51820,
-          52089,
-          52453,
-          53248,
-          53932,
-          54991,
-          55592,
-          56096,
-          56634,
-          57013,
-          57370,
-          57715,
-          58114,
-          58518,
-          58848,
-          59099,
-          59247
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合知识与笔记整理",
-        "支持本地或自托管运行",
-        "过去 7 天新增 2,320 Stars"
-      ],
-      "classification_evidence": [
-        "生态层: MCP & Connectors",
-        "项目类型: MCP Server",
-        "命中 model context protocol",
-        "命中 mcp",
-        "命中 mcp server",
-        "Topics: agents, ai-hacking, ai-penetration-testing, ai-pentesting"
-      ],
-      "readme_excerpt": "Strix are autonomous AI penetration testing agents that act just like real hackers - they run your code dynamically, find vulnerabilities, and validate them through actual proofs-of-concept. Built for developers and security teams who need fast, accurate security testing without the overhead of manual pentesting or the false positives of static analysis tools.\n\n**Full pentesting toolkit** - reconnaissance, exploitation, and validation out of the box **Multi-agent orchestration** - teams of AI pentesters that collaborate and scale **Real exploit validation** - working PoCs, not false positives like legacy vulnerability scanners **Developer‑first CLI** - actionable findings with remediation guidance **Auto‑fix & reporting** - generate patches and compliance-ready pentest reports",
-      "readme_language": "en",
-      "readme_url": "https://github.com/usestrix/strix#readme",
-      "readme_hash": "58fc4a6c2345b9529586989a2c363665e35e2ca936ecd1ae6fc203df7d1d24ea",
-      "summary_model": null,
-      "summary_updated_at": null,
-      "content_url": "data/projects/1032808806.json",
-      "guide_source": "metadata_fallback",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -477,11 +323,11 @@
         "tree-sitter"
       ],
       "license": "Apache-2.0",
-      "stars": 112212,
-      "forks": 10914,
-      "open_issues": 1165,
+      "stars": 112263,
+      "forks": 10924,
+      "open_issues": 1151,
       "created_at": "2026-04-03T15:49:07Z",
-      "pushed_at": "2026-08-28T00:29:00Z",
+      "pushed_at": "2026-08-29T18:41:12Z",
       "content_type": "Skill Pack",
       "ecosystem_layer": "Skills & Plugins",
       "project_subtype": "Agent Skill",
@@ -538,16 +384,16 @@
       "score_breakdown": {
         "growth": 55,
         "heat": 99,
-        "activity": 98,
+        "activity": 100,
         "community": 99,
         "completeness": 100,
         "penalty": 0
       },
       "growth": {
-        "day_1": 438,
-        "day_7": 2806,
+        "day_1": 489,
+        "day_7": 2756,
         "day_30": null,
-        "percent_7": 2.56,
+        "percent_7": 2.52,
         "sparkline": [
           104553,
           104939,
@@ -569,14 +415,14 @@
           111002,
           111592,
           111976,
-          112212
+          112263
         ]
       },
       "recommendation_reasons": [
         "适合文献与引用管理",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 2,806 Stars"
+        "过去 7 天新增 2,756 Stars"
       ],
       "classification_evidence": [
         "生态层: Skills & Plugins",
@@ -595,7 +441,7 @@
       "content_url": "data/projects/1200597263.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -628,11 +474,11 @@
         "supermemory"
       ],
       "license": "Apache-2.0",
-      "stars": 92562,
-      "forks": 8140,
-      "open_issues": 264,
+      "stars": 92578,
+      "forks": 8142,
+      "open_issues": 266,
       "created_at": "2025-08-31T20:50:03Z",
-      "pushed_at": "2026-08-29T10:04:53Z",
+      "pushed_at": "2026-08-29T17:10:17Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Infrastructure",
       "project_subtype": "Memory & Knowledge",
@@ -693,8 +539,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 111,
-        "day_7": 1062,
+        "day_1": 127,
+        "day_7": 1058,
         "day_30": null,
         "percent_7": 1.16,
         "sparkline": [
@@ -718,14 +564,14 @@
           91927,
           92238,
           92509,
-          92562
+          92578
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合文献与引用管理",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,062 Stars"
+        "过去 7 天新增 1,058 Stars"
       ],
       "classification_evidence": [
         "生态层: Infrastructure",
@@ -745,7 +591,161 @@
       "summary_status": "ready",
       "guide_source": "manual",
       "guide_status": "ready",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
+    },
+    {
+      "id": 1032808806,
+      "full_name": "usestrix/strix",
+      "url": "https://github.com/usestrix/strix",
+      "homepage": "https://strix.ai",
+      "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
+      "language": "Python",
+      "topics": [
+        "agents",
+        "ai-hacking",
+        "ai-penetration-testing",
+        "ai-pentesting",
+        "ai-security",
+        "artificial-intelligence",
+        "bug-bounty",
+        "code-quality",
+        "ctf-tools",
+        "cybersecurity",
+        "cybersecurity-tools",
+        "ethical-hacking",
+        "hacking",
+        "llm-security",
+        "offensive-security",
+        "penetration-testing",
+        "pentesting-tools",
+        "red-teaming",
+        "security",
+        "security-automation"
+      ],
+      "license": "Apache-2.0",
+      "stars": 59289,
+      "forks": 6474,
+      "open_issues": 329,
+      "created_at": "2025-08-05T21:28:30Z",
+      "pushed_at": "2026-08-28T20:46:50Z",
+      "content_type": "MCP Server",
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Research & Literature",
+        "Knowledge Management",
+        "Automation",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Browser & Computer Use",
+        "Search & Research",
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": true,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "MCP & Connectors",
+      "capabilities": [
+        "Agent Core",
+        "MCP & Connectors",
+        "Memory & Knowledge"
+      ],
+      "research_use_cases": [
+        "知识与笔记整理"
+      ],
+      "integration_methods": [
+        "MCP",
+        "CLI",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Linux",
+        "Web",
+        "Docker"
+      ],
+      "local_first": true,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 84,
+      "fit_score": 88,
+      "recommendation_score": 85,
+      "score_breakdown": {
+        "growth": 57,
+        "heat": 94,
+        "activity": 98,
+        "community": 95,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 303,
+        "day_7": 2276,
+        "day_30": null,
+        "percent_7": 3.99,
+        "sparkline": [
+          50715,
+          51158,
+          51500,
+          51820,
+          52089,
+          52453,
+          53248,
+          53932,
+          54991,
+          55592,
+          56096,
+          56634,
+          57013,
+          57370,
+          57715,
+          58114,
+          58518,
+          58848,
+          59099,
+          59289
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "适合知识与笔记整理",
+        "支持本地或自托管运行",
+        "过去 7 天新增 2,276 Stars"
+      ],
+      "classification_evidence": [
+        "生态层: MCP & Connectors",
+        "项目类型: MCP Server",
+        "命中 model context protocol",
+        "命中 mcp",
+        "命中 mcp server",
+        "Topics: agents, ai-hacking, ai-penetration-testing, ai-pentesting"
+      ],
+      "readme_excerpt": "Strix are autonomous AI penetration testing agents that act just like real hackers - they run your code dynamically, find vulnerabilities, and validate them through actual proofs-of-concept. Built for developers and security teams who need fast, accurate security testing without the overhead of manual pentesting or the false positives of static analysis tools.\n\n**Full pentesting toolkit** - reconnaissance, exploitation, and validation out of the box **Multi-agent orchestration** - teams of AI pentesters that collaborate and scale **Real exploit validation** - working PoCs, not false positives like legacy vulnerability scanners **Developer‑first CLI** - actionable findings with remediation guidance **Auto‑fix & reporting** - generate patches and compliance-ready pentest reports",
+      "readme_language": "en",
+      "readme_url": "https://github.com/usestrix/strix#readme",
+      "readme_hash": "58fc4a6c2345b9529586989a2c363665e35e2ca936ecd1ae6fc203df7d1d24ea",
+      "summary_model": null,
+      "summary_updated_at": null,
+      "content_url": "data/projects/1032808806.json",
+      "guide_source": "metadata_fallback",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
+      "summary_status": "pending"
     },
     {
       "id": 658928958,
@@ -772,8 +772,8 @@
         "qwen"
       ],
       "license": "MIT",
-      "stars": 179725,
-      "forks": 17606,
+      "stars": 179737,
+      "forks": 17605,
       "open_issues": 3844,
       "created_at": "2023-06-26T19:39:32Z",
       "pushed_at": "2026-08-29T03:47:58Z",
@@ -844,10 +844,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 105,
-        "day_7": 559,
+        "day_1": 117,
+        "day_7": 545,
         "day_30": null,
-        "percent_7": 0.31,
+        "percent_7": 0.3,
         "sparkline": [
           178216,
           178283,
@@ -868,14 +868,14 @@
           179510,
           179581,
           179662,
-          179725
+          179737
         ]
       },
       "recommendation_reasons": [
         "适合知识与笔记整理",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 559 Stars"
+        "过去 7 天新增 545 Stars"
       ],
       "classification_evidence": [
         "生态层: Infrastructure",
@@ -894,7 +894,7 @@
       "content_url": "data/projects/658928958.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "unavailable"
     },
     {
@@ -906,11 +906,11 @@
       "language": "TypeScript",
       "topics": [],
       "license": "MIT",
-      "stars": 79625,
-      "forks": 14600,
-      "open_issues": 5444,
+      "stars": 79632,
+      "forks": 14603,
+      "open_issues": 5433,
       "created_at": "2026-03-02T15:01:51Z",
-      "pushed_at": "2026-08-29T16:40:24Z",
+      "pushed_at": "2026-08-29T20:53:28Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Agents",
       "project_subtype": "Agent Framework",
@@ -976,10 +976,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 91,
-        "day_7": 489,
+        "day_1": 98,
+        "day_7": 469,
         "day_30": null,
-        "percent_7": 0.62,
+        "percent_7": 0.59,
         "sparkline": [
           76052,
           76357,
@@ -1001,7 +1001,7 @@
           79427,
           79508,
           79569,
-          79625
+          79632
         ]
       },
       "recommendation_reasons": [
@@ -1026,7 +1026,7 @@
       "content_url": "data/projects/1170821064.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -1053,9 +1053,9 @@
         "state-management"
       ],
       "license": "Apache-2.0",
-      "stars": 64314,
-      "forks": 7530,
-      "open_issues": 702,
+      "stars": 64318,
+      "forks": 7533,
+      "open_issues": 703,
       "created_at": "2023-06-20T08:58:36Z",
       "pushed_at": "2026-08-28T18:02:50Z",
       "content_type": "Skill Pack",
@@ -1117,16 +1117,16 @@
       "score_breakdown": {
         "growth": 41,
         "heat": 95,
-        "activity": 100,
+        "activity": 98,
         "community": 96,
         "completeness": 100,
         "penalty": 0
       },
       "growth": {
-        "day_1": 70,
-        "day_7": 512,
+        "day_1": 74,
+        "day_7": 496,
         "day_30": null,
-        "percent_7": 0.8,
+        "percent_7": 0.78,
         "sparkline": [
           62870,
           62950,
@@ -1148,13 +1148,13 @@
           64108,
           64201,
           64270,
-          64314
+          64318
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
         "支持本地或自托管运行",
-        "过去 7 天新增 512 Stars",
+        "过去 7 天新增 496 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -1174,7 +1174,7 @@
       "summary_status": "ready",
       "guide_source": "manual",
       "guide_status": "ready",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
     },
     {
       "id": 1202057891,
@@ -1185,9 +1185,9 @@
       "language": "TypeScript",
       "topics": [],
       "license": "MIT",
-      "stars": 29280,
-      "forks": 4345,
-      "open_issues": 152,
+      "stars": 29287,
+      "forks": 4349,
+      "open_issues": 156,
       "created_at": "2026-04-05T14:40:56Z",
       "pushed_at": "2026-08-29T10:45:03Z",
       "content_type": "MCP Server",
@@ -1243,7 +1243,7 @@
       "fit_score": 88,
       "recommendation_score": 83,
       "score_breakdown": {
-        "growth": 64,
+        "growth": 65,
         "heat": 88,
         "activity": 100,
         "community": 92,
@@ -1251,7 +1251,7 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 52,
+        "day_1": 59,
         "day_7": null,
         "day_30": null,
         "percent_7": null,
@@ -1259,7 +1259,7 @@
           29136,
           29196,
           29243,
-          29280
+          29287
         ]
       },
       "recommendation_reasons": [
@@ -1284,7 +1284,7 @@
       "content_url": "data/projects/1202057891.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -1303,9 +1303,9 @@
         "self-evolving"
       ],
       "license": "AGPL-3.0",
-      "stars": 34248,
-      "forks": 2602,
-      "open_issues": 580,
+      "stars": 34279,
+      "forks": 2607,
+      "open_issues": 581,
       "created_at": "2026-01-05T07:11:17Z",
       "pushed_at": "2026-08-29T15:23:53Z",
       "content_type": "Framework / SDK",
@@ -1357,11 +1357,11 @@
       "local_first": true,
       "external_service_required": false,
       "setup_level": "medium",
-      "quality_score": 85,
+      "quality_score": 84,
       "fit_score": 77,
       "recommendation_score": 82,
       "score_breakdown": {
-        "growth": 65,
+        "growth": 64,
         "heat": 88,
         "activity": 100,
         "community": 88,
@@ -1369,10 +1369,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 205,
-        "day_7": 2377,
+        "day_1": 236,
+        "day_7": 2295,
         "day_30": null,
-        "percent_7": 7.46,
+        "percent_7": 7.18,
         "sparkline": [
           28120,
           28167,
@@ -1394,14 +1394,14 @@
           33535,
           33876,
           34135,
-          34248
+          34279
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 2,377 Stars"
+        "过去 7 天新增 2,295 Stars"
       ],
       "classification_evidence": [
         "生态层: Skills & Plugins",
@@ -1420,7 +1420,7 @@
       "content_url": "data/projects/1128123594.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -1453,11 +1453,11 @@
         "vibe-coding"
       ],
       "license": "Apache-2.0",
-      "stars": 92570,
-      "forks": 10670,
-      "open_issues": 904,
+      "stars": 92597,
+      "forks": 10672,
+      "open_issues": 908,
       "created_at": "2026-04-28T04:25:20Z",
-      "pushed_at": "2026-08-29T16:01:05Z",
+      "pushed_at": "2026-08-29T18:06:37Z",
       "content_type": "Skill Pack",
       "ecosystem_layer": "Skills & Plugins",
       "project_subtype": "Agent Skill",
@@ -1515,10 +1515,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 320,
-        "day_7": 2260,
+        "day_1": 347,
+        "day_7": 2203,
         "day_30": null,
-        "percent_7": 2.5,
+        "percent_7": 2.44,
         "sparkline": [
           84722,
           84882,
@@ -1540,13 +1540,13 @@
           91755,
           92039,
           92373,
-          92570
+          92597
         ]
       },
       "recommendation_reasons": [
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 2,260 Stars",
+        "过去 7 天新增 2,203 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -1565,7 +1565,7 @@
       "content_url": "data/projects/1223170290.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -1598,9 +1598,9 @@
         "typescript"
       ],
       "license": "Apache-2.0",
-      "stars": 67989,
-      "forks": 5262,
-      "open_issues": 572,
+      "stars": 68004,
+      "forks": 5264,
+      "open_issues": 577,
       "created_at": "2026-01-07T19:58:51Z",
       "pushed_at": "2026-08-29T03:51:00Z",
       "content_type": "MCP Server",
@@ -1665,8 +1665,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 112,
-        "day_7": 827,
+        "day_1": 127,
+        "day_7": 824,
         "day_30": null,
         "percent_7": 1.23,
         "sparkline": [
@@ -1690,14 +1690,14 @@
           67694,
           67818,
           67928,
-          67989
+          68004
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 827 Stars"
+        "过去 7 天新增 824 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -1716,7 +1716,7 @@
       "content_url": "data/projects/1129940957.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -1749,11 +1749,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 50885,
-      "forks": 8809,
+      "stars": 50943,
+      "forks": 8818,
       "open_issues": 99,
       "created_at": "2026-03-18T18:38:02Z",
-      "pushed_at": "2026-08-29T16:12:45Z",
+      "pushed_at": "2026-08-29T17:00:17Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "MCP & Connectors",
       "project_subtype": "MCP Server",
@@ -1801,7 +1801,7 @@
       "fit_score": 68,
       "recommendation_score": 81,
       "score_breakdown": {
-        "growth": 65,
+        "growth": 66,
         "heat": 94,
         "activity": 100,
         "community": 98,
@@ -1809,10 +1809,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 449,
-        "day_7": 3272,
+        "day_1": 507,
+        "day_7": 3304,
         "day_30": null,
-        "percent_7": 6.87,
+        "percent_7": 6.94,
         "sparkline": [
           46374,
           46464,
@@ -1834,13 +1834,13 @@
           49534,
           50128,
           50597,
-          50885
+          50943
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
-        "过去 7 天新增 3,272 Stars",
+        "过去 7 天新增 3,304 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -1860,7 +1860,7 @@
       "content_url": "data/projects/1185590488.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -1892,7 +1892,7 @@
         "wiki"
       ],
       "license": "AGPL-3.0",
-      "stars": 46035,
+      "stars": 46034,
       "forks": 2970,
       "open_issues": 51,
       "created_at": "2020-08-30T09:21:35Z",
@@ -1958,10 +1958,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 18,
-        "day_7": 110,
+        "day_1": 17,
+        "day_7": 103,
         "day_30": null,
-        "percent_7": 0.24,
+        "percent_7": 0.22,
         "sparkline": [
           45688,
           45706,
@@ -1983,13 +1983,13 @@
           45995,
           46013,
           46024,
-          46035
+          46034
         ]
       },
       "recommendation_reasons": [
         "适合知识与笔记整理",
         "支持本地或自托管运行",
-        "过去 7 天新增 110 Stars",
+        "过去 7 天新增 103 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -2009,119 +2009,7 @@
       "content_url": "data/projects/291438522.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
-      "summary_status": "pending"
-    },
-    {
-      "id": 1333065091,
-      "full_name": "deepseek-ai/deepseek-harness",
-      "url": "https://github.com/deepseek-ai/deepseek-harness",
-      "homepage": "https://deepseek.com/harness",
-      "description": "DeepSeek Harness: Everything is a Plugin.",
-      "language": "TypeScript",
-      "topics": [
-        "ai-agents",
-        "cordis",
-        "dsh",
-        "dsh-plugin"
-      ],
-      "license": "MIT",
-      "stars": 203124,
-      "forks": 23419,
-      "open_issues": 0,
-      "created_at": "2026-08-13T11:56:32Z",
-      "pushed_at": "2026-08-27T17:06:36Z",
-      "content_type": "可运行工具",
-      "ecosystem_layer": "Agents",
-      "project_subtype": "General Agent",
-      "use_cases": [],
-      "functional_capabilities": [
-        "Browser & Computer Use",
-        "Evaluation, Observability & Safety"
-      ],
-      "summary_zh": null,
-      "summary_source": "github_description",
-      "features": {
-        "web_ui": true,
-        "api": false,
-        "sdk": false,
-        "cli": true,
-        "docker": false,
-        "self_host": false,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读"
-      ],
-      "integration_methods": [
-        "CLI"
-      ],
-      "platforms": [],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "easy",
-      "quality_score": 94,
-      "fit_score": 54,
-      "recommendation_score": 80,
-      "score_breakdown": {
-        "growth": 80,
-        "heat": 100,
-        "activity": 98,
-        "community": 100,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 1756,
-        "day_7": 19541,
-        "day_30": null,
-        "percent_7": 10.64,
-        "sparkline": [
-          37151,
-          94141,
-          113580,
-          129883,
-          148816,
-          159734,
-          166566,
-          173243,
-          180686,
-          184622,
-          187611,
-          191608,
-          195010,
-          197780,
-          200115,
-          201987,
-          203124
-        ]
-      },
-      "recommendation_reasons": [
-        "适合论文检索与阅读",
-        "过去 7 天新增 19,541 Stars",
-        "最近仍在活跃更新"
-      ],
-      "classification_evidence": [
-        "生态层: Agents",
-        "项目类型: General Agent",
-        "命中 ai agent",
-        "Topics: ai-agents, cordis, dsh, dsh-plugin"
-      ],
-      "readme_excerpt": "DeepSeek Harness (dsh) is an open-source agent harness developed by DeepSeek AI.\n\nIt is built on an **everything-is-a-plugin** architecture and powered by Cordis, whose design is described in _A Programming Paradigm for Spatiotemporal Composability_.",
-      "readme_language": "en",
-      "readme_url": "https://github.com/deepseek-ai/deepseek-harness#readme",
-      "readme_hash": "a51ca4bff273518c3f292b2e6800f5f2de76170ae6f5919fc48e4a0d82b0da1e",
-      "summary_model": null,
-      "summary_updated_at": null,
-      "content_url": "data/projects/1333065091.json",
-      "guide_source": "metadata_fallback",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -2154,11 +2042,11 @@
         "workflow-automation"
       ],
       "license": "NOASSERTION",
-      "stars": 202787,
+      "stars": 202805,
       "forks": 60455,
-      "open_issues": 1121,
+      "open_issues": 1122,
       "created_at": "2019-06-22T09:24:21Z",
-      "pushed_at": "2026-08-29T16:09:08Z",
+      "pushed_at": "2026-08-29T19:28:14Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Infrastructure",
       "project_subtype": "Automation & Orchestration",
@@ -2206,7 +2094,7 @@
       "fit_score": 73,
       "recommendation_score": 80,
       "score_breakdown": {
-        "growth": 46,
+        "growth": 45,
         "heat": 100,
         "activity": 100,
         "community": 100,
@@ -2214,10 +2102,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 118,
-        "day_7": 1195,
+        "day_1": 136,
+        "day_7": 1086,
         "day_30": null,
-        "percent_7": 0.59,
+        "percent_7": 0.54,
         "sparkline": [
           199958,
           200111,
@@ -2239,13 +2127,13 @@
           202522,
           202623,
           202712,
-          202787
+          202805
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
-        "过去 7 天新增 1,195 Stars",
+        "过去 7 天新增 1,086 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -2265,7 +2153,7 @@
       "summary_status": "ready",
       "guide_source": "manual",
       "guide_status": "ready",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
     },
     {
       "id": 1158722119,
@@ -2283,8 +2171,8 @@
         "skills"
       ],
       "license": "MIT",
-      "stars": 90639,
-      "forks": 9703,
+      "stars": 90676,
+      "forks": 9707,
       "open_issues": 122,
       "created_at": "2026-02-15T20:20:26Z",
       "pushed_at": "2026-08-28T23:31:50Z",
@@ -2346,10 +2234,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 235,
-        "day_7": 1617,
+        "day_1": 272,
+        "day_7": 1587,
         "day_30": null,
-        "percent_7": 1.82,
+        "percent_7": 1.78,
         "sparkline": [
           85013,
           85660,
@@ -2371,12 +2259,12 @@
           89997,
           90275,
           90504,
-          90639
+          90676
         ]
       },
       "recommendation_reasons": [
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,617 Stars",
+        "过去 7 天新增 1,587 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -2396,7 +2284,7 @@
       "content_url": "data/projects/1158722119.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -2421,11 +2309,11 @@
         "situation"
       ],
       "license": "AGPL-3.0",
-      "stars": 84832,
-      "forks": 12751,
-      "open_issues": 347,
+      "stars": 84884,
+      "forks": 12753,
+      "open_issues": 361,
       "created_at": "2026-01-08T17:26:06Z",
-      "pushed_at": "2026-08-29T16:31:55Z",
+      "pushed_at": "2026-08-29T20:43:16Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "MCP & Connectors",
       "project_subtype": "MCP Server",
@@ -2484,10 +2372,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 203,
-        "day_7": 1089,
+        "day_1": 255,
+        "day_7": 1106,
         "day_30": null,
-        "percent_7": 1.3,
+        "percent_7": 1.32,
         "sparkline": [
           80160,
           80464,
@@ -2509,14 +2397,14 @@
           84290,
           84560,
           84679,
-          84832
+          84884
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,089 Stars"
+        "过去 7 天新增 1,106 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -2535,7 +2423,7 @@
       "content_url": "data/projects/1130564872.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -2568,9 +2456,9 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 69703,
-      "forks": 8337,
-      "open_issues": 865,
+      "stars": 69718,
+      "forks": 8340,
+      "open_issues": 866,
       "created_at": "2025-06-02T21:24:20Z",
       "pushed_at": "2026-08-29T14:35:08Z",
       "content_type": "MCP Server",
@@ -2632,7 +2520,7 @@
       "fit_score": 75,
       "recommendation_score": 80,
       "score_breakdown": {
-        "growth": 46,
+        "growth": 45,
         "heat": 96,
         "activity": 100,
         "community": 97,
@@ -2640,10 +2528,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 102,
-        "day_7": 893,
+        "day_1": 117,
+        "day_7": 871,
         "day_30": null,
-        "percent_7": 1.3,
+        "percent_7": 1.27,
         "sparkline": [
           67480,
           67568,
@@ -2665,14 +2553,14 @@
           69469,
           69564,
           69646,
-          69703
+          69718
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 893 Stars"
+        "过去 7 天新增 871 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -2691,7 +2579,7 @@
       "content_url": "data/projects/995029641.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -2709,8 +2597,8 @@
         "llms"
       ],
       "license": "MIT",
-      "stars": 57790,
-      "forks": 8281,
+      "stars": 57794,
+      "forks": 8282,
       "open_issues": 769,
       "created_at": "2023-10-27T03:26:59Z",
       "pushed_at": "2026-08-28T22:36:31Z",
@@ -2777,10 +2665,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 62,
-        "day_7": 333,
+        "day_1": 66,
+        "day_7": 324,
         "day_30": null,
-        "percent_7": 0.58,
+        "percent_7": 0.56,
         "sparkline": [
           56904,
           56948,
@@ -2801,13 +2689,13 @@
           57643,
           57687,
           57755,
-          57790
+          57794
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 333 Stars",
+        "过去 7 天新增 324 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -2827,7 +2715,7 @@
       "content_url": "data/projects/710601088.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -2849,11 +2737,11 @@
         "vibe-coding"
       ],
       "license": "AGPL-3.0",
-      "stars": 51231,
-      "forks": 4890,
-      "open_issues": 1470,
+      "stars": 51232,
+      "forks": 4891,
+      "open_issues": 1479,
       "created_at": "2024-05-24T01:56:26Z",
-      "pushed_at": "2026-08-29T16:17:41Z",
+      "pushed_at": "2026-08-29T20:37:46Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Skills & Plugins",
       "project_subtype": "Agent Skill",
@@ -2906,7 +2794,7 @@
       "fit_score": 85,
       "recommendation_score": 80,
       "score_breakdown": {
-        "growth": 38,
+        "growth": 37,
         "heat": 92,
         "activity": 100,
         "community": 93,
@@ -2914,10 +2802,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 43,
-        "day_7": 323,
+        "day_1": 44,
+        "day_7": 313,
         "day_30": null,
-        "percent_7": 0.63,
+        "percent_7": 0.61,
         "sparkline": [
           50180,
           50237,
@@ -2939,21 +2827,20 @@
           51100,
           51152,
           51203,
-          51231
+          51232
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 323 Stars"
+        "过去 7 天新增 313 Stars"
       ],
       "classification_evidence": [
         "生态层: Skills & Plugins",
         "项目类型: Agent Skill",
         "命中 ai agent",
         "命中 autonomous agent",
-        "命中 coding agent",
         "Topics: agent-skills, ai-agent, claude-code, codex"
       ],
       "readme_excerpt": "🌐 Language English 简体中文 繁體中文 日本語 한국어 हिन्दी ไทย Français Deutsch Español Italiano Русский Português Nederlands Polski العربية فارسی Türkçe Tiếng Việt Bahasa Indonesia\n\nCherry Studio is a desktop client that supports multiple LLM providers, available on Windows, Mac and Linux.",
@@ -2965,7 +2852,7 @@
       "content_url": "data/projects/805155266.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -2991,8 +2878,8 @@
         "reinforcement-learning"
       ],
       "license": "Apache-2.0",
-      "stars": 43252,
-      "forks": 4773,
+      "stars": 43334,
+      "forks": 4776,
       "open_issues": 15,
       "created_at": "2025-09-09T02:41:44Z",
       "pushed_at": "2026-08-29T03:02:24Z",
@@ -3058,10 +2945,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 290,
-        "day_7": 2400,
+        "day_1": 372,
+        "day_7": 2419,
         "day_30": null,
-        "percent_7": 5.87,
+        "percent_7": 5.91,
         "sparkline": [
           35168,
           35668,
@@ -3083,12 +2970,12 @@
           42505,
           42779,
           43013,
-          43252
+          43334
         ]
       },
       "recommendation_reasons": [
         "适合学术写作",
-        "过去 7 天新增 2,400 Stars",
+        "过去 7 天新增 2,419 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -3104,12 +2991,12 @@
       "readme_url": "https://github.com/bojieli/ai-agent-book#readme",
       "readme_hash": "a6aea7a56c1ef00245fa87917e4f2e77e60307c1072fc4b32392b844b8a0bb80",
       "summary_model": null,
-      "summary_updated_at": "2026-08-29T16:42:10.439967Z",
+      "summary_updated_at": "2026-08-29T20:54:09.255821Z",
       "content_url": "data/projects/1053118194.json",
       "summary_status": "ready",
       "guide_source": "readme_zh",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
     },
     {
       "id": 1136590548,
@@ -3129,11 +3016,11 @@
         "productivity"
       ],
       "license": "MIT",
-      "stars": 244115,
-      "forks": 36915,
-      "open_issues": 148,
+      "stars": 244170,
+      "forks": 36925,
+      "open_issues": 135,
       "created_at": "2026-01-18T00:51:51Z",
-      "pushed_at": "2026-08-29T04:22:27Z",
+      "pushed_at": "2026-08-29T20:30:55Z",
       "content_type": "Framework / SDK",
       "ecosystem_layer": "Agents",
       "project_subtype": "General Agent",
@@ -3187,10 +3074,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 260,
-        "day_7": 2132,
+        "day_1": 315,
+        "day_7": 2078,
         "day_30": null,
-        "percent_7": 0.88,
+        "percent_7": 0.86,
         "sparkline": [
           238988,
           239196,
@@ -3212,12 +3099,12 @@
           243452,
           243736,
           243958,
-          244115
+          244170
         ]
       },
       "recommendation_reasons": [
         "支持本地或自托管运行",
-        "过去 7 天新增 2,132 Stars",
+        "过去 7 天新增 2,078 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -3236,7 +3123,7 @@
       "content_url": "data/projects/1136590548.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -3262,11 +3149,11 @@
         "openai"
       ],
       "license": "MIT",
-      "stars": 238021,
-      "forks": 48405,
-      "open_issues": 37349,
+      "stars": 238082,
+      "forks": 48416,
+      "open_issues": 37444,
       "created_at": "2025-07-22T22:22:28Z",
-      "pushed_at": "2026-08-29T16:28:01Z",
+      "pushed_at": "2026-08-29T18:04:52Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Agents",
       "project_subtype": "General Agent",
@@ -3328,10 +3215,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 477,
-        "day_7": 3814,
+        "day_1": 538,
+        "day_7": 3757,
         "day_30": null,
-        "percent_7": 1.63,
+        "percent_7": 1.6,
         "sparkline": [
           227878,
           228368,
@@ -3353,13 +3240,13 @@
           236834,
           237310,
           237727,
-          238021
+          238082
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 3,814 Stars",
+        "过去 7 天新增 3,757 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -3378,7 +3265,119 @@
       "content_url": "data/projects/1024554267.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
+      "summary_status": "pending"
+    },
+    {
+      "id": 1333065091,
+      "full_name": "deepseek-ai/deepseek-harness",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "homepage": "https://deepseek.com/harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "license": "MIT",
+      "stars": 203310,
+      "forks": 23451,
+      "open_issues": 0,
+      "created_at": "2026-08-13T11:56:32Z",
+      "pushed_at": "2026-08-27T17:06:36Z",
+      "content_type": "可运行工具",
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
+      "use_cases": [],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": true,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "Agent Core",
+      "capabilities": [
+        "Agent Core"
+      ],
+      "research_use_cases": [
+        "论文检索与阅读"
+      ],
+      "integration_methods": [
+        "CLI"
+      ],
+      "platforms": [],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "easy",
+      "quality_score": 93,
+      "fit_score": 54,
+      "recommendation_score": 79,
+      "score_breakdown": {
+        "growth": 79,
+        "heat": 100,
+        "activity": 96,
+        "community": 100,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 1942,
+        "day_7": 18688,
+        "day_30": null,
+        "percent_7": 10.12,
+        "sparkline": [
+          37151,
+          94141,
+          113580,
+          129883,
+          148816,
+          159734,
+          166566,
+          173243,
+          180686,
+          184622,
+          187611,
+          191608,
+          195010,
+          197780,
+          200115,
+          201987,
+          203310
+        ]
+      },
+      "recommendation_reasons": [
+        "适合论文检索与阅读",
+        "过去 7 天新增 18,688 Stars",
+        "最近仍在活跃更新"
+      ],
+      "classification_evidence": [
+        "生态层: Agents",
+        "项目类型: General Agent",
+        "命中 ai agent",
+        "Topics: ai-agents, cordis, dsh, dsh-plugin"
+      ],
+      "readme_excerpt": "DeepSeek Harness (dsh) is an open-source agent harness developed by DeepSeek AI.\n\nIt is built on an **everything-is-a-plugin** architecture and powered by Cordis, whose design is described in _A Programming Paradigm for Spatiotemporal Composability_.",
+      "readme_language": "en",
+      "readme_url": "https://github.com/deepseek-ai/deepseek-harness#readme",
+      "readme_hash": "a51ca4bff273518c3f292b2e6800f5f2de76170ae6f5919fc48e4a0d82b0da1e",
+      "summary_model": null,
+      "summary_updated_at": null,
+      "content_url": "data/projects/1333065091.json",
+      "guide_source": "metadata_fallback",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -3390,8 +3389,8 @@
       "language": "Shell",
       "topics": [],
       "license": "MIT",
-      "stars": 148796,
-      "forks": 23990,
+      "stars": 148827,
+      "forks": 24001,
       "open_issues": 143,
       "created_at": "2025-10-13T12:12:29Z",
       "pushed_at": "2026-08-26T14:57:12Z",
@@ -3456,10 +3455,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 224,
-        "day_7": 1511,
+        "day_1": 255,
+        "day_7": 1506,
         "day_30": null,
-        "percent_7": 1.03,
+        "percent_7": 1.02,
         "sparkline": [
           140501,
           141673,
@@ -3481,13 +3480,13 @@
           148202,
           148464,
           148624,
-          148796
+          148827
         ]
       },
       "recommendation_reasons": [
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,511 Stars",
+        "过去 7 天新增 1,506 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -3506,7 +3505,7 @@
       "content_url": "data/projects/1075372545.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -3518,8 +3517,8 @@
       "language": "Python",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 48576,
-      "forks": 4506,
+      "stars": 48593,
+      "forks": 4508,
       "open_issues": 84,
       "created_at": "2026-03-08T13:52:57Z",
       "pushed_at": "2026-08-21T07:26:58Z",
@@ -3586,10 +3585,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 124,
-        "day_7": 623,
+        "day_1": 141,
+        "day_7": 633,
         "day_30": null,
-        "percent_7": 1.3,
+        "percent_7": 1.32,
         "sparkline": [
           46811,
           46859,
@@ -3611,14 +3610,14 @@
           48293,
           48380,
           48518,
-          48576
+          48593
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 623 Stars"
+        "过去 7 天新增 633 Stars"
       ],
       "classification_evidence": [
         "生态层: Agents",
@@ -3635,159 +3634,7 @@
       "content_url": "data/projects/1176011916.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
-      "summary_status": "pending"
-    },
-    {
-      "id": 522158088,
-      "full_name": "zhayujie/CowAgent",
-      "url": "https://github.com/zhayujie/CowAgent",
-      "homepage": "https://cowagent.ai",
-      "description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-model, multi-channel. Lightweight, extensible, one-line install. (formerly chatgpt-on-wechat)",
-      "language": "Python",
-      "topics": [
-        "ai",
-        "ai-agent",
-        "ai-agents",
-        "chatgpt-on-wechat",
-        "claude",
-        "claude-code",
-        "codex",
-        "cowagent",
-        "deepseek",
-        "harness",
-        "llm",
-        "mcp",
-        "multi-agent",
-        "openai",
-        "openclaw",
-        "skills"
-      ],
-      "license": "MIT",
-      "stars": 46719,
-      "forks": 10328,
-      "open_issues": 42,
-      "created_at": "2022-08-07T08:33:41Z",
-      "pushed_at": "2026-08-27T11:39:32Z",
-      "content_type": "MCP Server",
-      "ecosystem_layer": "Skills & Plugins",
-      "project_subtype": "Agent Skill",
-      "use_cases": [
-        "Agent Development",
-        "Research & Literature",
-        "Knowledge Management",
-        "Automation",
-        "Learning"
-      ],
-      "functional_capabilities": [
-        "Browser & Computer Use",
-        "Search & Research",
-        "Memory & Knowledge",
-        "Automation & Orchestration",
-        "Evaluation, Observability & Safety"
-      ],
-      "summary_zh": null,
-      "summary_source": "github_description",
-      "features": {
-        "web_ui": false,
-        "api": true,
-        "sdk": false,
-        "cli": true,
-        "docker": true,
-        "self_host": false,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "Skills & Prompts",
-        "MCP & Connectors",
-        "Memory & Knowledge"
-      ],
-      "research_use_cases": [
-        "知识与笔记整理"
-      ],
-      "integration_methods": [
-        "MCP",
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Web",
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 76,
-      "fit_score": 85,
-      "recommendation_score": 79,
-      "score_breakdown": {
-        "growth": 29,
-        "heat": 93,
-        "activity": 96,
-        "community": 99,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 10,
-        "day_7": 89,
-        "day_30": null,
-        "percent_7": 0.19,
-        "sparkline": [
-          46432,
-          46448,
-          46460,
-          46470,
-          46501,
-          46510,
-          46512,
-          46526,
-          46531,
-          46548,
-          46572,
-          46599,
-          46623,
-          46632,
-          46643,
-          46654,
-          46672,
-          46692,
-          46705,
-          46711,
-          46719
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合知识与笔记整理",
-        "文档中提供 Windows 支持信号",
-        "过去 7 天新增 89 Stars"
-      ],
-      "classification_evidence": [
-        "生态层: Skills & Plugins",
-        "项目类型: Agent Skill",
-        "命中 ai agent",
-        "命中 ai agent",
-        "命中 agent framework",
-        "Topics: ai, ai-agent, ai-agents, chatgpt-on-wechat"
-      ],
-      "readme_excerpt": "**CowAgent** is an open-source super AI assistant that proactively plans tasks, controls your computer and external services, creates and runs Skills, builds a personal knowledge base and long-term memory, and grows alongside you through self-evolution — a reference implementation of Agent Harness engineering.\n\nCowAgent is lightweight, easy to deploy, and built to extend. Plug in any major LLM provider and run it 24/7 on a personal computer or server, across the web and all major IM platforms.",
-      "readme_language": "en",
-      "readme_url": "https://github.com/zhayujie/CowAgent#readme",
-      "readme_hash": "27670014a858dd8da06d841e2c3c42effebf9f6a1602ea75cbffc2143f9e734d",
-      "summary_model": null,
-      "summary_updated_at": null,
-      "content_url": "data/projects/522158088.json",
-      "guide_source": "metadata_fallback",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -3820,11 +3667,11 @@
         "webui"
       ],
       "license": "MIT",
-      "stars": 42592,
-      "forks": 8816,
-      "open_issues": 742,
+      "stars": 42596,
+      "forks": 8817,
+      "open_issues": 739,
       "created_at": "2023-02-12T01:06:52Z",
-      "pushed_at": "2026-08-29T16:41:08Z",
+      "pushed_at": "2026-08-29T20:39:29Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "MCP & Connectors",
       "project_subtype": "MCP Server",
@@ -3884,10 +3731,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 40,
-        "day_7": 260,
+        "day_1": 44,
+        "day_7": 256,
         "day_30": null,
-        "percent_7": 0.61,
+        "percent_7": 0.6,
         "sparkline": [
           42028,
           42062,
@@ -3904,14 +3751,14 @@
           42486,
           42532,
           42569,
-          42592
+          42596
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 260 Stars"
+        "过去 7 天新增 256 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -3930,7 +3777,7 @@
       "content_url": "data/projects/600596928.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -3963,11 +3810,11 @@
         "windsurf"
       ],
       "license": "MIT",
-      "stars": 41075,
-      "forks": 3344,
-      "open_issues": 514,
+      "stars": 41092,
+      "forks": 3347,
+      "open_issues": 512,
       "created_at": "2026-02-24T22:01:00Z",
-      "pushed_at": "2026-08-29T16:09:27Z",
+      "pushed_at": "2026-08-29T19:11:53Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "MCP & Connectors",
       "project_subtype": "MCP Server",
@@ -4035,10 +3882,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 122,
-        "day_7": 1227,
+        "day_1": 139,
+        "day_7": 1219,
         "day_30": null,
-        "percent_7": 3.08,
+        "percent_7": 3.06,
         "sparkline": [
           38279,
           38400,
@@ -4060,14 +3907,14 @@
           40760,
           40894,
           41000,
-          41075
+          41092
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,227 Stars"
+        "过去 7 天新增 1,219 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -4077,159 +3924,16 @@
         "命中 mcp server",
         "Topics: aider, ast, claude-code, code-analysis"
       ],
-      "readme_excerpt": "**The fastest and most efficient code intelligence engine for AI coding agents.** Full-indexes an average repository in milliseconds, the Linux kernel (28M LOC, 75K files) in 3 minutes. Answers structural queries in under 1ms. Ships as a native executable with a small verified runtime-asset set for macOS, Linux, and Windows — download, run install, done.\n\nHigh-quality parsing through tree-sitter AST analysis across all 161 languages, enhanced with **Hybrid LSP** semantic type resolution for Python, TypeScript / JavaScript / JSX / TSX, PHP, C#, Go, C, C++, Java, Kotlin, Rust, and Perl — producing a persistent knowledge graph of functions, classes, call chains, HTTP routes, and cross-service links. 15 MCP tools. No language runtime, hosted service, or API key. Plug and play across 45 supported automatic/conditional client surfaces.",
+      "readme_excerpt": "**The fastest and most efficient code intelligence engine for AI coding agents.** Full-indexes an average repository in milliseconds, the Linux kernel (28M LOC, 75K files) in 3 minutes. Answers structural queries in under 1ms. Ships as a native executable with a small verified runtime-asset set for macOS, Linux, and Windows — download, run install, done.\n\nHigh-quality parsing through tree-sitter AST analysis across all 162 languages, enhanced with **Hybrid LSP** semantic type resolution for Python, TypeScript / JavaScript / JSX / TSX, PHP, C#, Go, C, C++, Java, Kotlin, Rust, and Perl — producing a persistent knowledge graph of functions, classes, call chains, HTTP routes, and cross-service links. 15 MCP tools. No language runtime, hosted service, or API key. Plug and play across 45 supported automatic/conditional client surfaces.",
       "readme_language": "en",
       "readme_url": "https://github.com/DeusData/codebase-memory-mcp#readme",
-      "readme_hash": "7ac8bc389b736cc68c15e44d949040294c3931550f2ba8b767c1eb81cd91764d",
+      "readme_hash": "a729ac302b6648aa22178289f28c409ea82047fc73adcb4fb634e26b5f284179",
       "summary_model": null,
       "summary_updated_at": null,
       "content_url": "data/projects/1166102148.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
-      "summary_status": "pending"
-    },
-    {
-      "id": 876064934,
-      "full_name": "patchy631/ai-engineering-hub",
-      "url": "https://github.com/patchy631/ai-engineering-hub",
-      "homepage": "https://join.dailydoseofds.com",
-      "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
-      "language": "Jupyter Notebook",
-      "topics": [
-        "agents",
-        "ai",
-        "llms",
-        "machine-learning",
-        "mcp",
-        "rag"
-      ],
-      "license": "MIT",
-      "stars": 37225,
-      "forks": 6149,
-      "open_issues": 122,
-      "created_at": "2024-10-21T10:43:24Z",
-      "pushed_at": "2026-08-26T21:04:16Z",
-      "content_type": "MCP Server",
-      "ecosystem_layer": "MCP & Connectors",
-      "project_subtype": "MCP Server",
-      "use_cases": [
-        "Agent Development",
-        "Coding",
-        "Research & Literature",
-        "Data Analysis",
-        "Knowledge Management",
-        "Automation",
-        "Learning"
-      ],
-      "functional_capabilities": [
-        "Coding & Developer Tools",
-        "Browser & Computer Use",
-        "Search & Research",
-        "Memory & Knowledge",
-        "Automation & Orchestration",
-        "Evaluation, Observability & Safety"
-      ],
-      "summary_zh": null,
-      "summary_source": "github_description",
-      "features": {
-        "web_ui": false,
-        "api": true,
-        "sdk": false,
-        "cli": false,
-        "docker": false,
-        "self_host": false,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "MCP & Connectors",
-      "capabilities": [
-        "Agent Core",
-        "MCP & Connectors",
-        "Browser & Computer Use",
-        "Memory & Knowledge",
-        "Research & Learning"
-      ],
-      "research_use_cases": [
-        "文献与引用管理",
-        "研究数据与复现",
-        "学术写作"
-      ],
-      "integration_methods": [
-        "MCP",
-        "API"
-      ],
-      "platforms": [
-        "Windows",
-        "Linux"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "easy",
-      "quality_score": 76,
-      "fit_score": 85,
-      "recommendation_score": 79,
-      "score_breakdown": {
-        "growth": 31,
-        "heat": 91,
-        "activity": 96,
-        "community": 95,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 15,
-        "day_7": 118,
-        "day_30": null,
-        "percent_7": 0.32,
-        "sparkline": [
-          36913,
-          36924,
-          36942,
-          36971,
-          36984,
-          36998,
-          37004,
-          37007,
-          37018,
-          37027,
-          37035,
-          37052,
-          37057,
-          37124,
-          37153,
-          37156,
-          37171,
-          37184,
-          37197,
-          37214,
-          37225
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合文献与引用管理",
-        "文档中提供 Windows 支持信号",
-        "过去 7 天新增 118 Stars"
-      ],
-      "classification_evidence": [
-        "生态层: MCP & Connectors",
-        "项目类型: MCP Server",
-        "命中 mcp",
-        "命中 model context protocol",
-        "命中 mcp",
-        "Topics: agents, ai, llms, machine-learning"
-      ],
-      "readme_excerpt": "Welcome to the **AI Engineering Hub** - your comprehensive resource for learning and building with AI!\n\nAI Engineering is advancing rapidly, and staying at the forefront requires both deep understanding and hands-on experience. Here, you will find: **93+ Production-Ready Projects** across all skill levels In-depth tutorials on **LLMs, RAG, Agents, and more** Real-world **AI agent** applications Examples to implement, adapt, and scale in your projects",
-      "readme_language": "en",
-      "readme_url": "https://github.com/patchy631/ai-engineering-hub#readme",
-      "readme_hash": "7bff0ee22f7de1d66e65de10e5ba74a8c4d53f232381ed430e5f310d94a32080",
-      "summary_model": null,
-      "summary_updated_at": null,
-      "content_url": "data/projects/876064934.json",
-      "guide_source": "metadata_fallback",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -4249,11 +3953,11 @@
         "python"
       ],
       "license": "MIT",
-      "stars": 111647,
+      "stars": 111658,
       "forks": 12250,
-      "open_issues": 390,
+      "open_issues": 392,
       "created_at": "2024-10-31T16:00:56Z",
-      "pushed_at": "2026-08-29T02:08:30Z",
+      "pushed_at": "2026-08-29T18:08:42Z",
       "content_type": "Framework / SDK",
       "ecosystem_layer": "Agents",
       "project_subtype": "Computer Use Agent",
@@ -4311,10 +4015,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 113,
-        "day_7": 1566,
+        "day_1": 124,
+        "day_7": 1536,
         "day_30": null,
-        "percent_7": 1.42,
+        "percent_7": 1.39,
         "sparkline": [
           108468,
           108628,
@@ -4336,12 +4040,12 @@
           110856,
           111443,
           111575,
-          111647
+          111658
         ]
       },
       "recommendation_reasons": [
         "适合文献与引用管理",
-        "过去 7 天新增 1,566 Stars",
+        "过去 7 天新增 1,536 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -4361,7 +4065,7 @@
       "content_url": "data/projects/881458615.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -4389,11 +4093,11 @@
         "typescript"
       ],
       "license": "NOASSERTION",
-      "stars": 68503,
-      "forks": 5613,
-      "open_issues": 989,
+      "stars": 68507,
+      "forks": 5614,
+      "open_issues": 992,
       "created_at": "2025-12-03T01:40:05Z",
-      "pushed_at": "2026-08-29T12:49:09Z",
+      "pushed_at": "2026-08-29T16:59:42Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Skills & Plugins",
       "project_subtype": "Agent Skill",
@@ -4451,10 +4155,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 44,
-        "day_7": 277,
+        "day_1": 48,
+        "day_7": 267,
         "day_30": null,
-        "percent_7": 0.41,
+        "percent_7": 0.39,
         "sparkline": [
           67629,
           67702,
@@ -4475,12 +4179,12 @@
           68395,
           68446,
           68483,
-          68503
+          68507
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 277 Stars",
+        "过去 7 天新增 267 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -4499,7 +4203,7 @@
       "content_url": "data/projects/1108837393.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -4532,8 +4236,8 @@
         "youtube"
       ],
       "license": "MIT",
-      "stars": 60134,
-      "forks": 5270,
+      "stars": 60181,
+      "forks": 5274,
       "open_issues": 176,
       "created_at": "2026-01-23T20:37:37Z",
       "pushed_at": "2026-08-26T22:09:45Z",
@@ -4597,10 +4301,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 338,
-        "day_7": 1192,
+        "day_1": 385,
+        "day_7": 1220,
         "day_30": null,
-        "percent_7": 2.02,
+        "percent_7": 2.07,
         "sparkline": [
           57741,
           57823,
@@ -4612,13 +4316,13 @@
           59325,
           59578,
           59907,
-          60134
+          60181
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,192 Stars",
+        "过去 7 天新增 1,220 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -4638,7 +4342,7 @@
       "content_url": "data/projects/1140843380.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -4661,8 +4365,8 @@
         "slides"
       ],
       "license": "MIT",
-      "stars": 50178,
-      "forks": 4043,
+      "stars": 50198,
+      "forks": 4045,
       "open_issues": 6,
       "created_at": "2025-12-10T06:54:33Z",
       "pushed_at": "2026-08-29T14:18:32Z",
@@ -4725,10 +4429,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 194,
-        "day_7": 1607,
+        "day_1": 214,
+        "day_7": 1581,
         "day_30": null,
-        "percent_7": 3.31,
+        "percent_7": 3.25,
         "sparkline": [
           44089,
           44400,
@@ -4750,13 +4454,13 @@
           49596,
           49845,
           50032,
-          50178
+          50198
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,607 Stars",
+        "过去 7 天新增 1,581 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -4776,7 +4480,7 @@
       "content_url": "data/projects/1113573066.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -4810,8 +4514,8 @@
       ],
       "license": "MIT",
       "stars": 47521,
-      "forks": 8382,
-      "open_issues": 761,
+      "forks": 8384,
+      "open_issues": 762,
       "created_at": "2026-02-01T07:16:15Z",
       "pushed_at": "2026-08-29T15:03:23Z",
       "content_type": "MCP Server",
@@ -4877,9 +4581,9 @@
       },
       "growth": {
         "day_1": 36,
-        "day_7": 241,
+        "day_7": 237,
         "day_30": null,
-        "percent_7": 0.51,
+        "percent_7": 0.5,
         "sparkline": [
           46795,
           46827,
@@ -4908,7 +4612,7 @@
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 241 Stars"
+        "过去 7 天新增 237 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -4927,7 +4631,158 @@
       "content_url": "data/projects/1147094660.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
+      "summary_status": "pending"
+    },
+    {
+      "id": 522158088,
+      "full_name": "zhayujie/CowAgent",
+      "url": "https://github.com/zhayujie/CowAgent",
+      "homepage": "https://cowagent.ai",
+      "description": "Open-source super AI assistant & Agent Harness. Plans tasks, runs tools and skills, self-evolves with memory and knowledge. Multi-model, multi-channel. Lightweight, extensible, one-line install. (formerly chatgpt-on-wechat)",
+      "language": "Python",
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "chatgpt-on-wechat",
+        "claude",
+        "claude-code",
+        "codex",
+        "cowagent",
+        "deepseek",
+        "harness",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "openai",
+        "openclaw",
+        "skills"
+      ],
+      "license": "MIT",
+      "stars": 46722,
+      "forks": 10328,
+      "open_issues": 44,
+      "created_at": "2022-08-07T08:33:41Z",
+      "pushed_at": "2026-08-27T11:39:32Z",
+      "content_type": "MCP Server",
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Knowledge Management",
+        "Automation",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Search & Research",
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": true,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "Agent Core",
+      "capabilities": [
+        "Agent Core",
+        "MCP & Connectors",
+        "Memory & Knowledge"
+      ],
+      "research_use_cases": [
+        "知识与笔记整理"
+      ],
+      "integration_methods": [
+        "MCP",
+        "CLI",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Web",
+        "Docker"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 76,
+      "fit_score": 82,
+      "recommendation_score": 78,
+      "score_breakdown": {
+        "growth": 29,
+        "heat": 93,
+        "activity": 96,
+        "community": 99,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 13,
+        "day_7": 90,
+        "day_30": null,
+        "percent_7": 0.19,
+        "sparkline": [
+          46432,
+          46448,
+          46460,
+          46470,
+          46501,
+          46510,
+          46512,
+          46526,
+          46531,
+          46548,
+          46572,
+          46599,
+          46623,
+          46632,
+          46643,
+          46654,
+          46672,
+          46692,
+          46705,
+          46711,
+          46722
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "适合知识与笔记整理",
+        "文档中提供 Windows 支持信号",
+        "过去 7 天新增 90 Stars"
+      ],
+      "classification_evidence": [
+        "生态层: Agents",
+        "项目类型: Agent Framework",
+        "命中 ai agent",
+        "命中 ai agent",
+        "命中 agent framework",
+        "Topics: ai, ai-agent, ai-agents, chatgpt-on-wechat"
+      ],
+      "readme_excerpt": "**CowAgent** is an open-source super AI assistant that proactively plans tasks, controls your computer and external services, creates and runs Skills, builds a personal knowledge base and long-term memory, and grows alongside you through self-evolution — a reference implementation of Agent Harness engineering.\n\nCowAgent is lightweight, easy to deploy, and built to extend. Plug in any major LLM provider and run it 24/7 on a personal computer or server, across the web and all major IM platforms.",
+      "readme_language": "en",
+      "readme_url": "https://github.com/zhayujie/CowAgent#readme",
+      "readme_hash": "27670014a858dd8da06d841e2c3c42effebf9f6a1602ea75cbffc2143f9e734d",
+      "summary_model": null,
+      "summary_updated_at": null,
+      "content_url": "data/projects/522158088.json",
+      "guide_source": "metadata_fallback",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -4960,9 +4815,9 @@
         "skill-library"
       ],
       "license": "MIT",
-      "stars": 45636,
-      "forks": 6678,
-      "open_issues": 3,
+      "stars": 45647,
+      "forks": 6680,
+      "open_issues": 4,
       "created_at": "2026-01-14T17:48:09Z",
       "pushed_at": "2026-08-28T08:51:32Z",
       "content_type": "Skill Pack",
@@ -5025,7 +4880,7 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 57,
+        "day_1": 68,
         "day_7": 379,
         "day_30": null,
         "percent_7": 0.84,
@@ -5050,7 +4905,7 @@
           45472,
           45545,
           45599,
-          45636
+          45647
         ]
       },
       "recommendation_reasons": [
@@ -5074,7 +4929,150 @@
       "content_url": "data/projects/1134426800.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
+      "summary_status": "pending"
+    },
+    {
+      "id": 876064934,
+      "full_name": "patchy631/ai-engineering-hub",
+      "url": "https://github.com/patchy631/ai-engineering-hub",
+      "homepage": "https://join.dailydoseofds.com",
+      "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
+      "language": "Jupyter Notebook",
+      "topics": [
+        "agents",
+        "ai",
+        "llms",
+        "machine-learning",
+        "mcp",
+        "rag"
+      ],
+      "license": "MIT",
+      "stars": 37227,
+      "forks": 6149,
+      "open_issues": 122,
+      "created_at": "2024-10-21T10:43:24Z",
+      "pushed_at": "2026-08-26T21:04:16Z",
+      "content_type": "MCP Server",
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Research & Literature",
+        "Data Analysis",
+        "Knowledge Management",
+        "Automation",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Browser & Computer Use",
+        "Search & Research",
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "MCP & Connectors",
+      "capabilities": [
+        "Agent Core",
+        "MCP & Connectors",
+        "Browser & Computer Use",
+        "Memory & Knowledge",
+        "Research & Learning"
+      ],
+      "research_use_cases": [
+        "文献与引用管理",
+        "研究数据与复现",
+        "学术写作"
+      ],
+      "integration_methods": [
+        "MCP",
+        "API"
+      ],
+      "platforms": [
+        "Windows",
+        "Linux"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "easy",
+      "quality_score": 75,
+      "fit_score": 85,
+      "recommendation_score": 78,
+      "score_breakdown": {
+        "growth": 30,
+        "heat": 91,
+        "activity": 96,
+        "community": 95,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 17,
+        "day_7": 103,
+        "day_30": null,
+        "percent_7": 0.28,
+        "sparkline": [
+          36913,
+          36924,
+          36942,
+          36971,
+          36984,
+          36998,
+          37004,
+          37007,
+          37018,
+          37027,
+          37035,
+          37052,
+          37057,
+          37124,
+          37153,
+          37156,
+          37171,
+          37184,
+          37197,
+          37214,
+          37227
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "适合文献与引用管理",
+        "文档中提供 Windows 支持信号",
+        "过去 7 天新增 103 Stars"
+      ],
+      "classification_evidence": [
+        "生态层: MCP & Connectors",
+        "项目类型: MCP Server",
+        "命中 mcp",
+        "命中 model context protocol",
+        "命中 mcp",
+        "Topics: agents, ai, llms, machine-learning"
+      ],
+      "readme_excerpt": "Welcome to the **AI Engineering Hub** - your comprehensive resource for learning and building with AI!\n\nAI Engineering is advancing rapidly, and staying at the forefront requires both deep understanding and hands-on experience. Here, you will find: **93+ Production-Ready Projects** across all skill levels In-depth tutorials on **LLMs, RAG, Agents, and more** Real-world **AI agent** applications Examples to implement, adapt, and scale in your projects",
+      "readme_language": "en",
+      "readme_url": "https://github.com/patchy631/ai-engineering-hub#readme",
+      "readme_hash": "7bff0ee22f7de1d66e65de10e5ba74a8c4d53f232381ed430e5f310d94a32080",
+      "summary_model": null,
+      "summary_updated_at": null,
+      "content_url": "data/projects/876064934.json",
+      "guide_source": "metadata_fallback",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -5106,9 +5104,9 @@
         "vector-database"
       ],
       "license": "Apache-2.0",
-      "stars": 30336,
-      "forks": 2980,
-      "open_issues": 474,
+      "stars": 30338,
+      "forks": 2981,
+      "open_issues": 477,
       "created_at": "2023-08-16T16:16:33Z",
       "pushed_at": "2026-08-29T15:10:20Z",
       "content_type": "MCP Server",
@@ -5175,10 +5173,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 23,
-        "day_7": 158,
+        "day_1": 25,
+        "day_7": 154,
         "day_30": null,
-        "percent_7": 0.52,
+        "percent_7": 0.51,
         "sparkline": [
           29889,
           29928,
@@ -5200,14 +5198,14 @@
           30278,
           30298,
           30324,
-          30336
+          30338
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
         "支持本地或自托管运行",
-        "过去 7 天新增 158 Stars"
+        "过去 7 天新增 154 Stars"
       ],
       "classification_evidence": [
         "生态层: Skills & Plugins",
@@ -5226,7 +5224,7 @@
       "content_url": "data/projects/679343504.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -5247,11 +5245,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 28694,
-      "forks": 4024,
+      "stars": 28697,
+      "forks": 4025,
       "open_issues": 164,
       "created_at": "2025-07-27T23:07:53Z",
-      "pushed_at": "2026-08-29T08:17:05Z",
+      "pushed_at": "2026-08-29T19:46:23Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Agents",
       "project_subtype": "Coding Agent",
@@ -5309,10 +5307,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 47,
-        "day_7": 627,
+        "day_1": 50,
+        "day_7": 623,
         "day_30": null,
-        "percent_7": 2.23,
+        "percent_7": 2.22,
         "sparkline": [
           27551,
           27600,
@@ -5334,14 +5332,14 @@
           28547,
           28602,
           28658,
-          28694
+          28697
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 627 Stars"
+        "过去 7 天新增 623 Stars"
       ],
       "classification_evidence": [
         "生态层: Agents",
@@ -5359,7 +5357,7 @@
       "content_url": "data/projects/1027384981.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -5390,7 +5388,7 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 81099,
+      "stars": 81104,
       "forks": 11171,
       "open_issues": 913,
       "created_at": "2025-05-07T02:50:19Z",
@@ -5461,10 +5459,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 50,
-        "day_7": 555,
+        "day_1": 55,
+        "day_7": 547,
         "day_30": null,
-        "percent_7": 0.69,
+        "percent_7": 0.68,
         "sparkline": [
           79603,
           79674,
@@ -5486,13 +5484,13 @@
           80953,
           81016,
           81056,
-          81099
+          81104
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 555 Stars",
+        "过去 7 天新增 547 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -5512,7 +5510,7 @@
       "content_url": "data/projects/979115477.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -5545,8 +5543,8 @@
         "xpath"
       ],
       "license": "BSD-3-Clause",
-      "stars": 77094,
-      "forks": 7727,
+      "stars": 77150,
+      "forks": 7734,
       "open_issues": 5,
       "created_at": "2024-10-13T20:29:53Z",
       "pushed_at": "2026-08-25T18:39:16Z",
@@ -5598,16 +5596,16 @@
       "score_breakdown": {
         "growth": 49,
         "heat": 96,
-        "activity": 94,
+        "activity": 92,
         "community": 97,
         "completeness": 100,
         "penalty": 0
       },
       "growth": {
-        "day_1": 215,
-        "day_7": 1307,
+        "day_1": 271,
+        "day_7": 1319,
         "day_30": null,
-        "percent_7": 1.72,
+        "percent_7": 1.74,
         "sparkline": [
           73277,
           73385,
@@ -5629,13 +5627,13 @@
           76641,
           76784,
           76951,
-          77094
+          77150
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 1,307 Stars",
+        "过去 7 天新增 1,319 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -5655,129 +5653,7 @@
       "content_url": "data/projects/872119017.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
-      "summary_status": "pending"
-    },
-    {
-      "id": 249995750,
-      "full_name": "amruthpillai/reactive-resume",
-      "url": "https://github.com/amruthpillai/reactive-resume",
-      "homepage": "https://rxresu.me",
-      "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
-      "language": "TypeScript",
-      "topics": [
-        "agent-skills",
-        "ai",
-        "dsh-plugin",
-        "hacktoberfest",
-        "javascript",
-        "mcp-server",
-        "react",
-        "resume-builder",
-        "self-hosted",
-        "typescript"
-      ],
-      "license": "MIT",
-      "stars": 41920,
-      "forks": 4672,
-      "open_issues": 117,
-      "created_at": "2020-03-25T14:08:22Z",
-      "pushed_at": "2026-08-28T20:24:25Z",
-      "content_type": "MCP Server",
-      "ecosystem_layer": "MCP & Connectors",
-      "project_subtype": "MCP Server",
-      "use_cases": [
-        "Agent Development",
-        "Knowledge Management"
-      ],
-      "functional_capabilities": [
-        "Browser & Computer Use",
-        "Memory & Knowledge"
-      ],
-      "summary_zh": null,
-      "summary_source": "github_description",
-      "features": {
-        "web_ui": false,
-        "api": true,
-        "sdk": false,
-        "cli": false,
-        "docker": true,
-        "self_host": true,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "Skills & Prompts",
-      "capabilities": [
-        "Skills & Prompts",
-        "MCP & Connectors"
-      ],
-      "research_use_cases": [],
-      "integration_methods": [
-        "MCP",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Web",
-        "Docker"
-      ],
-      "local_first": true,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 79,
-      "fit_score": 73,
-      "recommendation_score": 77,
-      "score_breakdown": {
-        "growth": 40,
-        "heat": 91,
-        "activity": 100,
-        "community": 93,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 60,
-        "day_7": 421,
-        "day_30": null,
-        "percent_7": 1.01,
-        "sparkline": [
-          40987,
-          41157,
-          41300,
-          41445,
-          41515,
-          41571,
-          41650,
-          41723,
-          41776,
-          41844,
-          41887,
-          41920
-        ]
-      },
-      "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "支持本地或自托管运行",
-        "过去 7 天新增 421 Stars",
-        "最近仍在活跃更新"
-      ],
-      "classification_evidence": [
-        "生态层: MCP & Connectors",
-        "项目类型: MCP Server",
-        "命中 agent skill",
-        "命中 agent skills",
-        "Topics: agent-skills, ai, dsh-plugin, hacktoberfest"
-      ],
-      "readme_excerpt": "Reactive Resume is a free and open-source resume builder that makes it easy to create, update, and share your resume.\n\nPick a template, fill in your details, and export to PDF. Basic use needs no account. If you want more control, you can run the whole application on your own infrastructure.",
-      "readme_language": "en",
-      "readme_url": "https://github.com/amruthpillai/reactive-resume#readme",
-      "readme_hash": "94645da68fb3099e5ed68b8da01d2c58c608444006f617947de9eb1ebcbcaef9",
-      "summary_model": null,
-      "summary_updated_at": null,
-      "content_url": "data/projects/249995750.json",
-      "guide_source": "metadata_fallback",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -5789,11 +5665,11 @@
       "language": "Rust",
       "topics": [],
       "license": "GPL-3.0",
-      "stars": 38814,
-      "forks": 3813,
+      "stars": 38839,
+      "forks": 3815,
       "open_issues": 325,
       "created_at": "2026-02-18T20:01:27Z",
-      "pushed_at": "2026-08-29T14:01:49Z",
+      "pushed_at": "2026-08-29T18:49:21Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Infrastructure",
       "project_subtype": "Safety & Sandbox",
@@ -5854,10 +5730,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 167,
-        "day_7": 2324,
+        "day_1": 192,
+        "day_7": 2343,
         "day_30": null,
-        "percent_7": 6.37,
+        "percent_7": 6.42,
         "sparkline": [
           36159,
           36201,
@@ -5878,13 +5754,13 @@
           38147,
           38534,
           38715,
-          38814
+          38839
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
-        "过去 7 天新增 2,324 Stars",
+        "过去 7 天新增 2,343 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -5903,7 +5779,7 @@
       "content_url": "data/projects/1161163182.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -5925,7 +5801,7 @@
         "react-agent"
       ],
       "license": "Apache-2.0",
-      "stars": 30032,
+      "stars": 30041,
       "forks": 3414,
       "open_issues": 364,
       "created_at": "2024-01-12T03:41:59Z",
@@ -5980,11 +5856,11 @@
       "local_first": false,
       "external_service_required": false,
       "setup_level": "medium",
-      "quality_score": 80,
+      "quality_score": 79,
       "fit_score": 72,
       "recommendation_score": 77,
       "score_breakdown": {
-        "growth": 48,
+        "growth": 47,
         "heat": 88,
         "activity": 98,
         "community": 90,
@@ -5992,10 +5868,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 130,
-        "day_7": 792,
+        "day_1": 139,
+        "day_7": 774,
         "day_30": null,
-        "percent_7": 2.71,
+        "percent_7": 2.64,
         "sparkline": [
           28739,
           28774,
@@ -6017,13 +5893,13 @@
           29694,
           29822,
           29932,
-          30032
+          30041
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
-        "过去 7 天新增 792 Stars",
+        "过去 7 天新增 774 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -6043,7 +5919,7 @@
       "content_url": "data/projects/742244656.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6055,9 +5931,9 @@
       "language": "JavaScript",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 63737,
-      "forks": 3903,
-      "open_issues": 50,
+      "stars": 63777,
+      "forks": 3905,
+      "open_issues": 52,
       "created_at": "2025-11-16T01:52:04Z",
       "pushed_at": "2026-08-29T00:58:59Z",
       "content_type": "Skill Pack",
@@ -6112,10 +5988,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 280,
-        "day_7": 2220,
+        "day_1": 320,
+        "day_7": 2194,
         "day_30": null,
-        "percent_7": 3.61,
+        "percent_7": 3.56,
         "sparkline": [
           58199,
           58534,
@@ -6135,11 +6011,11 @@
           62908,
           63286,
           63596,
-          63737
+          63777
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 2,220 Stars",
+        "过去 7 天新增 2,194 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -6157,7 +6033,7 @@
       "content_url": "data/projects/1097346685.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6178,9 +6054,9 @@
         "puppeteer"
       ],
       "license": "Apache-2.0",
-      "stars": 50111,
-      "forks": 3515,
-      "open_issues": 95,
+      "stars": 50153,
+      "forks": 3518,
+      "open_issues": 96,
       "created_at": "2025-09-11T10:39:55Z",
       "pushed_at": "2026-08-28T12:24:25Z",
       "content_type": "MCP Server",
@@ -6241,10 +6117,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 258,
-        "day_7": 541,
+        "day_1": 300,
+        "day_7": 571,
         "day_30": null,
-        "percent_7": 1.09,
+        "percent_7": 1.15,
         "sparkline": [
           48814,
           48867,
@@ -6266,13 +6142,13 @@
           49751,
           49825,
           49952,
-          50111
+          50153
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 541 Stars",
+        "过去 7 天新增 571 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -6292,7 +6168,129 @@
       "content_url": "data/projects/1054793726.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
+      "summary_status": "pending"
+    },
+    {
+      "id": 249995750,
+      "full_name": "amruthpillai/reactive-resume",
+      "url": "https://github.com/amruthpillai/reactive-resume",
+      "homepage": "https://rxresu.me",
+      "description": "A one-of-a-kind resume builder that keeps your privacy in mind. Completely secure, customizable, portable, open-source and free forever. Try it out today!",
+      "language": "TypeScript",
+      "topics": [
+        "agent-skills",
+        "ai",
+        "dsh-plugin",
+        "hacktoberfest",
+        "javascript",
+        "mcp-server",
+        "react",
+        "resume-builder",
+        "self-hosted",
+        "typescript"
+      ],
+      "license": "MIT",
+      "stars": 41923,
+      "forks": 4672,
+      "open_issues": 117,
+      "created_at": "2020-03-25T14:08:22Z",
+      "pushed_at": "2026-08-28T20:24:25Z",
+      "content_type": "MCP Server",
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Knowledge Management"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": false,
+        "docker": true,
+        "self_host": true,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "Skills & Prompts",
+      "capabilities": [
+        "Skills & Prompts",
+        "MCP & Connectors"
+      ],
+      "research_use_cases": [],
+      "integration_methods": [
+        "MCP",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Web",
+        "Docker"
+      ],
+      "local_first": true,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 78,
+      "fit_score": 73,
+      "recommendation_score": 76,
+      "score_breakdown": {
+        "growth": 40,
+        "heat": 91,
+        "activity": 98,
+        "community": 93,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 63,
+        "day_7": 408,
+        "day_30": null,
+        "percent_7": 0.98,
+        "sparkline": [
+          40987,
+          41157,
+          41300,
+          41445,
+          41515,
+          41571,
+          41650,
+          41723,
+          41776,
+          41844,
+          41887,
+          41923
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "支持本地或自托管运行",
+        "过去 7 天新增 408 Stars",
+        "最近仍在活跃更新"
+      ],
+      "classification_evidence": [
+        "生态层: MCP & Connectors",
+        "项目类型: MCP Server",
+        "命中 agent skill",
+        "命中 agent skills",
+        "Topics: agent-skills, ai, dsh-plugin, hacktoberfest"
+      ],
+      "readme_excerpt": "Reactive Resume is a free and open-source resume builder that makes it easy to create, update, and share your resume.\n\nPick a template, fill in your details, and export to PDF. Basic use needs no account. If you want more control, you can run the whole application on your own infrastructure.",
+      "readme_language": "en",
+      "readme_url": "https://github.com/amruthpillai/reactive-resume#readme",
+      "readme_hash": "94645da68fb3099e5ed68b8da01d2c58c608444006f617947de9eb1ebcbcaef9",
+      "summary_model": null,
+      "summary_updated_at": null,
+      "content_url": "data/projects/249995750.json",
+      "guide_source": "metadata_fallback",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6321,9 +6319,9 @@
         "webui"
       ],
       "license": "Apache-2.0",
-      "stars": 34651,
+      "stars": 34658,
       "forks": 3045,
-      "open_issues": 889,
+      "open_issues": 892,
       "created_at": "2026-02-24T03:42:56Z",
       "pushed_at": "2026-08-28T17:50:20Z",
       "content_type": "可运行工具",
@@ -6382,16 +6380,16 @@
       "score_breakdown": {
         "growth": 39,
         "heat": 89,
-        "activity": 100,
+        "activity": 98,
         "community": 89,
         "completeness": 100,
         "penalty": 0
       },
       "growth": {
-        "day_1": 55,
-        "day_7": 335,
+        "day_1": 62,
+        "day_7": 330,
         "day_30": null,
-        "percent_7": 0.98,
+        "percent_7": 0.96,
         "sparkline": [
           34255,
           33999,
@@ -6413,13 +6411,13 @@
           34502,
           34565,
           34611,
-          34651
+          34658
         ]
       },
       "recommendation_reasons": [
         "适合知识与笔记整理",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 335 Stars",
+        "过去 7 天新增 330 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -6438,7 +6436,7 @@
       "content_url": "data/projects/1165324947.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6458,7 +6456,7 @@
         "playwright"
       ],
       "license": "Apache-2.0",
-      "stars": 28709,
+      "stars": 28716,
       "forks": 2817,
       "open_issues": 213,
       "created_at": "2026-03-14T22:10:23Z",
@@ -6523,10 +6521,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 32,
-        "day_7": 260,
+        "day_1": 39,
+        "day_7": 262,
         "day_30": null,
-        "percent_7": 0.91,
+        "percent_7": 0.92,
         "sparkline": [
           27971,
           28021,
@@ -6548,13 +6546,13 @@
           28616,
           28651,
           28685,
-          28709
+          28716
         ]
       },
       "recommendation_reasons": [
         "适合研究数据与复现",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 260 Stars",
+        "过去 7 天新增 262 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -6574,7 +6572,7 @@
       "content_url": "data/projects/1181982220.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6594,8 +6592,8 @@
         "spec-driven"
       ],
       "license": "MIT",
-      "stars": 132143,
-      "forks": 11889,
+      "stars": 132171,
+      "forks": 11894,
       "open_issues": 336,
       "created_at": "2025-08-21T22:54:31Z",
       "pushed_at": "2026-08-28T21:42:14Z",
@@ -6652,10 +6650,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 171,
-        "day_7": 1382,
+        "day_1": 199,
+        "day_7": 1360,
         "day_30": null,
-        "percent_7": 1.06,
+        "percent_7": 1.04,
         "sparkline": [
           125976,
           126094,
@@ -6677,12 +6675,12 @@
           131670,
           131888,
           132040,
-          132143
+          132171
         ]
       },
       "recommendation_reasons": [
         "支持本地或自托管运行",
-        "过去 7 天新增 1,382 Stars",
+        "过去 7 天新增 1,360 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -6701,7 +6699,7 @@
       "content_url": "data/projects/1042367133.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6727,8 +6725,8 @@
         "vibecoding"
       ],
       "license": "MIT",
-      "stars": 82111,
-      "forks": 5622,
+      "stars": 82156,
+      "forks": 5624,
       "open_issues": 58,
       "created_at": "2026-02-19T21:44:05Z",
       "pushed_at": "2026-08-24T15:23:56Z",
@@ -6785,10 +6783,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 387,
-        "day_7": 2962,
+        "day_1": 432,
+        "day_7": 2908,
         "day_30": null,
-        "percent_7": 3.74,
+        "percent_7": 3.67,
         "sparkline": [
           74550,
           74983,
@@ -6810,17 +6808,16 @@
           80968,
           81483,
           81879,
-          82111
+          82156
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 2,962 Stars",
+        "过去 7 天新增 2,908 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
         "生态层: Skills & Plugins",
         "项目类型: Agent Skill",
-        "命中 coding agent",
         "命中 ai agent",
         "命中 coding agent",
         "Topics: agent, ai, claude, claude-code"
@@ -6834,7 +6831,7 @@
       "content_url": "data/projects/1162099055.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6864,8 +6861,8 @@
         "youtube-transcript"
       ],
       "license": "MIT",
-      "stars": 76511,
-      "forks": 6541,
+      "stars": 76535,
+      "forks": 6546,
       "open_issues": 107,
       "created_at": "2026-02-24T02:10:24Z",
       "pushed_at": "2026-08-25T05:36:18Z",
@@ -6921,10 +6918,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 287,
-        "day_7": 2500,
+        "day_1": 311,
+        "day_7": 2442,
         "day_30": null,
-        "percent_7": 3.38,
+        "percent_7": 3.3,
         "sparkline": [
           69621,
           70227,
@@ -6946,11 +6943,11 @@
           75579,
           76014,
           76339,
-          76511
+          76535
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 2,500 Stars",
+        "过去 7 天新增 2,442 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -6970,7 +6967,7 @@
       "content_url": "data/projects/1165277268.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -6993,8 +6990,8 @@
         "tutorial"
       ],
       "license": "MIT",
-      "stars": 75594,
-      "forks": 12189,
+      "stars": 75608,
+      "forks": 12192,
       "open_issues": 30,
       "created_at": "2025-06-29T15:34:15Z",
       "pushed_at": "2026-08-26T16:38:22Z",
@@ -7054,8 +7051,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 68,
-        "day_7": 663,
+        "day_1": 82,
+        "day_7": 659,
         "day_30": null,
         "percent_7": 0.88,
         "sparkline": [
@@ -7079,12 +7076,12 @@
           75372,
           75476,
           75551,
-          75594
+          75608
         ]
       },
       "recommendation_reasons": [
         "适合学习工作流",
-        "过去 7 天新增 663 Stars",
+        "过去 7 天新增 659 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -7104,7 +7101,7 @@
       "content_url": "data/projects/1010681419.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -7128,11 +7125,11 @@
         "tui"
       ],
       "license": "MIT",
-      "stars": 40861,
+      "stars": 40863,
       "forks": 3539,
-      "open_issues": 132,
+      "open_issues": 122,
       "created_at": "2026-01-19T18:21:01Z",
-      "pushed_at": "2026-08-29T16:17:23Z",
+      "pushed_at": "2026-08-29T20:39:04Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Infrastructure",
       "project_subtype": "Safety & Sandbox",
@@ -7182,7 +7179,7 @@
       "fit_score": 80,
       "recommendation_score": 75,
       "score_breakdown": {
-        "growth": 19,
+        "growth": 20,
         "heat": 90,
         "activity": 100,
         "community": 91,
@@ -7190,8 +7187,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 0,
-        "day_7": 19,
+        "day_1": 1,
+        "day_7": 22,
         "day_30": null,
         "percent_7": 0.05,
         "sparkline": [
@@ -7207,14 +7204,14 @@
           40860,
           40866,
           40862,
-          40861
+          40863
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 19 Stars"
+        "过去 7 天新增 22 Stars"
       ],
       "classification_evidence": [
         "生态层: Infrastructure",
@@ -7233,7 +7230,119 @@
       "content_url": "data/projects/1137711311.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
+      "summary_status": "pending"
+    },
+    {
+      "id": 1212769188,
+      "full_name": "cathrynlavery/diagram-design",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "homepage": "https://cathrynlavery.github.io/diagram-design/",
+      "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "codex",
+        "data-visualization",
+        "diagrams",
+        "drawio",
+        "mermaid",
+        "svg"
+      ],
+      "license": "MIT",
+      "stars": 28566,
+      "forks": 1805,
+      "open_issues": 32,
+      "created_at": "2026-04-16T18:01:16Z",
+      "pushed_at": "2026-08-29T04:17:14Z",
+      "content_type": "Skill Pack",
+      "ecosystem_layer": "Skills & Plugins",
+      "project_subtype": "Agent Skill",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Search & Research",
+        "Memory & Knowledge",
+        "Automation & Orchestration"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": false,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "Skills & Prompts",
+      "capabilities": [
+        "Skills & Prompts"
+      ],
+      "research_use_cases": [
+        "论文检索与阅读"
+      ],
+      "integration_methods": [],
+      "platforms": [
+        "macOS",
+        "Linux"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 90,
+      "fit_score": 46,
+      "recommendation_score": 75,
+      "score_breakdown": {
+        "growth": 85,
+        "heat": 86,
+        "activity": 100,
+        "community": 85,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 363,
+        "day_7": null,
+        "day_30": null,
+        "percent_7": null,
+        "sparkline": [
+          27913,
+          28313,
+          28566
+        ]
+      },
+      "recommendation_reasons": [
+        "适合论文检索与阅读",
+        "最近仍在活跃更新",
+        "配置成本中等"
+      ],
+      "classification_evidence": [
+        "生态层: Skills & Plugins",
+        "项目类型: Agent Skill",
+        "命中 agent skill",
+        "命中 agent skills",
+        "命中 agent skill",
+        "Topics: agent-skills, claude-code, codex, data-visualization"
+      ],
+      "readme_excerpt": "**Editorial diagrams your designer won't hate.**\n\n*New in 2.0 — the Loop: flywheels with a shared-memory hub. The dashed lines are the write-backs.*",
+      "readme_language": "en",
+      "readme_url": "https://github.com/cathrynlavery/diagram-design#readme",
+      "readme_hash": "7ecd8e28e94dfda598b75278df9bf12013a944718efb9f0d467c867f13a56113",
+      "summary_model": null,
+      "summary_updated_at": null,
+      "content_url": "data/projects/1212769188.json",
+      "guide_source": "metadata_fallback",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -7259,9 +7368,9 @@
         "openclaw"
       ],
       "license": "Apache-2.0",
-      "stars": 27722,
-      "forks": 2390,
-      "open_issues": 528,
+      "stars": 27730,
+      "forks": 2392,
+      "open_issues": 534,
       "created_at": "2026-02-25T07:32:52Z",
       "pushed_at": "2026-08-24T06:11:16Z",
       "content_type": "MCP Server",
@@ -7327,10 +7436,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 66,
-        "day_7": 463,
+        "day_1": 74,
+        "day_7": 471,
         "day_30": null,
-        "percent_7": 1.7,
+        "percent_7": 1.73,
         "sparkline": [
           26783,
           26837,
@@ -7351,13 +7460,13 @@
           27515,
           27612,
           27676,
-          27722
+          27730
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 463 Stars",
+        "过去 7 天新增 471 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -7377,7 +7486,7 @@
       "content_url": "data/projects/1166408297.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -7401,8 +7510,8 @@
         "semantic-kernel"
       ],
       "license": "MIT",
-      "stars": 73457,
-      "forks": 24294,
+      "stars": 73465,
+      "forks": 24295,
       "open_issues": 8,
       "created_at": "2024-11-28T10:42:52Z",
       "pushed_at": "2026-08-27T09:55:57Z",
@@ -7459,10 +7568,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 77,
-        "day_7": 462,
+        "day_1": 85,
+        "day_7": 454,
         "day_30": null,
-        "percent_7": 0.63,
+        "percent_7": 0.62,
         "sparkline": [
           71729,
           71823,
@@ -7484,12 +7593,12 @@
           73276,
           73333,
           73420,
-          73457
+          73465
         ]
       },
       "recommendation_reasons": [
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 462 Stars",
+        "过去 7 天新增 454 Stars",
         "最近仍在活跃更新",
         "配置成本中等"
       ],
@@ -7510,7 +7619,7 @@
       "content_url": "data/projects/895508656.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "unavailable"
     },
     {
@@ -7541,11 +7650,11 @@
         "tts"
       ],
       "license": "MIT",
-      "stars": 48746,
-      "forks": 4400,
-      "open_issues": 223,
+      "stars": 48748,
+      "forks": 4399,
+      "open_issues": 218,
       "created_at": "2023-03-18T22:58:02Z",
-      "pushed_at": "2026-08-29T13:06:24Z",
+      "pushed_at": "2026-08-29T20:11:38Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Agents",
       "project_subtype": "General Agent",
@@ -7608,8 +7717,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 28,
-        "day_7": 127,
+        "day_1": 30,
+        "day_7": 126,
         "day_30": null,
         "percent_7": 0.26,
         "sparkline": [
@@ -7632,14 +7741,14 @@
           48695,
           48711,
           48727,
-          48746
+          48748
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合文献与引用管理",
         "支持本地或自托管运行",
-        "过去 7 天新增 127 Stars"
+        "过去 7 天新增 126 Stars"
       ],
       "classification_evidence": [
         "生态层: Agents",
@@ -7658,8 +7767,146 @@
       "content_url": "data/projects/615869301.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
+    },
+    {
+      "id": 822604462,
+      "full_name": "666ghj/BettaFish",
+      "url": "https://github.com/666ghj/BettaFish",
+      "homepage": "https://deepwiki.com/666ghj/BettaFish",
+      "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。",
+      "language": "Python",
+      "topics": [
+        "agent-framework",
+        "data-analysis",
+        "deep-research",
+        "deep-search",
+        "llms",
+        "multi-agent-system",
+        "nlp",
+        "public-opinion-analysis",
+        "python3",
+        "sentiment-analysis"
+      ],
+      "license": "GPL-2.0",
+      "stars": 42109,
+      "forks": 7630,
+      "open_issues": 3,
+      "created_at": "2024-07-01T13:11:38Z",
+      "pushed_at": "2026-08-25T16:01:57Z",
+      "content_type": "Framework / SDK",
+      "ecosystem_layer": "Agents",
+      "project_subtype": "Agent Framework",
+      "use_cases": [
+        "Agent Development",
+        "Research & Literature",
+        "Data Analysis",
+        "Knowledge Management",
+        "Learning"
+      ],
+      "functional_capabilities": [
+        "Browser & Computer Use",
+        "Search & Research",
+        "Memory & Knowledge"
+      ],
+      "summary_zh": "> [!IMPORTANT] > 查看我们最新发布的预测引擎：MiroFish-简洁通用的群体智能引擎，预测万物 > > > > “数据分析三板斧”全线贯通：我们激动的宣布 MiroFish 正式发布！随着最后一块版图补齐，我们构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路。",
+      "summary_source": "readme_zh",
+      "features": {
+        "web_ui": false,
+        "api": true,
+        "sdk": false,
+        "cli": true,
+        "docker": true,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "Agent Core",
+      "capabilities": [
+        "Agent Core",
+        "Browser & Computer Use"
+      ],
+      "research_use_cases": [
+        "研究数据与复现"
+      ],
+      "integration_methods": [
+        "CLI",
+        "API",
+        "Docker"
+      ],
+      "platforms": [
+        "Windows",
+        "macOS",
+        "Linux",
+        "Docker"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "medium",
+      "quality_score": 73,
+      "fit_score": 75,
+      "recommendation_score": 74,
+      "score_breakdown": {
+        "growth": 24,
+        "heat": 92,
+        "activity": 92,
+        "community": 97,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 9,
+        "day_7": 46,
+        "day_30": null,
+        "percent_7": 0.11,
+        "sparkline": [
+          41982,
+          41981,
+          41983,
+          41997,
+          42003,
+          42005,
+          42008,
+          42007,
+          42012,
+          42026,
+          42041,
+          42050,
+          42056,
+          42063,
+          42071,
+          42075,
+          42079,
+          42089,
+          42093,
+          42100,
+          42109
+        ]
+      },
+      "recommendation_reasons": [
+        "适合研究数据与复现",
+        "文档中提供 Windows 支持信号",
+        "过去 7 天新增 46 Stars",
+        "最近仍在活跃更新"
+      ],
+      "classification_evidence": [
+        "生态层: Agents",
+        "项目类型: Agent Framework",
+        "命中 agent framework",
+        "Topics: agent-framework, data-analysis, deep-research, deep-search"
+      ],
+      "readme_excerpt": "> [!IMPORTANT] > 查看我们最新发布的预测引擎：MiroFish-简洁通用的群体智能引擎，预测万物 > > > > “数据分析三板斧”全线贯通：我们激动的宣布 MiroFish 正式发布！随着最后一块版图补齐，我们构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路。至此，从原始数据到智能决策的闭环已成，让预见未来成为可能！\n\n“**微舆**” 是一个从0实现的创新型 多智能体 舆情分析系统，帮助大家破除信息茧房，还原舆情原貌，预测未来走向，辅助决策。用户只需像聊天一样提出分析需求，智能体开始全自动分析 国内外30+主流社媒 与 数百万条大众评论。",
+      "readme_language": "zh",
+      "readme_url": "https://github.com/666ghj/BettaFish#readme",
+      "readme_hash": "ab72a64ba91b007d56ebb7f9f1cbc349ed7c5aa0faffe75ef4f62a66219880b1",
+      "summary_model": null,
+      "summary_updated_at": "2026-08-29T20:54:09.255821Z",
+      "content_url": "data/projects/822604462.json",
+      "summary_status": "ready",
+      "guide_source": "readme_zh",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
     },
     {
       "id": 1132001614,
@@ -7670,8 +7917,8 @@
       "language": "Rust",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 41546,
-      "forks": 2755,
+      "stars": 41551,
+      "forks": 2756,
       "open_issues": 672,
       "created_at": "2026-01-11T05:38:15Z",
       "pushed_at": "2026-08-26T23:52:15Z",
@@ -7729,10 +7976,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 73,
-        "day_7": 421,
+        "day_1": 78,
+        "day_7": 412,
         "day_30": null,
-        "percent_7": 1.02,
+        "percent_7": 1.0,
         "sparkline": [
           40263,
           40344,
@@ -7754,13 +8001,13 @@
           41378,
           41441,
           41504,
-          41546
+          41551
         ]
       },
       "recommendation_reasons": [
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 421 Stars",
+        "过去 7 天新增 412 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -7779,7 +8026,7 @@
       "content_url": "data/projects/1132001614.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -7812,7 +8059,7 @@
         "webui"
       ],
       "license": "Apache-2.0",
-      "stars": 32396,
+      "stars": 32403,
       "forks": 3327,
       "open_issues": 861,
       "created_at": "2025-08-07T10:29:51Z",
@@ -7877,8 +8124,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 33,
-        "day_7": 199,
+        "day_1": 40,
+        "day_7": 200,
         "day_30": null,
         "percent_7": 0.62,
         "sparkline": [
@@ -7902,14 +8149,14 @@
           32312,
           32343,
           32380,
-          32396
+          32403
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 199 Stars"
+        "过去 7 天新增 200 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -7928,263 +8175,7 @@
       "content_url": "data/projects/1033778670.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
-      "summary_status": "pending"
-    },
-    {
-      "id": 912559512,
-      "full_name": "simstudioai/sim",
-      "url": "https://github.com/simstudioai/sim",
-      "homepage": "https://www.sim.ai",
-      "description": "Sim is the collaborative workspace to build, deploy, and monitor AI agents and workflows. Used by 100,000+ builders.",
-      "language": "TypeScript",
-      "topics": [
-        "agent-workflow",
-        "agentic-workflow",
-        "agents",
-        "ai",
-        "aiagents",
-        "anthropic",
-        "artificial-intelligence",
-        "automation",
-        "chatbot",
-        "deepseek",
-        "gemini",
-        "low-code",
-        "nextjs",
-        "no-code",
-        "openai",
-        "rag",
-        "react",
-        "typescript"
-      ],
-      "license": "Apache-2.0",
-      "stars": 29489,
-      "forks": 3801,
-      "open_issues": 297,
-      "created_at": "2025-01-05T22:47:49Z",
-      "pushed_at": "2026-08-29T16:17:47Z",
-      "content_type": "Framework / SDK",
-      "ecosystem_layer": "Agents",
-      "project_subtype": "General Agent",
-      "use_cases": [
-        "Knowledge Management",
-        "Automation"
-      ],
-      "functional_capabilities": [
-        "Browser & Computer Use",
-        "Memory & Knowledge",
-        "Automation & Orchestration",
-        "Evaluation, Observability & Safety"
-      ],
-      "summary_zh": null,
-      "summary_source": "github_description",
-      "features": {
-        "web_ui": false,
-        "api": true,
-        "sdk": false,
-        "cli": false,
-        "docker": true,
-        "self_host": true,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "Memory & Knowledge",
-        "Automation"
-      ],
-      "research_use_cases": [
-        "知识与笔记整理"
-      ],
-      "integration_methods": [
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Web",
-        "Docker"
-      ],
-      "local_first": true,
-      "external_service_required": false,
-      "setup_level": "advanced",
-      "quality_score": 73,
-      "fit_score": 76,
-      "recommendation_score": 74,
-      "score_breakdown": {
-        "growth": 23,
-        "heat": 88,
-        "activity": 100,
-        "community": 91,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 6,
-        "day_7": 36,
-        "day_30": null,
-        "percent_7": 0.12,
-        "sparkline": [
-          29387,
-          29401,
-          29406,
-          29416,
-          29417,
-          29421,
-          29424,
-          29426,
-          29423,
-          29431,
-          29435,
-          29443,
-          29449,
-          29455,
-          29460,
-          29469,
-          29472,
-          29472,
-          29479,
-          29489,
-          29489
-        ]
-      },
-      "recommendation_reasons": [
-        "适合知识与笔记整理",
-        "支持本地或自托管运行",
-        "过去 7 天新增 36 Stars",
-        "最近仍在活跃更新"
-      ],
-      "classification_evidence": [
-        "生态层: Agents",
-        "项目类型: General Agent",
-        "命中 ai agent",
-        "命中 agentic",
-        "命中 ai agent",
-        "Topics: agent-workflow, agentic-workflow, agents, ai"
-      ],
-      "readme_excerpt": "Connect 1,000+ integrations and every major LLM Add Slack, Notion, HubSpot, Salesforce, databases, and more Build agents visually, conversationally, or with code Ingest files, knowledge bases, and structured table data Monitor runs, logs, schedules, and workflow activity",
-      "readme_language": "en",
-      "readme_url": "https://github.com/simstudioai/sim#readme",
-      "readme_hash": "923c11452288163cd65c3197b4f3af400030556ebcae2f03bc73a331f183ec08",
-      "summary_model": null,
-      "summary_updated_at": null,
-      "content_url": "data/projects/912559512.json",
-      "guide_source": "metadata_fallback",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
-      "summary_status": "pending"
-    },
-    {
-      "id": 1212769188,
-      "full_name": "cathrynlavery/diagram-design",
-      "url": "https://github.com/cathrynlavery/diagram-design",
-      "homepage": "https://cathrynlavery.github.io/diagram-design/",
-      "description": "38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-      "language": "HTML",
-      "topics": [
-        "agent-skills",
-        "claude-code",
-        "codex",
-        "data-visualization",
-        "diagrams",
-        "drawio",
-        "mermaid",
-        "svg"
-      ],
-      "license": "MIT",
-      "stars": 28538,
-      "forks": 1802,
-      "open_issues": 31,
-      "created_at": "2026-04-16T18:01:16Z",
-      "pushed_at": "2026-08-29T04:17:14Z",
-      "content_type": "Skill Pack",
-      "ecosystem_layer": "Skills & Plugins",
-      "project_subtype": "Agent Skill",
-      "use_cases": [
-        "Agent Development",
-        "Research & Literature",
-        "Knowledge Management",
-        "Automation"
-      ],
-      "functional_capabilities": [
-        "Browser & Computer Use",
-        "Search & Research",
-        "Memory & Knowledge",
-        "Automation & Orchestration"
-      ],
-      "summary_zh": null,
-      "summary_source": "github_description",
-      "features": {
-        "web_ui": false,
-        "api": false,
-        "sdk": false,
-        "cli": false,
-        "docker": false,
-        "self_host": false,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "Skills & Prompts",
-      "capabilities": [
-        "Skills & Prompts"
-      ],
-      "research_use_cases": [
-        "论文检索与阅读"
-      ],
-      "integration_methods": [],
-      "platforms": [
-        "macOS",
-        "Linux"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 89,
-      "fit_score": 46,
-      "recommendation_score": 74,
-      "score_breakdown": {
-        "growth": 84,
-        "heat": 86,
-        "activity": 100,
-        "community": 85,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 335,
-        "day_7": null,
-        "day_30": null,
-        "percent_7": null,
-        "sparkline": [
-          27913,
-          28313,
-          28538
-        ]
-      },
-      "recommendation_reasons": [
-        "适合论文检索与阅读",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "生态层: Skills & Plugins",
-        "项目类型: Agent Skill",
-        "命中 agent skill",
-        "命中 agent skills",
-        "命中 agent skill",
-        "Topics: agent-skills, claude-code, codex, data-visualization"
-      ],
-      "readme_excerpt": "**Editorial diagrams your designer won't hate.**\n\n*New in 2.0 — the Loop: flywheels with a shared-memory hub. The dashed lines are the write-backs.*",
-      "readme_language": "en",
-      "readme_url": "https://github.com/cathrynlavery/diagram-design#readme",
-      "readme_hash": "7ecd8e28e94dfda598b75278df9bf12013a944718efb9f0d467c867f13a56113",
-      "summary_model": null,
-      "summary_updated_at": null,
-      "content_url": "data/projects/1212769188.json",
-      "guide_source": "metadata_fallback",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -8203,8 +8194,8 @@
         "react-flow"
       ],
       "license": "MIT",
-      "stars": 153861,
-      "forks": 9959,
+      "stars": 153864,
+      "forks": 9960,
       "open_issues": 992,
       "created_at": "2023-02-08T22:28:03Z",
       "pushed_at": "2026-08-29T03:41:50Z",
@@ -8254,7 +8245,7 @@
       "fit_score": 60,
       "recommendation_score": 73,
       "score_breakdown": {
-        "growth": 37,
+        "growth": 36,
         "heat": 98,
         "activity": 100,
         "community": 99,
@@ -8262,8 +8253,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 83,
-        "day_7": 312,
+        "day_1": 86,
+        "day_7": 303,
         "day_30": null,
         "percent_7": 0.2,
         "sparkline": [
@@ -8286,13 +8277,13 @@
           153715,
           153741,
           153817,
-          153861
+          153864
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 312 Stars",
+        "过去 7 天新增 303 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -8312,7 +8303,7 @@
       "content_url": "data/projects/599320067.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -8333,8 +8324,8 @@
       ],
       "license": "Apache-2.0",
       "stars": 106741,
-      "forks": 14499,
-      "open_issues": 870,
+      "forks": 14505,
+      "open_issues": 872,
       "created_at": "2025-04-17T17:04:31Z",
       "pushed_at": "2026-08-29T01:56:42Z",
       "content_type": "MCP Server",
@@ -8397,7 +8388,7 @@
       },
       "growth": {
         "day_1": 19,
-        "day_7": 129,
+        "day_7": 128,
         "day_30": null,
         "percent_7": 0.12,
         "sparkline": [
@@ -8426,7 +8417,7 @@
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 129 Stars",
+        "过去 7 天新增 128 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -8446,7 +8437,7 @@
       "content_url": "data/projects/968197216.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -8479,11 +8470,11 @@
         "resume"
       ],
       "license": "MIT",
-      "stars": 69206,
-      "forks": 13081,
+      "stars": 69243,
+      "forks": 13090,
       "open_issues": 329,
       "created_at": "2026-04-04T18:21:18Z",
-      "pushed_at": "2026-08-28T22:00:25Z",
+      "pushed_at": "2026-08-29T20:15:37Z",
       "content_type": "Framework / SDK",
       "ecosystem_layer": "Agents",
       "project_subtype": "Multi-Agent System",
@@ -8539,10 +8530,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 187,
-        "day_7": 1481,
+        "day_1": 224,
+        "day_7": 1476,
         "day_30": null,
-        "percent_7": 2.19,
+        "percent_7": 2.18,
         "sparkline": [
           63300,
           63423,
@@ -8564,11 +8555,11 @@
           68655,
           68868,
           69084,
-          69206
+          69243
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 1,481 Stars",
+        "过去 7 天新增 1,476 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -8588,7 +8579,7 @@
       "content_url": "data/projects/1201476594.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -8619,11 +8610,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 35242,
-      "forks": 2355,
+      "stars": 35241,
+      "forks": 2356,
       "open_issues": 1647,
       "created_at": "2026-04-21T08:27:02Z",
-      "pushed_at": "2026-08-29T16:29:19Z",
+      "pushed_at": "2026-08-29T18:32:11Z",
       "content_type": "MCP Server",
       "ecosystem_layer": "Agents",
       "project_subtype": "Agent Framework",
@@ -8681,10 +8672,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 8,
-        "day_7": 222,
+        "day_1": 7,
+        "day_7": 209,
         "day_30": null,
-        "percent_7": 0.63,
+        "percent_7": 0.6,
         "sparkline": [
           33407,
           33689,
@@ -8706,13 +8697,13 @@
           35188,
           35221,
           35237,
-          35242
+          35241
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 222 Stars",
+        "过去 7 天新增 209 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -8732,47 +8723,53 @@
       "content_url": "data/projects/1216785679.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
-      "id": 953683578,
-      "full_name": "oraios/serena",
-      "url": "https://github.com/oraios/serena",
-      "homepage": "https://oraios.github.io/serena",
-      "description": "A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent",
-      "language": "Python",
+      "id": 912559512,
+      "full_name": "simstudioai/sim",
+      "url": "https://github.com/simstudioai/sim",
+      "homepage": "https://www.sim.ai",
+      "description": "Sim is the collaborative workspace to build, deploy, and monitor AI agents and workflows. Used by 100,000+ builders.",
+      "language": "TypeScript",
       "topics": [
-        "agent",
+        "agent-workflow",
+        "agentic-workflow",
+        "agents",
         "ai",
-        "ai-coding",
-        "claude",
-        "claude-code",
-        "codex",
-        "ide",
-        "jetbrains",
-        "language-server",
-        "mcp-server",
-        "programming",
-        "vibe-coding"
+        "aiagents",
+        "anthropic",
+        "artificial-intelligence",
+        "automation",
+        "chatbot",
+        "deepseek",
+        "gemini",
+        "low-code",
+        "nextjs",
+        "no-code",
+        "openai",
+        "rag",
+        "react",
+        "typescript"
       ],
-      "license": "MIT",
-      "stars": 28603,
-      "forks": 1931,
-      "open_issues": 154,
-      "created_at": "2025-03-23T22:35:24Z",
-      "pushed_at": "2026-08-20T06:51:15Z",
-      "content_type": "MCP Server",
-      "ecosystem_layer": "MCP & Connectors",
-      "project_subtype": "MCP Server",
+      "license": "Apache-2.0",
+      "stars": 29488,
+      "forks": 3801,
+      "open_issues": 299,
+      "created_at": "2025-01-05T22:47:49Z",
+      "pushed_at": "2026-08-29T20:16:29Z",
+      "content_type": "Framework / SDK",
+      "ecosystem_layer": "Agents",
+      "project_subtype": "General Agent",
       "use_cases": [
-        "Agent Development",
         "Coding",
         "Knowledge Management",
         "Automation"
       ],
       "functional_capabilities": [
         "Coding & Developer Tools",
+        "Browser & Computer Use",
         "Memory & Knowledge",
         "Automation & Orchestration",
         "Evaluation, Observability & Safety"
@@ -8781,96 +8778,98 @@
       "summary_source": "github_description",
       "features": {
         "web_ui": false,
-        "api": false,
+        "api": true,
         "sdk": false,
-        "cli": true,
-        "docker": false,
-        "self_host": false,
+        "cli": false,
+        "docker": true,
+        "self_host": true,
         "gpu_required": false
       },
       "preview": null,
-      "primary_capability": "MCP & Connectors",
+      "primary_capability": "Agent Core",
       "capabilities": [
         "Agent Core",
-        "MCP & Connectors"
+        "Memory & Knowledge",
+        "Automation"
       ],
       "research_use_cases": [
-        "学术写作"
+        "知识与笔记整理"
       ],
       "integration_methods": [
-        "MCP",
-        "CLI"
+        "API",
+        "Docker"
       ],
       "platforms": [
-        "Windows"
+        "Web",
+        "Docker"
       ],
-      "local_first": false,
+      "local_first": true,
       "external_service_required": false,
-      "setup_level": "easy",
+      "setup_level": "advanced",
       "quality_score": 72,
-      "fit_score": 75,
+      "fit_score": 76,
       "recommendation_score": 73,
       "score_breakdown": {
-        "growth": 37,
-        "heat": 86,
-        "activity": 81,
-        "community": 86,
+        "growth": 22,
+        "heat": 88,
+        "activity": 100,
+        "community": 91,
         "completeness": 100,
         "penalty": 0
       },
       "growth": {
-        "day_1": 40,
-        "day_7": 247,
+        "day_1": 5,
+        "day_7": 33,
         "day_30": null,
-        "percent_7": 0.87,
+        "percent_7": 0.11,
         "sparkline": [
-          27782,
-          27816,
-          27869,
-          27928,
-          27966,
-          28021,
-          28069,
-          28098,
-          28140,
-          28194,
-          28243,
-          28289,
-          28333,
-          28369,
-          28405,
-          28447,
-          28489,
-          28519,
-          28544,
-          28578,
-          28603
+          29387,
+          29401,
+          29406,
+          29416,
+          29417,
+          29421,
+          29424,
+          29426,
+          29423,
+          29431,
+          29435,
+          29443,
+          29449,
+          29455,
+          29460,
+          29469,
+          29472,
+          29472,
+          29479,
+          29489,
+          29488
         ]
       },
       "recommendation_reasons": [
-        "提供 MCP Server，可直接接入 Agent",
-        "适合学术写作",
-        "文档中提供 Windows 支持信号",
-        "过去 7 天新增 247 Stars"
+        "适合知识与笔记整理",
+        "支持本地或自托管运行",
+        "过去 7 天新增 33 Stars",
+        "最近仍在活跃更新"
       ],
       "classification_evidence": [
-        "生态层: MCP & Connectors",
-        "项目类型: MCP Server",
-        "命中 mcp",
-        "命中 mcp server",
-        "命中 model context protocol",
-        "Topics: agent, ai, ai-coding, claude"
+        "生态层: Agents",
+        "项目类型: General Agent",
+        "命中 ai agent",
+        "命中 agentic",
+        "命中 ai agent",
+        "Topics: agent-workflow, agentic-workflow, agents, ai"
       ],
-      "readme_excerpt": "Serena provides essential **semantic code retrieval, editing, refactoring and debugging tools** that are akin to an IDE's capabilities, operating at the symbol level and exploiting relational structure. It integrates with any client/LLM via the model context protocol (**MCP**).\n\nSerena's **agent-first tool design** involves robust high-level abstractions, distinguishing it from approaches that rely on low-level concepts like line numbers or primitive search patterns.",
+      "readme_excerpt": "Connect 1,000+ integrations and every major LLM Add Slack, Notion, HubSpot, Salesforce, databases, and more Build agents visually, conversationally, or with code Ingest files, knowledge bases, and structured table data Monitor runs, logs, schedules, and workflow activity",
       "readme_language": "en",
-      "readme_url": "https://github.com/oraios/serena#readme",
-      "readme_hash": "e617441ff791c8c9cdb250b66ed9510284f6df0af260c529b77a94e3ac4eb461",
+      "readme_url": "https://github.com/simstudioai/sim#readme",
+      "readme_hash": "923c11452288163cd65c3197b4f3af400030556ebcae2f03bc73a331f183ec08",
       "summary_model": null,
       "summary_updated_at": null,
-      "content_url": "data/projects/953683578.json",
+      "content_url": "data/projects/912559512.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -8903,8 +8902,8 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 145242,
-      "forks": 24239,
+      "stars": 145250,
+      "forks": 24240,
       "open_issues": 432,
       "created_at": "2022-10-17T02:58:36Z",
       "pushed_at": "2026-08-29T08:14:11Z",
@@ -8948,7 +8947,7 @@
       "fit_score": 52,
       "recommendation_score": 72,
       "score_breakdown": {
-        "growth": 40,
+        "growth": 39,
         "heat": 100,
         "activity": 100,
         "community": 100,
@@ -8956,10 +8955,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 63,
-        "day_7": 476,
+        "day_1": 71,
+        "day_7": 470,
         "day_30": null,
-        "percent_7": 0.33,
+        "percent_7": 0.32,
         "sparkline": [
           143902,
           143991,
@@ -8980,11 +8979,11 @@
           145065,
           145144,
           145205,
-          145242
+          145250
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 476 Stars",
+        "过去 7 天新增 470 Stars",
         "最近仍在活跃更新",
         "配置成本中等"
       ],
@@ -9004,7 +9003,7 @@
       "content_url": "data/projects/552661142.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -9021,7 +9020,7 @@
         "tutorial"
       ],
       "license": "NOASSERTION",
-      "stars": 75474,
+      "stars": 75476,
       "forks": 9388,
       "open_issues": 183,
       "created_at": "2025-09-07T09:50:24Z",
@@ -9079,10 +9078,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 106,
-        "day_7": 1273,
+        "day_1": 108,
+        "day_7": 1259,
         "day_30": null,
-        "percent_7": 1.72,
+        "percent_7": 1.7,
         "sparkline": [
           71826,
           72059,
@@ -9104,11 +9103,11 @@
           75060,
           75261,
           75398,
-          75474
+          75476
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 1,273 Stars"
+        "过去 7 天新增 1,259 Stars"
       ],
       "classification_evidence": [
         "生态层: Skills & Plugins",
@@ -9122,12 +9121,12 @@
       "readme_url": "https://github.com/datawhalechina/hello-agents#readme",
       "readme_hash": "e02fb30e4b7cc78f21615f4b45d73a9ce456b65cc658189ae499656943114137",
       "summary_model": null,
-      "summary_updated_at": "2026-08-29T16:42:10.439967Z",
+      "summary_updated_at": "2026-08-29T20:54:09.255821Z",
       "content_url": "data/projects/1052050442.json",
       "summary_status": "ready",
       "guide_source": "readme_zh",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
     },
     {
       "id": 1025856648,
@@ -9159,7 +9158,7 @@
         "subagents"
       ],
       "license": "MIT",
-      "stars": 39242,
+      "stars": 39246,
       "forks": 4190,
       "open_issues": 5,
       "created_at": "2025-07-24T23:28:14Z",
@@ -9216,10 +9215,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 28,
-        "day_7": 227,
+        "day_1": 32,
+        "day_7": 223,
         "day_30": null,
-        "percent_7": 0.58,
+        "percent_7": 0.57,
         "sparkline": [
           38689,
           38714,
@@ -9240,11 +9239,11 @@
           39160,
           39198,
           39228,
-          39242
+          39246
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 227 Stars",
+        "过去 7 天新增 223 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -9264,7 +9263,7 @@
       "content_url": "data/projects/1025856648.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -9291,11 +9290,11 @@
         "workflows"
       ],
       "license": "Apache-2.0",
-      "stars": 32145,
-      "forks": 996,
+      "stars": 32143,
+      "forks": 997,
       "open_issues": 255,
       "created_at": "2023-12-08T06:06:09Z",
-      "pushed_at": "2026-08-28T17:32:58Z",
+      "pushed_at": "2026-08-29T20:51:22Z",
       "content_type": "Framework / SDK",
       "ecosystem_layer": "Agents",
       "project_subtype": "General Agent",
@@ -9347,7 +9346,7 @@
       "fit_score": 73,
       "recommendation_score": 72,
       "score_breakdown": {
-        "growth": 25,
+        "growth": 24,
         "heat": 86,
         "activity": 100,
         "community": 81,
@@ -9355,8 +9354,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 3,
-        "day_7": 46,
+        "day_1": 1,
+        "day_7": 45,
         "day_30": null,
         "percent_7": 0.14,
         "sparkline": [
@@ -9379,13 +9378,13 @@
           32135,
           32135,
           32144,
-          32145
+          32143
         ]
       },
       "recommendation_reasons": [
         "支持本地或自托管运行",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 46 Stars",
+        "过去 7 天新增 45 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -9405,7 +9404,7 @@
       "content_url": "data/projects/728981719.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -9428,9 +9427,9 @@
         "trading"
       ],
       "license": "MIT",
-      "stars": 32033,
-      "forks": 5228,
-      "open_issues": 17,
+      "stars": 32052,
+      "forks": 5229,
+      "open_issues": 18,
       "created_at": "2026-04-01T09:52:20Z",
       "pushed_at": "2026-08-29T04:59:38Z",
       "content_type": "Framework / SDK",
@@ -9485,8 +9484,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 101,
-        "day_7": 588,
+        "day_1": 120,
+        "day_7": 589,
         "day_30": null,
         "percent_7": 1.87,
         "sparkline": [
@@ -9510,11 +9509,11 @@
           31781,
           31891,
           31968,
-          32033
+          32052
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 588 Stars",
+        "过去 7 天新增 589 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -9533,7 +9532,7 @@
       "content_url": "data/projects/1198306812.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -9564,7 +9563,7 @@
         "vector-database"
       ],
       "license": "NOASSERTION",
-      "stars": 29270,
+      "stars": 29271,
       "forks": 3575,
       "open_issues": 4,
       "created_at": "2024-07-13T16:08:36Z",
@@ -9623,10 +9622,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 11,
-        "day_7": 99,
+        "day_1": 12,
+        "day_7": 97,
         "day_30": null,
-        "percent_7": 0.34,
+        "percent_7": 0.33,
         "sparkline": [
           29000,
           29012,
@@ -9648,12 +9647,12 @@
           29232,
           29253,
           29264,
-          29270
+          29271
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
-        "过去 7 天新增 99 Stars",
+        "过去 7 天新增 97 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -9673,7 +9672,7 @@
       "content_url": "data/projects/828268839.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -9697,7 +9696,7 @@
         "webscraping"
       ],
       "license": "Apache-2.0",
-      "stars": 29199,
+      "stars": 29200,
       "forks": 3964,
       "open_issues": 59,
       "created_at": "2023-05-12T10:33:54Z",
@@ -9753,22 +9752,22 @@
       "local_first": false,
       "external_service_required": true,
       "setup_level": "medium",
-      "quality_score": 75,
+      "quality_score": 74,
       "fit_score": 67,
       "recommendation_score": 72,
       "score_breakdown": {
         "growth": 31,
         "heat": 88,
-        "activity": 98,
+        "activity": 96,
         "community": 92,
         "completeness": 100,
         "penalty": 0
       },
       "growth": {
-        "day_1": 19,
-        "day_7": 118,
+        "day_1": 20,
+        "day_7": 116,
         "day_30": null,
-        "percent_7": 0.41,
+        "percent_7": 0.4,
         "sparkline": [
           28901,
           28916,
@@ -9790,13 +9789,13 @@
           29157,
           29175,
           29187,
-          29199
+          29200
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
-        "过去 7 天新增 118 Stars",
+        "过去 7 天新增 116 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -9816,7 +9815,7 @@
       "content_url": "data/projects/639835356.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -9828,8 +9827,8 @@
       "language": "Python",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 29040,
-      "forks": 2903,
+      "stars": 29041,
+      "forks": 2904,
       "open_issues": 740,
       "created_at": "2024-12-05T11:28:04Z",
       "pushed_at": "2026-08-25T18:36:00Z",
@@ -9890,13 +9889,13 @@
       "score_breakdown": {
         "growth": 31,
         "heat": 87,
-        "activity": 94,
+        "activity": 92,
         "community": 89,
         "completeness": 80,
         "penalty": 0
       },
       "growth": {
-        "day_1": 13,
+        "day_1": 14,
         "day_7": 114,
         "day_30": null,
         "percent_7": 0.39,
@@ -9921,7 +9920,7 @@
           29005,
           29021,
           29036,
-          29040
+          29041
         ]
       },
       "recommendation_reasons": [
@@ -9945,7 +9944,145 @@
       "content_url": "data/projects/898968194.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
+      "summary_status": "pending"
+    },
+    {
+      "id": 953683578,
+      "full_name": "oraios/serena",
+      "url": "https://github.com/oraios/serena",
+      "homepage": "https://oraios.github.io/serena",
+      "description": "A powerful MCP toolkit for coding, providing semantic retrieval and editing capabilities  - the IDE for your agent",
+      "language": "Python",
+      "topics": [
+        "agent",
+        "ai",
+        "ai-coding",
+        "claude",
+        "claude-code",
+        "codex",
+        "ide",
+        "jetbrains",
+        "language-server",
+        "mcp-server",
+        "programming",
+        "vibe-coding"
+      ],
+      "license": "MIT",
+      "stars": 28609,
+      "forks": 1931,
+      "open_issues": 154,
+      "created_at": "2025-03-23T22:35:24Z",
+      "pushed_at": "2026-08-20T06:51:15Z",
+      "content_type": "MCP Server",
+      "ecosystem_layer": "MCP & Connectors",
+      "project_subtype": "MCP Server",
+      "use_cases": [
+        "Agent Development",
+        "Coding",
+        "Knowledge Management",
+        "Automation"
+      ],
+      "functional_capabilities": [
+        "Coding & Developer Tools",
+        "Memory & Knowledge",
+        "Automation & Orchestration",
+        "Evaluation, Observability & Safety"
+      ],
+      "summary_zh": null,
+      "summary_source": "github_description",
+      "features": {
+        "web_ui": false,
+        "api": false,
+        "sdk": false,
+        "cli": true,
+        "docker": false,
+        "self_host": false,
+        "gpu_required": false
+      },
+      "preview": null,
+      "primary_capability": "MCP & Connectors",
+      "capabilities": [
+        "Agent Core",
+        "MCP & Connectors"
+      ],
+      "research_use_cases": [
+        "学术写作"
+      ],
+      "integration_methods": [
+        "MCP",
+        "CLI"
+      ],
+      "platforms": [
+        "Windows"
+      ],
+      "local_first": false,
+      "external_service_required": false,
+      "setup_level": "easy",
+      "quality_score": 71,
+      "fit_score": 75,
+      "recommendation_score": 72,
+      "score_breakdown": {
+        "growth": 36,
+        "heat": 86,
+        "activity": 81,
+        "community": 86,
+        "completeness": 100,
+        "penalty": 0
+      },
+      "growth": {
+        "day_1": 46,
+        "day_7": 240,
+        "day_30": null,
+        "percent_7": 0.85,
+        "sparkline": [
+          27782,
+          27816,
+          27869,
+          27928,
+          27966,
+          28021,
+          28069,
+          28098,
+          28140,
+          28194,
+          28243,
+          28289,
+          28333,
+          28369,
+          28405,
+          28447,
+          28489,
+          28519,
+          28544,
+          28578,
+          28609
+        ]
+      },
+      "recommendation_reasons": [
+        "提供 MCP Server，可直接接入 Agent",
+        "适合学术写作",
+        "文档中提供 Windows 支持信号",
+        "过去 7 天新增 240 Stars"
+      ],
+      "classification_evidence": [
+        "生态层: MCP & Connectors",
+        "项目类型: MCP Server",
+        "命中 mcp",
+        "命中 mcp server",
+        "命中 model context protocol",
+        "Topics: agent, ai, ai-coding, claude"
+      ],
+      "readme_excerpt": "Serena provides essential **semantic code retrieval, editing, refactoring and debugging tools** that are akin to an IDE's capabilities, operating at the symbol level and exploiting relational structure. It integrates with any client/LLM via the model context protocol (**MCP**).\n\nSerena's **agent-first tool design** involves robust high-level abstractions, distinguishing it from approaches that rely on low-level concepts like line numbers or primitive search patterns.",
+      "readme_language": "en",
+      "readme_url": "https://github.com/oraios/serena#readme",
+      "readme_hash": "e617441ff791c8c9cdb250b66ed9510284f6df0af260c529b77a94e3ac4eb461",
+      "summary_model": null,
+      "summary_updated_at": null,
+      "content_url": "data/projects/953683578.json",
+      "guide_source": "metadata_fallback",
+      "guide_status": "partial",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -9966,8 +10103,8 @@
         "superpowers"
       ],
       "license": "MIT",
-      "stars": 279303,
-      "forks": 25011,
+      "stars": 279354,
+      "forks": 25017,
       "open_issues": 334,
       "created_at": "2025-10-09T19:45:18Z",
       "pushed_at": "2026-08-29T03:21:18Z",
@@ -10011,7 +10148,7 @@
       "fit_score": 46,
       "recommendation_score": 71,
       "score_breakdown": {
-        "growth": 54,
+        "growth": 53,
         "heat": 100,
         "activity": 100,
         "community": 100,
@@ -10019,10 +10156,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 464,
-        "day_7": 3396,
+        "day_1": 515,
+        "day_7": 3281,
         "day_30": null,
-        "percent_7": 1.23,
+        "percent_7": 1.19,
         "sparkline": [
           269663,
           270162,
@@ -10044,11 +10181,11 @@
           278018,
           278627,
           279047,
-          279303
+          279354
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 3,396 Stars",
+        "过去 7 天新增 3,281 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -10067,7 +10204,7 @@
       "content_url": "data/projects/1073224795.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -10100,8 +10237,8 @@
         "vibe-coding"
       ],
       "license": "MIT",
-      "stars": 65340,
-      "forks": 6514,
+      "stars": 65354,
+      "forks": 6515,
       "open_issues": 46,
       "created_at": "2025-10-31T14:15:28Z",
       "pushed_at": "2026-08-29T06:40:15Z",
@@ -10160,10 +10297,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 55,
-        "day_7": 486,
+        "day_1": 69,
+        "day_7": 492,
         "day_30": null,
-        "percent_7": 0.75,
+        "percent_7": 0.76,
         "sparkline": [
           64216,
           64268,
@@ -10185,19 +10322,19 @@
           65185,
           65258,
           65305,
-          65340
+          65354
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 486 Stars",
+        "过去 7 天新增 492 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
         "生态层: Agents",
         "项目类型: Agent Framework",
         "命中 ai agent",
-        "命中 agentic",
+        "命中 coding agent",
         "命中 agentic",
         "Topics: agentic-ai, agentic-coding, agentic-engineering, agentic-workflow"
       ],
@@ -10210,7 +10347,7 @@
       "content_url": "data/projects/1087192965.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -10230,8 +10367,8 @@
         "quantitative-trading"
       ],
       "license": "MIT",
-      "stars": 64257,
-      "forks": 53889,
+      "stars": 64263,
+      "forks": 53890,
       "open_issues": 65,
       "created_at": "2026-01-10T06:43:20Z",
       "pushed_at": "2026-08-29T14:33:53Z",
@@ -10286,10 +10423,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 74,
-        "day_7": 647,
+        "day_1": 80,
+        "day_7": 638,
         "day_30": null,
-        "percent_7": 1.02,
+        "percent_7": 1.0,
         "sparkline": [
           61088,
           61717,
@@ -10311,12 +10448,12 @@
           63997,
           64127,
           64209,
-          64257
+          64263
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
-        "过去 7 天新增 647 Stars",
+        "过去 7 天新增 638 Stars",
         "最近仍在活跃更新",
         "配置成本中等"
       ],
@@ -10331,12 +10468,12 @@
       "readme_url": "https://github.com/ZhuLinsen/daily_stock_analysis#readme",
       "readme_hash": "4888bf1ab8cb614be2e8c65d385ef0222ccc250929860e7c57fe4ef8e0d4220a",
       "summary_model": null,
-      "summary_updated_at": "2026-08-29T16:42:10.439967Z",
+      "summary_updated_at": "2026-08-29T20:54:09.255821Z",
       "content_url": "data/projects/1131513930.json",
       "summary_status": "ready",
       "guide_source": "readme_zh",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
     },
     {
       "id": 955620917,
@@ -10352,9 +10489,9 @@
         "vibe-coding"
       ],
       "license": "MIT",
-      "stars": 61385,
+      "stars": 61392,
       "forks": 2957,
-      "open_issues": 65,
+      "open_issues": 66,
       "created_at": "2025-03-26T23:40:39Z",
       "pushed_at": "2026-08-28T12:52:17Z",
       "content_type": "MCP Server",
@@ -10408,10 +10545,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 52,
-        "day_7": 309,
+        "day_1": 59,
+        "day_7": 304,
         "day_30": null,
-        "percent_7": 0.51,
+        "percent_7": 0.5,
         "sparkline": [
           60493,
           60550,
@@ -10433,12 +10570,12 @@
           61263,
           61308,
           61351,
-          61385
+          61392
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 309 Stars",
+        "过去 7 天新增 304 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -10458,144 +10595,8 @@
       "content_url": "data/projects/955620917.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
-    },
-    {
-      "id": 822604462,
-      "full_name": "666ghj/BettaFish",
-      "url": "https://github.com/666ghj/BettaFish",
-      "homepage": "https://deepwiki.com/666ghj/BettaFish",
-      "description": "微舆：人人可用的多Agent舆情分析助手，打破信息茧房，还原舆情原貌，预测未来走向，辅助决策！从0实现，不依赖任何框架。",
-      "language": "Python",
-      "topics": [
-        "agent-framework",
-        "data-analysis",
-        "deep-research",
-        "deep-search",
-        "llms",
-        "multi-agent-system",
-        "nlp",
-        "public-opinion-analysis",
-        "python3",
-        "sentiment-analysis"
-      ],
-      "license": "GPL-2.0",
-      "stars": 42108,
-      "forks": 7630,
-      "open_issues": 3,
-      "created_at": "2024-07-01T13:11:38Z",
-      "pushed_at": "2026-08-25T16:01:57Z",
-      "content_type": "Framework / SDK",
-      "ecosystem_layer": "Agents",
-      "project_subtype": "Agent Framework",
-      "use_cases": [
-        "Agent Development",
-        "Research & Literature",
-        "Data Analysis",
-        "Knowledge Management",
-        "Learning"
-      ],
-      "functional_capabilities": [
-        "Browser & Computer Use",
-        "Search & Research",
-        "Memory & Knowledge"
-      ],
-      "summary_zh": "> [!IMPORTANT] > 查看我们最新发布的预测引擎：MiroFish-简洁通用的群体智能引擎，预测万物 > > > > “数据分析三板斧”全线贯通：我们激动的宣布 MiroFish 正式发布！随着最后一块版图补齐，我们构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路。",
-      "summary_source": "readme_zh",
-      "features": {
-        "web_ui": false,
-        "api": true,
-        "sdk": false,
-        "cli": true,
-        "docker": true,
-        "self_host": false,
-        "gpu_required": false
-      },
-      "preview": null,
-      "primary_capability": "Agent Core",
-      "capabilities": [
-        "Agent Core",
-        "Browser & Computer Use"
-      ],
-      "research_use_cases": [],
-      "integration_methods": [
-        "CLI",
-        "API",
-        "Docker"
-      ],
-      "platforms": [
-        "Windows",
-        "macOS",
-        "Linux",
-        "Docker"
-      ],
-      "local_first": false,
-      "external_service_required": false,
-      "setup_level": "medium",
-      "quality_score": 73,
-      "fit_score": 67,
-      "recommendation_score": 71,
-      "score_breakdown": {
-        "growth": 24,
-        "heat": 92,
-        "activity": 92,
-        "community": 97,
-        "completeness": 100,
-        "penalty": 0
-      },
-      "growth": {
-        "day_1": 8,
-        "day_7": 45,
-        "day_30": null,
-        "percent_7": 0.11,
-        "sparkline": [
-          41982,
-          41981,
-          41983,
-          41997,
-          42003,
-          42005,
-          42008,
-          42007,
-          42012,
-          42026,
-          42041,
-          42050,
-          42056,
-          42063,
-          42071,
-          42075,
-          42079,
-          42089,
-          42093,
-          42100,
-          42108
-        ]
-      },
-      "recommendation_reasons": [
-        "文档中提供 Windows 支持信号",
-        "过去 7 天新增 45 Stars",
-        "最近仍在活跃更新",
-        "配置成本中等"
-      ],
-      "classification_evidence": [
-        "生态层: Agents",
-        "项目类型: Agent Framework",
-        "命中 agent framework",
-        "Topics: agent-framework, data-analysis, deep-research, deep-search"
-      ],
-      "readme_excerpt": "> [!IMPORTANT] > 查看我们最新发布的预测引擎：MiroFish-简洁通用的群体智能引擎，预测万物 > > > > “数据分析三板斧”全线贯通：我们激动的宣布 MiroFish 正式发布！随着最后一块版图补齐，我们构建了从 BettaFish（数据收集与分析）到 MiroFish（全景预测）的完整链路。至此，从原始数据到智能决策的闭环已成，让预见未来成为可能！\n\n“**微舆**” 是一个从0实现的创新型 多智能体 舆情分析系统，帮助大家破除信息茧房，还原舆情原貌，预测未来走向，辅助决策。用户只需像聊天一样提出分析需求，智能体开始全自动分析 国内外30+主流社媒 与 数百万条大众评论。",
-      "readme_language": "zh",
-      "readme_url": "https://github.com/666ghj/BettaFish#readme",
-      "readme_hash": "ab72a64ba91b007d56ebb7f9f1cbc349ed7c5aa0faffe75ef4f62a66219880b1",
-      "summary_model": null,
-      "summary_updated_at": "2026-08-29T16:42:10.439967Z",
-      "content_url": "data/projects/822604462.json",
-      "summary_status": "ready",
-      "guide_source": "readme_zh",
-      "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
     },
     {
       "id": 655515393,
@@ -10627,11 +10628,11 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 37103,
-      "forks": 4587,
-      "open_issues": 355,
+      "stars": 37105,
+      "forks": 4588,
+      "open_issues": 353,
       "created_at": "2023-06-19T04:08:31Z",
-      "pushed_at": "2026-08-29T15:33:10Z",
+      "pushed_at": "2026-08-29T19:29:31Z",
       "content_type": "Skill Pack",
       "ecosystem_layer": "Skills & Plugins",
       "project_subtype": "Agent Skill",
@@ -10682,10 +10683,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 16,
-        "day_7": 149,
+        "day_1": 18,
+        "day_7": 145,
         "day_30": null,
-        "percent_7": 0.4,
+        "percent_7": 0.39,
         "sparkline": [
           36655,
           36669,
@@ -10707,12 +10708,12 @@
           37062,
           37078,
           37094,
-          37103
+          37105
         ]
       },
       "recommendation_reasons": [
         "支持本地或自托管运行",
-        "过去 7 天新增 149 Stars",
+        "过去 7 天新增 145 Stars",
         "最近仍在活跃更新",
         "配置成本中等"
       ],
@@ -10733,7 +10734,7 @@
       "content_url": "data/projects/655515393.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -10751,7 +10752,7 @@
         "sdk"
       ],
       "license": "MIT",
-      "stars": 28516,
+      "stars": 28515,
       "forks": 4744,
       "open_issues": 264,
       "created_at": "2023-02-27T17:39:42Z",
@@ -10806,13 +10807,13 @@
       "score_breakdown": {
         "growth": 23,
         "heat": 88,
-        "activity": 98,
+        "activity": 96,
         "community": 93,
         "completeness": 100,
         "penalty": 0
       },
       "growth": {
-        "day_1": 7,
+        "day_1": 6,
         "day_7": 37,
         "day_30": null,
         "percent_7": 0.13,
@@ -10836,7 +10837,7 @@
           28504,
           28507,
           28510,
-          28516
+          28515
         ]
       },
       "recommendation_reasons": [
@@ -10862,7 +10863,7 @@
       "content_url": "data/projects/607289185.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -10885,7 +10886,7 @@
         "vibe-coding"
       ],
       "license": "MIT",
-      "stars": 38872,
+      "stars": 38876,
       "forks": 3488,
       "open_issues": 1,
       "created_at": "2026-01-09T03:36:29Z",
@@ -10950,8 +10951,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 36,
-        "day_7": 145,
+        "day_1": 40,
+        "day_7": 143,
         "day_30": null,
         "percent_7": 0.37,
         "sparkline": [
@@ -10974,12 +10975,12 @@
           38808,
           38823,
           38852,
-          38872
+          38876
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 145 Stars",
+        "过去 7 天新增 143 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -10999,7 +11000,7 @@
       "content_url": "data/projects/1130809465.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11091,9 +11092,9 @@
       },
       "growth": {
         "day_1": 12,
-        "day_7": 60,
+        "day_7": 59,
         "day_30": null,
-        "percent_7": 0.16,
+        "percent_7": 0.15,
         "sparkline": [
           38533,
           38543,
@@ -11122,7 +11123,7 @@
         "提供 MCP Server，可直接接入 Agent",
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 60 Stars"
+        "过去 7 天新增 59 Stars"
       ],
       "classification_evidence": [
         "生态层: MCP & Connectors",
@@ -11141,7 +11142,7 @@
       "content_url": "data/projects/918932603.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11153,8 +11154,8 @@
       "language": "Shell",
       "topics": [],
       "license": "MIT",
-      "stars": 240796,
-      "forks": 20478,
+      "stars": 240918,
+      "forks": 20490,
       "open_issues": 437,
       "created_at": "2026-02-03T11:15:53Z",
       "pushed_at": "2026-08-24T14:20:17Z",
@@ -11201,7 +11202,7 @@
       "fit_score": 38,
       "recommendation_score": 69,
       "score_breakdown": {
-        "growth": 67,
+        "growth": 66,
         "heat": 100,
         "activity": 90,
         "community": 100,
@@ -11209,10 +11210,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 1104,
-        "day_7": 9939,
+        "day_1": 1226,
+        "day_7": 9342,
         "day_30": null,
-        "percent_7": 4.31,
+        "percent_7": 4.03,
         "sparkline": [
           210932,
           212414,
@@ -11234,11 +11235,11 @@
           237833,
           239027,
           240174,
-          240796
+          240918
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 9,939 Stars",
+        "过去 7 天新增 9,342 Stars",
         "最近仍在活跃更新",
         "配置成本中等"
       ],
@@ -11257,7 +11258,7 @@
       "content_url": "data/projects/1148788086.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11273,9 +11274,9 @@
         "mcp-server"
       ],
       "license": "MIT",
-      "stars": 32597,
-      "forks": 4865,
-      "open_issues": 333,
+      "stars": 32599,
+      "forks": 4868,
+      "open_issues": 332,
       "created_at": "2025-03-04T16:42:04Z",
       "pushed_at": "2026-08-28T14:17:47Z",
       "content_type": "MCP Server",
@@ -11332,10 +11333,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 22,
-        "day_7": 174,
+        "day_1": 24,
+        "day_7": 172,
         "day_30": null,
-        "percent_7": 0.54,
+        "percent_7": 0.53,
         "sparkline": [
           32095,
           32122,
@@ -11357,12 +11358,12 @@
           32527,
           32564,
           32585,
-          32597
+          32599
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 174 Stars",
+        "过去 7 天新增 172 Stars",
         "最近仍在活跃更新",
         "配置成本中等"
       ],
@@ -11383,7 +11384,7 @@
       "content_url": "data/projects/942771284.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11397,9 +11398,9 @@
         "agent-skills"
       ],
       "license": null,
-      "stars": 172434,
-      "forks": 20488,
-      "open_issues": 1188,
+      "stars": 172451,
+      "forks": 20489,
+      "open_issues": 1189,
       "created_at": "2025-09-22T15:53:31Z",
       "pushed_at": "2026-08-21T17:10:55Z",
       "content_type": "MCP Server",
@@ -11447,16 +11448,16 @@
       "score_breakdown": {
         "growth": 48,
         "heat": 100,
-        "activity": 85,
+        "activity": 83,
         "community": 100,
         "completeness": 60,
         "penalty": 8
       },
       "growth": {
-        "day_1": 263,
-        "day_7": 1486,
+        "day_1": 280,
+        "day_7": 1457,
         "day_30": null,
-        "percent_7": 0.87,
+        "percent_7": 0.85,
         "sparkline": [
           167210,
           167418,
@@ -11478,13 +11479,12 @@
           171794,
           172065,
           172275,
-          172434
+          172451
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 1,486 Stars",
-        "最近仍在活跃更新"
+        "过去 7 天新增 1,457 Stars"
       ],
       "classification_evidence": [
         "生态层: Skills & Plugins",
@@ -11503,7 +11503,7 @@
       "content_url": "data/projects/1061953414.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11536,7 +11536,7 @@
         "typescript"
       ],
       "license": "MIT",
-      "stars": 28113,
+      "stars": 28114,
       "forks": 1507,
       "open_issues": 139,
       "created_at": "2024-07-13T07:11:32Z",
@@ -11599,10 +11599,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 20,
-        "day_7": 106,
+        "day_1": 21,
+        "day_7": 105,
         "day_30": null,
-        "percent_7": 0.38,
+        "percent_7": 0.37,
         "sparkline": [
           27744,
           27772,
@@ -11623,12 +11623,12 @@
           28070,
           28085,
           28101,
-          28113
+          28114
         ]
       },
       "recommendation_reasons": [
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 106 Stars",
+        "过去 7 天新增 105 Stars",
         "最近仍在活跃更新",
         "配置成本中等"
       ],
@@ -11647,7 +11647,7 @@
       "content_url": "data/projects/828119367.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11665,9 +11665,9 @@
         "coding"
       ],
       "license": "NOASSERTION",
-      "stars": 30880,
-      "forks": 8925,
-      "open_issues": 67,
+      "stars": 30884,
+      "forks": 8922,
+      "open_issues": 69,
       "created_at": "2026-04-01T03:15:49Z",
       "pushed_at": "2026-08-27T07:59:24Z",
       "content_type": "可运行工具",
@@ -11725,10 +11725,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 19,
-        "day_7": 88,
+        "day_1": 23,
+        "day_7": 85,
         "day_30": null,
-        "percent_7": 0.29,
+        "percent_7": 0.28,
         "sparkline": [
           30591,
           30610,
@@ -11750,12 +11750,12 @@
           30843,
           30857,
           30863,
-          30880
+          30884
         ]
       },
       "recommendation_reasons": [
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 88 Stars",
+        "过去 7 天新增 85 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -11773,7 +11773,7 @@
       "content_url": "data/projects/1197990888.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11802,7 +11802,7 @@
         "rust"
       ],
       "license": "Apache-2.0",
-      "stars": 30635,
+      "stars": 30639,
       "forks": 1796,
       "open_issues": 127,
       "created_at": "2026-03-02T19:46:06Z",
@@ -11859,8 +11859,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 24,
-        "day_7": 126,
+        "day_1": 28,
+        "day_7": 124,
         "day_30": null,
         "percent_7": 0.41,
         "sparkline": [
@@ -11884,11 +11884,11 @@
           30575,
           30595,
           30624,
-          30635
+          30639
         ]
       },
       "recommendation_reasons": [
-        "过去 7 天新增 126 Stars",
+        "过去 7 天新增 124 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -11908,7 +11908,7 @@
       "content_url": "data/projects/1171026502.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -11923,7 +11923,7 @@
         "genai"
       ],
       "license": "MIT",
-      "stars": 37162,
+      "stars": 37169,
       "forks": 6623,
       "open_issues": 71,
       "created_at": "2024-12-20T13:37:15Z",
@@ -11987,10 +11987,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 69,
-        "day_7": 332,
+        "day_1": 76,
+        "day_7": 328,
         "day_30": null,
-        "percent_7": 0.9,
+        "percent_7": 0.89,
         "sparkline": [
           36093,
           36146,
@@ -12012,12 +12012,12 @@
           37023,
           37071,
           37116,
-          37162
+          37169
         ]
       },
       "recommendation_reasons": [
         "适合研究数据与复现",
-        "过去 7 天新增 332 Stars"
+        "过去 7 天新增 328 Stars"
       ],
       "classification_evidence": [
         "生态层: Agents",
@@ -12036,7 +12036,7 @@
       "content_url": "data/projects/906251482.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -12064,7 +12064,7 @@
         "web-development"
       ],
       "license": null,
-      "stars": 73936,
+      "stars": 73938,
       "forks": 6719,
       "open_issues": 7,
       "created_at": "2017-10-16T10:12:36Z",
@@ -12123,10 +12123,10 @@
         "penalty": 8
       },
       "growth": {
-        "day_1": 11,
-        "day_7": 326,
+        "day_1": 13,
+        "day_7": 328,
         "day_30": null,
-        "percent_7": 0.44,
+        "percent_7": 0.45,
         "sparkline": [
           73478,
           73483,
@@ -12148,12 +12148,12 @@
           73882,
           73915,
           73931,
-          73936
+          73938
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 326 Stars"
+        "过去 7 天新增 328 Stars"
       ],
       "classification_evidence": [
         "生态层: Agents",
@@ -12171,7 +12171,7 @@
       "content_url": "data/projects/107111421.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -12190,7 +12190,7 @@
         "rust"
       ],
       "license": "Apache-2.0",
-      "stars": 68184,
+      "stars": 68187,
       "forks": 5869,
       "open_issues": 9,
       "created_at": "2023-07-14T07:10:44Z",
@@ -12235,11 +12235,11 @@
       "local_first": false,
       "external_service_required": false,
       "setup_level": "medium",
-      "quality_score": 72,
+      "quality_score": 73,
       "fit_score": 48,
       "recommendation_score": 64,
       "score_breakdown": {
-        "growth": 27,
+        "growth": 28,
         "heat": 95,
         "activity": 81,
         "community": 95,
@@ -12247,8 +12247,8 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 11,
-        "day_7": 74,
+        "day_1": 14,
+        "day_7": 75,
         "day_30": null,
         "percent_7": 0.11,
         "sparkline": [
@@ -12272,12 +12272,12 @@
           68160,
           68170,
           68174,
-          68184
+          68187
         ]
       },
       "recommendation_reasons": [
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 74 Stars",
+        "过去 7 天新增 75 Stars",
         "配置成本中等"
       ],
       "classification_evidence": [
@@ -12296,7 +12296,7 @@
       "content_url": "data/projects/666299222.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -12319,8 +12319,8 @@
         "llm-framework"
       ],
       "license": "CC-BY-4.0",
-      "stars": 60689,
-      "forks": 9165,
+      "stars": 60697,
+      "forks": 9166,
       "open_issues": 996,
       "created_at": "2023-08-18T11:43:45Z",
       "pushed_at": "2026-04-15T11:59:09Z",
@@ -12383,10 +12383,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 20,
-        "day_7": 119,
+        "day_1": 28,
+        "day_7": 126,
         "day_30": null,
-        "percent_7": 0.2,
+        "percent_7": 0.21,
         "sparkline": [
           60351,
           60362,
@@ -12407,20 +12407,20 @@
           60640,
           60657,
           60676,
-          60689
+          60697
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 119 Stars"
+        "过去 7 天新增 126 Stars"
       ],
       "classification_evidence": [
         "生态层: Agents",
         "项目类型: Agent Framework",
-        "命中 ai agent",
         "命中 agentic",
         "命中 agent framework",
+        "命中 multi-agent",
         "Topics: agentic, agentic-agi, agents, ai"
       ],
       "readme_excerpt": "**AutoGen** is a framework for creating multi-agent AI applications that can act autonomously or work alongside humans.\n\n> [!CAUTION] > **⚠️ Maintenance Mode** > > AutoGen is now in maintenance mode. It will not receive new features or enhancements and is community managed going forward. > > New users should start with Microsoft Agent Framework. Existing users are encouraged to migrate using the AutoGen → Microsoft Agent Framework migration guide. > > Microsoft Agent Framework (MAF) is the enterprise‑ready successor to AutoGen. Microsoft Agent FrameworkAF in now available as a production-ready release: stable APIs, and a commitment to long-term support. Whether you're building a single assistant or orchestrating a fleet of specialized agents, Microsoft Agent Framework 1.0 gives you enterprise-grade multi-agent orchestration, multi-provider model support, and cross-runtime interoperability via A2A and MCP.",
@@ -12432,7 +12432,7 @@
       "content_url": "data/projects/680120071.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -12444,7 +12444,7 @@
       "language": "Python",
       "topics": [],
       "license": "Apache-2.0",
-      "stars": 34145,
+      "stars": 34148,
       "forks": 4271,
       "open_issues": 68,
       "created_at": "2023-08-28T02:18:13Z",
@@ -12511,10 +12511,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 5,
-        "day_7": 48,
+        "day_1": 8,
+        "day_7": 51,
         "day_30": null,
-        "percent_7": 0.14,
+        "percent_7": 0.15,
         "sparkline": [
           33974,
           33978,
@@ -12535,13 +12535,13 @@
           34126,
           34135,
           34141,
-          34145
+          34148
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 48 Stars",
+        "过去 7 天新增 51 Stars",
         "配置成本中等"
       ],
       "classification_evidence": [
@@ -12559,7 +12559,7 @@
       "content_url": "data/projects/683892956.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -12571,8 +12571,8 @@
       "language": "TypeScript",
       "topics": [],
       "license": null,
-      "stars": 32904,
-      "forks": 2530,
+      "stars": 32905,
+      "forks": 2531,
       "open_issues": 1,
       "created_at": "2026-02-02T14:21:18Z",
       "pushed_at": "2026-08-29T05:45:32Z",
@@ -12630,10 +12630,10 @@
         "penalty": 8
       },
       "growth": {
-        "day_1": 16,
-        "day_7": 110,
+        "day_1": 17,
+        "day_7": 107,
         "day_30": null,
-        "percent_7": 0.34,
+        "percent_7": 0.33,
         "sparkline": [
           32592,
           32609,
@@ -12654,12 +12654,12 @@
           32855,
           32874,
           32891,
-          32904
+          32905
         ]
       },
       "recommendation_reasons": [
         "文档中提供 Windows 支持信号",
-        "过去 7 天新增 110 Stars",
+        "过去 7 天新增 107 Stars",
         "最近仍在活跃更新"
       ],
       "classification_evidence": [
@@ -12677,7 +12677,7 @@
       "content_url": "data/projects/1148052330.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     },
     {
@@ -12706,7 +12706,7 @@
         "wework"
       ],
       "license": "GPL-3.0",
-      "stars": 61912,
+      "stars": 61915,
       "forks": 24878,
       "open_issues": 61,
       "created_at": "2025-04-28T11:42:16Z",
@@ -12763,10 +12763,10 @@
         "penalty": 0
       },
       "growth": {
-        "day_1": 20,
-        "day_7": 252,
+        "day_1": 23,
+        "day_7": 245,
         "day_30": null,
-        "percent_7": 0.41,
+        "percent_7": 0.4,
         "sparkline": [
           61301,
           61326,
@@ -12788,12 +12788,12 @@
           61854,
           61876,
           61896,
-          61912
+          61915
         ]
       },
       "recommendation_reasons": [
         "提供 MCP Server，可直接接入 Agent",
-        "过去 7 天新增 252 Stars",
+        "过去 7 天新增 245 Stars",
         "配置成本中等"
       ],
       "classification_evidence": [
@@ -12809,12 +12809,12 @@
       "readme_url": "https://github.com/sansan0/TrendRadar#readme",
       "readme_hash": "d8fb0c9a11752dce85b8cbf167566079e621718dbced2ebdd20cdf8b953f220a",
       "summary_model": null,
-      "summary_updated_at": "2026-08-29T16:42:10.439967Z",
+      "summary_updated_at": "2026-08-29T20:54:09.255821Z",
       "content_url": "data/projects/974186260.json",
       "summary_status": "ready",
       "guide_source": "readme_zh",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z"
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z"
     },
     {
       "id": 776854298,
@@ -12835,7 +12835,7 @@
         "retrieval-augmented-generation"
       ],
       "license": "MIT",
-      "stars": 31160,
+      "stars": 31161,
       "forks": 2931,
       "open_issues": 107,
       "created_at": "2024-03-24T16:23:39Z",
@@ -12897,10 +12897,10 @@
         "penalty": 8
       },
       "growth": {
-        "day_1": 14,
-        "day_7": 58,
+        "day_1": 15,
+        "day_7": 56,
         "day_30": null,
-        "percent_7": 0.19,
+        "percent_7": 0.18,
         "sparkline": [
           30876,
           30901,
@@ -12922,12 +12922,12 @@
           31133,
           31139,
           31152,
-          31160
+          31161
         ]
       },
       "recommendation_reasons": [
         "适合论文检索与阅读",
-        "过去 7 天新增 58 Stars"
+        "过去 7 天新增 56 Stars"
       ],
       "classification_evidence": [
         "生态层: Agents",
@@ -12946,7 +12946,7 @@
       "content_url": "data/projects/776854298.json",
       "guide_source": "metadata_fallback",
       "guide_status": "partial",
-      "guide_updated_at": "2026-08-29T16:42:10.439967Z",
+      "guide_updated_at": "2026-08-29T20:54:09.255821Z",
       "summary_status": "pending"
     }
   ]
